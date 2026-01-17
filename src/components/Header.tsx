@@ -33,24 +33,12 @@ const Header = () => {
       <div className="container-tight">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
-            <div className="relative">
-              <div className="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 text-primary-foreground"
-                  fill="currentColor"
-                >
-                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z" />
-                  <circle cx="8" cy="10" r="1.5" />
-                  <circle cx="12" cy="10" r="1.5" />
-                  <circle cx="16" cy="10" r="1.5" />
-                </svg>
-              </div>
-            </div>
-            <span className="text-xl font-bold text-foreground">
-              Converse<span className="gradient-text">AI</span>
-            </span>
+          <a href="/" className="flex items-center group">
+            <img 
+              src="/assets/logo.png" 
+              alt="ConverseAI" 
+              className="h-8 md:h-10 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
