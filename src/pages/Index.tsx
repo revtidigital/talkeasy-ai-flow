@@ -1,12 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import TrustSignals from "@/components/TrustSignals";
+import FeaturesGrid from "@/components/FeaturesGrid";
+import UserBehaviorInsight from "@/components/UserBehaviorInsight";
+import ProductModules from "@/components/ProductModules";
+import MidCTA from "@/components/MidCTA";
+import WhyConverseAI from "@/components/WhyConverseAI";
+import HowItWorks from "@/components/HowItWorks";
+import MobileExperience from "@/components/MobileExperience";
+import FinalCTA from "@/components/FinalCTA";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <HeroSection />
+        <TrustSignals />
+        <FeaturesGrid />
+        <UserBehaviorInsight />
+        <ProductModules />
+        <MidCTA />
+        <WhyConverseAI />
+        <HowItWorks />
+        <MobileExperience />
+        <FinalCTA />
+      </main>
+      <Footer />
     </div>
   );
 };
