@@ -1,4 +1,5 @@
-import { MessageCircle, Twitter, Linkedin, Github, Youtube } from "lucide-react";
+import { Twitter, Linkedin, Github, Youtube } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const footerLinks = {
@@ -43,13 +44,12 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center">
-                <MessageCircle className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold">
-                Converse<span className="text-primary">AI</span>
-              </span>
+            <a href="/" className="flex items-center mb-4">
+              <img 
+                src={logo} 
+                alt="ConverseAI" 
+                className="h-8 w-auto brightness-0 invert"
+              />
             </a>
             <p className="text-sm text-primary-foreground/70 mb-6 max-w-xs">
               AI-powered conversations that help businesses connect, engage, and grow.
