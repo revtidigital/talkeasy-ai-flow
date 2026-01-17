@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import ChatbotMockup from "./ChatbotMockup";
+import ContactFormDialog from "./ContactFormDialog";
 
 const HeroSection = () => {
   return (
@@ -35,14 +36,18 @@ const HeroSection = () => {
             </p>
             
             <div className="animate-fade-up-delayed flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="xl">
-                Start Free Trial
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button variant="hero-outline" size="xl">
-                <Play className="w-5 h-5" />
-                Book Demo
-              </Button>
+              <ContactFormDialog>
+                <Button variant="hero" size="xl">
+                  Start Free Trial
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </ContactFormDialog>
+              <ContactFormDialog>
+                <Button variant="hero-outline" size="xl">
+                  <Play className="w-5 h-5" />
+                  Book Demo
+                </Button>
+              </ContactFormDialog>
             </div>
 
             {/* Quick Stats */}

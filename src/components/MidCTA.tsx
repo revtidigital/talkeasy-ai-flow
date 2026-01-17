@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare } from "lucide-react";
+import ContactFormDialog from "./ContactFormDialog";
 
 const MidCTA = () => {
   return (
@@ -34,21 +35,25 @@ const MidCTA = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="hero-outline" 
-                size="xl"
-                className="bg-white text-foreground hover:bg-white/90 border-0"
-              >
-                Start Free Trial
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="xl"
-                className="text-white border-2 border-white/30 hover:bg-white/10 hover:text-white"
-              >
-                Talk to Sales
-              </Button>
+              <ContactFormDialog>
+                <Button 
+                  variant="hero-outline" 
+                  size="xl"
+                  className="bg-white text-foreground hover:bg-white/90 border-0"
+                >
+                  Start Free Trial
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </ContactFormDialog>
+              <ContactFormDialog>
+                <Button 
+                  variant="ghost" 
+                  size="xl"
+                  className="text-white border-2 border-white/30 hover:bg-white/10 hover:text-white"
+                >
+                  Talk to Sales
+                </Button>
+              </ContactFormDialog>
             </div>
           </div>
         </div>

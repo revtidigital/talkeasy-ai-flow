@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import ContactFormDialog from "./ContactFormDialog";
 
 const FinalCTA = () => {
   return (
@@ -26,13 +27,17 @@ const FinalCTA = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl">
-                Get Started Free
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button variant="hero-outline" size="xl">
-                Contact Sales
-              </Button>
+              <ContactFormDialog>
+                <Button variant="hero" size="xl">
+                  Get Started Free
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </ContactFormDialog>
+              <ContactFormDialog>
+                <Button variant="hero-outline" size="xl">
+                  Contact Sales
+                </Button>
+              </ContactFormDialog>
             </div>
 
             <p className="mt-8 text-sm text-muted-foreground">
