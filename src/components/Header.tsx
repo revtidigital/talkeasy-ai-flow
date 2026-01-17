@@ -15,11 +15,12 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "Product", href: "#product" },
-    { label: "Solutions", href: "#solutions" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Developers", href: "#developers" },
-    { label: "Resources", href: "#resources" },
+    { label: "Home", href: "#" },
+    { label: "Features", href: "#features" },
+    { label: "Products", href: "#products" },
+    { label: "About Us", href: "#about" },
+    { label: "Blog", href: "#blog" },
+    { label: "Contact Us", href: "#contact" },
   ];
 
   return (
@@ -56,12 +57,12 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button variant="ghost" size="sm">
-              Login
-            </Button>
-            <Button variant="gradient" size="default">
-              Get Started
+          <div className="hidden lg:flex items-center">
+            <Button 
+              variant="outline" 
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6"
+            >
+              Start Your Trial
             </Button>
           </div>
 
@@ -89,11 +90,11 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 mt-4 px-4">
-                <Button variant="ghost" className="justify-center">
-                  Login
-                </Button>
-                <Button variant="gradient" className="justify-center">
-                  Get Started
+                <Button 
+                  variant="outline" 
+                  className="justify-center border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                >
+                  Start Your Trial
                 </Button>
               </div>
             </nav>
