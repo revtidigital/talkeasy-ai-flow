@@ -1,6 +1,7 @@
 import { Facebook, Youtube, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import metaTechProvider from "@/assets/meta-tech-provider.jpg";
+
 const Footer = () => {
   const footerLinks = {
     Products: [
@@ -24,32 +25,44 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-background text-foreground border-t border-border">
+    <footer className="bg-[#1a1f2e] text-white">
       <div className="container-tight py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <a href="/" className="flex items-center mb-4">
               <img 
                 src={logo} 
                 alt="ConverseAI" 
-                className="h-10 w-auto"
+                className="h-10 w-auto brightness-0 invert"
               />
             </a>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              We help businesses <span className="font-semibold text-foreground">talk better with their customers</span>. We give them powerful tools to have real conversations, keep customers happy, and grow their business.
+            <p className="text-sm text-gray-400 leading-relaxed mb-6">
+              We help businesses <span className="font-semibold text-white">talk better with their customers</span>. We give them powerful tools to have real conversations, keep customers happy, and grow their business.
             </p>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Products */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Products</h3>
+            <h3 className="font-semibold text-white mb-4">Products</h3>
             <ul className="space-y-3">
               {footerLinks.Products.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-gray-400 hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -60,13 +73,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Company</h3>
+            <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.Company.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-gray-400 hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -75,37 +88,23 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Follow Us */}
+          {/* Contact */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
-            <div className="flex gap-3 mb-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-            <div className="space-y-2">
+            <h3 className="font-semibold text-white mb-4">Contact</h3>
+            <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">Email:</span>
-                <a href="mailto:contact@theconverseai.com" className="text-primary hover:underline">
+                <a href="mailto:contact@theconverseai.com" className="text-gray-400 hover:text-white transition-colors">
                   contact@theconverseai.com
                 </a>
               </div>
               <div className="flex items-start gap-2 text-sm">
                 <Phone className="w-4 h-4 text-primary mt-0.5" />
-                <span className="text-muted-foreground">Phone:</span>
-                <div className="flex flex-col">
-                  <a href="tel:+919982323333" className="text-primary hover:underline">
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+919982323333" className="text-gray-400 hover:text-white transition-colors">
                     +91-9982323333
                   </a>
-                  <a href="tel:+917023084065" className="text-primary hover:underline">
+                  <a href="tel:+917023084065" className="text-gray-400 hover:text-white transition-colors">
                     +91-7023084065
                   </a>
                 </div>
@@ -115,8 +114,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 mt-12 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-4">
             <span className="bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
               A Product by Revti Digital
             </span>
@@ -126,11 +125,11 @@ const Footer = () => {
             <img 
               src={metaTechProvider} 
               alt="Meta Tech Provider" 
-              className="h-16 w-auto rounded-lg border border-border"
+              className="h-12 w-auto rounded-lg"
             />
           </div>
           
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-400">
             © 2025 ConverseAI. All rights reserved.
           </p>
         </div>
