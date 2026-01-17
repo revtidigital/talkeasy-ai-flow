@@ -1,6 +1,6 @@
 import { Facebook, Youtube, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
-
+import metaTechProvider from "@/assets/meta-tech-provider.jpg";
 const Footer = () => {
   const footerLinks = {
     Products: [
@@ -115,7 +115,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 mt-12 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 mt-12 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-2">
+            <span className="bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
+              A Product by Revti Digital
+            </span>
+          </div>
+          
+          <div className="flex items-center">
+            <img 
+              src={metaTechProvider} 
+              alt="Meta Tech Provider" 
+              className="h-16 w-auto rounded-lg border border-border"
+            />
+          </div>
+          
           <p className="text-sm text-muted-foreground">
             © 2025 ConverseAI. All rights reserved.
           </p>
