@@ -116,8 +116,8 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4">
-            <span className="bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
-              A Product by Revti Digital
+            <span className="text-sm text-gray-400">
+              A Product by <span className="text-white font-medium">Revti Digital</span>
             </span>
           </div>
           
