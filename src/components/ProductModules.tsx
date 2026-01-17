@@ -1,4 +1,5 @@
-import { Bot, MessageCircle, Phone, ArrowRight } from "lucide-react";
+import { Bot, MessageCircle, ArrowRight } from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 const ProductModules = () => {
   const modules = [
@@ -27,7 +28,7 @@ const ProductModules = () => {
       color: "from-violet to-pink-soft",
     },
     {
-      icon: Phone,
+      icon: WhatsAppIcon,
       title: "WhatsApp Automation",
       description: "Scale your WhatsApp conversations with automation and smart routing.",
       features: [
