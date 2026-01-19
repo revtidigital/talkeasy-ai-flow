@@ -14,7 +14,7 @@ const Footer = () => {
     ],
     Company: [
       { label: "About Us", href: "#", isRoute: false },
-      { label: "Contact Us", href: "/converse-ai-team", isRoute: true },
+      { label: "Contact Us", href: "/contact-us", isRoute: true },
     ],
   };
 
