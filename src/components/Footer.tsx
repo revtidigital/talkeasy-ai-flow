@@ -1,6 +1,6 @@
 import { Facebook, Youtube, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logoIcon from "@/assets/logo-icon.svg";
 import metaTechProvider from "@/assets/meta-tech-provider.jpg";
 
 const Footer = () => {
@@ -19,10 +19,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Facebook, href: "https://www.facebook.com/share/1BTGfP9JgU/", label: "Facebook" },
+    { icon: Youtube, href: "https://www.youtube.com/@theconverseai", label: "YouTube" },
+    { icon: Instagram, href: "https://www.instagram.com/theconverseai/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/theconverseai", label: "LinkedIn" },
   ];
 
   return (
@@ -33,9 +33,9 @@ const Footer = () => {
           <div className="md:col-span-1">
             <a href="/" className="flex items-center mb-4">
               <img 
-                src={logo} 
+                src={logoIcon} 
                 alt="ConverseAI" 
-                className="h-10 w-auto brightness-0 invert"
+                className="h-12 w-auto"
               />
             </a>
             <p className="text-sm text-gray-400 leading-relaxed mb-6">
@@ -46,6 +46,8 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                   aria-label={social.label}
                 >
@@ -127,7 +129,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-400">
-              A Product by <span className="text-white font-medium">Revti Digital</span>
+              A Product by <a href="https://revtidigital.com/" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-primary transition-colors">Revti Digital</a>
             </span>
           </div>
           
