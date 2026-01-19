@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { validateContactForm } from "@/lib/validations/contact";
 
 interface ContactFormDialogProps {
   children: React.ReactNode;
@@ -34,15 +35,28 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
     message: "",
     agreeToTerms: false,
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
     
     if (!formData.agreeToTerms) {
       toast({
         title: "Please accept the terms",
         description: "You must agree to the Privacy Policy to continue.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const validation = validateContactForm(formData);
+    if (!validation.success) {
+      setErrors(validation.errors);
+      toast({
+        title: "Please fix the errors",
+        description: Object.values(validation.errors)[0],
         variant: "destructive",
       });
       return;
@@ -63,6 +77,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
       message: "",
       agreeToTerms: false,
     });
+    setErrors({});
     setOpen(false);
   };
 
@@ -78,37 +93,40 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         
         <form onSubmit={handleSubmit} className="px-6 pb-6 space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Input
                 placeholder="Your Name*"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary"
+                maxLength={100}
+                className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.name ? "border-destructive" : ""}`}
               />
+              {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
             </div>
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Input
                 type="email"
                 placeholder="Your Email*"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary"
+                maxLength={255}
+                className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.email ? "border-destructive" : ""}`}
               />
+              {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Input
                 type="tel"
                 placeholder="Phone Number*"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                required
-                className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary"
+                maxLength={20}
+                className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.phone ? "border-destructive" : ""}`}
               />
+              {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
             </div>
             <div className="space-y-2">
               <Select
@@ -129,23 +147,26 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1">
             <Input
               placeholder="Subject*"
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              required
-              className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary"
+              maxLength={200}
+              className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.subject ? "border-destructive" : ""}`}
             />
+            {errors.subject && <p className="text-xs text-destructive">{errors.subject}</p>}
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1">
             <Textarea
               placeholder="Tell us about your project"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="min-h-[100px] border border-muted rounded-lg resize-y focus-visible:ring-1 focus-visible:ring-primary"
+              maxLength={2000}
+              className={`min-h-[100px] border border-muted rounded-lg resize-y focus-visible:ring-1 focus-visible:ring-primary ${errors.message ? "border-destructive" : ""}`}
             />
+            {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
           </div>
 
           <div className="flex items-center space-x-2">

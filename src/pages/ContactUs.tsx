@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Shield, Clock, Users, Send } from "lucide-react";
+import { validateContactForm } from "@/lib/validations/contact";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -22,11 +23,25 @@ const ContactUs = () => {
     product: "",
     message: "",
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
+    
+    const validation = validateContactForm(formData);
+    if (!validation.success) {
+      setErrors(validation.errors);
+      toast({
+        title: "Please fix the errors",
+        description: Object.values(validation.errors)[0],
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     
     // Simulate form submission
@@ -118,9 +133,10 @@ const ContactUs = () => {
                         placeholder="John Doe"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
-                        className="h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary"
+                        maxLength={100}
+                        className={`h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary ${errors.name ? "border-destructive" : ""}`}
                       />
+                      {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground">
@@ -131,9 +147,10 @@ const ContactUs = () => {
                         placeholder="john@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                        className="h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary"
+                        maxLength={255}
+                        className={`h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary ${errors.email ? "border-destructive" : ""}`}
                       />
+                      {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
                     </div>
                   </div>
 
@@ -147,9 +164,10 @@ const ContactUs = () => {
                         placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        required
-                        className="h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary"
+                        maxLength={20}
+                        className={`h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary ${errors.phone ? "border-destructive" : ""}`}
                       />
+                      {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground">
@@ -180,8 +198,10 @@ const ContactUs = () => {
                       placeholder="Tell us about your project and requirements..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="min-h-[140px] bg-white/50 border-muted focus:border-primary focus:ring-primary resize-none"
+                      maxLength={2000}
+                      className={`min-h-[140px] bg-white/50 border-muted focus:border-primary focus:ring-primary resize-none ${errors.message ? "border-destructive" : ""}`}
                     />
+                    {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
                   </div>
 
                   <Button
