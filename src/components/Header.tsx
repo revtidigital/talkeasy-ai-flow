@@ -24,7 +24,7 @@ const Header = () => {
     { label: "Products", href: "#products", isRoute: false },
     { label: "About Us", href: "#about", isRoute: false },
     { label: "Blog", href: "#blog", isRoute: false },
-    { label: "Contact Us", href: "/converse-ai-team", isRoute: true },
+    { label: "Contact Us", href: "/contact-us", isRoute: true },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: { href: string; isRoute: boolean }) => {
