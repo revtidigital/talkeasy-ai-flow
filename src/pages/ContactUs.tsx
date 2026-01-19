@@ -14,7 +14,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Shield, Clock, Users, Send } from "lucide-react";
 
-const ConverseAITeam = () => {
+const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -311,4 +311,4 @@ const ConverseAITeam = () => {
   );
 };
 
-export default ConverseAITeam;
+export default ContactUs;

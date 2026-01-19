@@ -22,7 +22,7 @@ const Header = () => {
     { label: "Home", href: "#", isRoute: false },
     { label: "Features", href: "#features", isRoute: false },
     { label: "Products", href: "#products", isRoute: false },
-    { label: "About Us", href: "#about", isRoute: false },
+    { label: "About Us", href: "/about-us", isRoute: true },
     { label: "Blog", href: "#blog", isRoute: false },
     { label: "Contact Us", href: "/contact-us", isRoute: true },
   ];
@@ -81,7 +81,7 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center">
-            <Link to="/converse-ai-team">
+            <Link to="/contact-us">
               <Button 
                 variant="outline" 
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6"
@@ -115,7 +115,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 mt-4 px-4">
-                <Link to="/converse-ai-team" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link to="/contact-us" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button 
                     variant="outline" 
                     className="w-full justify-center border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
