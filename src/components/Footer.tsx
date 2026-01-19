@@ -13,7 +13,7 @@ const Footer = () => {
       { label: "Conversational AI Chatbot", href: "#" },
     ],
     Company: [
-      { label: "About Us", href: "#", isRoute: false },
+      { label: "About Us", href: "/about-us", isRoute: true },
       { label: "Contact Us", href: "/contact-us", isRoute: true },
     ],
   };
