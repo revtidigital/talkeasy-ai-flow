@@ -19,7 +19,7 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "#", isRoute: false },
+    { label: "Home", href: "/", isRoute: true },
     { label: "Features", href: "#features", isRoute: false },
     { label: "Products", href: "#products", isRoute: false },
     { label: "About Us", href: "/about-us", isRoute: true },
