@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
@@ -18,20 +19,25 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "#" },
-    { label: "Features", href: "#features" },
-    { label: "Products", href: "#products" },
-    { label: "About Us", href: "#about" },
-    { label: "Blog", href: "#blog" },
-    { label: "Contact Us", href: "#contact" },
+    { label: "Home", href: "#", isRoute: false },
+    { label: "Features", href: "#features", isRoute: false },
+    { label: "Products", href: "#products", isRoute: false },
+    { label: "About Us", href: "#about", isRoute: false },
+    { label: "Blog", href: "#blog", isRoute: false },
+    { label: "Contact Us", href: "/converse-ai-team", isRoute: true },
   ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: { href: string; isRoute: boolean }) => {
     e.preventDefault();
-    if (href === "#") {
+    if (link.isRoute) {
+      navigate(link.href);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+    if (link.href === "#") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      const element = document.querySelector(href);
+      const element = document.querySelector(link.href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
@@ -64,7 +70,7 @@ const Header = () => {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={(e) => handleNavClick(e, link)}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {link.label}
@@ -102,7 +108,7 @@ const Header = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={(e) => handleNavClick(e, link)}
                   className="px-4 py-3 text-foreground hover:bg-secondary rounded-lg transition-colors"
                 >
                   {link.label}

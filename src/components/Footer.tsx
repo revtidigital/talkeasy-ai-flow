@@ -1,4 +1,5 @@
 import { Facebook, Youtube, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import metaTechProvider from "@/assets/meta-tech-provider.jpg";
 
@@ -12,8 +13,8 @@ const Footer = () => {
       { label: "Conversational AI Chatbot", href: "#" },
     ],
     Company: [
-      { label: "About Us", href: "#" },
-      { label: "Contact Us", href: "#" },
+      { label: "About Us", href: "#", isRoute: false },
+      { label: "Contact Us", href: "/converse-ai-team", isRoute: true },
     ],
   };
 
@@ -77,12 +78,21 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.Company.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
