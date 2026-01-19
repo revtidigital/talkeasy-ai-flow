@@ -1,0 +1,314 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { MapPin, Phone, Mail, Shield, Clock, Users, Send } from "lucide-react";
+
+const ConverseAITeam = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    product: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    toast({
+      title: "Message sent successfully!",
+      description: "Our team will get back to you within 24 hours.",
+    });
+    
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      product: "",
+      message: "",
+    });
+    setIsSubmitting(false);
+  };
+
+  const benefits = [
+    {
+      icon: Users,
+      title: "Free consultation with AI experts",
+      description: "Get personalized advice from our team of specialists",
+    },
+    {
+      icon: Clock,
+      title: "Fast response time",
+      description: "We respond to all inquiries within 24 hours",
+    },
+    {
+      icon: Shield,
+      title: "Enterprise-grade data security",
+      description: "Your data is protected with industry-leading security",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-16 overflow-hidden">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-violet/15 to-background" />
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute top-40 right-1/4 w-80 h-80 bg-violet/20 rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        
+        <div className="container-tight relative z-10 text-center py-16 md:py-24">
+          <div className="animate-fade-up">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <span className="w-2 h-2 rounded-full bg-mint animate-pulse" />
+              Let's Connect
+            </span>
+          </div>
+          
+          <h1 className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Get in Touch with{" "}
+            <span className="gradient-text">ConverseAI Team</span>
+          </h1>
+          
+          <p className="animate-fade-up-delayed text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Connect with our team to explore how AI chatbot and WhatsApp automation 
+            can grow your business.
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content - 2 Column Layout */}
+      <section className="relative pb-20 -mt-8">
+        <div className="container-tight">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+            {/* Left Column - Contact Form */}
+            <div className="lg:col-span-3 animate-fade-up">
+              <div className="glass-card rounded-2xl p-6 md:p-8 border border-white/50 bg-white/80 backdrop-blur-xl">
+                <h2 className="text-2xl font-bold text-foreground mb-6">
+                  Send us a message
+                </h2>
+                
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-foreground">
+                        Full Name *
+                      </label>
+                      <Input
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                        className="h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-foreground">
+                        Email Address *
+                      </label>
+                      <Input
+                        type="email"
+                        placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                        className="h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-foreground">
+                        Phone Number *
+                      </label>
+                      <Input
+                        type="tel"
+                        placeholder="+91 98765 43210"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        required
+                        className="h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-foreground">
+                        Select Product
+                      </label>
+                      <Select
+                        value={formData.product}
+                        onValueChange={(value) => setFormData({ ...formData, product: value })}
+                      >
+                        <SelectTrigger className="h-12 bg-white/50 border-muted focus:ring-primary">
+                          <SelectValue placeholder="Choose a product" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white">
+                          <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
+                          <SelectItem value="whatsapp-marketing">WhatsApp Marketing</SelectItem>
+                          <SelectItem value="live-chat">Live Chat</SelectItem>
+                          <SelectItem value="conversational-ai">Conversational AI</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">
+                      Message
+                    </label>
+                    <Textarea
+                      placeholder="Tell us about your project and requirements..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="min-h-[140px] bg-white/50 border-muted focus:border-primary focus:ring-primary resize-none"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-12 gradient-cta text-primary-foreground font-semibold text-base hover:opacity-90 transition-opacity"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Sending...
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <Send className="w-5 h-5" />
+                        Send Message
+                      </span>
+                    )}
+                  </Button>
+                </form>
+              </div>
+            </div>
+
+            {/* Right Column - Contact Information */}
+            <div className="lg:col-span-2 space-y-6 animate-slide-in-right">
+              {/* Contact Info Card */}
+              <div className="glass-card rounded-2xl p-6 md:p-8 border border-white/50 bg-white/80 backdrop-blur-xl">
+                <h3 className="text-xl font-bold text-foreground mb-6">
+                  Contact Information
+                </h3>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Office Location</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        F-21, Madhuban Colony, Barkat Nagar, Tonk Phatak, Jaipur, Rajasthan 302015
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Phone</h4>
+                      <a 
+                        href="tel:+919982323333" 
+                        className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                      >
+                        +91-9982323333
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Email</h4>
+                      <a 
+                        href="mailto:himanshu@revtidigital.com" 
+                        className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                      >
+                        himanshu@revtidigital.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social/Quick Links Card */}
+              <div className="glass-card rounded-2xl p-6 border border-primary/20 bg-gradient-to-br from-primary/5 to-violet/5">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">Business Hours:</span>
+                  <br />
+                  Monday - Saturday: 10:00 AM - 7:00 PM IST
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Reach Out Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-background to-secondary/30">
+        <div className="container-tight">
+          <div className="text-center mb-12 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Why reach out to{" "}
+              <span className="gradient-text">ConverseAI?</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Join hundreds of businesses that trust us for their AI automation needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={benefit.title}
+                className="glass-card-hover rounded-2xl p-6 text-center animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-14 h-14 mx-auto rounded-2xl gradient-cta flex items-center justify-center mb-4">
+                  <benefit.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default ConverseAITeam;

@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,12 +75,14 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center">
-            <Button 
-              variant="outline" 
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6"
-            >
-              Start Your Trial
-            </Button>
+            <Link to="/converse-ai-team">
+              <Button 
+                variant="outline" 
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6"
+              >
+                Start Free Trial
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -104,12 +109,14 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 mt-4 px-4">
-                <Button 
-                  variant="outline" 
-                  className="justify-center border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                >
-                  Start Your Trial
-                </Button>
+                <Link to="/converse-ai-team" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-center border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  >
+                    Start Free Trial
+                  </Button>
+                </Link>
               </div>
             </nav>
           </div>
