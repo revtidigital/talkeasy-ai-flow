@@ -21,7 +21,7 @@ const Header = () => {
   const navLinks = [
     { label: "Home", href: "/", isRoute: true },
     { label: "Features", href: "#features", isRoute: false },
-    { label: "Products", href: "#products", isRoute: false },
+    { label: "AI Chatbot", href: "/chatbot", isRoute: true },
     { label: "About Us", href: "/about-us", isRoute: true },
     { label: "Blog", href: "#blog", isRoute: false },
     { label: "Contact Us", href: "/contact-us", isRoute: true },
