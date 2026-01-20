@@ -157,19 +157,19 @@ const Header = () => {
                 {/* Features Mega Menu */}
                 {link.hasDropdown === "features" && activeDropdown === "features" && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50">
-                    <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 min-w-[700px] animate-fade-in">
-                      <div className="grid grid-cols-4 gap-6">
+                    <div className="bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 min-w-[750px] animate-fade-in">
+                      <div className="grid grid-cols-4 gap-8">
                         {Object.values(featuresMenu).map((column) => (
-                          <div key={column.title}>
-                            <h4 className="text-sm font-semibold text-foreground mb-3 pb-2 border-b border-border/50">
+                          <div key={column.title} className="min-w-[150px]">
+                            <h4 className="text-sm font-semibold text-foreground mb-3 pb-2 border-b border-border/50 whitespace-nowrap">
                               {column.title}
                             </h4>
-                            <ul className="space-y-2">
+                            <ul className="space-y-1">
                               {column.items.map((item) => (
                                 <li key={item.label}>
                                   <button
                                     onClick={() => handleDropdownItemClick(item.href)}
-                                    className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-2 py-1.5 rounded-lg transition-colors"
+                                    className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-2 py-1.5 rounded-lg transition-colors whitespace-nowrap"
                                   >
                                     {item.label}
                                   </button>
