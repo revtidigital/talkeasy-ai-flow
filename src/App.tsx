@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import Chatbot from "./pages/Chatbot";
+import LiveChat from "./pages/LiveChat";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 
@@ -25,6 +26,7 @@ const AnimatedRoutes = () => {
         <Route path="/contact-us" element={<PageTransition><ContactUs /></PageTransition>} />
         <Route path="/about-us" element={<PageTransition><AboutUs /></PageTransition>} />
         <Route path="/chatbot" element={<PageTransition><Chatbot /></PageTransition>} />
+        <Route path="/live-chat" element={<PageTransition><LiveChat /></PageTransition>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
