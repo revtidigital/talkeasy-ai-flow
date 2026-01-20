@@ -13,6 +13,10 @@ import Chatbot from "./pages/Chatbot";
 import LiveChat from "./pages/LiveChat";
 import OmniChannel from "./pages/OmniChannel";
 import PreChatForms from "./pages/PreChatForms";
+import TeamReports from "./pages/TeamReports";
+import AgentReports from "./pages/AgentReports";
+import CSATReport from "./pages/CSATReport";
+import InboxReports from "./pages/InboxReports";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 
@@ -31,6 +35,10 @@ const AnimatedRoutes = () => {
         <Route path="/live-chat" element={<PageTransition><LiveChat /></PageTransition>} />
         <Route path="/omni-channel" element={<PageTransition><OmniChannel /></PageTransition>} />
         <Route path="/pre-chat-forms" element={<PageTransition><PreChatForms /></PageTransition>} />
+        <Route path="/team-reports" element={<PageTransition><TeamReports /></PageTransition>} />
+        <Route path="/agent-reports" element={<PageTransition><AgentReports /></PageTransition>} />
+        <Route path="/csat-report" element={<PageTransition><CSATReport /></PageTransition>} />
+        <Route path="/inbox-reports" element={<PageTransition><InboxReports /></PageTransition>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>

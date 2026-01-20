@@ -32,10 +32,10 @@ const Header = () => {
     analyse: {
       title: "Analyse",
       items: [
-        { label: "Team Reports", href: "#team-reports" },
-        { label: "Agent Reports", href: "#agent-reports" },
-        { label: "CSAT Report", href: "#csat-report" },
-        { label: "Inbox Reports", href: "#inbox-reports" },
+        { label: "Team Reports", href: "/team-reports" },
+        { label: "Agent Reports", href: "/agent-reports" },
+        { label: "CSAT Report", href: "/csat-report" },
+        { label: "Inbox Reports", href: "/inbox-reports" },
       ],
     },
     whatsapp: {
