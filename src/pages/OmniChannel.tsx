@@ -22,11 +22,11 @@ import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const OmniChannel = () => {
   const channels = [
-    { icon: Globe, label: "Website", color: "from-blue-500 to-cyan-500" },
-    { icon: WhatsAppIcon, label: "WhatsApp", color: "from-green-500 to-emerald-500" },
-    { icon: MessageSquare, label: "Live Chat", color: "from-purple-500 to-pink-500" },
-    { icon: Smartphone, label: "Mobile Apps", color: "from-orange-500 to-red-500" },
-    { icon: Mail, label: "Email", color: "from-indigo-500 to-purple-500" },
+    { icon: Globe, label: "Website", color: "from-primary to-violet" },
+    { icon: WhatsAppIcon, label: "WhatsApp", color: "from-mint to-accent" },
+    { icon: MessageSquare, label: "Live Chat", color: "from-violet to-pink-soft" },
+    { icon: Smartphone, label: "Mobile Apps", color: "from-accent to-primary" },
+    { icon: Mail, label: "Email", color: "from-primary to-accent" },
   ];
 
   const features = [

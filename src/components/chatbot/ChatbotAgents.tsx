@@ -87,8 +87,8 @@ const ChatbotAgents = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-xs text-green-500">Online</span>
+                      <span className="w-2 h-2 bg-mint rounded-full animate-pulse" />
+                      <span className="text-xs text-mint">Online</span>
                     </div>
                   </div>
 

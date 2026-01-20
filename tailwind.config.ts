@@ -63,6 +63,10 @@ export default {
           DEFAULT: "hsl(var(--mint))",
           soft: "hsl(var(--mint-soft))",
         },
+        footer: {
+          DEFAULT: "hsl(var(--footer-bg))",
+          text: "hsl(var(--footer-text))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
