@@ -26,7 +26,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#1a1f2e] text-white">
+    <footer className="bg-footer text-primary-foreground">
       <div className="container-tight py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -38,8 +38,8 @@ const Footer = () => {
                 className="h-12 w-auto"
               />
             </a>
-            <p className="text-sm text-gray-400 leading-relaxed mb-6">
-              We help businesses <span className="font-semibold text-white">talk better with their customers</span>. We give them powerful tools to have real conversations, keep customers happy, and grow their business.
+            <p className="text-sm text-footer-text leading-relaxed mb-6">
+              We help businesses <span className="font-semibold text-primary-foreground">talk better with their customers</span>. We give them powerful tools to have real conversations, keep customers happy, and grow their business.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -48,7 +48,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -59,21 +59,21 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Products</h3>
+            <h3 className="font-semibold text-primary-foreground mb-4">Products</h3>
             <ul className="space-y-3">
               {footerLinks.Products.map((link) => (
                 <li key={link.label}>
                   {link.isRoute ? (
                     <Link
                       to={link.href}
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                      className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
                     >
                       {link.label}
                     </Link>
                   ) : (
                     <a
                       href={link.href}
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                      className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
                     >
                       {link.label}
                     </a>
@@ -85,21 +85,21 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Company</h3>
+            <h3 className="font-semibold text-primary-foreground mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.Company.map((link) => (
                 <li key={link.label}>
                   {link.isRoute ? (
                     <Link
                       to={link.href}
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                      className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
                     >
                       {link.label}
                     </Link>
                   ) : (
                     <a
                       href={link.href}
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                      className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
                     >
                       {link.label}
                     </a>
@@ -111,21 +111,21 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Contact</h3>
+            <h3 className="font-semibold text-primary-foreground mb-4">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:contact@theconverseai.com" className="text-gray-400 hover:text-white transition-colors">
+                <a href="mailto:contact@theconverseai.com" className="text-footer-text hover:text-primary-foreground transition-colors">
                   contact@theconverseai.com
                 </a>
               </div>
               <div className="flex items-start gap-2 text-sm">
                 <Phone className="w-4 h-4 text-primary mt-0.5" />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:+919982323333" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="tel:+919982323333" className="text-footer-text hover:text-primary-foreground transition-colors">
                     +91-9982323333
                   </a>
-                  <a href="tel:+917023084065" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="tel:+917023084065" className="text-footer-text hover:text-primary-foreground transition-colors">
                     +91-7023084065
                   </a>
                 </div>
@@ -135,10 +135,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-400">
-              A Product by <a href="https://revtidigital.com/" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-primary transition-colors">Revti Digital</a>
+            <span className="text-sm text-footer-text">
+              A Product by <a href="https://revtidigital.com/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground font-medium hover:text-primary transition-colors">Revti Digital</a>
             </span>
           </div>
           
@@ -150,7 +150,7 @@ const Footer = () => {
             />
           </div>
           
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-footer-text">
             © 2025 ConverseAI. All rights reserved.
           </p>
         </div>

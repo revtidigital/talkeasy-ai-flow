@@ -254,7 +254,7 @@ const PreChatForms = () => {
                             <div className="h-2 bg-secondary/50 rounded w-full mt-2" />
                             <div className="flex gap-2 mt-2">
                               <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded">Sales</span>
-                              <span className="text-xs px-2 py-1 bg-green-500/10 text-green-600 rounded">Pre-chat</span>
+                              <span className="text-xs px-2 py-1 bg-mint/10 text-mint rounded">Pre-chat</span>
                             </div>
                           </div>
                         </div>

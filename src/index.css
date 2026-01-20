@@ -48,6 +48,10 @@
     --mint: 168 84% 50%;
     --mint-soft: 168 60% 90%;
     
+    /* Footer colors */
+    --footer-bg: 225 25% 14%;
+    --footer-text: 220 10% 60%;
+    
     --shadow-soft: 0 4px 20px -4px hsl(262 83% 58% / 0.15);
     --shadow-glow: 0 8px 40px -8px hsl(262 83% 58% / 0.3);
     --shadow-card: 0 4px 24px -4px hsl(260 20% 20% / 0.08);
