@@ -11,6 +11,8 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import Chatbot from "./pages/Chatbot";
 import LiveChat from "./pages/LiveChat";
+import OmniChannel from "./pages/OmniChannel";
+import PreChatForms from "./pages/PreChatForms";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 
@@ -27,6 +29,8 @@ const AnimatedRoutes = () => {
         <Route path="/about-us" element={<PageTransition><AboutUs /></PageTransition>} />
         <Route path="/chatbot" element={<PageTransition><Chatbot /></PageTransition>} />
         <Route path="/live-chat" element={<PageTransition><LiveChat /></PageTransition>} />
+        <Route path="/omni-channel" element={<PageTransition><OmniChannel /></PageTransition>} />
+        <Route path="/pre-chat-forms" element={<PageTransition><PreChatForms /></PageTransition>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>

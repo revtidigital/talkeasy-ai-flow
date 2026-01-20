@@ -9,8 +9,8 @@ const Footer = () => {
       { label: "WhatsApp Marketing", href: "#" },
       { label: "WhatsApp Shop", href: "#" },
       { label: "WhatsApp AI Chatbot", href: "#" },
-      { label: "Live Chat", href: "#" },
-      { label: "Conversational AI Chatbot", href: "#" },
+      { label: "Live Chat", href: "/live-chat", isRoute: true },
+      { label: "Conversational AI Chatbot", href: "/chatbot", isRoute: true },
     ],
     Company: [
       { label: "About Us", href: "/about-us", isRoute: true },
@@ -63,12 +63,21 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.Products.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
