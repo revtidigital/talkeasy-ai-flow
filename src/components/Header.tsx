@@ -58,9 +58,8 @@ const Header = () => {
   };
 
   const productsMenu = [
-    { label: "AI Chatbot", href: "/chatbot" },
     { label: "Conversational AI Chatbot", href: "/chatbot" },
-    { label: "WhatsApp AI Chatbot", href: "#whatsapp-ai-chatbot" },
+    { label: "WhatsApp AI Chatbot", href: "/whatsapp-ai-chatbot" },
     { label: "Live Chat", href: "/live-chat" },
     { label: "Omni Channel", href: "/omni-channel" },
     { label: "Pre-Chat Forms", href: "/pre-chat-forms" },
