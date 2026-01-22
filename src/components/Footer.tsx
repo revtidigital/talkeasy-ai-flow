@@ -6,11 +6,19 @@ import metaTechProvider from "@/assets/meta-tech-provider.jpg";
 const Footer = () => {
   const footerLinks = {
     Products: [
-      { label: "WhatsApp Marketing", href: "#" },
-      { label: "WhatsApp Shop", href: "#" },
-      { label: "WhatsApp AI Chatbot", href: "#" },
-      { label: "Live Chat", href: "/live-chat", isRoute: true },
       { label: "Conversational AI Chatbot", href: "/chatbot", isRoute: true },
+      { label: "WhatsApp AI Chatbot", href: "/whatsapp-ai-chatbot", isRoute: true },
+      { label: "WhatsApp Shop", href: "/whatsapp-shop", isRoute: true },
+      { label: "WhatsApp Marketing", href: "/whatsapp-marketing", isRoute: true },
+      { label: "Live Chat", href: "/live-chat", isRoute: true },
+      { label: "Omni Channel", href: "/omni-channel", isRoute: true },
+      { label: "Pre-Chat Forms", href: "/pre-chat-forms", isRoute: true },
+    ],
+    Analyse: [
+      { label: "Team Reports", href: "/team-reports", isRoute: true },
+      { label: "Agent Reports", href: "/agent-reports", isRoute: true },
+      { label: "CSAT Report", href: "/csat-report", isRoute: true },
+      { label: "Inbox Reports", href: "/inbox-reports", isRoute: true },
     ],
     Company: [
       { label: "About Us", href: "/about-us", isRoute: true },
@@ -28,9 +36,9 @@ const Footer = () => {
   return (
     <footer className="bg-footer text-primary-foreground">
       <div className="container-tight py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-12">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-2 lg:col-span-1">
             <a href="/" className="flex items-center mb-4">
               <img 
                 src={logoIcon} 
@@ -60,24 +68,32 @@ const Footer = () => {
           {/* Products */}
           <div>
             <h3 className="font-semibold text-primary-foreground mb-4">Products</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.Products.map((link) => (
                 <li key={link.label}>
-                  {link.isRoute ? (
-                    <Link
-                      to={link.href}
-                      className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  )}
+                  <Link
+                    to={link.href}
+                    className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Analyse */}
+          <div>
+            <h3 className="font-semibold text-primary-foreground mb-4">Analyse</h3>
+            <ul className="space-y-2">
+              {footerLinks.Analyse.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -86,24 +102,15 @@ const Footer = () => {
           {/* Company */}
           <div>
             <h3 className="font-semibold text-primary-foreground mb-4">Company</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.Company.map((link) => (
                 <li key={link.label}>
-                  {link.isRoute ? (
-                    <Link
-                      to={link.href}
-                      className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  )}
+                  <Link
+                    to={link.href}
+                    className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
