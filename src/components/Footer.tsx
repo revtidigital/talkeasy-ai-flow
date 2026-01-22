@@ -20,6 +20,12 @@ const Footer = () => {
       { label: "CSAT Report", href: "/csat-report", isRoute: true },
       { label: "Inbox Reports", href: "/inbox-reports", isRoute: true },
     ],
+    Manage: [
+      { label: "Agent Capacity", href: "/agent-capacity", isRoute: true },
+      { label: "Private Notes", href: "/private-notes", isRoute: true },
+      { label: "Live View", href: "/live-view", isRoute: true },
+      { label: "Teams", href: "/teams-2", isRoute: true },
+    ],
     Company: [
       { label: "About Us", href: "/about-us", isRoute: true },
       { label: "Contact Us", href: "/contact-us", isRoute: true },
@@ -36,7 +42,7 @@ const Footer = () => {
   return (
     <footer className="bg-footer text-primary-foreground">
       <div className="container-tight py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-6 mb-12">
           {/* Brand */}
           <div className="md:col-span-2 lg:col-span-1">
             <a href="/" className="flex items-center mb-4">
@@ -87,6 +93,23 @@ const Footer = () => {
             <h3 className="font-semibold text-primary-foreground mb-4">Analyse</h3>
             <ul className="space-y-2">
               {footerLinks.Analyse.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-footer-text hover:text-primary-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Manage */}
+          <div>
+            <h3 className="font-semibold text-primary-foreground mb-4">Manage</h3>
+            <ul className="space-y-2">
+              {footerLinks.Manage.map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.href}
