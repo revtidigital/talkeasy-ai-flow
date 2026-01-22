@@ -20,6 +20,10 @@ import InboxReports from "./pages/InboxReports";
 import WhatsAppAIChatbot from "./pages/WhatsAppAIChatbot";
 import WhatsAppShop from "./pages/WhatsAppShop";
 import WhatsAppMarketing from "./pages/WhatsAppMarketing";
+import AgentCapacity from "./pages/AgentCapacity";
+import PrivateNotes from "./pages/PrivateNotes";
+import LiveView from "./pages/LiveView";
+import Teams from "./pages/Teams";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 
@@ -45,6 +49,10 @@ const AnimatedRoutes = () => {
         <Route path="/whatsapp-ai-chatbot" element={<PageTransition><WhatsAppAIChatbot /></PageTransition>} />
         <Route path="/whatsapp-shop" element={<PageTransition><WhatsAppShop /></PageTransition>} />
         <Route path="/whatsapp-marketing" element={<PageTransition><WhatsAppMarketing /></PageTransition>} />
+        <Route path="/agent-capacity" element={<PageTransition><AgentCapacity /></PageTransition>} />
+        <Route path="/private-notes" element={<PageTransition><PrivateNotes /></PageTransition>} />
+        <Route path="/live-view" element={<PageTransition><LiveView /></PageTransition>} />
+        <Route path="/teams-2" element={<PageTransition><Teams /></PageTransition>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
