@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Bot, MessageCircle, Settings, Smartphone } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import ContactFormDialog from "@/components/ContactFormDialog";
+import { Link } from "react-router-dom";
 
 const ChatbotAutomation = () => {
   return (
@@ -145,12 +145,12 @@ const ChatbotAutomation = () => {
                 ))}
               </ul>
 
-              <ContactFormDialog>
+              <Link to="/whatsapp-ai-chatbot">
                 <Button variant="hero" size="lg">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>
-              </ContactFormDialog>
+              </Link>
             </div>
           </AnimatedSection>
         </div>

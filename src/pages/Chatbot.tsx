@@ -15,10 +15,10 @@ const Chatbot = () => {
   return (
     <>
       <Helmet>
-        <title>AI Chatbot for Smarter Customer Support | ConverseAI</title>
+        <title>AI Chatbot for Customer Support | Converse AI</title>
         <meta
           name="description"
-          content="Automate customer support and engagement with ConverseAI's AI-powered chatbot. Deliver faster, smarter, and personalized conversations 24/7."
+          content="Build intelligent AI chatbots to automate customer support, boost engagement, and manage conversations across multiple channels with Converse AI."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://talkeasy-ai-flow.lovable.app/chatbot" />

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Headphones, RefreshCw, Users, Zap, BarChart3, MessageSquare } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import ContactFormDialog from "@/components/ContactFormDialog";
+import { Link } from "react-router-dom";
 
 const ChatbotAgents = () => {
   return (
@@ -57,12 +57,12 @@ const ChatbotAgents = () => {
                 ))}
               </div>
 
-              <ContactFormDialog>
+              <Link to="/agent-capacity">
                 <Button variant="hero" size="lg">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>
-              </ContactFormDialog>
+              </Link>
             </div>
           </AnimatedSection>
 
