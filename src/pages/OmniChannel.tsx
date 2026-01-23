@@ -223,9 +223,10 @@ const OmniChannel = () => {
                     </Button>
                   </Link>
                   <Link to="/contact-us">
-                    <Button variant="outline" size="lg" className="border-2 border-white text-white bg-white/10 backdrop-blur-sm px-8 py-6 text-lg rounded-full hover:bg-white hover:text-primary">
-                      Talk to Sales
+                    <Button variant="outline" size="lg" className="border-2 border-white text-white bg-transparent px-8 py-6 text-lg rounded-full transition-all duration-300
+                         hover:bg-white/10 hover:backdrop-blur-sm hover:text-white" > Talk to Sales 
                     </Button>
+
                   </Link>
                 </div>
               </AnimatedSection>
