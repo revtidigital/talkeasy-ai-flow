@@ -84,7 +84,7 @@ const ChatbotIndustries = () => {
         <AnimatedSection delay={0.4}>
           <div className="text-center mt-12">
             <ContactFormDialog>
-              <Button variant="hero" size="xl">
+              <Button variant="hero" size="xl" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-primary hover:border-2 hover:border-primary">
                 Request a Demo
                 <ArrowRight className="w-5 h-5" />
               </Button>

@@ -31,7 +31,7 @@ const LiveChatHero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link to="/contact-us">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground px-8 py-6 text-lg rounded-full shadow-lg">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-6 text-lg rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:from-transparent hover:to-transparent hover:text-primary hover:border-2 hover:border-primary">
                   Start Your Free Trial
                 </Button>
               </Link>
