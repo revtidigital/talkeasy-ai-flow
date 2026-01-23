@@ -38,7 +38,7 @@ const PrivateNotes = () => {
                   Work seamlessly with your team by discussing queries privately before responding to customers.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="group transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-primary hover:border-2 hover:border-primary hover:from-transparent hover:to-transparent">
+                  <Button variant="gradient" size="xl" className="group">
                     Request a Demo
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -223,7 +223,7 @@ const PrivateNotes = () => {
                   Go beyond plain text. Attach files, use emojis, and format your notes for clearer contextual collaboration.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="lg" className="group transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-primary hover:border-2 hover:border-primary hover:from-transparent hover:to-transparent">
+                  <Button variant="gradient" size="lg" className="group">
                     Learn More
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -245,7 +245,7 @@ const PrivateNotes = () => {
                   Empower your team to collaborate internally and resolve customer issues faster than ever.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="group transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-primary hover:border-2 hover:border-primary hover:from-transparent hover:to-transparent">
+                  <Button variant="gradient" size="xl" className="group">
                     Start Your Free Trial
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>

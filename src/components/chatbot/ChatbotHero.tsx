@@ -37,13 +37,13 @@ const ChatbotHero = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <ContactFormDialog>
-                  <Button variant="hero" size="xl" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-primary hover:border-2 hover:border-primary">
+                  <Button variant="hero" size="xl">
                     Request a Demo
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </ContactFormDialog>
                 <Link to="/contact-us">
-                  <Button variant="hero-outline" size="xl" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:bg-transparent hover:text-primary">
+                  <Button variant="hero-outline" size="xl">
                     <Play className="w-5 h-5" />
                     Start Free Trial
                   </Button>

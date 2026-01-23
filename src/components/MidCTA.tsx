@@ -39,7 +39,7 @@ const MidCTA = () => {
                 <Button 
                   variant="hero-outline" 
                   size="xl"
-                  className="bg-white text-foreground border-0 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-white hover:border-2 hover:border-white"
+                  className="bg-white text-foreground border-0 hover:bg-primary hover:text-primary-foreground"
                 >
                   Start Free Trial
                   <ArrowRight className="w-5 h-5" />
@@ -47,9 +47,9 @@ const MidCTA = () => {
               </ContactFormDialog>
               <ContactFormDialog>
                 <Button 
-                  variant="ghost" 
+                  variant="outline" 
                   size="xl"
-                  className="text-white border-2 border-white/30 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:bg-transparent hover:text-white hover:border-white"
+                  className="text-white border-2 border-white/50 bg-white/10 hover:bg-white hover:text-primary hover:border-white"
                 >
                   Talk to Sales
                 </Button>

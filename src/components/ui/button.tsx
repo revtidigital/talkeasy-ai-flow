@@ -5,20 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-glow",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        default: "bg-primary text-primary-foreground shadow-soft hover:shadow-glow hover:scale-[1.02] hover:-translate-y-0.5 active:scale-100 active:translate-y-0",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-100",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground hover:border-primary/50 hover:shadow-soft hover:scale-[1.02] hover:-translate-y-0.5 active:scale-100",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-100",
+        ghost: "hover:bg-accent hover:text-accent-foreground hover:scale-[1.02] active:scale-100",
         link: "text-primary underline-offset-4 hover:underline",
-        gradient: "gradient-cta text-primary-foreground shadow-soft hover:shadow-glow hover:scale-105 active:scale-100",
-        "gradient-outline": "border-2 border-primary bg-transparent text-primary hover:bg-primary/5 hover:shadow-soft",
-        hero: "gradient-cta text-primary-foreground shadow-glow hover:shadow-[0_12px_50px_-10px_hsl(262_83%_58%_/_0.4)] hover:scale-105 active:scale-100 font-semibold",
-        "hero-outline": "border-2 border-primary/30 bg-white/80 backdrop-blur-sm text-foreground hover:border-primary/50 hover:bg-white hover:shadow-soft font-medium",
+        gradient: "gradient-cta text-primary-foreground shadow-soft hover:shadow-[0_12px_40px_-8px_hsl(262_83%_58%_/_0.5)] hover:scale-[1.03] hover:-translate-y-1 active:scale-100 active:translate-y-0",
+        "gradient-outline": "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-[1.03] hover:-translate-y-1 active:scale-100",
+        hero: "gradient-cta text-primary-foreground shadow-glow hover:shadow-[0_16px_50px_-10px_hsl(262_83%_58%_/_0.6)] hover:scale-[1.03] hover:-translate-y-1 active:scale-100 active:translate-y-0 font-semibold",
+        "hero-outline": "border-2 border-primary/30 bg-white/80 backdrop-blur-sm text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-[1.03] hover:-translate-y-1 active:scale-100 font-medium",
       },
       size: {
         default: "h-10 px-4 py-2",
