@@ -1,4 +1,5 @@
 import { Bot, MessageCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 const ProductModules = () => {
@@ -14,6 +15,7 @@ const ProductModules = () => {
         "Custom training capabilities",
       ],
       color: "from-primary to-violet",
+      link: "/chatbot",
     },
     {
       icon: MessageCircle,
@@ -26,6 +28,7 @@ const ProductModules = () => {
         "Chat transcripts",
       ],
       color: "from-violet to-pink-soft",
+      link: "/live-chat",
     },
     {
       icon: WhatsAppIcon,
@@ -38,6 +41,7 @@ const ProductModules = () => {
         "CRM integration",
       ],
       color: "from-mint to-accent",
+      link: "/whatsapp-ai-chatbot",
     },
   ];
 
@@ -83,13 +87,13 @@ const ProductModules = () => {
                   ))}
                 </ul>
 
-                <a
-                  href="#"
+                <Link
+                  to={module.link}
                   className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
                 >
                   Explore {module.title}
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
