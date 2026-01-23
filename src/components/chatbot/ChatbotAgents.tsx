@@ -57,8 +57,8 @@ const ChatbotAgents = () => {
                 ))}
               </div>
 
-              <Link to="/agent-capacity">
-                <Button variant="hero" size="lg">
+              <Link to="/agent-capacity" className="inline-block mt-2">
+                <Button variant="hero" size="lg" className="w-auto">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>

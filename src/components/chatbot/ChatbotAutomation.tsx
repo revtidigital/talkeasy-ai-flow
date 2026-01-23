@@ -145,8 +145,8 @@ const ChatbotAutomation = () => {
                 ))}
               </ul>
 
-              <Link to="/whatsapp-ai-chatbot">
-                <Button variant="hero" size="lg">
+              <Link to="/whatsapp-ai-chatbot" className="inline-block mt-2">
+                <Button variant="hero" size="lg" className="w-auto">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>

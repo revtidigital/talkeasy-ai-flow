@@ -121,8 +121,8 @@ const ChatbotPlatform = () => {
                 ))}
               </ul>
 
-              <Link to="/inbox-reports">
-                <Button variant="hero" size="lg">
+              <Link to="/inbox-reports" className="inline-block mt-2">
+                <Button variant="hero" size="lg" className="w-auto">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>
