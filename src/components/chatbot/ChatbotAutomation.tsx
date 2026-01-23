@@ -42,7 +42,7 @@ const ChatbotAutomation = () => {
                     </div>
                     <div className="flex-1">
                       <p className="font-semibold text-sm">ConverseAI</p>
-                      <p className="text-xs text-green-500">Active now</p>
+                      <p className="text-xs text-mint">Active now</p>
                     </div>
                     <Settings className="w-5 h-5 text-muted-foreground" />
                   </div>
