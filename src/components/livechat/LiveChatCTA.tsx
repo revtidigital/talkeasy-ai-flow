@@ -33,8 +33,9 @@ const LiveChatCTA = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact-us">
               <Button
+                variant="hero-outline"
                 size="lg"
-                className="bg-white text-primary px-8 py-6 text-lg rounded-full shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-white hover:border-2 hover:border-white"
+                className="bg-white text-primary px-8 py-6 text-lg rounded-full"
               >
                 Start Your Free Trial
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -42,8 +43,9 @@ const LiveChatCTA = () => {
             </Link>
             <Link to="/contact-us">
               <Button
+                variant="outline"
                 size="lg"
-                className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:bg-transparent hover:shadow-white/20"
+                className="border-2 border-white text-white bg-white/10 backdrop-blur-sm px-8 py-6 text-lg rounded-full hover:bg-white hover:text-primary"
               >
                 Contact Sales
               </Button>

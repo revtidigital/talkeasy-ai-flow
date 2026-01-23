@@ -145,7 +145,7 @@ const ChatbotComparison = () => {
 
                 <div className="mt-6">
                   <ContactFormDialog>
-                    <Button variant="hero" className="w-full transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-primary hover:border-2 hover:border-primary">
+                    <Button variant="hero" className="w-full">
                       Learn More
                       <ArrowRight className="w-4 h-4" />
                     </Button>
