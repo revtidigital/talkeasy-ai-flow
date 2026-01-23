@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -26,6 +27,7 @@ import LiveView from "./pages/LiveView";
 import Teams from "./pages/Teams";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
+import LoadingScreen from "./components/LoadingScreen";
 
 const queryClient = new QueryClient();
 
@@ -60,19 +62,35 @@ const AnimatedRoutes = () => {
   );
 };
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <AnimatedRoutes />
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
-);
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <AnimatePresence mode="wait">
+            {isLoading && <LoadingScreen key="loading" />}
+          </AnimatePresence>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <AnimatedRoutes />
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
+  );
+};
 
 export default App;
