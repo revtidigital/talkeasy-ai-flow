@@ -23,10 +23,10 @@ const Header = () => {
     products: {
       title: "Products",
       items: [
+        { label: "Chatbot", href: "/chatbot" },
         { label: "Live Chat", href: "/live-chat" },
         { label: "Pre-Chat Forms", href: "/pre-chat-forms" },
         { label: "Omni Channel", href: "/omni-channel" },
-        { label: "Chatbot", href: "/chatbot" },
       ],
     },
     analyse: {
@@ -41,9 +41,9 @@ const Header = () => {
     whatsapp: {
       title: "WhatsApp for Business",
       items: [
-        { label: "WhatsApp AI Chatbot", href: "/whatsapp-ai-chatbot" },
         { label: "WhatsApp Shop", href: "/whatsapp-shop" },
         { label: "WhatsApp Marketing", href: "/whatsapp-marketing" },
+        { label: "WhatsApp AI Chatbot", href: "/whatsapp-ai-chatbot" },
       ],
     },
     manage: {
