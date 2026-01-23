@@ -223,7 +223,7 @@ const OmniChannel = () => {
                     </Button>
                   </Link>
                   <Link to="/contact-us">
-                    <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white/10 px-8">
+                    <Button variant="outline" size="lg" className="border-2 border-white text-white bg-white/10 backdrop-blur-sm px-8 py-6 text-lg rounded-full hover:bg-white hover:text-primary">
                       Talk to Sales
                     </Button>
                   </Link>
