@@ -43,8 +43,7 @@ const LiveChatCTA = () => {
             <Link to="/contact-us">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
+                className="bg-white/20 backdrop-blur-sm border-2 border-white text-white hover:bg-white/30 px-8 py-6 text-lg rounded-full"
               >
                 Contact Sales
               </Button>
