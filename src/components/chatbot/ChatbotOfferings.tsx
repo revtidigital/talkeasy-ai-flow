@@ -1,45 +1,56 @@
-import { Brain, MessageSquare, Route, Globe, Shield, BarChart3 } from "lucide-react";
+import { useState } from "react";
+import { Brain, MessageSquare, BarChart3, Users, Layers, Shield, MessageCircle, FileText, Globe } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import { Link } from "react-router-dom";
 
-const offerings = [
+const tabs = [
+  { id: "conversation", label: "Conversation Intelligence", icon: Brain },
+  { id: "analytics", label: "Analytics", icon: BarChart3 },
+  { id: "agent", label: "Agent Assist", icon: Users },
+  { id: "channels", label: "Channels", icon: Globe },
+  { id: "integrations", label: "Integrations", icon: Layers },
+  { id: "security", label: "Security", icon: Shield },
+];
+
+const featureCards = [
   {
-    icon: Brain,
-    title: "Conversational Intelligence",
-    description: "Natural language understanding that comprehends context, intent, and sentiment for meaningful conversations.",
-  },
-  {
-    icon: MessageSquare,
-    title: "AI Assistant for FAQs & Lead Capture",
-    description: "Automatically answer common questions and qualify leads 24/7 without human intervention.",
-  },
-  {
-    icon: Route,
-    title: "Smart Routing & Automation",
-    description: "Intelligent ticket routing based on query type, priority, and agent availability.",
-  },
-  {
-    icon: Globe,
-    title: "Multi-language Support",
-    description: "Communicate with customers in their preferred language with real-time translation.",
-  },
-  {
-    icon: Shield,
-    title: "Security & Compliance",
-    description: "Enterprise-grade security with GDPR, HIPAA, and SOC 2 compliance built-in.",
+    icon: MessageCircle,
+    title: "Live Chat",
+    description: "Real-time chat support to engage customers instantly across your website and apps.",
+    href: "/live-chat",
+    color: "from-primary to-violet",
   },
   {
     icon: BarChart3,
-    title: "Real-time Analytics",
-    description: "Comprehensive dashboards with actionable insights on performance and customer satisfaction.",
+    title: "Team Reports",
+    description: "Track agent productivity, response time, and performance with auto-generated reports.",
+    href: "/team-reports",
+    color: "from-mint to-primary",
+  },
+  {
+    icon: FileText,
+    title: "Private Notes",
+    description: "Collaborate internally with private notes, tags, and quick team mentions inside chats.",
+    href: "/private-notes",
+    color: "from-violet to-pink-400",
+  },
+  {
+    icon: Globe,
+    title: "Omni Channel",
+    description: "Manage conversations from WhatsApp, website, Facebook, and Instagram in one inbox.",
+    href: "/omni-channel",
+    color: "from-primary to-mint",
   },
 ];
 
 const ChatbotOfferings = () => {
+  const [activeTab, setActiveTab] = useState("conversation");
+
   return (
     <section className="section-padding">
       <div className="container-tight">
         <AnimatedSection>
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Brain className="w-4 h-4" />
               What We Offer
@@ -56,18 +67,50 @@ const ChatbotOfferings = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {offerings.map((offering, index) => (
+        {/* Tabs */}
+        <AnimatedSection delay={0.1}>
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                  activeTab === tab.id
+                    ? "gradient-bg text-white shadow-lg shadow-primary/25"
+                    : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
+                }`}
+              >
+                <tab.icon className="w-4 h-4" />
+                <span className="hidden sm:inline">{tab.label}</span>
+              </button>
+            ))}
+          </div>
+        </AnimatedSection>
+
+        {/* Feature Cards Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {featureCards.map((card, index) => (
             <AnimatedSection key={index} delay={index * 0.1}>
-              <div className="glass-card-hover rounded-2xl p-6 h-full">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-violet/20 flex items-center justify-center mb-4">
-                  <offering.icon className="w-6 h-6 text-primary" />
+              <Link to={card.href} className="block group">
+                <div className="glass-card-hover rounded-2xl p-6 h-full transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-primary/10">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <card.icon className="w-7 h-7 text-white" />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                    {card.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground">
+                    {card.description}
+                  </p>
+
+                  <div className="mt-4 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span>Explore Feature</span>
+                    <MessageSquare className="w-4 h-4" />
+                  </div>
                 </div>
-                
-                <h3 className="text-lg font-semibold mb-3">{offering.title}</h3>
-                
-                <p className="text-muted-foreground text-sm">{offering.description}</p>
-              </div>
+              </Link>
             </AnimatedSection>
           ))}
         </div>

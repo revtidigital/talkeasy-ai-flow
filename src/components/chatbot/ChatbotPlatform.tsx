@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart3, Bot, Globe, MessageSquare, Layers } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import ContactFormDialog from "@/components/ContactFormDialog";
+import { Link } from "react-router-dom";
 
 const ChatbotPlatform = () => {
   return (
@@ -121,12 +121,12 @@ const ChatbotPlatform = () => {
                 ))}
               </ul>
 
-              <ContactFormDialog>
+              <Link to="/inbox-reports">
                 <Button variant="hero" size="lg">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>
-              </ContactFormDialog>
+              </Link>
             </div>
           </AnimatedSection>
         </div>

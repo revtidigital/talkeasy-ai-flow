@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingCart, GraduationCap, Plane, Building2, Truck, Shield } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
+import { Link } from "react-router-dom";
 
 const industries = [
   {
@@ -74,14 +75,7 @@ const ChatbotIndustries = () => {
                 
                 <h3 className="text-xl font-semibold mb-3">{industry.title}</h3>
                 
-                <p className="text-muted-foreground mb-4">{industry.description}</p>
-                
-                <ContactFormDialog>
-                  <button className="text-primary text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </ContactFormDialog>
+                <p className="text-muted-foreground">{industry.description}</p>
               </div>
             </AnimatedSection>
           ))}
