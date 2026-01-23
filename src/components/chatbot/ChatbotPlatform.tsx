@@ -49,14 +49,14 @@ const ChatbotPlatform = () => {
                     <h4 className="font-semibold text-sm mb-1">Live Chat</h4>
                     <p className="text-xs text-muted-foreground">Human support</p>
                     <div className="mt-3 flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="w-2 h-2 bg-mint rounded-full animate-pulse" />
                       <span className="text-xs">5 agents online</span>
                     </div>
                   </div>
 
                   {/* Integration Module */}
                   <div className="glass-card rounded-xl p-4 border border-pink-soft/20">
-                    <Globe className="w-8 h-8 text-pink-400 mb-3" />
+                    <Globe className="w-8 h-8 text-pink-soft mb-3" />
                     <h4 className="font-semibold text-sm mb-1">Integrations</h4>
                     <p className="text-xs text-muted-foreground">Connect everywhere</p>
                     <div className="mt-3 flex -space-x-2">

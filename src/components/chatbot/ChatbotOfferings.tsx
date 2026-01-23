@@ -35,14 +35,14 @@ const offeringCards = [
     icon: Shield,
     title: "Security & Compliance",
     description: "Enterprise-grade security with GDPR, HIPAA, and SOC 2 compliance built-in.",
-    href: null,
+    href: "/pre-chat-forms",
     color: "from-violet to-primary",
   },
   {
     icon: BarChart3,
     title: "Real-time Analytics",
     description: "Comprehensive dashboards with actionable insights on performance and customer satisfaction.",
-    href: null,
+    href: "/inbox-reports",
     color: "from-primary to-violet",
   },
 ];
@@ -73,29 +73,13 @@ const ChatbotOfferings = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {offeringCards.map((card, index) => (
             <AnimatedSection key={index} delay={index * 0.1}>
-              {card.href ? (
-                <Link to={card.href} className="block group h-full">
-                  <div className="glass-card-hover rounded-2xl p-6 h-full transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-primary/10">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <card.icon className="w-6 h-6 text-white" />
-                    </div>
-                    
-                    <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
-                      {card.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground text-sm">
-                      {card.description}
-                    </p>
-                  </div>
-                </Link>
-              ) : (
-                <div className="glass-card-hover rounded-2xl p-6 h-full">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4`}>
+              <Link to={card.href} className="block group h-full">
+                <div className="glass-card-hover rounded-2xl p-6 h-full transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-primary/10">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <card.icon className="w-6 h-6 text-white" />
                   </div>
                   
-                  <h3 className="text-lg font-semibold mb-3">
+                  <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
                     {card.title}
                   </h3>
                   
@@ -103,7 +87,7 @@ const ChatbotOfferings = () => {
                     {card.description}
                   </p>
                 </div>
-              )}
+              </Link>
             </AnimatedSection>
           ))}
         </div>
