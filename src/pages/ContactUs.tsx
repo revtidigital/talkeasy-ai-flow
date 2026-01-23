@@ -252,12 +252,20 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                      <a 
-                        href="tel:+919982323333" 
-                        className="text-muted-foreground text-sm hover:text-primary transition-colors"
-                      >
-                        +91-9982323333
-                      </a>
+                      <div className="flex flex-col gap-1">
+                        <a 
+                          href="tel:+919982323333" 
+                          className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                        >
+                          +91-9982323333
+                        </a>
+                        <a 
+                          href="tel:+917023084065" 
+                          className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                        >
+                          +91-7023084065
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -268,10 +276,10 @@ const ContactUs = () => {
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
                       <a 
-                        href="mailto:himanshu@revtidigital.com" 
+                        href="mailto:contact@theconverseai.com" 
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
                       >
-                        himanshu@revtidigital.com
+                        contact@theconverseai.com
                       </a>
                     </div>
                   </div>
