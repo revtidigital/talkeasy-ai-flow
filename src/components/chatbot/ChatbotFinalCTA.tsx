@@ -39,13 +39,13 @@ const ChatbotFinalCTA = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact-us">
-                  <Button variant="hero" size="xl">
+                  <Button variant="hero" size="xl" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:bg-transparent hover:text-primary hover:border-2 hover:border-primary">
                     Get Free Trial
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </Link>
                 <ContactFormDialog>
-                  <Button variant="hero-outline" size="xl">
+                  <Button variant="hero-outline" size="xl" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:bg-transparent hover:text-primary">
                     Contact Sales
                   </Button>
                 </ContactFormDialog>
