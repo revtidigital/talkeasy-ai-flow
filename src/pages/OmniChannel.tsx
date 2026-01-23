@@ -218,13 +218,19 @@ const OmniChannel = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/contact-us">
-                    <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8">
+                    {/* <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8">
+                      Get Started Free
+                    </Button> */}
+                    <Button size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gradient-cta text-primary-foreground shadow-glow hover:shadow-[0_16px_50px_-10px_hsl(262_83%_58%_/_0.6)] hover:scale-[1.03] hover:-translate-y-1 active:scale-100 active:translate-y-0 font-semibold h-14 rounded-xl px-8 text-base">
                       Get Started Free
                     </Button>
                   </Link>
                   <Link to="/contact-us">
-                    <Button variant="outline" size="lg" className="border-2 border-white text-white bg-transparent px-8 py-6 text-lg rounded-full transition-all duration-300
+                    {/* <Button variant="outline" size="lg" className="border-2 border-white text-white bg-transparent px-8 py-6 text-lg rounded-full transition-all duration-300
                          hover:bg-white/10 hover:backdrop-blur-sm hover:text-white" > Talk to Sales 
+                    </Button> */}
+                    <Button variant="outline" size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-primary/30 bg-white/80 backdrop-blur-sm text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-[1.03] hover:-translate-y-1 active:scale-100 font-medium h-14 rounded-xl px-8 text-base" > 
+                        Talk to Sales 
                     </Button>
 
                   </Link>
