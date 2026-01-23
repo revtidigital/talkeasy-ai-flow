@@ -41,7 +41,7 @@ const LiveChatCTA = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Link to="/contact-us">
+            {/* <Link to="/contact-us">
               <Button
                 variant="outline"
                 size="lg"
@@ -49,7 +49,12 @@ const LiveChatCTA = () => {
               >
                 Contact Sales
               </Button>
-            </Link>
+            </Link> */}
+            <Button variant="outline" size="lg"  className="border-2 border-white text-white bg-transparent px-8 py-6 text-lg rounded-full 
+              hover:bg-white/10 hover:text-white backdrop-blur-sm" >
+              Contact Sales
+            </Button>
+
           </div>
         </motion.div>
       </div>
