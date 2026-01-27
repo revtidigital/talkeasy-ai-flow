@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Eye, MessageSquare, Users, Activity, ArrowRight, Clock, AlertCircle, TrendingUp } from "lucide-react";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
@@ -14,9 +13,7 @@ const LiveView = () => {
         <meta name="description" content="Monitor conversations and agent activity in real time with ConverseAI Live View. Track availability, workload, and performance instantly." />
       </Helmet>
 
-      <Header />
-
-      <main>
+      <main className="pt-16 md:pt-20">
         {/* Hero Section */}
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/10">
           <div className="absolute inset-0 overflow-hidden">

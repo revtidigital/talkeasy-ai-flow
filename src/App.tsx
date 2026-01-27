@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 import LoadingScreen from "./components/LoadingScreen";
+import Header from "./components/Header";
 
 // Eagerly loaded - critical for initial render
 import Index from "./pages/Index";
@@ -94,6 +95,8 @@ const App = () => {
             <a href="#main-content" className="skip-link">
               Skip to main content
             </a>
+            {/* Header outside PageTransition to maintain fixed positioning */}
+            <Header />
             <ScrollToTop />
             <AnimatedRoutes />
           </BrowserRouter>

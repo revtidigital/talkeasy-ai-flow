@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustSignals from "@/components/TrustSignals";
 import FeaturesGrid from "@/components/FeaturesGrid";
@@ -29,8 +28,7 @@ const Index = () => {
         />
         <link rel="canonical" href="https://theconverseai.com/" />
       </Helmet>
-      <div className="min-h-screen bg-background">
-        <Header />
+      <div className="min-h-screen bg-background pt-16 md:pt-20">
         <main id="main-content">
           <AnimatedSection>
             <HeroSection />

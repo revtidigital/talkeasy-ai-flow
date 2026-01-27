@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
@@ -96,8 +95,7 @@ const AboutUs = () => {
         <link rel="canonical" href="https://theconverseai.com/about-us" />
       </Helmet>
       
-      <div className="min-h-screen bg-background">
-        <Header />
+      <div className="min-h-screen bg-background pt-16 md:pt-20">
         
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 overflow-hidden">

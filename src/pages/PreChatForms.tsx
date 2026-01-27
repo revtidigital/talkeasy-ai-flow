@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
@@ -65,8 +64,7 @@ const PreChatForms = () => {
         <link rel="canonical" href="https://theconverseai.com/pre-chat-forms" />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
-        <Header />
+      <div className="min-h-screen bg-background pt-16 md:pt-20">
         
         <main>
           {/* Hero Section */}

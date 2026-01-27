@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Users, Settings, BarChart3, ArrowRight, Zap, Globe, MessageSquare, Shield } from "lucide-react";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
@@ -14,9 +13,7 @@ const Teams = () => {
         <meta name="description" content="Organize support agents into efficient teams with ConverseAI. Automate assignments, track performance, and improve collaboration." />
       </Helmet>
 
-      <Header />
-
-      <main>
+      <main className="pt-16 md:pt-20">
         {/* Hero Section */}
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/10">
           <div className="absolute inset-0 overflow-hidden">
