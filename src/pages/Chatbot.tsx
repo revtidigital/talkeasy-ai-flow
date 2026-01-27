@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatbotHero from "@/components/chatbot/ChatbotHero";
 import ChatbotComparison from "@/components/chatbot/ChatbotComparison";
@@ -23,10 +22,8 @@ const Chatbot = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://talkeasy-ai-flow.lovable.app/chatbot" />
       </Helmet>
-
-      <Header />
       
-      <main>
+      <main className="pt-16 md:pt-20">
         <ChatbotHero />
         <ChatbotComparison />
         <ChatbotRevolutionize />

@@ -10,7 +10,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Shield, Clock, Users, Send } from "lucide-react";
 import { validateContactForm } from "@/lib/validations/contact";
@@ -81,8 +80,7 @@ const ContactUs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <div className="min-h-screen bg-background pt-16 md:pt-20">
       
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">

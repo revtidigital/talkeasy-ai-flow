@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Smile, Star, Download, Calendar, TrendingUp, Heart, MessageCircle, ThumbsUp } from "lucide-react";
@@ -19,9 +18,7 @@ const CSATReport = () => {
         <link rel="canonical" href="https://converseai.com/csat-report" />
       </Helmet>
 
-      <Header />
-
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-16 md:pt-20">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-primary/5 to-violet-500/10" />

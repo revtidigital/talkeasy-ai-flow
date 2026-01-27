@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Inbox, BarChart3, Filter, Clock, TrendingUp, Zap, Download, Layers } from "lucide-react";
@@ -19,9 +18,7 @@ const InboxReports = () => {
         <link rel="canonical" href="https://converseai.com/inbox-reports" />
       </Helmet>
 
-      <Header />
-
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-16 md:pt-20">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-violet-500/5 to-pink-500/10" />
