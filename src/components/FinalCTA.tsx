@@ -4,19 +4,19 @@ import ContactFormDialog from "./ContactFormDialog";
 
 const FinalCTA = () => {
   return (
-    <section className="section-padding">
+    <section className="section-padding" aria-labelledby="cta-heading">
       <div className="container-tight">
         <div className="relative text-center max-w-4xl mx-auto">
           {/* Background Glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-violet/10 to-mint/10 rounded-3xl blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-violet/10 to-mint/10 rounded-3xl blur-3xl" aria-hidden="true" />
           
           <div className="relative z-10 glass-card rounded-3xl p-12 md:p-16 lg:p-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-4 h-4" aria-hidden="true" />
               Get Started Today
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+            <h2 id="cta-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
               Start meaningful conversations{" "}
               <span className="gradient-text">today</span>
             </h2>
@@ -28,13 +28,13 @@ const FinalCTA = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ContactFormDialog>
-                <Button variant="hero" size="xl">
+                <Button variant="hero" size="xl" aria-label="Get started with ConverseAI for free">
                   Get Started Free
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Button>
               </ContactFormDialog>
               <ContactFormDialog>
-                <Button variant="hero-outline" size="xl">
+                <Button variant="hero-outline" size="xl" aria-label="Contact our sales team">
                   Contact Sales
                 </Button>
               </ContactFormDialog>

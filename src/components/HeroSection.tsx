@@ -5,11 +5,14 @@ import ContactFormDialog from "./ContactFormDialog";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+    <section 
+      className="relative min-h-screen pt-24 pb-16 overflow-hidden"
+      aria-labelledby="hero-heading"
+    >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-background to-background" />
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute top-40 right-1/4 w-80 h-80 bg-violet/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-background to-background" aria-hidden="true" />
+      <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute top-40 right-1/4 w-80 h-80 bg-violet/10 rounded-full blur-3xl" aria-hidden="true" />
       
       <div className="container-tight relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[calc(100vh-6rem)]">
@@ -17,12 +20,12 @@ const HeroSection = () => {
           <div className="text-center lg:text-left">
             <div className="animate-fade-up">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                <span className="w-2 h-2 rounded-full bg-mint animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-mint animate-pulse" aria-hidden="true" />
                 AI-Powered Customer Engagement
               </span>
             </div>
             
-            <h1 className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 id="hero-heading" className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               AI conversations that{" "}
               <span className="gradient-text">feel human.</span>
               <br />
@@ -37,27 +40,27 @@ const HeroSection = () => {
             
             <div className="animate-fade-up-delayed flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <ContactFormDialog>
-                <Button variant="hero" size="xl">
+                <Button variant="hero" size="xl" aria-label="Start your free trial - opens contact form">
                   Start Free Trial
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Button>
               </ContactFormDialog>
               <ContactFormDialog>
-                <Button variant="hero-outline" size="xl">
-                  <Play className="w-5 h-5" />
+                <Button variant="hero-outline" size="xl" aria-label="Book a demo - opens contact form">
+                  <Play className="w-5 h-5" aria-hidden="true" />
                   Book Demo
                 </Button>
               </ContactFormDialog>
             </div>
 
             {/* Quick Stats */}
-            <div className="mt-12 flex flex-wrap gap-8 justify-center lg:justify-start animate-fade-up-delayed">
+            <div className="mt-12 flex flex-wrap gap-8 justify-center lg:justify-start animate-fade-up-delayed" role="list" aria-label="Key statistics">
               {[
                 { value: "10K+", label: "Active Users" },
                 { value: "50M+", label: "Messages Sent" },
                 { value: "99.9%", label: "Uptime" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center lg:text-left">
+                <div key={stat.label} className="text-center lg:text-left" role="listitem">
                   <div className="text-2xl font-bold gradient-text">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
@@ -73,7 +76,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-soft">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-soft" aria-hidden="true">
         <span className="text-xs text-muted-foreground">Scroll to explore</span>
         <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-1.5">
           <div className="w-1.5 h-3 rounded-full bg-primary animate-pulse" />
