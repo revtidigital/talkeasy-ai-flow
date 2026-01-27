@@ -1,6 +1,7 @@
 import { Bot, Users, MessageCircle, Eye, Calendar, BarChart3 } from "lucide-react";
+import { memo } from "react";
 
-const FeaturesGrid = () => {
+const FeaturesGrid = memo(() => {
   const features = [
     {
       icon: Bot,
@@ -59,7 +60,7 @@ const FeaturesGrid = () => {
               role="listitem"
             >
               <div className="w-14 h-14 rounded-2xl gradient-bg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
-                <feature.icon className="w-7 h-7 text-primary-foreground" />
+                <feature.icon className="w-7 h-7 text-primary-foreground" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-foreground">
                 {feature.title}
@@ -73,6 +74,8 @@ const FeaturesGrid = () => {
       </div>
     </section>
   );
-};
+});
+
+FeaturesGrid.displayName = 'FeaturesGrid';
 
 export default FeaturesGrid;

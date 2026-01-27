@@ -42,6 +42,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 width="48"
                 height="48"
                 loading="lazy"
+                decoding="async"
               />
             </Link>
             <p className="text-sm text-footer-text leading-relaxed mb-6 max-w-xs">
@@ -163,6 +164,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               width="80"
               height="40"
               loading="lazy"
+              decoding="async"
             />
           </div>
           

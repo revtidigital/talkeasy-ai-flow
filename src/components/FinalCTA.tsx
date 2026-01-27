@@ -1,14 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { memo } from "react";
 import ContactFormDialog from "./ContactFormDialog";
 
-const FinalCTA = () => {
+const FinalCTA = memo(() => {
   return (
     <section className="section-padding" aria-labelledby="cta-heading">
       <div className="container-tight">
         <div className="relative text-center max-w-4xl mx-auto">
-          {/* Background Glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-violet/10 to-mint/10 rounded-3xl blur-3xl" aria-hidden="true" />
+          {/* Background Glow - optimized with contain */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-r from-primary/10 via-violet/10 to-mint/10 rounded-3xl blur-3xl" 
+            aria-hidden="true"
+            style={{ contain: 'strict', willChange: 'auto' }}
+          />
           
           <div className="relative z-10 glass-card rounded-3xl p-12 md:p-16 lg:p-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
@@ -48,6 +53,8 @@ const FinalCTA = () => {
       </div>
     </section>
   );
-};
+});
+
+FinalCTA.displayName = 'FinalCTA';
 
 export default FinalCTA;
