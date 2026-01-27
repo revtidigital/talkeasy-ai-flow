@@ -1,10 +1,11 @@
 import { Shield, Zap, Clock } from "lucide-react";
+import { memo } from "react";
 
-const TrustSignals = () => {
+const TrustSignals = memo(() => {
   const stats = [
-    { icon: Clock, value: "99.9%", label: "Uptime Guarantee" },
-    { icon: Zap, value: "<1s", label: "Response Time" },
-    { icon: Shield, value: "SOC 2", label: "Enterprise Security" },
+    { icon: Clock, value: "99.9%", label: "Uptime Guarantee", ariaLabel: "99.9 percent uptime guarantee" },
+    { icon: Zap, value: "<1s", label: "Response Time", ariaLabel: "Less than 1 second response time" },
+    { icon: Shield, value: "SOC 2", label: "Enterprise Security", ariaLabel: "SOC 2 certified enterprise security" },
   ];
 
   return (
@@ -22,12 +23,13 @@ const TrustSignals = () => {
             <li
               key={index}
               className="flex items-center gap-4 group"
+              aria-label={stat.ariaLabel}
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <stat.icon className="w-6 h-6 text-primary" />
+                <stat.icon className="w-6 h-6 text-primary" aria-hidden="true" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                <div className="text-2xl font-bold text-foreground" aria-hidden="true">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             </li>
@@ -36,6 +38,8 @@ const TrustSignals = () => {
       </div>
     </section>
   );
-};
+});
+
+TrustSignals.displayName = 'TrustSignals';
 
 export default TrustSignals;

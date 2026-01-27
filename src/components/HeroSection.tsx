@@ -1,7 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import ChatbotMockup from "./ChatbotMockup";
+import { lazy, Suspense } from "react";
 import ContactFormDialog from "./ContactFormDialog";
+
+// Lazy load ChatbotMockup - it's below the fold on mobile and not LCP critical
+const ChatbotMockup = lazy(() => import("./ChatbotMockup"));
+
+// Fallback for lazy loaded mockup
+const MockupFallback = () => (
+  <div 
+    className="relative animate-pulse bg-secondary/50 rounded-3xl min-h-[400px] flex items-center justify-center"
+    role="img"
+    aria-label="Loading chatbot demonstration"
+  >
+    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const HeroSection = () => {
   return (
@@ -9,14 +23,26 @@ const HeroSection = () => {
       className="relative min-h-screen pt-24 pb-16 overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-background to-background" aria-hidden="true" />
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
-      <div className="absolute top-40 right-1/4 w-80 h-80 bg-violet/10 rounded-full blur-3xl" aria-hidden="true" />
+      {/* Background Elements - using CSS instead of multiple divs for performance */}
+      <div 
+        className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-background to-background" 
+        aria-hidden="true"
+        style={{ willChange: 'auto' }}
+      />
+      <div 
+        className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" 
+        aria-hidden="true"
+        style={{ willChange: 'auto', contain: 'layout style paint' }}
+      />
+      <div 
+        className="absolute top-40 right-1/4 w-80 h-80 bg-violet/10 rounded-full blur-3xl" 
+        aria-hidden="true"
+        style={{ willChange: 'auto', contain: 'layout style paint' }}
+      />
       
       <div className="container-tight relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[calc(100vh-6rem)]">
-          {/* Left Content */}
+          {/* Left Content - LCP critical content */}
           <div className="text-center lg:text-left">
             <div>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -25,6 +51,7 @@ const HeroSection = () => {
               </span>
             </div>
             
+            {/* H1 is the primary LCP element on mobile */}
             <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               AI conversations that{" "}
               <span className="gradient-text">feel human.</span>
@@ -68,9 +95,11 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right - Chatbot Mockup */}
+          {/* Right - Chatbot Mockup (lazy loaded) */}
           <div className="relative lg:pl-8">
-            <ChatbotMockup />
+            <Suspense fallback={<MockupFallback />}>
+              <ChatbotMockup />
+            </Suspense>
           </div>
         </div>
       </div>

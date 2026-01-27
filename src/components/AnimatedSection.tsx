@@ -1,5 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, ReactNode } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useRef, ReactNode, memo } from "react";
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -7,9 +7,15 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
-const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
+const AnimatedSection = memo(({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const prefersReducedMotion = useReducedMotion();
+
+  // Skip animations for users who prefer reduced motion
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
@@ -22,10 +28,13 @@ const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectio
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       className={className}
+      style={{ willChange: isInView ? 'auto' : 'opacity, transform' }}
     >
       {children}
     </motion.div>
   );
-};
+});
+
+AnimatedSection.displayName = 'AnimatedSection';
 
 export default AnimatedSection;

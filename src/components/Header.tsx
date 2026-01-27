@@ -127,7 +127,7 @@ const Header = () => {
     >
       <div className="container-tight">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo - LCP element with high priority */}
+          {/* Logo - LCP element with highest priority */}
           <Link to="/" className="flex items-center group" aria-label="ConverseAI - Go to homepage">
             <img 
               src="/assets/logo.png" 
@@ -136,7 +136,9 @@ const Header = () => {
               width="120"
               height="40"
               fetchPriority="high"
-              decoding="async"
+              decoding="sync"
+              loading="eager"
+              style={{ contentVisibility: 'auto' }}
             />
           </Link>
 
