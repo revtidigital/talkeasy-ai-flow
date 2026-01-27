@@ -18,14 +18,14 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[calc(100vh-6rem)]">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <div className="animate-fade-up">
+            <div>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 <span className="w-2 h-2 rounded-full bg-mint animate-pulse" aria-hidden="true" />
                 AI-Powered Customer Engagement
               </span>
             </div>
             
-            <h1 id="hero-heading" className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               AI conversations that{" "}
               <span className="gradient-text">feel human.</span>
               <br />
@@ -33,12 +33,12 @@ const HeroSection = () => {
               <span className="gradient-text">scale.</span>
             </h1>
             
-            <p className="animate-fade-up-delayed text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
               ConverseAI helps businesses automate, engage, and support customers 
               using intelligent chatbots and real-time messaging.
             </p>
             
-            <div className="animate-fade-up-delayed flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <ContactFormDialog>
                 <Button variant="hero" size="xl" aria-label="Start your free trial - opens contact form">
                   Start Free Trial
@@ -54,7 +54,7 @@ const HeroSection = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="mt-12 flex flex-wrap gap-8 justify-center lg:justify-start animate-fade-up-delayed" role="list" aria-label="Key statistics">
+            <div className="mt-12 flex flex-wrap gap-8 justify-center lg:justify-start" role="list" aria-label="Key statistics">
               {[
                 { value: "10K+", label: "Active Users" },
                 { value: "50M+", label: "Messages Sent" },
