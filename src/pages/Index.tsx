@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustSignals from "@/components/TrustSignals";
@@ -14,42 +15,57 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <AnimatedSection>
-          <HeroSection />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <TrustSignals />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <FeaturesGrid />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <UserBehaviorInsight />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <ProductModules />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <MidCTA />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <WhyConverseAI />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <HowItWorks />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <MobileExperience />
-        </AnimatedSection>
-        <AnimatedSection delay={0.1}>
-          <FinalCTA />
-        </AnimatedSection>
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Helmet>
+        <title>ConverseAI - AI Conversations That Feel Human | Customer Engagement Platform</title>
+        <meta
+          name="description"
+          content="ConverseAI helps businesses automate, engage, and support customers using intelligent chatbots and real-time messaging. Start your free trial today."
+        />
+        <meta property="og:title" content="ConverseAI - AI Conversations That Feel Human" />
+        <meta
+          property="og:description"
+          content="ConverseAI helps businesses automate, engage, and support customers using intelligent chatbots and real-time messaging."
+        />
+        <link rel="canonical" href="https://theconverseai.com/" />
+      </Helmet>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main id="main-content">
+          <AnimatedSection>
+            <HeroSection />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <TrustSignals />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <FeaturesGrid />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <UserBehaviorInsight />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <ProductModules />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <MidCTA />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <WhyConverseAI />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <HowItWorks />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <MobileExperience />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <FinalCTA />
+          </AnimatedSection>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

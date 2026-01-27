@@ -118,6 +118,7 @@ const Header = () => {
 
   return (
     <header
+      role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white/90 backdrop-blur-xl shadow-soft"
@@ -127,16 +128,18 @@ const Header = () => {
       <div className="container-tight">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group" aria-label="ConverseAI - Go to homepage">
             <img 
               src="/assets/logo.png" 
-              alt="ConverseAI" 
+              alt="ConverseAI Logo" 
               className="h-8 md:h-10 w-auto"
+              width="120"
+              height="40"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
             {navLinks.map((link) => (
               <div
                 key={link.label}
@@ -147,16 +150,24 @@ const Header = () => {
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group flex items-center gap-1"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md px-2 py-1"
+                  aria-expanded={link.hasDropdown ? activeDropdown === link.hasDropdown : undefined}
+                  aria-haspopup={link.hasDropdown ? "menu" : undefined}
                 >
                   {link.label}
-                  {link.hasDropdown && <ChevronDown className="w-4 h-4 transition-transform duration-200" style={{ transform: activeDropdown === link.hasDropdown ? 'rotate(180deg)' : 'rotate(0deg)' }} />}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  {link.hasDropdown && (
+                    <ChevronDown 
+                      className="w-4 h-4 transition-transform duration-200" 
+                      style={{ transform: activeDropdown === link.hasDropdown ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" aria-hidden="true" />
                 </a>
 
                 {/* Features Mega Menu */}
                 {link.hasDropdown === "features" && activeDropdown === "features" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50" role="menu" aria-label="Features submenu">
                     <div className="bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 min-w-[750px] animate-fade-in">
                       <div className="grid grid-cols-4 gap-8">
                         {Object.values(featuresMenu).map((column) => (
@@ -164,12 +175,13 @@ const Header = () => {
                             <h4 className="text-sm font-semibold text-foreground mb-3 pb-2 border-b border-border/50 whitespace-nowrap">
                               {column.title}
                             </h4>
-                            <ul className="space-y-1">
+                            <ul className="space-y-1" role="group" aria-label={column.title}>
                               {column.items.map((item) => (
-                                <li key={item.label}>
+                                <li key={item.label} role="none">
                                   <button
                                     onClick={() => handleDropdownItemClick(item.href)}
-                                    className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-2 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+                                    className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-2 py-1.5 rounded-lg transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                    role="menuitem"
                                   >
                                     {item.label}
                                   </button>
@@ -185,14 +197,15 @@ const Header = () => {
 
                 {/* Products Dropdown */}
                 {link.hasDropdown === "products" && activeDropdown === "products" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50" role="menu" aria-label="Products submenu">
                     <div className="bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-4 min-w-[220px] animate-fade-in">
                       <ul className="space-y-1">
                         {productsMenu.map((item) => (
-                          <li key={item.label}>
+                          <li key={item.label} role="none">
                             <button
                               onClick={() => handleDropdownItemClick(item.href)}
-                              className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-3 py-2 rounded-lg transition-colors"
+                              className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                              role="menuitem"
                             >
                               {item.label}
                             </button>
@@ -212,6 +225,7 @@ const Header = () => {
               <Button 
                 variant="outline" 
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6"
+                aria-label="Start your free trial"
               >
                 Start Your Trial
               </Button>
@@ -220,36 +234,47 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-border animate-fade-up max-h-[80vh] overflow-y-auto">
-            <nav className="container-tight py-4 flex flex-col gap-2">
+          <div 
+            id="mobile-menu"
+            className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-border animate-fade-up max-h-[80vh] overflow-y-auto"
+            role="dialog"
+            aria-label="Mobile navigation menu"
+          >
+            <nav className="container-tight py-4 flex flex-col gap-2" aria-label="Mobile navigation">
               {navLinks.map((link) => (
                 <div key={link.label}>
                   {link.hasDropdown ? (
                     <div>
                       <button
                         onClick={() => toggleMobileMenu(link.hasDropdown!)}
-                        className="w-full px-4 py-3 text-foreground hover:bg-secondary rounded-lg transition-colors flex items-center justify-between"
+                        className="w-full px-4 py-3 text-foreground hover:bg-secondary rounded-lg transition-colors flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        aria-expanded={mobileExpandedMenus.includes(link.hasDropdown!)}
+                        aria-controls={`mobile-${link.hasDropdown}-menu`}
                       >
                         {link.label}
                         <ChevronDown 
                           className={`w-4 h-4 transition-transform duration-200 ${
                             mobileExpandedMenus.includes(link.hasDropdown!) ? 'rotate-180' : ''
-                          }`} 
+                          }`}
+                          aria-hidden="true"
                         />
                       </button>
                       
                       {/* Mobile Features Accordion */}
                       {link.hasDropdown === "features" && mobileExpandedMenus.includes("features") && (
-                        <div className="pl-4 pb-2 space-y-3">
+                        <div id="mobile-features-menu" className="pl-4 pb-2 space-y-3" role="group" aria-label="Features">
                           {Object.values(featuresMenu).map((column) => (
                             <div key={column.title} className="space-y-1">
                               <h5 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-4 py-1">
@@ -262,7 +287,7 @@ const Header = () => {
                                     handleDropdownItemClick(item.href);
                                     setIsMobileMenuOpen(false);
                                   }}
-                                  className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                                  className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                                 >
                                   {item.label}
                                 </button>
@@ -274,7 +299,7 @@ const Header = () => {
 
                       {/* Mobile Products Accordion */}
                       {link.hasDropdown === "products" && mobileExpandedMenus.includes("products") && (
-                        <div className="pl-4 pb-2">
+                        <div id="mobile-products-menu" className="pl-4 pb-2" role="group" aria-label="Products">
                           {productsMenu.map((item) => (
                             <button
                               key={item.label}
@@ -282,7 +307,7 @@ const Header = () => {
                                 handleDropdownItemClick(item.href);
                                 setIsMobileMenuOpen(false);
                               }}
-                              className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                              className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                             >
                               {item.label}
                             </button>
@@ -294,7 +319,7 @@ const Header = () => {
                     <a
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link)}
-                      className="px-4 py-3 text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                      className="px-4 py-3 text-foreground hover:bg-secondary rounded-lg transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       {link.label}
                     </a>
@@ -306,6 +331,7 @@ const Header = () => {
                   <Button 
                     variant="outline" 
                     className="w-full justify-center border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    aria-label="Start your free trial"
                   >
                     Start Your Trial
                   </Button>
