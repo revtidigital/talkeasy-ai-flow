@@ -70,13 +70,18 @@ const Header = () => {
     { label: "Features", href: "#features", isRoute: false, hasDropdown: "features" },
     { label: "Products", href: "#products", isRoute: false, hasDropdown: "products" },
     { label: "About Us", href: "/about-us", isRoute: true },
-    { label: "Blog", href: "#blog", isRoute: false },
+    { label: "Blog", href: "https://test.revtidigital.com/blog/", isRoute: false, isExternal: true },
     { label: "Contact Us", href: "/contact-us", isRoute: true },
   ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: { href: string; isRoute: boolean; hasDropdown?: string }) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: { href: string; isRoute: boolean; hasDropdown?: string; isExternal?: boolean }) => {
     if (link.hasDropdown) {
       e.preventDefault();
+      return;
+    }
+    if (link.isExternal) {
+      // Let the default anchor behavior handle external links
+      setIsMobileMenuOpen(false);
       return;
     }
     e.preventDefault();
@@ -154,6 +159,8 @@ const Header = () => {
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
+                  target={link.isExternal ? "_blank" : undefined}
+                  rel={link.isExternal ? "noopener noreferrer" : undefined}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md px-2 py-1"
                   aria-expanded={link.hasDropdown ? activeDropdown === link.hasDropdown : undefined}
                   aria-haspopup={link.hasDropdown ? "menu" : undefined}
@@ -323,6 +330,8 @@ const Header = () => {
                     <a
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link)}
+                      target={link.isExternal ? "_blank" : undefined}
+                      rel={link.isExternal ? "noopener noreferrer" : undefined}
                       className="px-4 py-3 text-foreground hover:bg-secondary rounded-lg transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       {link.label}
