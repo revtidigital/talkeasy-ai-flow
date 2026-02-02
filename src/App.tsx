@@ -18,6 +18,7 @@ import Index from "./pages/Index";
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
+const Blog = lazy(() => import("./pages/Blog"));
 const Chatbot = lazy(() => import("./pages/Chatbot"));
 const LiveChat = lazy(() => import("./pages/LiveChat"));
 const OmniChannel = lazy(() => import("./pages/OmniChannel"));
@@ -54,6 +55,7 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<PageTransition><Index /></PageTransition>} />
           <Route path="/contact-us" element={<PageTransition><ContactUs /></PageTransition>} />
           <Route path="/about-us" element={<PageTransition><AboutUs /></PageTransition>} />
+          <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
           <Route path="/chatbot" element={<PageTransition><Chatbot /></PageTransition>} />
           <Route path="/live-chat" element={<PageTransition><LiveChat /></PageTransition>} />
           <Route path="/omni-channel" element={<PageTransition><OmniChannel /></PageTransition>} />
