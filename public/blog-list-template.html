@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | ConverseAI - AI Chatbot & Customer Engagement Insights</title>
+  <meta name="description" content="Explore the latest insights on AI chatbots, customer engagement, WhatsApp Business, and conversational AI strategies from ConverseAI experts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --background: #0a0a0f;
+      --foreground: #fafafa;
+      --card: #0f0f17;
+      --card-foreground: #fafafa;
+      --primary: #8b5cf6;
+      --primary-foreground: #fafafa;
+      --secondary: #1a1a2e;
+      --secondary-foreground: #fafafa;
+      --muted: #1a1a2e;
+      --muted-foreground: #a1a1aa;
+      --accent: #c084fc;
+      --border: #27272a;
+      --ring: #8b5cf6;
+      --gradient-start: #8b5cf6;
+      --gradient-end: #c084fc;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 15, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+      padding: 1rem 0;
+    }
+    
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .logo-text {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .nav {
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+    
+    .nav-link {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary);
+    }
+    
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+      border-radius: 1px;
+    }
+    
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .header-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px -10px rgba(139, 92, 246, 0.5);
+    }
+    
+    .mobile-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--foreground);
+      cursor: pointer;
+    }
+    
+    @media (min-width: 1024px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 4rem;
+      background: linear-gradient(180deg, rgba(139, 92, 246, 0.1) 0%, transparent 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(192, 132, 252, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.5rem;
+      }
+    }
+    
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Main Content */
+    .main-content {
+      padding: 4rem 0;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+    
+    /* Blog Cards */
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .blog-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.3);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+    
+    @media (min-width: 768px) {
+      .blog-card-inner {
+        display: flex;
+      }
+    }
+    
+    .blog-card-image {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    @media (min-width: 768px) {
+      .blog-card-image {
+        width: 40%;
+        flex-shrink: 0;
+      }
+    }
+    
+    .blog-card-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    @media (min-width: 768px) {
+      .blog-card-image img {
+        height: 100%;
+        min-height: 220px;
+      }
+    }
+    
+    .blog-card:hover .blog-card-image img {
+      transform: scale(1.05);
+    }
+    
+    .blog-card-date {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.75rem;
+      background: var(--primary);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+    }
+    
+    .blog-card-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    @media (min-width: 768px) {
+      .blog-card-content {
+        width: 60%;
+      }
+    }
+    
+    .blog-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: color 0.2s;
+    }
+    
+    .blog-card:hover .blog-card-title {
+      color: var(--primary);
+    }
+    
+    .blog-card-excerpt {
+      font-size: 0.9375rem;
+      color: var(--muted-foreground);
+      margin-bottom: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      transition: gap 0.2s;
+    }
+    
+    .read-more:hover {
+      gap: 0.75rem;
+    }
+    
+    .read-more svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+    
+    .read-more:hover svg {
+      transform: translateX(4px);
+    }
+    
+    .comment-count {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+    }
+    
+    .comment-count svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+    }
+    
+    .pagination-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: var(--secondary);
+      color: var(--foreground);
+    }
+    
+    .pagination-btn:hover {
+      background: rgba(139, 92, 246, 0.2);
+    }
+    
+    .pagination-btn.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .sidebar {
+        position: sticky;
+        top: 6rem;
+      }
+    }
+    
+    .sidebar-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    
+    .sidebar-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .sidebar-title svg {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+    }
+    
+    /* Search */
+    .search-wrapper {
+      position: relative;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 2.5rem 0.75rem 1rem;
+      background: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--foreground);
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    
+    .search-input::placeholder {
+      color: var(--muted-foreground);
+    }
+    
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
+    
+    .search-icon {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted-foreground);
+      width: 16px;
+      height: 16px;
+    }
+    
+    /* Recent Posts List */
+    .recent-posts-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .recent-post-link {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: color 0.2s;
+    }
+    
+    .recent-post-link:hover {
+      color: var(--primary);
+    }
+    
+    /* Comments Empty State */
+    .comments-empty {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      font-style: italic;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #1a1f2e;
+      padding: 4rem 0 2rem;
+      margin-top: 4rem;
+      position: relative;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (min-width: 640px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+    
+    @media (min-width: 1024px) {
+      .footer-brand {
+        grid-column: auto;
+      }
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-description {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      max-width: 250px;
+    }
+    
+    .footer-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--foreground);
+    }
+    
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .footer-link {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      transition: color 0.2s;
+    }
+    
+    .footer-link:hover {
+      color: var(--primary);
+    }
+    
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    
+    .footer-copyright {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+    
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--secondary);
+      border-radius: 8px;
+      color: var(--muted-foreground);
+      transition: all 0.2s;
+    }
+    
+    .social-link:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .animation-delay-100 { animation-delay: 0.1s; }
+    .animation-delay-200 { animation-delay: 0.2s; }
+    .animation-delay-300 { animation-delay: 0.3s; }
+    .animation-delay-400 { animation-delay: 0.4s; }
+    .animation-delay-500 { animation-delay: 0.5s; }
+    
+    /* SVG Icons */
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">C</div>
+        <span class="logo-text">ConverseAI</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/chatbot" class="nav-link">Chatbot</a>
+        <a href="/live-chat" class="nav-link">Live Chat</a>
+        <a href="/omni-channel" class="nav-link">Omni Channel</a>
+        <a href="/whatsapp-ai" class="nav-link">WhatsApp AI</a>
+        <a href="/blog" class="nav-link active">Blog</a>
+      </nav>
+      
+      <button class="header-cta">
+        Get Started
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      
+      <button class="mobile-menu-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content animate-fade-in-up">
+        <span class="hero-badge">ConverseAI</span>
+        <h1 class="hero-title">Blog List</h1>
+        <p class="hero-subtitle">Insights, guides, and strategies for AI-powered customer engagement</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <div class="content-grid">
+        <!-- Blog Posts Column -->
+        <div class="blog-list">
+          <!-- Blog Card 1 -->
+          <article class="blog-card animate-fade-in-up animation-delay-100">
+            <div class="blog-card-inner">
+              <div class="blog-card-image">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop" alt="UPI Rules Banking Chatbot" loading="lazy">
+                <span class="blog-card-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  January 28, 2025
+                </span>
+              </div>
+              <div class="blog-card-content">
+                <div>
+                  <h2 class="blog-card-title">New UPI Rules Are Here (August 1st): Why Your Bank's Best Response is a Chatbot</h2>
+                  <p class="blog-card-excerpt">Discover how the latest UPI regulations impact banking and why AI-powered chatbots are the perfect solution for seamless customer communication and compliance.</p>
+                </div>
+                <div class="blog-card-footer">
+                  <a href="/blog/new-upi-rules-chatbot-response" class="read-more">
+                    Read More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                  <span class="comment-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    No comments
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Blog Card 2 -->
+          <article class="blog-card animate-fade-in-up animation-delay-200">
+            <div class="blog-card-inner">
+              <div class="blog-card-image">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="E-commerce Chatbot Abandoned Carts" loading="lazy">
+                <span class="blog-card-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  January 25, 2025
+                </span>
+              </div>
+              <div class="blog-card-content">
+                <div>
+                  <h2 class="blog-card-title">How To Use E-commerce Chatbot to Recover Abandoned Carts</h2>
+                  <p class="blog-card-excerpt">Learn proven strategies to recover lost sales using intelligent chatbots that engage customers at the right moment and guide them back to complete their purchase.</p>
+                </div>
+                <div class="blog-card-footer">
+                  <a href="/blog/ecommerce-chatbot-abandoned-carts" class="read-more">
+                    Read More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                  <span class="comment-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    No comments
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Blog Card 3 -->
+          <article class="blog-card animate-fade-in-up animation-delay-300">
+            <div class="blog-card-inner">
+              <div class="blog-card-image">
+                <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=600&h=400&fit=crop" alt="WhatsApp Business Guide 2025" loading="lazy">
+                <span class="blog-card-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  January 20, 2025
+                </span>
+              </div>
+              <div class="blog-card-content">
+                <div>
+                  <h2 class="blog-card-title">Your Ultimate Guide to WhatsApp Business in 2025</h2>
+                  <p class="blog-card-excerpt">Everything you need to know about leveraging WhatsApp Business API for customer engagement, marketing automation, and sales growth in the new year.</p>
+                </div>
+                <div class="blog-card-footer">
+                  <a href="/blog/whatsapp-business-guide-2025" class="read-more">
+                    Read More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                  <span class="comment-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    No comments
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Blog Card 4 -->
+          <article class="blog-card animate-fade-in-up animation-delay-400">
+            <div class="blog-card-inner">
+              <div class="blog-card-image">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="NVIDIA AI Business Innovation" loading="lazy">
+                <span class="blog-card-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  January 15, 2025
+                </span>
+              </div>
+              <div class="blog-card-content">
+                <div>
+                  <h2 class="blog-card-title">NVIDIA AI Diplomacy Signals a New Era for Business Innovation</h2>
+                  <p class="blog-card-excerpt">Explore how NVIDIA's latest AI developments are reshaping business landscapes and what it means for companies looking to stay ahead in the AI revolution.</p>
+                </div>
+                <div class="blog-card-footer">
+                  <a href="/blog/nvidia-ai-business-innovation" class="read-more">
+                    Read More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                  <span class="comment-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    No comments
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Blog Card 5 -->
+          <article class="blog-card animate-fade-in-up animation-delay-500">
+            <div class="blog-card-inner">
+              <div class="blog-card-image">
+                <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop" alt="Add Chatbot Website Free" loading="lazy">
+                <span class="blog-card-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  January 10, 2025
+                </span>
+              </div>
+              <div class="blog-card-content">
+                <div>
+                  <h2 class="blog-card-title">How To Add Chatbot On Your Website Free</h2>
+                  <p class="blog-card-excerpt">A step-by-step guide to implementing a powerful AI chatbot on your website without breaking the bank. Get started with conversational AI today.</p>
+                </div>
+                <div class="blog-card-footer">
+                  <a href="/blog/add-chatbot-website-free" class="read-more">
+                    Read More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                  <span class="comment-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    No comments
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Blog Card 6 -->
+          <article class="blog-card animate-fade-in-up animation-delay-500">
+            <div class="blog-card-inner">
+              <div class="blog-card-image">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop" alt="Air India Crisis Chatbots" loading="lazy">
+                <span class="blog-card-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  January 5, 2025
+                </span>
+              </div>
+              <div class="blog-card-content">
+                <div>
+                  <h2 class="blog-card-title">Air India's Response to AI171: Why Crisis-Ready Chatbots Matter</h2>
+                  <p class="blog-card-excerpt">Analyzing how crisis communication can be transformed with AI chatbots and why every business needs a robust customer communication strategy.</p>
+                </div>
+                <div class="blog-card-footer">
+                  <a href="/blog/air-india-crisis-chatbots" class="read-more">
+                    Read More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                  <span class="comment-count">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    No comments
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Pagination -->
+          <nav class="pagination" aria-label="Blog pagination">
+            <button class="pagination-btn active" aria-label="Page 1" aria-current="page">1</button>
+            <button class="pagination-btn" aria-label="Page 2">2</button>
+            <button class="pagination-btn" aria-label="Page 3">3</button>
+          </nav>
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <!-- Search -->
+          <div class="sidebar-card animate-fade-in-up animation-delay-200">
+            <h3 class="sidebar-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Search
+            </h3>
+            <div class="search-wrapper">
+              <input type="search" class="search-input" placeholder="Search articles..." aria-label="Search blog posts">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Recent Posts -->
+          <div class="sidebar-card animate-fade-in-up animation-delay-300">
+            <h3 class="sidebar-title">
+              <span style="color: var(--primary);">📄</span>
+              Recent Posts
+            </h3>
+            <ul class="recent-posts-list">
+              <li><a href="/blog/new-upi-rules-chatbot-response" class="recent-post-link">New UPI Rules Are Here (August 1st): Why Your Bank's Best Response is a Chatbot</a></li>
+              <li><a href="/blog/ecommerce-chatbot-abandoned-carts" class="recent-post-link">How To Use E-commerce Chatbot to Recover Abandoned Carts</a></li>
+              <li><a href="/blog/whatsapp-business-guide-2025" class="recent-post-link">Your Ultimate Guide to WhatsApp Business in 2025</a></li>
+              <li><a href="/blog/nvidia-ai-business-innovation" class="recent-post-link">NVIDIA AI Diplomacy Signals a New Era for Business Innovation</a></li>
+              <li><a href="/blog/add-chatbot-website-free" class="recent-post-link">How To Add Chatbot On Your Website Free</a></li>
+            </ul>
+          </div>
+          
+          <!-- Recent Comments -->
+          <div class="sidebar-card animate-fade-in-up animation-delay-400">
+            <h3 class="sidebar-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              Recent Comments
+            </h3>
+            <p class="comments-empty">No comments yet. Be the first to share your thoughts!</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon" style="width: 32px; height: 32px; font-size: 14px;">C</div>
+            <span class="logo-text">ConverseAI</span>
+          </div>
+          <p class="footer-description">AI-powered customer engagement platform that helps businesses automate, engage, and support customers.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Products</h4>
+          <ul class="footer-links">
+            <li><a href="/chatbot" class="footer-link">Chatbot</a></li>
+            <li><a href="/live-chat" class="footer-link">Live Chat</a></li>
+            <li><a href="/omni-channel" class="footer-link">Omni Channel</a></li>
+            <li><a href="/whatsapp-ai" class="footer-link">WhatsApp AI</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="/about" class="footer-link">About Us</a></li>
+            <li><a href="/contact" class="footer-link">Contact Us</a></li>
+            <li><a href="/blog" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@theconverseai.com" class="footer-link">contact@theconverseai.com</a></li>
+            <li><a href="tel:+919982323333" class="footer-link">+91-9982323333</a></li>
+            <li><a href="tel:+917023084065" class="footer-link">+91-7023084065</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 ConverseAI. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Search functionality
+    document.querySelector('.search-input').addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase();
+      const blogCards = document.querySelectorAll('.blog-card');
+      
+      blogCards.forEach(card => {
+        const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+        const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
+        
+        if (title.includes(query) || excerpt.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = query ? 'none' : 'block';
+        }
+      });
+    });
+    
+    // Pagination functionality
+    document.querySelectorAll('.pagination-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.pagination-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
