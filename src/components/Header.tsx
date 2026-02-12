@@ -150,7 +150,8 @@ const Header = () => {
                 key={link.label}
                 className={link.hasDropdown === "features" ? "static" : "relative"}
                 onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.hasDropdown)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseLeave={() => link.hasDropdown && setActiveDropdown(null)}
+                style={link.hasDropdown ? { paddingBottom: '10px', marginBottom: '-10px' } : undefined}
               >
                 <a
                   href={link.href}
@@ -172,8 +173,8 @@ const Header = () => {
 
                 {/* Features Mega Menu - positioned relative to container-tight */}
                 {link.hasDropdown === "features" && activeDropdown === "features" && (
-                  <div className="fixed left-1/2 -translate-x-1/2 pt-2 z-50" style={{ top: '80px', width: 'min(700px, 90vw)' }} role="menu" aria-label="Features submenu">
-                    <div className="bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 animate-fade-in">
+                  <div className="fixed left-1/2 -translate-x-1/2 z-50" style={{ top: '80px', width: 'min(700px, 90vw)', paddingTop: '0px' }} role="menu" aria-label="Features submenu">
+                    <div className="bg-white backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 animate-fade-in">
                       <div className="grid grid-cols-4 gap-6">
                         {Object.values(featuresMenu).map((column) => (
                           <div key={column.title} className="min-w-[150px]">
@@ -202,8 +203,8 @@ const Header = () => {
 
                 {/* Products Dropdown */}
                 {link.hasDropdown === "products" && activeDropdown === "products" && (
-                  <div className="absolute top-full left-0 pt-2 z-50" role="menu" aria-label="Products submenu">
-                    <div className="bg-background/95 backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-4 min-w-[220px] animate-fade-in">
+                  <div className="absolute top-full left-0 z-50" role="menu" aria-label="Products submenu">
+                    <div className="bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-4 min-w-[220px] animate-fade-in">
                       <ul className="space-y-1">
                         {productsMenu.map((item) => (
                           <li key={item.label} role="none">
