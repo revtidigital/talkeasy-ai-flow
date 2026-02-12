@@ -119,12 +119,12 @@ const Header = () => {
   return (
     <header
       role="banner"
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow] duration-300 backdrop-blur-xl ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-soft"
+          ? "bg-white/90 shadow-soft"
           : "bg-transparent"
       }`}
-      style={{ height: '80px' }}
+      style={{ height: '80px', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
     >
       <div className="container-tight relative">
         <div className="flex items-center justify-between h-20">
@@ -148,15 +148,14 @@ const Header = () => {
             {navLinks.map((link) => (
               <div
                 key={link.label}
-                className={link.hasDropdown === "features" ? "static" : "relative"}
+                className={`${link.hasDropdown === "features" ? "static" : "relative"} ${link.hasDropdown ? "group/dropdown" : ""}`}
                 onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.hasDropdown)}
                 onMouseLeave={() => link.hasDropdown && setActiveDropdown(null)}
-                style={link.hasDropdown ? { paddingBottom: '10px', marginBottom: '-10px' } : undefined}
               >
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md px-2 py-1"
+                  className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md px-2 py-1 ${link.hasDropdown ? "after:content-[''] after:absolute after:left-0 after:right-0 after:top-full after:h-4" : ""}`}
                   aria-expanded={link.hasDropdown ? activeDropdown === link.hasDropdown : undefined}
                   aria-haspopup={link.hasDropdown ? "menu" : undefined}
                 >
