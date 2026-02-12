@@ -1,5 +1,5 @@
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyu7Xsftoe4o0TXKTfAtL5welj-zwqKlAM1hHPsINN_wGGb0-mnpJsKMPsGIVnH7piK7A/exec";
+  "https://script.google.com/macros/s/AKfycbxt6gYfBYRjGPkxsqfPmwIGI0Kkxx7EDZWreWISOIUt-RcRip09Khn01qUFDZMASBWCcA/exec";
 
 interface ContactPayload {
   fullName: string;
