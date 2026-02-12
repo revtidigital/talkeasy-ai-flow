@@ -126,7 +126,7 @@ const Header = () => {
       }`}
       style={{ height: '80px' }}
     >
-      <div className="container-tight">
+      <div className="container-tight relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo - LCP element with highest priority */}
           <Link to="/" className="flex items-center group shrink-0" aria-label="ConverseAI - Go to homepage">
@@ -144,11 +144,11 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 relative" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation" style={{ position: 'static' }}>
             {navLinks.map((link) => (
               <div
                 key={link.label}
-                className="relative"
+                className={link.hasDropdown === "features" ? "static" : "relative"}
                 onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.hasDropdown)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
@@ -170,10 +170,10 @@ const Header = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" aria-hidden="true" />
                 </a>
 
-                {/* Features Mega Menu */}
+                {/* Features Mega Menu - positioned relative to container-tight */}
                 {link.hasDropdown === "features" && activeDropdown === "features" && (
-                  <div className="absolute top-full right-0 pt-2 z-50" role="menu" aria-label="Features submenu">
-                    <div className="bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 w-[700px] animate-fade-in">
+                  <div className="fixed left-1/2 -translate-x-1/2 pt-2 z-50" style={{ top: '80px', width: 'min(700px, 90vw)' }} role="menu" aria-label="Features submenu">
+                    <div className="bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 animate-fade-in">
                       <div className="grid grid-cols-4 gap-6">
                         {Object.values(featuresMenu).map((column) => (
                           <div key={column.title} className="min-w-[150px]">
