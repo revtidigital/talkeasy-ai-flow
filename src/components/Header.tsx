@@ -119,16 +119,17 @@ const Header = () => {
   return (
     <header
       role="banner"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         isScrolled
           ? "bg-white/90 backdrop-blur-xl shadow-soft"
           : "bg-transparent"
       }`}
+      style={{ height: '80px' }}
     >
       <div className="container-tight">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20">
           {/* Logo - LCP element with highest priority */}
-          <Link to="/" className="flex items-center group" aria-label="ConverseAI - Go to homepage">
+          <Link to="/" className="flex items-center group shrink-0" aria-label="ConverseAI - Go to homepage">
             <img 
               src="/assets/logo.png" 
               alt="ConverseAI Logo" 
@@ -143,7 +144,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-6 relative" aria-label="Main navigation">
             {navLinks.map((link) => (
               <div
                 key={link.label}
@@ -171,9 +172,9 @@ const Header = () => {
 
                 {/* Features Mega Menu */}
                 {link.hasDropdown === "features" && activeDropdown === "features" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50" role="menu" aria-label="Features submenu">
-                    <div className="bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 min-w-[750px] animate-fade-in">
-                      <div className="grid grid-cols-4 gap-8">
+                  <div className="absolute top-full right-0 pt-2 z-50" role="menu" aria-label="Features submenu">
+                    <div className="bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 w-[700px] animate-fade-in">
+                      <div className="grid grid-cols-4 gap-6">
                         {Object.values(featuresMenu).map((column) => (
                           <div key={column.title} className="min-w-[150px]">
                             <h4 className="text-sm font-semibold text-foreground mb-3 pb-2 border-b border-border/50 whitespace-nowrap">
@@ -201,8 +202,8 @@ const Header = () => {
 
                 {/* Products Dropdown */}
                 {link.hasDropdown === "products" && activeDropdown === "products" && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50" role="menu" aria-label="Products submenu">
-                    <div className="bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-4 min-w-[220px] animate-fade-in">
+                  <div className="absolute top-full left-0 pt-2 z-50" role="menu" aria-label="Products submenu">
+                    <div className="bg-background/95 backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-4 min-w-[220px] animate-fade-in">
                       <ul className="space-y-1">
                         {productsMenu.map((item) => (
                           <li key={item.label} role="none">
