@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Facebook, Youtube, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Facebook, Youtube, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.svg";
 import metaTechProvider from "@/assets/meta-tech-provider.jpg";
@@ -56,7 +56,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer"
+                      className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 hover:scale-110 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer"
                       aria-label={`Visit our ${social.label} page`}
                     >
                       <social.icon className="w-5 h-5" aria-hidden="true" />
@@ -105,39 +105,27 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div>
             <h3 className="font-semibold text-primary-foreground text-lg mb-5">Contact</h3>
             <address className="not-italic space-y-4">
-              <div className="flex items-center gap-3 text-sm group">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors duration-300" aria-hidden="true">
-                  <Mail className="w-4 h-4 text-primary group-hover:text-white transition-colors duration-300" />
-                </div>
-                <a 
-                  href="mailto:contact@theconverseai.com" 
-                  className="text-footer-text hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
-                  aria-label="Email us at contact@theconverseai.com"
-                >
-                  contact@theconverseai.com
-                </a>
-              </div>
-              <div className="flex items-start gap-3 text-sm group">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors duration-300" aria-hidden="true">
-                  <Phone className="w-4 h-4 text-primary group-hover:text-white transition-colors duration-300" />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <a 
-                    href="tel:+919982323333" 
-                    className="text-footer-text hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
-                    aria-label="Call us at +91 99823 23333"
-                  >
-                    +91-9982323333
-                  </a>
-                  <a 
-                    href="tel:+917023084065" 
-                    className="text-footer-text hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
-                    aria-label="Call us at +91 70230 84065"
-                  >
-                    +91-7023084065
-                  </a>
-                </div>
-              </div>
+              <a 
+                href="mailto:contact@theconverseai.com" 
+                className="text-sm text-footer-text hover:text-primary transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
+                aria-label="Email us at contact@theconverseai.com"
+              >
+                contact@theconverseai.com
+              </a>
+              <a 
+                href="tel:+919982323333" 
+                className="text-sm text-footer-text hover:text-primary transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
+                aria-label="Call us at +91 99823 23333"
+              >
+                +91-9982323333
+              </a>
+              <a 
+                href="tel:+917023084065" 
+                className="text-sm text-footer-text hover:text-primary transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
+                aria-label="Call us at +91 70230 84065"
+              >
+                +91-7023084065
+              </a>
             </address>
           </div>
         </div>
