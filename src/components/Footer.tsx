@@ -75,7 +75,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-sm text-footer-text hover:text-primary hover:translate-x-1 inline-block transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
+                    className="text-sm text-footer-text hover:text-primary inline-block transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
                   >
                     {link.label}
                   </Link>
@@ -92,7 +92,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-sm text-footer-text hover:text-primary hover:translate-x-1 inline-block transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
+                    className="text-sm text-footer-text hover:text-primary inline-block transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
                   >
                     {link.label}
                   </Link>
