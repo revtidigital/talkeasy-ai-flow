@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { validateContactForm } from "@/lib/validations/contact";
+import { submitContactForm } from "@/lib/submitContactForm";
 
 interface ContactFormDialogProps {
   children: React.ReactNode;
@@ -26,6 +27,7 @@ interface ContactFormDialogProps {
 
 const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
   const [open, setOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,7 +40,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
     
@@ -62,23 +64,42 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
       return;
     }
 
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      lookingFor: "",
-      subject: "",
-      message: "",
-      agreeToTerms: false,
-    });
-    setErrors({});
-    setOpen(false);
+    setIsSubmitting(true);
+
+    try {
+      await submitContactForm({
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        product: formData.lookingFor,
+        message: `${formData.subject ? `[${formData.subject}] ` : ""}${formData.message}`,
+      });
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        lookingFor: "",
+        subject: "",
+        message: "",
+        agreeToTerms: false,
+      });
+      setErrors({});
+      setOpen(false);
+    } catch {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -220,9 +241,10 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
           <div className="flex justify-end pt-2">
             <Button
               type="submit"
+              disabled={isSubmitting}
               className="bg-primary hover:bg-primary/90 text-white px-8 py-2 rounded-lg"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </div>
         </form>
