@@ -72,7 +72,8 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         email: formData.email,
         phone: formData.phone,
         product: formData.lookingFor,
-        message: `${formData.subject ? `[${formData.subject}] ` : ""}${formData.message}`,
+        subject: formData.subject,
+        message: formData.message,
       });
 
       toast({
