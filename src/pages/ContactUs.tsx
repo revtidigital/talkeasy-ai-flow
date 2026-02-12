@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Shield, Clock, Users, Send } from "lucide-react";
 import { validateContactForm } from "@/lib/validations/contact";
+import { submitContactForm } from "@/lib/submitContactForm";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -43,22 +44,36 @@ const ContactUs = () => {
     
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent successfully!",
-      description: "Our team will get back to you within 24 hours.",
-    });
-    
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      product: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+    try {
+      await submitContactForm({
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        product: formData.product,
+        message: formData.message,
+      });
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Our team will get back to you within 24 hours.",
+      });
+      
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        product: "",
+        message: "",
+      });
+    } catch {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const benefits = [
