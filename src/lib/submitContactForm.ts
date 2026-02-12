@@ -6,6 +6,7 @@ interface ContactPayload {
   email: string;
   phone: string;
   product: string;
+  subject: string;
   message: string;
 }
 
@@ -15,6 +16,7 @@ export const submitContactForm = async (payload: ContactPayload): Promise<void> 
   formData.append("email", payload.email);
   formData.append("phone", payload.phone);
   formData.append("product", payload.product);
+  formData.append("subject", payload.subject);
   formData.append("message", payload.message);
 
   const response = await fetch(GOOGLE_SCRIPT_URL, {

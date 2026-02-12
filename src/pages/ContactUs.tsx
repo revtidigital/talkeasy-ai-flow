@@ -50,6 +50,7 @@ const ContactUs = () => {
         email: formData.email,
         phone: formData.phone,
         product: formData.product,
+        subject: "",
         message: formData.message,
       });
       
