@@ -10,7 +10,14 @@ interface ContactPayload {
   message: string;
 }
 
+const getUtmParams = () => ({
+  utm_source: localStorage.getItem("utm_source") || "",
+  utm_medium: localStorage.getItem("utm_medium") || "",
+  utm_campaign: localStorage.getItem("utm_campaign") || "",
+});
+
 export const submitContactForm = async (payload: ContactPayload): Promise<void> => {
+  const utm = getUtmParams();
   const formData = new FormData();
   formData.append("fullName", payload.fullName);
   formData.append("email", payload.email);
@@ -18,6 +25,9 @@ export const submitContactForm = async (payload: ContactPayload): Promise<void> 
   formData.append("product", payload.product);
   formData.append("subject", payload.subject);
   formData.append("message", payload.message);
+  formData.append("utm_source", utm.utm_source);
+  formData.append("utm_medium", utm.utm_medium);
+  formData.append("utm_campaign", utm.utm_campaign);
 
   const response = await fetch(GOOGLE_SCRIPT_URL, {
     method: "POST",
