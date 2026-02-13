@@ -172,7 +172,7 @@ const Header = () => {
 
                 {/* Features Mega Menu - positioned relative to container-tight */}
                 {link.hasDropdown === "features" && activeDropdown === "features" && (
-                  <div className="fixed left-1/2 -translate-x-1/2 z-50" style={{ top: '56px', width: 'min(700px, 90vw)' }} role="menu" aria-label="Features submenu">
+                  <div className="fixed left-1/2 -translate-x-1/2 z-50" style={{ top: '56px', width: 'min(820px, 92vw)' }} role="menu" aria-label="Features submenu">
                     <div className="bg-white backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 animate-fade-in">
                       <div className="grid grid-cols-4 gap-6">
                         {Object.values(featuresMenu).map((column) => (
