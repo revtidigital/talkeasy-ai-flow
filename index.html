@@ -67,6 +67,24 @@
     </script>
     <!-- End Meta Pixel -->
 
+    <!-- UTM Parameter Capture -->
+    <script>
+      (function() {
+        if (typeof window === 'undefined') return;
+        function getParam(name) {
+          var urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(name);
+        }
+        var utm_source = getParam('utm_source');
+        var utm_medium = getParam('utm_medium');
+        var utm_campaign = getParam('utm_campaign');
+        if (utm_source) localStorage.setItem('utm_source', utm_source);
+        if (utm_medium) localStorage.setItem('utm_medium', utm_medium);
+        if (utm_campaign) localStorage.setItem('utm_campaign', utm_campaign);
+      })();
+    </script>
+    <!-- End UTM Parameter Capture -->
+
     <!-- Critical inline CSS for above-the-fold content -->
     <style>
       /* Critical CSS for LCP optimization */
