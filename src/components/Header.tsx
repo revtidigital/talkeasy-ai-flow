@@ -172,12 +172,12 @@ const Header = () => {
 
                 {/* Features Mega Menu - positioned relative to container-tight */}
                 {link.hasDropdown === "features" && activeDropdown === "features" && (
-                  <div className="fixed left-1/2 -translate-x-1/2 z-50" style={{ top: '56px', width: 'min(820px, 92vw)' }} role="menu" aria-label="Features submenu">
-                    <div className="bg-white backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 animate-fade-in">
+                  <div className="fixed left-1/2 -translate-x-1/2 z-50" style={{ top: '56px', width: 'min(700px, 90vw)' }} role="menu" aria-label="Features submenu">
+                    <div className="bg-white rounded-xl shadow-lg border-2 border-border p-6 animate-fade-in">
                       <div className="grid grid-cols-4 gap-6">
                         {Object.values(featuresMenu).map((column) => (
-                          <div key={column.title} className="min-w-[150px]">
-                            <h4 className="text-sm font-semibold text-foreground mb-3 pb-2 border-b border-border/50 whitespace-nowrap">
+                          <div key={column.title}>
+                            <h4 className="text-xs font-bold text-foreground uppercase tracking-wider mb-3">
                               {column.title}
                             </h4>
                             <ul className="space-y-1" role="group" aria-label={column.title}>
@@ -185,7 +185,7 @@ const Header = () => {
                                 <li key={item.label} role="none">
                                   <button
                                     onClick={() => handleDropdownItemClick(item.href)}
-                                    className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-2 py-1.5 rounded-lg transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                    className="text-sm text-muted-foreground hover:text-primary w-full text-left py-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                                     role="menuitem"
                                   >
                                     {item.label}
