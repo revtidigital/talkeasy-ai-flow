@@ -10,6 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 import LoadingScreen from "./components/LoadingScreen";
 import Header from "./components/Header";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 
 // Eagerly loaded - critical for initial render
 import Index from "./pages/Index";
@@ -102,6 +103,7 @@ const App = () => {
             {/* Header outside PageTransition to maintain fixed positioning */}
             <Header />
             <ScrollToTop />
+            <WhatsAppFloat />
             <AnimatedRoutes />
           </BrowserRouter>
         </TooltipProvider>
