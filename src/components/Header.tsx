@@ -169,8 +169,7 @@ const Header = () => {
                   {link.label}
                   {link.hasDropdown && (
                     <ChevronDown 
-                      className="w-4 h-4 transition-transform duration-200" 
-                      style={{ transform: activeDropdown === link.hasDropdown ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                      className="w-4 h-4"
                       aria-hidden="true"
                     />
                   )}
@@ -277,9 +276,7 @@ const Header = () => {
                       >
                         {link.label}
                         <ChevronDown 
-                          className={`w-4 h-4 transition-transform duration-200 ${
-                            mobileExpandedMenus.includes(link.hasDropdown!) ? 'rotate-180' : ''
-                          }`}
+                          className={`w-4 h-4`}
                           aria-hidden="true"
                         />
                       </button>
