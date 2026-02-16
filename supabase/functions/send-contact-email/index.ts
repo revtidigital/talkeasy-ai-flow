@@ -1,4 +1,4 @@
-import { SmtpClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
+import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -20,13 +20,16 @@ Deno.serve(async (req) => {
 
     const { fullName, email, phone, product, subject, message, utm_source, utm_medium, utm_campaign } = await req.json();
 
-    const client = new SmtpClient();
-
-    await client.connectTLS({
-      hostname: "smtp.gmail.com",
-      port: 465,
-      username: SMTP_USER,
-      password: SMTP_PASS,
+    const client = new SMTPClient({
+      connection: {
+        hostname: "smtp.gmail.com",
+        port: 465,
+        tls: true,
+        auth: {
+          username: SMTP_USER,
+          password: SMTP_PASS,
+        },
+      },
     });
 
     const emailBody = `
