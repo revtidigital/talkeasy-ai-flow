@@ -74,9 +74,11 @@ UTM Parameters:
       params.append('utm_campaign', utm_campaign || '');
 
       await fetch(
-        `https://script.google.com/macros/s/AKfycbxt6gYfBYRjGPkxsqfPmwIGI0Kkxx7EDZWreWISOIUt-RcRip09Khn01qUFDZMASBWCcA/exec?${params.toString()}`,
+        'https://script.google.com/macros/s/AKfycbxt6gYfBYRjGPkxsqfPmwIGI0Kkxx7EDZWreWISOIUt-RcRip09Khn01qUFDZMASBWCcA/exec',
         {
-          method: 'GET',
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString(),
           redirect: 'follow',
         }
       );
