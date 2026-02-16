@@ -62,23 +62,21 @@ UTM Parameters:
 
     // Also send data to Google Sheet via Apps Script
     try {
-      const sheetData = {
-        fullName,
-        email,
-        phone,
-        product,
-        subject,
-        message,
-        utm_source: utm_source || '',
-        utm_medium: utm_medium || '',
-        utm_campaign: utm_campaign || '',
-      };
+      const params = new URLSearchParams();
+      params.append('fullName', fullName || '');
+      params.append('email', email || '');
+      params.append('phone', phone || '');
+      params.append('product', product || '');
+      params.append('subject', subject || '');
+      params.append('message', message || '');
+      params.append('utm_source', utm_source || '');
+      params.append('utm_medium', utm_medium || '');
+      params.append('utm_campaign', utm_campaign || '');
+
       await fetch(
-        'https://script.google.com/macros/s/AKfycbxt6gYfBYRjGPkxsqfPmwIGI0Kkxx7EDZWreWISOIUt-RcRip09Khn01qUFDZMASBWCcA/exec',
+        `https://script.google.com/macros/s/AKfycbxt6gYfBYRjGPkxsqfPmwIGI0Kkxx7EDZWreWISOIUt-RcRip09Khn01qUFDZMASBWCcA/exec?${params.toString()}`,
         {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(sheetData),
+          method: 'GET',
           redirect: 'follow',
         }
       );
