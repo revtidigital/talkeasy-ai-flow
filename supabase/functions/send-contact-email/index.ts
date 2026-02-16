@@ -60,6 +60,32 @@ UTM Parameters:
 
     await client.close();
 
+    // Also send data to Google Sheet via Apps Script
+    try {
+      const sheetData = {
+        fullName,
+        email,
+        phone,
+        product,
+        subject,
+        message,
+        utm_source: utm_source || '',
+        utm_medium: utm_medium || '',
+        utm_campaign: utm_campaign || '',
+      };
+      await fetch(
+        'https://script.google.com/macros/s/AKfycbxt6gYfBYRjGPkxsqfPmwIGI0Kkxx7EDZWreWISOIUt-RcRip09Khn01qUFDZMASBWCcA/exec',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(sheetData),
+        }
+      );
+    } catch (sheetError) {
+      console.error('Google Sheet submission failed:', sheetError);
+      // Don't fail the whole request if sheet fails
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
