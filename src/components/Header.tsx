@@ -177,7 +177,7 @@ const Header = () => {
                       <div className="grid grid-cols-4 gap-6">
                         {Object.values(featuresMenu).map((column) => (
                           <div key={column.title} className="min-w-[150px]">
-                            <h4 className="text-sm font-semibold text-foreground mb-3 pb-2 border-b border-border/50 whitespace-nowrap">
+                            <h4 className="text-sm font-semibold text-foreground mb-3">
                               {column.title}
                             </h4>
                             <ul className="space-y-1" role="group" aria-label={column.title}>
