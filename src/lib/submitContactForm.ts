@@ -1,5 +1,4 @@
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxt6gYfBYRjGPkxsqfPmwIGI0Kkxx7EDZWreWISOIUt-RcRip09Khn01qUFDZMASBWCcA/exec";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ContactPayload {
   fullName: string;
@@ -18,23 +17,19 @@ const getUtmParams = () => ({
 
 export const submitContactForm = async (payload: ContactPayload): Promise<void> => {
   const utm = getUtmParams();
-  const formData = new FormData();
-  formData.append("fullName", payload.fullName);
-  formData.append("email", payload.email);
-  formData.append("phone", payload.phone);
-  formData.append("product", payload.product);
-  formData.append("subject", payload.subject);
-  formData.append("message", payload.message);
-  formData.append("utm_source", utm.utm_source);
-  formData.append("utm_medium", utm.utm_medium);
-  formData.append("utm_campaign", utm.utm_campaign);
 
-  const response = await fetch(GOOGLE_SCRIPT_URL, {
-    method: "POST",
-    body: formData,
+  const { data, error } = await supabase.functions.invoke("send-contact-email", {
+    body: {
+      ...payload,
+      ...utm,
+    },
   });
 
-  if (!response.ok) {
+  if (error) {
     throw new Error("Submission failed");
+  }
+
+  if (data && !data.success) {
+    throw new Error(data.error || "Submission failed");
   }
 };
