@@ -37,12 +37,12 @@ function buildUserEmailHTML(data: Record<string, string>): string {
   </td></tr>
   <tr><td style="padding:24px">
     <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 16px">Hi <strong>${data.fullName}</strong>,</p>
-    <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 20px">Thank you for reaching out to TalkEasy AI Flow. We have received your enquiry and our team will get back to you shortly.</p>
+    <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 20px">Thank you for reaching out to theconverseAI. We have received your enquiry and our team will get back to you shortly.</p>
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-radius:8px;overflow:hidden">${rowsHTML}</table>
     <p style="color:#555;font-size:14px;line-height:1.6;margin:20px 0 0">If you have any urgent queries, feel free to call us at <strong>+91-9982323333</strong>.</p>
   </td></tr>
   <tr><td style="background:#f9f7ff;padding:20px 24px;text-align:center;border-top:1px solid #e5e0f0">
-    <p style="margin:0;color:#7c3aed;font-weight:700;font-size:14px">Team TalkEasy AI Flow</p>
+    <p style="margin:0;color:#7c3aed;font-weight:700;font-size:14px">Team theconverseAI</p>
     <p style="margin:4px 0 0;color:#999;font-size:12px">www.theconverseai.com</p>
   </td></tr>
 </table>
@@ -94,7 +94,7 @@ function buildAdminEmailHTML(data: Record<string, string>): string {
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-radius:8px;overflow:hidden">${makeRows(trackingRows)}</table>
   </td></tr>
   <tr><td style="background:#f9f7ff;padding:16px 24px;text-align:center;border-top:1px solid #e5e0f0">
-    <p style="margin:0;color:#999;font-size:12px">TalkEasy AI Flow Admin Notification</p>
+    <p style="margin:0;color:#999;font-size:12px">theconverseAI Admin Notification</p>
   </td></tr>
 </table>
 </td></tr></table></body></html>`;
@@ -144,7 +144,7 @@ Deno.serve(async (req) => {
     await client.send({
       from: SMTP_USER,
       to: [email],
-      subject: 'Thank you for contacting TalkEasy AI Flow',
+      subject: 'Thank you for contacting theconverseAI Flow',
       content: buildUserEmailHTML(data),
       html: buildUserEmailHTML(data),
     });
