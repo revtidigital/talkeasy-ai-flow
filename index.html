@@ -75,12 +75,11 @@
           var urlParams = new URLSearchParams(window.location.search);
           return urlParams.get(name);
         }
-        var utm_source = getParam('utm_source');
-        var utm_medium = getParam('utm_medium');
-        var utm_campaign = getParam('utm_campaign');
-        if (utm_source) localStorage.setItem('utm_source', utm_source);
-        if (utm_medium) localStorage.setItem('utm_medium', utm_medium);
-        if (utm_campaign) localStorage.setItem('utm_campaign', utm_campaign);
+        var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','utm_id'];
+        utmKeys.forEach(function(key) {
+          var val = getParam(key);
+          if (val) localStorage.setItem(key, val);
+        });
       })();
     </script>
     <!-- End UTM Parameter Capture -->

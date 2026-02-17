@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { trackWhatsAppClick } from "@/lib/tracking";
 
 const WhatsAppFloat = memo(() => {
   const phoneNumber = "919982323333";
@@ -10,6 +11,7 @@ const WhatsAppFloat = memo(() => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
+      onClick={() => trackWhatsAppClick()}
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-11 h-11 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white">
