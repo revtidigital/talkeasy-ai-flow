@@ -143,18 +143,22 @@ Deno.serve(async (req) => {
     // Send user confirmation email
     await client.send({
       from: SMTP_USER,
-      to: email,
+      to: [email],
       subject: 'Thank you for contacting TalkEasy AI Flow',
+      content: buildUserEmailHTML(data),
       html: buildUserEmailHTML(data),
     });
 
-    // Send admin notification email to both admins
-    await client.send({
-      from: SMTP_USER,
-      to: adminEmails.join(','),
-      subject: `New Enquiry - ${form_source || 'Website Form'}`,
-      html: buildAdminEmailHTML(data),
-    });
+    // Send admin notification emails
+    for (const adminEmail of adminEmails) {
+      await client.send({
+        from: SMTP_USER,
+        to: [adminEmail],
+        subject: `New Enquiry - ${form_source || 'Website Form'}`,
+        content: buildAdminEmailHTML(data),
+        html: buildAdminEmailHTML(data),
+      });
+    }
 
     await client.close();
 
