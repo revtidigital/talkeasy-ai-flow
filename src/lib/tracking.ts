@@ -1,5 +1,11 @@
-// GA4 + Meta Pixel tracking utility
+// ===============================================
+// FULL TRACKING UTILITY
+// Works with Lovable + Supabase + React + GA4 + Meta Pixel
+// ===============================================
 
+const DEBUG = true;
+
+// ---------- GLOBAL TYPES ----------
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
@@ -7,64 +13,125 @@ declare global {
   }
 }
 
-/**
- * Track a custom event on both GA4 and Meta Pixel
- */
-export function trackEvent(eventName: string, params?: Record<string, string | number | boolean>) {
+// ---------- CORE EVENT ----------
+export function trackEvent(
+  eventName: string,
+  params?: Record<string, string | number | boolean>
+) {
+  if (DEBUG) console.log("[TRACK]", eventName, params);
+
   // GA4
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', eventName, params);
+  if (typeof window !== "undefined" && window.gtag) {
+    try {
+      window.gtag("event", eventName, params);
+    } catch (e) {
+      console.error("GA4 Error:", e);
+    }
+  } else if (DEBUG) console.warn("GA4 not loaded");
+
+  // META
+  if (typeof window !== "undefined" && window.fbq) {
+    try {
+      window.fbq("trackCustom", eventName, params);
+    } catch (e) {
+      console.error("Meta Pixel Error:", e);
+    }
   }
-
-  // Meta Pixel
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('trackCustom', eventName, params);
-  }
 }
 
-/**
- * Track standard Meta Pixel events (Lead, Purchase, etc.)
- */
-export function trackMetaStandard(eventName: string, params?: Record<string, string | number>) {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', eventName, params);
-  }
-}
-
-/**
- * Track button clicks
- */
-export function trackButtonClick(buttonName: string, location: string) {
-  trackEvent('button_click', { button_name: buttonName, click_location: location });
-}
-
-/**
- * Track CTA clicks
- */
-export function trackCTAClick(ctaName: string, page: string) {
-  trackEvent('cta_click', { cta_name: ctaName, page });
-  trackMetaStandard('Lead', { content_name: ctaName });
-}
-
-/**
- * Track WhatsApp clicks
- */
-export function trackWhatsAppClick() {
-  trackEvent('whatsapp_click', { button_location: 'floating_button' });
-  trackMetaStandard('Contact', { content_name: 'WhatsApp Float' });
-}
-
-/**
- * Track page views (for SPA navigation)
- */
+// ---------- PAGE VIEW ----------
 export function trackPageView(path: string, title: string) {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'page_view', {
-      page_path: path,
-      page_title: title,
+  trackEvent("page_view", { page_path: path, page_title: title });
+
+  if (typeof window !== "undefined" && window.fbq) {
+    window.fbq("track", "PageView");
+  }
+}
+
+// ---------- FORM ----------
+export function trackFormStart(form: string) {
+  trackEvent("form_start", { form });
+}
+
+export function trackFormSuccess(form: string) {
+  trackEvent("form_success", { form });
+
+  if (typeof window !== "undefined" && window.fbq) {
+    window.fbq("track", "Lead", { form });
+  }
+}
+
+export function trackFormError(form: string, error: string) {
+  trackEvent("form_error", { form, error });
+}
+
+// ---------- WHATSAPP ----------
+export function trackWhatsAppClick() {
+  trackEvent("whatsapp_click", { location: window.location.pathname });
+}
+
+// ---------- SCROLL ----------
+export function initScrollTracking() {
+  let fired25 = false,
+    fired50 = false,
+    fired75 = false;
+
+  window.addEventListener("scroll", () => {
+    const scroll =
+      (window.scrollY + window.innerHeight) /
+      document.documentElement.scrollHeight;
+
+    if (scroll > 0.25 && !fired25) {
+      trackEvent("scroll_25");
+      fired25 = true;
+    }
+    if (scroll > 0.5 && !fired50) {
+      trackEvent("scroll_50");
+      fired50 = true;
+    }
+    if (scroll > 0.75 && !fired75) {
+      trackEvent("scroll_75");
+      fired75 = true;
+    }
+  });
+}
+
+// ---------- AUTO BUTTON TRACKING ----------
+export function initAutoButtonTracking() {
+  if (typeof window === "undefined") return;
+
+  document.addEventListener("click", (e) => {
+    const el = e.target as HTMLElement;
+    if (!el) return;
+
+    const btn = el.closest("button, a") as HTMLElement | null;
+    if (!btn) return;
+
+    if (btn.classList.contains("no-track")) return;
+
+    const text =
+      btn.innerText ||
+      btn.getAttribute("aria-label") ||
+      btn.className ||
+      "unknown_button";
+
+    trackEvent("auto_button_click", {
+      button_text: text.trim().slice(0, 60),
+      page: window.location.pathname,
     });
-  }
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'PageView');
-  }
+  });
+
+  if (DEBUG) console.log("✅ Auto Button Tracking Enabled");
+}
+
+// ---------- ERROR TRACKING ----------
+export function initErrorTracking() {
+  window.addEventListener("error", (e) => {
+    trackEvent("js_error", { message: e.message });
+  });
+}
+
+// ---------- TEST ----------
+export function testTracking() {
+  trackEvent("test_event", { test: true });
 }
