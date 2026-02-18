@@ -134,7 +134,7 @@ Deno.serve(async (req) => {
         hostname: "smtp.gmail.com",
         port: 465,
         tls: true,
-        auth: { username: SMTP_USER, password: SMTP_PASS },
+        auth: { username: SMTP_USER, password: SMTP_PASS},
       },
     });
 
