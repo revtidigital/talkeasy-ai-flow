@@ -138,13 +138,13 @@ Deno.serve(async (req) => {
       },
     });
 
-    const adminEmails = ['maheshvar.revti@gmail.com','sainmaheshvar@gmail.com'];
+    const adminEmails = ['maheshvar.revti@gmail.com','meghansh.cbetter@gmail.com','himanshu@revtidigital.com'];
 
     // Send user confirmation email
     await client.send({
       from: SMTP_USER,
       to: [email],
-      subject: 'Thank you for contacting theconverseAI',
+      subject: 'Thank you for contacting to theconverseAI',
       content: buildUserEmailHTML(data),
       html: buildUserEmailHTML(data),
     });
