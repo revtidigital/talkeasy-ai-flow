@@ -168,7 +168,7 @@ Deno.serve(async (req) => {
       Object.entries(data).forEach(([key, val]) => params.append(key, val || ''));
 
       await fetch(
-        'https://script.google.com/macros/s/AKfycbxt6gYfBYRjGPkxsqfPmwIGI0Kkxx7EDZWreWISOIUt-RcRip09Khn01qUFDZMASBWCcA/exec',
+        'https://script.google.com/macros/s/AKfycbwdCbkPiV2qeJdXSgipi5UIH9RO0kPthZdCZyN_CpXs38LS1NwPUNeRAXOZVkg4wq1C/exec',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
