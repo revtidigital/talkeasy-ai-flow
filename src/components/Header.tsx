@@ -182,7 +182,7 @@ const Header = () => {
                     <div className="bg-white backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 animate-fade-in">
                       <div className="grid grid-cols-4 gap-6">
                         {Object.values(featuresMenu).map((column) => (
-                          <div key={column.title} className={column.title === "WhatsApp for Business" ? "w-[130px]" : "min-w-[150px]"}>
+                          <div key={column.title} className={column.title === "WhatsApp for Business" ? "w-[130px]" : "min-w-[180px]"}>
                             <h4 className="text-sm font-semibold text-foreground mb-3">
                               {column.title}
                             </h4>
