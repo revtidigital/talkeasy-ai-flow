@@ -35,7 +35,7 @@ const AgentCapacity = () => {
                   Effortlessly manage agent workloads by setting precise auto-assignment limits and balancing capacity in real time.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="group">
+                  <Button variant="gradient" size="xl" className="w-full group">
                     Start Your Free Trial
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
