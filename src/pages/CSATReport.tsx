@@ -426,8 +426,7 @@
 // export default CSATReport;
 
 
-// new 
-import { Helmet } from "react-helmet-async";
+// new import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
@@ -441,16 +440,16 @@ const CSATReport = () => {
         <title>CSAT Reports & Customer Satisfaction Analytics | ConverseAI</title>
       </Helmet>
 
-      {/* ✅ FIX 1 → stop horizontal scroll */}
+      {/* ✅ FIX → stop horizontal overflow */}
       <main className="min-h-screen bg-background pt-16 md:pt-20 overflow-x-hidden">
 
-        {/* Hero Section */}
+        {/* ================= HERO ================= */}
         <section className="relative pt-32 pb-20 overflow-hidden">
 
-          {/* background */}
+          {/* gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-primary/5 to-violet-500/10" />
 
-          {/* ✅ FIX 2 → blur circles safe (no overflow) */}
+          {/* ✅ FIX → blur circles safe */}
           <div className="hidden md:block absolute top-20 left-0 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl pointer-events-none" />
           <div className="hidden md:block absolute bottom-10 right-0 w-80 h-80 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
 
@@ -482,8 +481,92 @@ const CSATReport = () => {
           </div>
         </section>
 
-        {/* Rest of your code SAME */}
-        {/* No change needed below unless more blur backgrounds */}
+        {/* ================= FEEDBACK ================= */}
+        <section className="py-20 bg-secondary/30 overflow-hidden">
+          <div className="container-tight">
+            <AnimatedSection className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Gather Feedback with Ease
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Simple, non-intrusive ways to collect customer feedback at the right moment
+              </p>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-2 gap-8">
+
+              <AnimatedSection>
+                <div className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-full">
+                  <div className="flex items-center gap-4 mb-6">
+                    <Smile className="w-7 h-7 text-pink-500" />
+                    <h3 className="text-xl font-semibold">Emoji-Based Surveys</h3>
+                  </div>
+
+                  <div className="flex justify-center gap-4 p-4 bg-secondary/50 rounded-xl">
+                    {["😡", "😕", "😐", "🙂", "😊"].map((emoji, i) => (
+                      <button key={i} className="text-3xl p-2">
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.1}>
+                <div className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-full">
+                  <div className="flex items-center gap-4 mb-6">
+                    <MessageCircle className="w-7 h-7 text-primary" />
+                    <h3 className="text-xl font-semibold">Automated CSAT Prompts</h3>
+                  </div>
+
+                  <ul className="space-y-2 text-sm">
+                    {["Chat session ends", "Ticket resolved", "Purchase completed"].map((t, i) => (
+                      <li key={i} className="flex gap-2 items-center">
+                        <ThumbsUp className="w-4 h-4 text-primary" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedSection>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ================= ANALYTICS ================= */}
+        <section className="py-20 overflow-hidden">
+          <div className="container-tight grid lg:grid-cols-2 gap-12 items-center">
+
+            <AnimatedSection>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Analyze and Export CSAT Reports
+              </h2>
+
+              <ul className="space-y-4">
+                {[
+                  { icon: Calendar, text: "Date-wise filtering and trends" },
+                  { icon: Star, text: "Agent performance correlation" },
+                  { icon: Download, text: "Downloadable reports" },
+                  { icon: TrendingUp, text: "Historical comparison" },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <item.icon className="w-5 h-5 text-pink-500" />
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <div className="bg-gradient-to-br from-pink-500/10 to-primary/10 rounded-3xl p-8 text-center">
+                <p className="text-sm text-muted-foreground mb-2">Overall CSAT Score</p>
+                <div className="text-5xl font-bold">4.7 / 5</div>
+              </div>
+            </AnimatedSection>
+
+          </div>
+        </section>
 
       </main>
 
