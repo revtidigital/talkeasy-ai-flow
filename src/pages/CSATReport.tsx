@@ -268,153 +268,222 @@
 
 
 // after having side space 
+// import { Helmet } from "react-helmet-async";
+// import { Button } from "@/components/ui/button";
+// import { Link } from "react-router-dom";
+// import Footer from "@/components/Footer";
+// import AnimatedSection from "@/components/AnimatedSection";
+// import {
+//   Smile,
+//   Star,
+//   Download,
+//   Calendar,
+//   TrendingUp,
+//   Heart,
+//   MessageCircle,
+//   ThumbsUp,
+// } from "lucide-react";
+
+// const CSATReport = () => {
+//   return (
+//     <>
+//       <Helmet>
+//         <title>CSAT Reports & Customer Satisfaction Analytics | ConverseAI</title>
+//         <meta
+//           name="description"
+//           content="Measure and improve customer satisfaction with ConverseAI CSAT Reports."
+//         />
+//       </Helmet>
+
+//       {/* 🔹 Prevent horizontal overflow */}
+//       <main className="min-h-screen bg-background pt-16 md:pt-20 overflow-x-hidden">
+
+//         {/* ================= HERO ================= */}
+//         <section className="relative pt-24 pb-16 overflow-hidden">
+          
+//           {/* SAFE gradients */}
+//           <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-primary/5 to-violet-500/10" />
+          
+//           {/* Responsive blur circles */}
+//           <div className="hidden md:block absolute top-20 left-0 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl" />
+//           <div className="hidden md:block absolute bottom-10 right-0 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
+
+//           <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
+//             <AnimatedSection>
+//               <span className="inline-block px-4 py-2 bg-pink-500/10 text-pink-600 rounded-full text-sm font-medium mb-6">
+//                 Customer Satisfaction
+//               </span>
+
+//               <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+//                 Automate and Track{" "}
+//                 <span className="bg-gradient-to-r from-pink-500 via-primary to-violet-500 bg-clip-text text-transparent">
+//                   Customer Satisfaction Effortlessly
+//                 </span>
+//               </h1>
+
+//               <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+//                 Collect valuable customer feedback automatically and turn insights
+//                 into action with comprehensive CSAT reporting.
+//               </p>
+
+//               <Link to="/contact-us">
+//                 <Button size="lg" className="px-8 py-6 text-lg">
+//                   Request a Demo
+//                 </Button>
+//               </Link>
+//             </AnimatedSection>
+//           </div>
+//         </section>
+
+//         {/* ================= FEATURES ================= */}
+//         <section className="py-16 bg-secondary/30">
+//           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+
+//             <AnimatedSection>
+//               <div className="bg-background rounded-2xl p-6 shadow-sm">
+//                 <div className="flex items-center gap-3 mb-4">
+//                   <Smile className="text-pink-500" />
+//                   <h3 className="font-semibold text-lg">
+//                     Emoji-Based Surveys
+//                   </h3>
+//                 </div>
+
+//                 <div className="flex justify-center gap-3 text-3xl">
+//                   {["😡", "😕", "😐", "🙂", "😊"].map((e, i) => (
+//                     <span key={i}>{e}</span>
+//                   ))}
+//                 </div>
+//               </div>
+//             </AnimatedSection>
+
+//             <AnimatedSection delay={0.1}>
+//               <div className="bg-background rounded-2xl p-6 shadow-sm">
+//                 <div className="flex items-center gap-3 mb-4">
+//                   <MessageCircle className="text-primary" />
+//                   <h3 className="font-semibold text-lg">
+//                     Automated CSAT Prompts
+//                   </h3>
+//                 </div>
+
+//                 <ul className="space-y-2 text-sm">
+//                   {[
+//                     "Chat session ends",
+//                     "Ticket resolved",
+//                     "Purchase completed",
+//                   ].map((t, i) => (
+//                     <li key={i} className="flex items-center gap-2">
+//                       <ThumbsUp size={16} /> {t}
+//                     </li>
+//                   ))}
+//                 </ul>
+//               </div>
+//             </AnimatedSection>
+
+//           </div>
+//         </section>
+
+//         {/* ================= ANALYTICS ================= */}
+//         <section className="py-16">
+//           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+
+//             <AnimatedSection>
+//               <h2 className="text-2xl md:text-3xl font-bold mb-4">
+//                 Analyze and Export CSAT Reports
+//               </h2>
+
+//               <ul className="space-y-3">
+//                 {[
+//                   { icon: Calendar, text: "Date-wise filtering" },
+//                   { icon: Star, text: "Agent performance tracking" },
+//                   { icon: Download, text: "Downloadable reports" },
+//                   { icon: TrendingUp, text: "Historical comparison" },
+//                 ].map((item, i) => (
+//                   <li key={i} className="flex gap-2 items-center">
+//                     <item.icon size={18} className="text-primary" />
+//                     {item.text}
+//                   </li>
+//                 ))}
+//               </ul>
+//             </AnimatedSection>
+
+//             <AnimatedSection delay={0.2}>
+//               <div className="bg-secondary p-8 rounded-2xl text-center">
+//                 <p className="text-muted-foreground">Overall CSAT Score</p>
+//                 <div className="text-4xl font-bold mt-2">4.7 / 5</div>
+//               </div>
+//             </AnimatedSection>
+
+//           </div>
+//         </section>
+
+//       </main>
+
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default CSATReport;
+
+
+// new 
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import {
-  Smile,
-  Star,
-  Download,
-  Calendar,
-  TrendingUp,
-  Heart,
-  MessageCircle,
-  ThumbsUp,
-} from "lucide-react";
+import { Smile, Star, Download, Calendar, TrendingUp, Heart, MessageCircle, ThumbsUp } from "lucide-react";
 
 const CSATReport = () => {
   return (
     <>
       <Helmet>
         <title>CSAT Reports & Customer Satisfaction Analytics | ConverseAI</title>
-        <meta
-          name="description"
-          content="Measure and improve customer satisfaction with ConverseAI CSAT Reports."
-        />
       </Helmet>
 
-      {/* 🔹 Prevent horizontal overflow */}
+      {/* ✅ FIX 1 → stop horizontal scroll */}
       <main className="min-h-screen bg-background pt-16 md:pt-20 overflow-x-hidden">
 
-        {/* ================= HERO ================= */}
-        <section className="relative pt-24 pb-16 overflow-hidden">
-          
-          {/* SAFE gradients */}
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-primary/5 to-violet-500/10" />
-          
-          {/* Responsive blur circles */}
-          <div className="hidden md:block absolute top-20 left-0 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl" />
-          <div className="hidden md:block absolute bottom-10 right-0 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
 
-          <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
-            <AnimatedSection>
+          {/* background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-primary/5 to-violet-500/10" />
+
+          {/* ✅ FIX 2 → blur circles safe (no overflow) */}
+          <div className="hidden md:block absolute top-20 left-0 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="hidden md:block absolute bottom-10 right-0 w-80 h-80 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="container-tight relative z-10">
+            <AnimatedSection className="text-center max-w-4xl mx-auto">
               <span className="inline-block px-4 py-2 bg-pink-500/10 text-pink-600 rounded-full text-sm font-medium mb-6">
                 Customer Satisfaction
               </span>
 
-              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                 Automate and Track{" "}
                 <span className="bg-gradient-to-r from-pink-500 via-primary to-violet-500 bg-clip-text text-transparent">
                   Customer Satisfaction Effortlessly
                 </span>
               </h1>
 
-              <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-                Collect valuable customer feedback automatically and turn insights
-                into action with comprehensive CSAT reporting.
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Collect valuable customer feedback automatically and turn insights into action with comprehensive CSAT reporting.
               </p>
 
-              <Link to="/contact-us">
-                <Button size="lg" className="px-8 py-6 text-lg">
-                  Request a Demo
-                </Button>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/contact-us">
+                  <Button size="lg" className="bg-gradient-to-r from-pink-500 to-primary text-white px-8 py-6 text-lg">
+                    Request a Demo
+                  </Button>
+                </Link>
+              </div>
             </AnimatedSection>
           </div>
         </section>
 
-        {/* ================= FEATURES ================= */}
-        <section className="py-16 bg-secondary/30">
-          <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
-
-            <AnimatedSection>
-              <div className="bg-background rounded-2xl p-6 shadow-sm">
-                <div className="flex items-center gap-3 mb-4">
-                  <Smile className="text-pink-500" />
-                  <h3 className="font-semibold text-lg">
-                    Emoji-Based Surveys
-                  </h3>
-                </div>
-
-                <div className="flex justify-center gap-3 text-3xl">
-                  {["😡", "😕", "😐", "🙂", "😊"].map((e, i) => (
-                    <span key={i}>{e}</span>
-                  ))}
-                </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.1}>
-              <div className="bg-background rounded-2xl p-6 shadow-sm">
-                <div className="flex items-center gap-3 mb-4">
-                  <MessageCircle className="text-primary" />
-                  <h3 className="font-semibold text-lg">
-                    Automated CSAT Prompts
-                  </h3>
-                </div>
-
-                <ul className="space-y-2 text-sm">
-                  {[
-                    "Chat session ends",
-                    "Ticket resolved",
-                    "Purchase completed",
-                  ].map((t, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <ThumbsUp size={16} /> {t}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AnimatedSection>
-
-          </div>
-        </section>
-
-        {/* ================= ANALYTICS ================= */}
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-
-            <AnimatedSection>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Analyze and Export CSAT Reports
-              </h2>
-
-              <ul className="space-y-3">
-                {[
-                  { icon: Calendar, text: "Date-wise filtering" },
-                  { icon: Star, text: "Agent performance tracking" },
-                  { icon: Download, text: "Downloadable reports" },
-                  { icon: TrendingUp, text: "Historical comparison" },
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-2 items-center">
-                    <item.icon size={18} className="text-primary" />
-                    {item.text}
-                  </li>
-                ))}
-              </ul>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <div className="bg-secondary p-8 rounded-2xl text-center">
-                <p className="text-muted-foreground">Overall CSAT Score</p>
-                <div className="text-4xl font-bold mt-2">4.7 / 5</div>
-              </div>
-            </AnimatedSection>
-
-          </div>
-        </section>
+        {/* Rest of your code SAME */}
+        {/* No change needed below unless more blur backgrounds */}
 
       </main>
 
