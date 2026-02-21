@@ -87,11 +87,13 @@ const PreChatForms = () => {
                   <p className="text-lg md:text-xl text-white/80 mb-8">
                     Gather essential information before conversations begin for faster and more informed resolutions.
                   </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link to="/contact-us">
                     <Button variant="hero" size="lg" className="px-8 py-6 text-lg rounded-xl">
                       Start Your Free Trial
                     </Button>
                   </Link>
+                  </div>
                 </AnimatedSection>
 
                 {/* Form Preview */}
