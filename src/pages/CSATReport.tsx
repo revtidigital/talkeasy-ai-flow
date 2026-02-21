@@ -446,17 +446,44 @@ const CSATReport = () => {
         <link rel="canonical" href="https://converseai.com/csat-report" />
       </Helmet>
 
-      {/* ✅ FIX 1 → Stop horizontal overflow */}
-      <main className="min-h-screen bg-background pt-16 md:pt-20 overflow-x-hidden">
+      {/* ✅ FIX 1 → stop horizontal overflow */}
+      <main
+        className="min-h-screen bg-background pt-16 md:pt-20"
+        style={{ overflowX: "hidden", maxWidth: "100vw" }}
+      >
 
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
+        <section className="relative pt-32 pb-20" style={{ overflow: "hidden" }}>
           <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-primary/5 to-violet-500/10" />
 
-          {/* ✅ FIX 2 → Blur circles safe */}
-          <div className="hidden md:block absolute top-20 left-0 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="hidden md:block absolute bottom-10 right-0 w-80 h-80 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
-          
+          {/* ✅ FIX 2 → blur circles safe */}
+          <div
+            className="absolute hidden md:block"
+            style={{
+              top: 80,
+              left: 0,
+              width: 260,
+              height: 260,
+              borderRadius: "50%",
+              background: "rgba(236,72,153,0.2)",
+              filter: "blur(80px)",
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            className="absolute hidden md:block"
+            style={{
+              bottom: 40,
+              right: 0,
+              width: 320,
+              height: 320,
+              borderRadius: "50%",
+              background: "rgba(99,102,241,0.2)",
+              filter: "blur(80px)",
+              pointerEvents: "none",
+            }}
+          />
+
           <div className="container-tight relative z-10">
             <AnimatedSection className="text-center max-w-4xl mx-auto">
               <span className="inline-block px-4 py-2 bg-pink-500/10 text-pink-600 rounded-full text-sm font-medium mb-6">
@@ -483,7 +510,7 @@ const CSATReport = () => {
         </section>
 
         {/* Gather Feedback with Ease */}
-        <section className="py-20 bg-secondary/30 overflow-hidden">
+        <section className="py-20 bg-secondary/30" style={{ overflow: "hidden" }}>
           <div className="container-tight">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
