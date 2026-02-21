@@ -342,11 +342,12 @@ const CSATReport = () => {
                   <h3 className="font-semibold text-lg">
                     Emoji-Based Surveys
                   </h3>
-                       <p className="text-muted-foreground mb-6">
-                        Let customers express their satisfaction with intuitive emoji ratings that take just one click.
-                       </p>
                 </div>
-
+                 <div>
+                     <p className="text-muted-foreground mb-6">
+                        Let customers express their satisfaction with intuitive emoji ratings that take just one click.
+                    </p>
+                 </div>
                 <div className="flex justify-center gap-3 text-3xl">
                   {["😡", "😕", "😐", "🙂", "😊"].map((e, i) => (
                     <span key={i}>{e}</span>
