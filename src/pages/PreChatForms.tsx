@@ -88,7 +88,7 @@ const PreChatForms = () => {
                     Gather essential information before conversations begin for faster and more informed resolutions.
                   </p>
                   <Link to="/contact-us">
-                    <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-glow px-8 py-6 text-lg">
+                    <Button size="lg" variant="hero">
                       Start Your Free Trial
                     </Button>
                   </Link>
