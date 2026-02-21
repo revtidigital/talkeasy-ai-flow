@@ -356,7 +356,7 @@ const AboutUs = () => {
                     </Button>
                   </ContactFormDialog>
                   <Link to="/contact-us">
-                    <Button variant="hero-outline" size="xl">
+                    <Button variant="hero-outline" size="xl" className="w-full">
                       Talk to Sales
                     </Button>
                   </Link>
