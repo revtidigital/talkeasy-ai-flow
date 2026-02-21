@@ -338,16 +338,14 @@ const CSATReport = () => {
             <AnimatedSection>
               <div className="bg-background rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <Smile className="text-pink-500" />
-                  <h3 className="font-semibold text-lg">
-                    Emoji-Based Surveys
-                  </h3>
-                </div>
-                 <div>
-                     <p className="text-muted-foreground mb-6">
-                        Let customers express their satisfaction with intuitive emoji ratings that take just one click.
-                    </p>
-                 </div>
+                   <div className="w-14 h-14 bg-gradient-to-br from-pink-500/20 to-primary/20 rounded-xl flex items-center justify-center">
+                       <Smile className="w-7 h-7 text-pink-500" />
+                     </div>
+                     <h3 className="text-xl font-semibold text-foreground">Emoji-Based Surveys</h3>
+                   </div>
+                   <p className="text-muted-foreground mb-6">
+                     Let customers express their satisfaction with intuitive emoji ratings that take just one click.
+                   </p>
                 <div className="flex justify-center gap-3 text-3xl">
                   {["😡", "😕", "😐", "🙂", "😊"].map((e, i) => (
                     <span key={i}>{e}</span>
