@@ -39,7 +39,7 @@ const ChatbotFinalCTA = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact-us">
-                  <Button variant="hero" size="xl">
+                  <Button variant="hero" size="xl" className="w-full">
                     Get Free Trial
                     <ArrowRight className="w-5 h-5" />
                   </Button>
