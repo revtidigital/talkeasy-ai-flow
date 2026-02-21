@@ -88,7 +88,7 @@ const PreChatForms = () => {
                     Gather essential information before conversations begin for faster and more informed resolutions.
                   </p>
                   <Link to="/contact-us">
-                    <Button size="lg" variant="hero">
+                    <Button variant="hero" size="lg" className="px-8 py-6 text-lg rounded-xl">
                       Start Your Free Trial
                     </Button>
                   </Link>
@@ -281,7 +281,9 @@ const PreChatForms = () => {
                   From one dashboard, handle pre-chat forms, live chats, and customer data seamlessly.
                 </p>
                 <Link to="/contact-us">
-                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8">
+                  <Button   variant="hero-outline"
+                size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gradient-cta text-primary-foreground shadow-glow hover:shadow-[0_16px_50px_-10px_hsl(262_83%_58%_/_0.6)] hover:scale-[1.03] hover:-translate-y-1 active:scale-100 active:translate-y-0 font-semibold h-14 rounded-xl px-8 text-base"
+            >
                     Request a Demo
                   </Button>
                 </Link>
