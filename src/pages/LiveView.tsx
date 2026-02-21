@@ -35,7 +35,7 @@ const LiveView = () => {
                   Get instant visibility into agent status, conversations, and workload — all from one live dashboard.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="group">
+                  <Button variant="gradient" size="xl" className="w-full group">
                     Request a Demo
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
