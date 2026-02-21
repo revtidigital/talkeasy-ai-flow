@@ -335,29 +335,22 @@ const CSATReport = () => {
         <section className="py-16 bg-secondary/30">
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
 
-             <AnimatedSection>
-                 <div className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-xl hover:border-pink-500/30 transition-all duration-300 h-full">
-                   <div className="flex items-center gap-4 mb-6">
-                     <div className="w-14 h-14 bg-gradient-to-br from-pink-500/20 to-primary/20 rounded-xl flex items-center justify-center">
-                       <Smile className="w-7 h-7 text-pink-500" />
-                     </div>
-                     <h3 className="text-xl font-semibold text-foreground">Emoji-Based Surveys</h3>
-                   </div>
-                   <p className="text-muted-foreground mb-6">
-                     Let customers express their satisfaction with intuitive emoji ratings that take just one click.
-                   </p>
-                   <div className="flex justify-center gap-4 p-4 bg-secondary/50 rounded-xl">
-                     {["😡", "😕", "😐", "🙂", "😊"].map((emoji, index) => (
-                      <button 
-                        key={index}
-                        className="text-3xl hover:scale-125 transition-transform duration-200 p-2 rounded-lg hover:bg-background"
-                      >
-                        {emoji}
-                      </button>
-                    ))}
-                  </div>
+            <AnimatedSection>
+              <div className="bg-background rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center gap-3 mb-4">
+                  <Smile className="text-pink-500" />
+                  <h3 className="font-semibold text-lg">
+                    Emoji-Based Surveys
+                  </h3>
                 </div>
-              </AnimatedSection>
+
+                <div className="flex justify-center gap-3 text-3xl">
+                  {["😡", "😕", "😐", "🙂", "😊"].map((e, i) => (
+                    <span key={i}>{e}</span>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
               <div className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-xl hover:border-pink-500/30 transition-all duration-300 h-full">
