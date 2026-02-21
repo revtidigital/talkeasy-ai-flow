@@ -221,6 +221,7 @@ const OmniChannel = () => {
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </Link>
+                </div>
                 <ContactFormDialog>
                   <Button variant="hero-outline" size="xl">
                     Contact Sales
