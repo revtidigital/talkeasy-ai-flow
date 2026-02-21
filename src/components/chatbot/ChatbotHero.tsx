@@ -43,7 +43,7 @@ const ChatbotHero = () => {
                   </Button>
                 </ContactFormDialog>
                 <Link to="/contact-us">
-                  <Button variant="hero-outline" size="xl">
+                  <Button variant="hero-outline" size="xl" className="w-full">
                     <Play className="w-5 h-5" />
                     Start Free Trial
                   </Button>
