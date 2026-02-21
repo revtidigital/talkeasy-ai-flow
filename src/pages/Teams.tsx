@@ -35,7 +35,7 @@ const Teams = () => {
                   Create structured teams to streamline collaboration and manage conversations more effectively.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="group">
+                  <Button variant="gradient" size="xl" className="w-full group">
                     Schedule a Demo
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
