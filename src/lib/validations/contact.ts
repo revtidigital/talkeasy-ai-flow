@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { isValidPhoneNumber } from "react-phone-number-input";
 
 export const contactFormSchema = z.object({
   name: z
@@ -15,18 +14,11 @@ export const contactFormSchema = z.object({
   phone: z
     .string()
     .trim()
-    .min(1, { message: "Phone number is required" })
-    .refine(
-      (val) => {
-        try {
-          return isValidPhoneNumber(val);
-        } catch {
-          return false;
-        }
-      },
-      { message: "Please enter a valid phone number for the selected country" }
-    ),
-  countryName: z.string().optional().or(z.literal("")),
+    .min(10, { message: "Phone number must be at least 10 digits" })
+    .max(20, { message: "Phone number must be less than 20 characters" })
+    .regex(/^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$/, {
+      message: "Please enter a valid phone number",
+    }),
   message: z
     .string()
     .trim()

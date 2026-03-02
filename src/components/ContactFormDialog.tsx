@@ -20,7 +20,6 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { validateContactForm } from "@/lib/validations/contact";
 import { submitContactForm } from "@/lib/submitContactForm";
-import PhoneInputField from "@/components/ui/PhoneInputField";
 
 interface ContactFormDialogProps {
   children: React.ReactNode;
@@ -33,7 +32,6 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
     name: "",
     email: "",
     phone: "",
-    countryName: "",
     lookingFor: "",
     subject: "",
     message: "",
@@ -45,7 +43,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
-
+    
     if (!formData.agreeToTerms) {
       toast({
         title: "Please accept the terms",
@@ -73,7 +71,6 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         fullName: formData.name,
         email: formData.email,
         phone: formData.phone,
-        countryName: formData.countryName,
         product: formData.lookingFor,
         subject: formData.subject,
         message: formData.message,
@@ -84,12 +81,11 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         title: "Message sent!",
         description: "We'll get back to you as soon as possible.",
       });
-
+      
       setFormData({
         name: "",
         email: "",
         phone: "",
-        countryName: "",
         lookingFor: "",
         subject: "",
         message: "",
@@ -117,7 +113,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             Contact Us
           </DialogTitle>
         </DialogHeader>
-
+        
         <form onSubmit={handleSubmit} className="px-6 pb-6 space-y-4" noValidate>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
@@ -155,14 +151,20 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <PhoneInputField
+              <label htmlFor="contact-phone" className="sr-only">Phone Number (required)</label>
+              <Input
+                id="contact-phone"
+                type="tel"
+                placeholder="Phone Number*"
                 value={formData.phone}
-                onChange={(phone, countryName) =>
-                  setFormData({ ...formData, phone, countryName })
-                }
-                error={errors.phone}
-                variant="underline"
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                maxLength={20}
+                aria-required="true"
+                aria-invalid={!!errors.phone}
+                aria-describedby={errors.phone ? "phone-error" : undefined}
+                className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.phone ? "border-destructive" : ""}`}
               />
+              {errors.phone && <p id="phone-error" className="text-xs text-destructive" role="alert">{errors.phone}</p>}
             </div>
             <div className="space-y-2">
               <label htmlFor="contact-looking-for" className="sr-only">What are you looking for?</label>
@@ -170,7 +172,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                 value={formData.lookingFor}
                 onValueChange={(value) => setFormData({ ...formData, lookingFor: value })}
               >
-                <SelectTrigger
+                <SelectTrigger 
                   id="contact-looking-for"
                   className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus:ring-0 focus:border-primary text-muted-foreground data-[state=open]:border-primary [&>span]:text-left"
                   aria-label="Select what you're looking for"
