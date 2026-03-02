@@ -46,7 +46,7 @@
 //     product: payload.product,
 //   });
 // };
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2i4qQRnX_Uv5buKvB1L5f-RtZtiFbQ033JOs-nHWZrk_tRDkk8mxmtvay-vx5vS95/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxEsqy_XG_eHhWdN5VEf4iE4TPqMBnf3XOdPDnViP52hfjQMI4GlHsBs9PW8MNS3QiB/exec';
 
 interface ContactPayload {
   fullName: string;
