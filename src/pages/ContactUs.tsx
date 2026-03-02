@@ -14,12 +14,14 @@ import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, Shield, Clock, Users, Send } from "lucide-react";
 import { validateContactForm } from "@/lib/validations/contact";
 import { submitContactForm } from "@/lib/submitContactForm";
+import PhoneInputField from "@/components/ui/PhoneInputField";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    countryName: "",
     product: "",
     message: "",
   });
@@ -49,6 +51,7 @@ const ContactUs = () => {
         fullName: formData.name,
         email: formData.email,
         phone: formData.phone,
+        countryName: formData.countryName,
         product: formData.product,
         subject: "",
         message: formData.message,
@@ -64,6 +67,7 @@ const ContactUs = () => {
         name: "",
         email: "",
         phone: "",
+        countryName: "",
         product: "",
         message: "",
       });
@@ -174,15 +178,14 @@ const ContactUs = () => {
                       <label className="text-sm font-medium text-foreground">
                         Phone Number *
                       </label>
-                      <Input
-                        type="tel"
-                        placeholder="+91 98765 43210"
+                      <PhoneInputField
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        maxLength={20}
-                        className={`h-12 bg-white/50 border-muted focus:border-primary focus:ring-primary ${errors.phone ? "border-destructive" : ""}`}
+                        onChange={(phone, countryName) =>
+                          setFormData({ ...formData, phone, countryName })
+                        }
+                        error={errors.phone}
+                        variant="bordered"
                       />
-                      {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground">
