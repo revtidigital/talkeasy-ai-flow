@@ -358,6 +358,13 @@
   flex-shrink: 0;
 }
 
+/* Remove any underlines from the phone input */
+.phone-input-wrapper .PhoneInputInput,
+.phone-input-wrapper .PhoneInputCountrySelect,
+.phone-input-wrapper * {
+  text-decoration: none !important;
+}
+
 .phone-input-wrapper .PhoneInputCountrySelect {
   position: absolute;
   opacity: 0;
