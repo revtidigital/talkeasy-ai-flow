@@ -21,18 +21,38 @@ export const submitContactForm = async (payload: ContactPayload): Promise<void> 
     utm_id: localStorage.getItem("utm_id") || "N/A",
   };
 
-  const finalPayload = {
-    ...payload,
-    countryName: payload.countryName || "",
-    ...utm,
+  // Truncate device_info to avoid body size issues
+  const deviceInfo = navigator.userAgent.substring(0, 200);
+
+  // Build a clean flat object with all string values (no undefined/null)
+  const finalPayload: Record<string, string> = {
+    fullName: payload.fullName || "",
+    email: payload.email || "",
+    phone: payload.phone || "",
+    countryName: payload.countryName || "N/A",
+    product: payload.product || "N/A",
+    subject: payload.subject || "N/A",
+    message: payload.message || "N/A",
+    form_source: payload.form_source || "Website",
+    utm_source: utm.utm_source,
+    utm_medium: utm.utm_medium,
+    utm_campaign: utm.utm_campaign,
+    utm_term: utm.utm_term,
+    utm_content: utm.utm_content,
+    utm_id: utm.utm_id,
     page_url: window.location.href,
-    device_info: navigator.userAgent,
+    device_info: deviceInfo,
   };
+
+  const params = new URLSearchParams();
+  Object.entries(finalPayload).forEach(([key, value]) => {
+    params.append(key, value);
+  });
 
   await fetch(SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(finalPayload).toString(),
+    body: params.toString(),
   });
 };
