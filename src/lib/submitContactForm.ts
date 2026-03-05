@@ -1,4 +1,4 @@
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwsr47ioYwyLtXrRI2GwwIUtoIDTjPqvcOeiXUSHhPbZ57RZF3G8N23lFsSJKcAL6he/exec';
+import { supabase } from "@/integrations/supabase/client";
 
 interface ContactPayload {
   fullName: string;
@@ -18,6 +18,7 @@ export const submitContactForm = async (payload: ContactPayload): Promise<void> 
     utm_campaign: localStorage.getItem("utm_campaign") || "N/A",
     utm_term: localStorage.getItem("utm_term") || "N/A",
     utm_content: localStorage.getItem("utm_content") || "N/A",
+    utm_id: localStorage.getItem("utm_id") || "N/A",
   };
 
   const finalPayload = {
@@ -28,10 +29,11 @@ export const submitContactForm = async (payload: ContactPayload): Promise<void> 
     device_info: navigator.userAgent,
   };
 
-  await fetch(SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(finalPayload).toString(),
+  const { error } = await supabase.functions.invoke("send-contact-email", {
+    body: finalPayload,
   });
+
+  if (error) {
+    throw new Error(error.message || "Failed to submit form");
+  }
 };
