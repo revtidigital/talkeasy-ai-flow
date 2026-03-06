@@ -90,9 +90,8 @@ const AccordionRow = ({
     <span>{label}</span>
     <ChevronDown
       className={cn(
-        "shrink-0 transition-transform duration-200",
-        depth === 0 ? "w-4 h-4" : "w-3.5 h-3.5",
-        isOpen && "rotate-180"
+        "shrink-0",
+        depth === 0 ? "w-4 h-4" : "w-3.5 h-3.5"
       )}
     />
   </button>
