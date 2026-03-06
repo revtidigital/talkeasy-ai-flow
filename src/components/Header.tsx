@@ -90,9 +90,8 @@ const AccordionRow = ({
     <span>{label}</span>
     <ChevronDown
       className={cn(
-        "shrink-0 transition-transform duration-200",
-        depth === 0 ? "w-4 h-4" : "w-3.5 h-3.5",
-        isOpen && "rotate-180"
+        "shrink-0",
+        depth === 0 ? "w-4 h-4" : "w-3.5 h-3.5"
       )}
     />
   </button>
@@ -345,7 +344,7 @@ const Header = () => {
                   depth={0}
                 />
                 {openMobileTop === "features" && (
-                  <div className="ml-2 mt-0.5 border-l-2 border-primary/20 pl-2 flex flex-col gap-0.5 animate-fade-in">
+                  <div className="ml-2 mt-0.5 pl-2 flex flex-col gap-0.5 animate-fade-in">
                     {Object.entries(featuresMenu).map(([key, column]) => (
                       <div key={key}>
                         <AccordionRow
@@ -355,7 +354,7 @@ const Header = () => {
                           depth={1}
                         />
                         {openMobileSub === key && (
-                          <div className="ml-2 mt-0.5 border-l border-border/60 pl-1 flex flex-col gap-0.5 animate-fade-in">
+                          <div className="ml-2 mt-0.5 pl-1 flex flex-col gap-0.5 animate-fade-in">
                             {column.items.map((item) => (
                               <LeafItem
                                 key={item.label}
@@ -382,7 +381,7 @@ const Header = () => {
                   depth={0}
                 />
                 {openMobileTop === "products" && (
-                  <div className="ml-2 mt-0.5 border-l-2 border-primary/20 pl-2 flex flex-col gap-0.5 animate-fade-in">
+                  <div className="ml-2 mt-0.5 pl-2 flex flex-col gap-0.5 animate-fade-in">
                     {productsMenu.map((item) => (
                       <LeafItem
                         key={item.label}
