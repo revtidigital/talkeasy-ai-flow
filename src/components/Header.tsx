@@ -344,7 +344,7 @@ const Header = () => {
                   depth={0}
                 />
                 {openMobileTop === "features" && (
-                  <div className="ml-2 mt-0.5 border-l-2 border-primary/20 pl-2 flex flex-col gap-0.5 animate-fade-in">
+                  <div className="ml-2 mt-0.5 pl-2 flex flex-col gap-0.5 animate-fade-in">
                     {Object.entries(featuresMenu).map(([key, column]) => (
                       <div key={key}>
                         <AccordionRow
