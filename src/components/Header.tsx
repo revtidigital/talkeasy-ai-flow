@@ -354,7 +354,7 @@ const Header = () => {
                           depth={1}
                         />
                         {openMobileSub === key && (
-                          <div className="ml-2 mt-0.5 border-l border-border/60 pl-1 flex flex-col gap-0.5 animate-fade-in">
+                          <div className="ml-2 mt-0.5 pl-1 flex flex-col gap-0.5 animate-fade-in">
                             {column.items.map((item) => (
                               <LeafItem
                                 key={item.label}
