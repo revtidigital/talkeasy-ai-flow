@@ -381,7 +381,7 @@ const Header = () => {
                   depth={0}
                 />
                 {openMobileTop === "products" && (
-                  <div className="ml-2 mt-0.5 border-l-2 border-primary/20 pl-2 flex flex-col gap-0.5 animate-fade-in">
+                  <div className="ml-2 mt-0.5 pl-2 flex flex-col gap-0.5 animate-fade-in">
                     {productsMenu.map((item) => (
                       <LeafItem
                         key={item.label}
