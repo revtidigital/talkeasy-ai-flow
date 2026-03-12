@@ -292,7 +292,7 @@ const Header = () => {
             <Link to="/contact-us">
               <Button
                 variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6 hover:scale-100 hover:translate-y-0"
                 aria-label="Start your free trial"
               >
                 Start Your Trial
