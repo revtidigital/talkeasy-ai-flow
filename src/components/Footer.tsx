@@ -147,11 +147,11 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             </a>
           </span>
           
-          <div className="flex items-center order-1 md:order-2">
+          <div className="flex items-center justify-center order-1 md:order-2">
             <img 
               src={metaTechProvider} 
               alt="Meta Tech Provider Partner Badge" 
-              className="h-10 w-auto rounded-lg"
+              className="h-10 w-auto rounded-lg mx-auto"
               width="80"
               height="40"
               loading="lazy"
