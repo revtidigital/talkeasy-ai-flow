@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
+// import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -37,7 +37,6 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
     lookingFor: "",
     subject: "",
     message: "",
-    agreeToTerms: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
@@ -46,14 +45,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
     e.preventDefault();
     setErrors({});
 
-    if (!formData.agreeToTerms) {
-      toast({
-        title: "Please accept the terms",
-        description: "You must agree to the Privacy Policy to continue.",
-        variant: "destructive",
-      });
-      return;
-    }
+   
 
     const validation = validateContactForm(formData);
     if (!validation.success) {
@@ -74,7 +66,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         email: formData.email,
         phone: formData.phone,
         countryName: formData.countryName,
-        product: formData.lookingFor,
+        product: formData.lookingFor || "Not specified",
         subject: formData.subject,
         message: formData.message,
         form_source: "Popup Form Enquiry",
@@ -93,7 +85,6 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         lookingFor: "",
         subject: "",
         message: "",
-        agreeToTerms: false,
       });
       setErrors({});
       setOpen(false);
@@ -219,7 +210,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             {errors.message && <p id="message-error" className="text-xs text-destructive" role="alert">{errors.message}</p>}
           </div>
 
-          <div className="flex items-center space-x-2">
+          {/* <div className="flex items-center space-x-2">
             <Checkbox
               id="terms"
               checked={formData.agreeToTerms}
@@ -236,7 +227,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             >
               I agree to the terms of this Privacy Policy
             </label>
-          </div>
+          </div> */}
 
           <div className="flex justify-end pt-2">
             <Button
