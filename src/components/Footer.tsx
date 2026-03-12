@@ -134,7 +134,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-primary-foreground/10 grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-center md:text-left">
           <span className="text-sm text-footer-text order-2 md:order-1">
             A Product by{" "}
             <a 
