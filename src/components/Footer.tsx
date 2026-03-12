@@ -1,8 +1,11 @@
 import { forwardRef } from "react";
-import { Facebook, Youtube, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.svg";
 import metaTechProvider from "@/assets/meta-tech-provider.jpg";
+import facebookIcon from "@/assets/social-facebook.svg";
+import youtubeIcon from "@/assets/social-youtube.svg";
+import instagramIcon from "@/assets/social-instagram.svg";
+import linkedinIcon from "@/assets/social-linkedin.svg";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const footerLinks = {
@@ -19,10 +22,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/share/1BTGfP9JgU/", label: "Facebook" },
-    { icon: Youtube, href: "https://www.youtube.com/@theconverseai", label: "YouTube" },
-    { icon: Instagram, href: "https://www.instagram.com/theconverseai/", label: "Instagram" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/theconverseai", label: "LinkedIn" },
+    { icon: facebookIcon, href: "https://www.facebook.com/share/1BTGfP9JgU/", label: "Facebook" },
+    { icon: youtubeIcon, href: "https://www.youtube.com/@theconverseai", label: "YouTube" },
+    { icon: instagramIcon, href: "https://www.instagram.com/theconverseai/", label: "Instagram" },
+    { icon: linkedinIcon, href: "https://www.linkedin.com/company/theconverseai", label: "LinkedIn" },
   ];
 
   return (
