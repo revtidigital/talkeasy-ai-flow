@@ -1,4 +1,4 @@
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYMpkAqfjJhW6SD7RHEG2ROoQ9cmz8qGsWsPlkUvNtk5-Z3UWo5ISz0mIo0vmIGX0-/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDJ9WCKY02behdN63jhvvA6otsX5kLadVD-a7DBXBKH2G4R1NSblUyZwKfbpwEp0GR/exec';
 
 interface ContactPayload {
   fullName: string;
