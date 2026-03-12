@@ -61,6 +61,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                       rel="noopener noreferrer"
                       className="hover:scale-100 transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded-full inline-block"
                       aria-label={`Visit our ${social.label} page`}
+                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#7C3AED")}
                     >
                       <img src={social.icon} alt={social.label} className="w-10 h-10" aria-hidden="true" />
                     </a>
