@@ -1,8 +1,11 @@
 import { forwardRef } from "react";
-import { Facebook, Youtube, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.svg";
 import metaTechProvider from "@/assets/meta-tech-provider.jpg";
+import facebookIcon from "@/assets/social-facebook.svg";
+import youtubeIcon from "@/assets/social-youtube.svg";
+import instagramIcon from "@/assets/social-instagram.svg";
+import linkedinIcon from "@/assets/social-linkedin.svg";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const footerLinks = {
@@ -19,10 +22,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/share/1BTGfP9JgU/", label: "Facebook" },
-    { icon: Youtube, href: "https://www.youtube.com/@theconverseai", label: "YouTube" },
-    { icon: Instagram, href: "https://www.instagram.com/theconverseai/", label: "Instagram" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/theconverseai", label: "LinkedIn" },
+    { icon: facebookIcon, href: "https://www.facebook.com/share/1BTGfP9JgU/", label: "Facebook" },
+    { icon: youtubeIcon, href: "https://www.youtube.com/@theconverseai", label: "YouTube" },
+    { icon: instagramIcon, href: "https://www.instagram.com/theconverseai/", label: "Instagram" },
+    { icon: linkedinIcon, href: "https://www.linkedin.com/company/theconverseai", label: "LinkedIn" },
   ];
 
   return (
@@ -56,10 +59,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 hover:scale-110 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer"
+                      className="hover:scale-110 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded-full"
                       aria-label={`Visit our ${social.label} page`}
                     >
-                      <social.icon className="w-5 h-5" aria-hidden="true" />
+                      <img src={social.icon} alt={social.label} className="w-10 h-10" aria-hidden="true" />
                     </a>
                   </li>
                 ))}
@@ -144,11 +147,11 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             </a>
           </span>
           
-          <div className="flex items-center order-1 md:order-2">
+          <div className="flex items-center justify-center order-1 md:order-2">
             <img 
               src={metaTechProvider} 
               alt="Meta Tech Provider Partner Badge" 
-              className="h-10 w-auto rounded-lg"
+              className="h-10 w-auto rounded-lg mx-auto"
               width="80"
               height="40"
               loading="lazy"
