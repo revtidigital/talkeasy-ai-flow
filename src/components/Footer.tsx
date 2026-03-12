@@ -59,10 +59,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 hover:scale-110 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer"
+                      className="hover:scale-110 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded-full"
                       aria-label={`Visit our ${social.label} page`}
                     >
-                      <social.icon className="w-5 h-5" aria-hidden="true" />
+                      <img src={social.icon} alt={social.label} className="w-10 h-10" aria-hidden="true" />
                     </a>
                   </li>
                 ))}
