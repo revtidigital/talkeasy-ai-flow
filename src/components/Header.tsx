@@ -288,7 +288,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center" onMouseEnter={() => setActiveDropdown(null)}>
             <Link to="/contact-us">
               <Button
                 variant="outline"
