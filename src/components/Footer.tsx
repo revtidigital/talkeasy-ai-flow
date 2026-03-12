@@ -134,7 +134,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-primary-foreground/10 grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-center md:text-left">
+        {/* <div className="pt-8 border-t border-primary-foreground/10 grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-center md:text-left">
           <span className="text-sm text-footer-text order-2 md:order-1">
             A Product by{" "}
             <a 
@@ -162,7 +162,41 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <p className="text-sm text-footer-text md:justify-self-end">
             © {new Date().getFullYear()} ConverseAI. All rights reserved.
           </p>
-        </div>
+        </div> */}
+        <div className="pt-8 border-t border-primary-foreground/10 grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-center md:text-left">
+
+  {/* Left */}
+  <span className="text-sm text-footer-text md:justify-self-start">
+    A Product by{" "}
+    <a 
+      href="https://revtidigital.com/" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-primary-foreground font-medium hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
+    >
+      Revti Digital
+    </a>
+  </span>
+
+  {/* Center */}
+  <div className="flex items-center justify-center">
+    <img 
+      src={metaTechProvider} 
+      alt="Meta Tech Provider Partner Badge" 
+      className="h-10 w-auto rounded-lg"
+      width="80"
+      height="40"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  {/* Right */}
+  <p className="text-sm text-footer-text md:justify-self-end">
+    © {new Date().getFullYear()} ConverseAI. All rights reserved.
+  </p>
+
+</div>
       </div>
     </footer>
   );
