@@ -54,41 +54,17 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <nav aria-label="Social media links">
               <ul className="flex gap-3">
                 {socialLinks.map((social) => (
-                  // <li key={social.label}>
-                  //   <a
-                  //     href={social.href}
-                  //     target="_blank"
-                  //     rel="noopener noreferrer"
-                  //     className="hover:scale-100 transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded-full inline-block"
-                  //     aria-label={`Visit our ${social.label} page`}
-                  //      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#7C3AED")}
-                  //   >
-                  //     <img src={social.icon} alt={social.label} className="w-10 h-10" aria-hidden="true" />
-                  //   </a>
-                  // </li>
-                     <li key={social.label}>
-  <a
-    href={social.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:scale-100 transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded-full inline-block"
-    aria-label={`Visit our ${social.label} page`}
-    style={{ padding: "6px", borderRadius: "50%" }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.backgroundColor = "#7C3AED";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.backgroundColor = "transparent";
-    }}
-  >
-    <img
-      src={social.icon}
-      alt={social.label}
-      className="w-10 h-10"
-      aria-hidden="true"
-    />
-  </a>
-</li>
+                  <li key={social.label}>
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:scale-100 transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded-full inline-block"
+                      aria-label={`Visit our ${social.label} page`}
+                    >
+                      <img src={social.icon} alt={social.label} className="w-10 h-10" aria-hidden="true" />
+                    </a>
+                  </li>
                 ))}
               </ul>
             </nav>
