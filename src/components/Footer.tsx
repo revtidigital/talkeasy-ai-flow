@@ -159,7 +159,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             />
           </div>
           
-          <p className="text-sm text-footer-text order-3">
+          <p className="text-sm text-footer-text md:justify-self-end">
             © {new Date().getFullYear()} ConverseAI. All rights reserved.
           </p>
         </div>
