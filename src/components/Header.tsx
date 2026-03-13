@@ -411,7 +411,7 @@ const Header = () => {
                   depth={0}
                 />
                 {openMobileTop === "features" && (
-                  <div className="ml-2 mt-0.5 pl-2 flex flex-col gap-0.5 animate-fade-in">
+                  <div className="mt-0.5 flex flex-col gap-0.5 animate-fade-in">
                     {Object.entries(featuresMenu).map(([key, column]) => (
                       <div key={key}>
                         <AccordionRow
@@ -421,7 +421,7 @@ const Header = () => {
                           depth={1}
                         />
                         {openMobileSub === key && (
-                          <div className="ml-2 mt-0.5 pl-1 flex flex-col gap-0.5 animate-fade-in">
+                          <div className="flex flex-col gap-0.5 animate-fade-in">
                             {column.items.map((item) => (
                               <LeafItem
                                 key={item.label}
@@ -448,7 +448,7 @@ const Header = () => {
                   depth={0}
                 />
                 {openMobileTop === "products" && (
-                  <div className="ml-2 mt-0.5 pl-2 flex flex-col gap-0.5 animate-fade-in">
+                  <div className="mt-0.5 flex flex-col gap-0.5 animate-fade-in">
                     {productsMenu.map((item) => (
                       <LeafItem
                         key={item.label}
