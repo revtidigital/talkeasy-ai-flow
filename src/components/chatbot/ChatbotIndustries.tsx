@@ -8,37 +8,37 @@ const industries = [
   {
     icon: ShoppingCart,
     title: "E-commerce",
-    description: "Boost sales with personalized product recommendations, order tracking, and instant customer support.",
+    description: "Drive sales with conversational experiences.",
     color: "from-primary to-violet",
   },
   {
     icon: GraduationCap,
     title: "EdTech",
-    description: "Enhance student engagement with AI tutors, course recommendations, and administrative automation.",
+    description: "Offer support across preferred channels.",
     color: "from-mint to-primary",
   },
   {
     icon: Plane,
     title: "Travel",
-    description: "Streamline bookings, provide real-time updates, and offer personalized travel recommendations.",
+    description: "Send media-rich updates and reminders.",
     color: "from-violet to-pink-400",
   },
   {
     icon: Building2,
     title: "Real Estate",
-    description: "Qualify leads, schedule viewings, and provide instant property information to prospects.",
+    description: "Schedule visits and manage documents.",
     color: "from-primary to-mint",
   },
   {
     icon: Truck,
     title: "Logistics",
-    description: "Track shipments, handle delivery queries, and automate customer communications at scale.",
+    description: "Provide real-time updates and resolve queries.",
     color: "from-mint to-violet",
   },
   {
     icon: Shield,
     title: "Insurance",
-    description: "Simplify claims processing, policy inquiries, and customer onboarding with AI assistance.",
+    description: "Streamline KYC and create interactive forms.",
     color: "from-violet to-primary",
   },
 ];
