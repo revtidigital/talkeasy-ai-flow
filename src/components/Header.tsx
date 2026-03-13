@@ -45,7 +45,7 @@ const featuresMenu = {
 };
 
 const productsMenu = [
-  { label: "Conversational AI Chatbot", href: "/chatbot" },
+  { label: "Conversational AI Chatbot", href: "/chatbot", noWrap: true },
   { label: "WhatsApp AI Chatbot", href: "/whatsapp-ai-chatbot" },
   { label: "Live Chat", href: "/live-chat" },
   { label: "Omni Channel", href: "/omni-channel" },
