@@ -185,10 +185,10 @@ const Header = () => {
     <header
       role="banner"
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow] duration-300 backdrop-blur-xl",
-        isScrolled ? "bg-white/90 shadow-soft" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-[100] transition-[background-color,box-shadow] duration-300",
+        isScrolled ? "bg-white shadow-soft" : "bg-white/95 backdrop-blur-xl"
       )}
-      style={{ height: "80px", backfaceVisibility: "hidden", transform: "translateZ(0)" }}
+      style={{ height: "80px", backfaceVisibility: "hidden", transform: "translateZ(0)", isolation: "isolate" }}
     >
       <div className="container-tight relative">
         <div className="flex items-center justify-between h-20">
