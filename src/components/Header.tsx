@@ -57,7 +57,7 @@ const navLinks = [
   { label: "Features", href: "#features", isRoute: false, hasDropdown: "features" },
   { label: "Products", href: "#products", isRoute: false, hasDropdown: "products" },
   { label: "About Us", href: "/about-us", isRoute: true },
-  { label: "Blog", href: "https://linen-spoonbill-814762.hostingersite.com/blog/", isRoute: false, isExternal: true },
+  { label: "Blog", href: "https://blog.theconverseai.com/", isRoute: false, isExternal: true },
   { label: "Contact Us", href: "/contact-us", isRoute: true },
 ];
 
@@ -473,7 +473,7 @@ const Header = () => {
 
               {/* ── Blog (external) ── */}
               <a
-                href="https://linen-spoonbill-814762.hostingersite.com/blog/"
+                href="https://blog.theconverseai.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
