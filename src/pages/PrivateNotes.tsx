@@ -117,7 +117,7 @@ const PrivateNotes = () => {
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-muted rounded-full mb-4">
                       <span className="text-sm text-muted-foreground">Press</span>
-                      <kbd className="px-2 py-1 bg-background border border-border rounded text-sm font-mono">Ctrl</kbd>
+                      <kbd className="px-2 py-1 bg-background border border-border rounded text-sm font-mono">Alt / ⌥ </kbd>
                       <span className="text-sm text-muted-foreground">+</span>
                       <kbd className="px-2 py-1 bg-background border border-border rounded text-sm font-mono">P</kbd>
                     </div>
