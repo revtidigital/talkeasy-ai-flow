@@ -9,7 +9,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-// import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -21,6 +20,7 @@ import { useToast } from "@/hooks/use-toast";
 import { validateContactForm } from "@/lib/validations/contact";
 import { submitContactForm } from "@/lib/submitContactForm";
 import PhoneInputField from "@/components/ui/PhoneInputField";
+import { trackFormSuccess } from "@/lib/tracking";
 
 interface ContactFormDialogProps {
   children: React.ReactNode;
