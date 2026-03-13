@@ -154,7 +154,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                   setFormData({ ...formData, phone, countryName })
                 }
                 error={errors.phone}
-                variant="underline"
+                variant="bordered"
               />
             </div>
             <div className="space-y-2">
