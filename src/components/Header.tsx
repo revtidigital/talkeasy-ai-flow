@@ -266,13 +266,13 @@ const Header = () => {
                 {/* Products Dropdown */}
                 {link.hasDropdown === "products" && activeDropdown === "products" && (
                   <div className="absolute top-full left-0 z-50" role="menu">
-                    <div className="bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-4 min-w-[220px] animate-fade-in">
+                    <div className="bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-4 min-w-[240px] animate-fade-in">
                       <ul className="space-y-1">
                         {productsMenu.map((item) => (
                           <li key={item.label} role="none">
                             <button
                               onClick={() => handleDropdownItemClick(item.href)}
-                              className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                              className={`text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring${'noWrap' in item && item.noWrap ? ' whitespace-nowrap' : ''}`}
                               role="menuitem"
                             >
                               {item.label}
