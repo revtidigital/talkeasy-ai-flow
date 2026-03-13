@@ -1,9 +1,9 @@
 // ===============================================
 // FULL TRACKING UTILITY
-// Works with Lovable + Supabase + React + GA4 + Meta Pixel
+// Works with Lovable + React + GA4 + Meta Pixel
 // ===============================================
 
-const DEBUG = true;
+const DEBUG = false;
 
 // ---------- GLOBAL TYPES ----------
 declare global {
@@ -27,7 +27,7 @@ export function trackEvent(
     } catch (e) {
       console.error("GA4 Error:", e);
     }
-  } else if (DEBUG) console.warn("GA4 not loaded");
+  }
 
   // META
   if (typeof window !== "undefined" && window.fbq) {
@@ -48,14 +48,31 @@ export function trackPageView(path: string, title: string) {
   }
 }
 
+// ---------- BUTTON CLICK ----------
+export function trackButtonClick(buttonName: string) {
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("event", "button_click", {
+      event_category: "engagement",
+      event_label: buttonName,
+    });
+  }
+}
+
 // ---------- FORM ----------
 export function trackFormStart(form: string) {
   trackEvent("form_start", { form });
 }
 
 export function trackFormSuccess(form: string) {
-  trackEvent("form_success", { form });
+  // GA4 form_submit event
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("event", "form_submit", {
+      event_category: "lead",
+      event_label: form,
+    });
+  }
 
+  // Meta Pixel Lead event
   if (typeof window !== "undefined" && window.fbq) {
     window.fbq("track", "Lead", { form });
   }
@@ -115,13 +132,16 @@ export function initAutoButtonTracking() {
       btn.className ||
       "unknown_button";
 
-    trackEvent("auto_button_click", {
-      button_text: text.trim().slice(0, 60),
-      page: window.location.pathname,
-    });
-  });
+    const label = text.trim().slice(0, 60);
 
-  if (DEBUG) console.log("✅ Auto Button Tracking Enabled");
+    // Fire GA4 button_click event
+    if (window.gtag) {
+      window.gtag("event", "button_click", {
+        event_category: "engagement",
+        event_label: label,
+      });
+    }
+  });
 }
 
 // ---------- ERROR TRACKING ----------

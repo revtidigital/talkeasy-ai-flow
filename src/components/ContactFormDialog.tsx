@@ -9,7 +9,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-// import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -21,6 +20,7 @@ import { useToast } from "@/hooks/use-toast";
 import { validateContactForm } from "@/lib/validations/contact";
 import { submitContactForm } from "@/lib/submitContactForm";
 import PhoneInputField from "@/components/ui/PhoneInputField";
+import { trackFormSuccess } from "@/lib/tracking";
 
 interface ContactFormDialogProps {
   children: React.ReactNode;
@@ -77,6 +77,8 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         description: "We'll get back to you as soon as possible.",
       });
 
+      trackFormSuccess("contact_form");
+
       setFormData({
         name: "",
         email: "",
@@ -122,7 +124,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                 aria-required="true"
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? "name-error" : undefined}
-                className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.name ? "border-destructive" : ""}`}
+                className={`rounded-lg border focus-visible:ring-1 focus-visible:ring-primary ${errors.name ? "border-destructive" : "border-input"}`}
               />
               {errors.name && <p id="name-error" className="text-xs text-destructive" role="alert">{errors.name}</p>}
             </div>
@@ -138,7 +140,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                 aria-required="true"
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? "email-error" : undefined}
-                className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.email ? "border-destructive" : ""}`}
+                className={`rounded-lg border focus-visible:ring-1 focus-visible:ring-primary ${errors.email ? "border-destructive" : "border-input"}`}
               />
               {errors.email && <p id="email-error" className="text-xs text-destructive" role="alert">{errors.email}</p>}
             </div>
@@ -152,7 +154,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                   setFormData({ ...formData, phone, countryName })
                 }
                 error={errors.phone}
-                variant="underline"
+                variant="bordered"
               />
             </div>
             <div className="space-y-2">
@@ -163,17 +165,15 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
               >
                 <SelectTrigger
                   id="contact-looking-for"
-                  className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus:ring-0 focus:border-primary text-muted-foreground data-[state=open]:border-primary [&>span]:text-left"
+                  className={`rounded-lg border focus:ring-1 focus:ring-primary text-foreground data-[state=open]:ring-1 data-[state=open]:ring-primary ${errors.lookingFor ? "border-destructive" : "border-input"}`}
                   aria-label="Select what you're looking for"
                 >
                   <SelectValue placeholder="What are you looking for?" />
                 </SelectTrigger>
                 <SelectContent className="bg-white z-50">
+                  <SelectItem value="whatsapp-marketing">WhatsApp Marketing</SelectItem>
                   <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
-                  <SelectItem value="whatsapp-automation">WhatsApp Automation</SelectItem>
-                  <SelectItem value="customer-support">Customer Support Solution</SelectItem>
-                  <SelectItem value="lead-generation">Lead Generation</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                  <SelectItem value="whatsapp-shop">WhatsApp Shop</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -190,7 +190,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
               aria-required="true"
               aria-invalid={!!errors.subject}
               aria-describedby={errors.subject ? "subject-error" : undefined}
-              className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.subject ? "border-destructive" : ""}`}
+              className={`rounded-lg border focus-visible:ring-1 focus-visible:ring-primary ${errors.subject ? "border-destructive" : "border-input"}`}
             />
             {errors.subject && <p id="subject-error" className="text-xs text-destructive" role="alert">{errors.subject}</p>}
           </div>

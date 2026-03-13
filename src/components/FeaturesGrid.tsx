@@ -1,37 +1,37 @@
-import { Bot, Users, MessageCircle, Eye, Calendar, BarChart3 } from "lucide-react";
+import { Bot, Users, MessageCircle, Globe, FileText, Shield } from "lucide-react";
 import { memo } from "react";
 
 const FeaturesGrid = memo(() => {
   const features = [
     {
       icon: Bot,
-      title: "AI Chatbot Automation",
-      description: "Intelligent conversations that understand context and deliver personalized responses 24/7.",
-    },
-    {
-      icon: Users,
-      title: "Live Human Takeover",
-      description: "Seamlessly transfer complex queries to human agents when AI needs support.",
+      title: "Conversational AI",
+      description: "Deploy intelligent AI chatbots that understand customer intent and deliver helpful responses around the clock.",
     },
     {
       icon: MessageCircle,
-      title: "WhatsApp Business API",
-      description: "Connect with customers on their favorite messaging platform at scale.",
+      title: "Live Chat",
+      description: "Connect your support team with customers in real-time for personalized, human-led conversations.",
     },
     {
-      icon: Eye,
-      title: "Visitor Tracking",
-      description: "Understand visitor behavior and engage proactively at the right moment.",
+      icon: Users,
+      title: "WhatsApp for Business",
+      description: "Engage customers on WhatsApp with broadcast messaging, template management, and smart routing.",
     },
     {
-      icon: Calendar,
-      title: "Appointment Scheduling",
-      description: "Let customers book meetings directly through chat without leaving the conversation.",
+      icon: Globe,
+      title: "Omni-Channel Inbox",
+      description: "Manage all customer conversations across every channel from a single unified inbox.",
     },
     {
-      icon: BarChart3,
-      title: "Analytics Dashboard",
-      description: "Real-time insights into conversation metrics, customer satisfaction, and team performance.",
+      icon: FileText,
+      title: "Pre-Chat Forms",
+      description: "Collect lead details before a conversation starts so your team is always prepared.",
+    },
+    {
+      icon: Shield,
+      title: "Team Collaboration",
+      description: "Empower your team with private notes, agent assignment, canned responses, and file sharing.",
     },
   ];
 
