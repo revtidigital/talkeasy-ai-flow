@@ -190,7 +190,7 @@ const AgentCapacity = () => {
               </div>
             </AnimatedSection>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            {/* <div className="grid md:grid-cols-3 gap-8">
               {[
                 { icon: Zap, title: "Faster Responses", value: "40%", description: "Reduction in response time" },
                 { icon: Clock, title: "Reduced Wait Times", value: "60%", description: "Less customer waiting" },
@@ -207,7 +207,7 @@ const AgentCapacity = () => {
                   </div>
                 </AnimatedSection>
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
 
