@@ -1,11 +1,11 @@
-import { Shield, Zap, Clock } from "lucide-react";
+import { MessageCircle, Users, Globe } from "lucide-react";
 import { memo } from "react";
 
 const TrustSignals = memo(() => {
   const stats = [
-    { icon: Clock, value: "99.9%", label: "Uptime Guarantee", ariaLabel: "99.9 percent uptime guarantee" },
-    { icon: Zap, value: "<1s", label: "Response Time", ariaLabel: "Less than 1 second response time" },
-    { icon: Shield, value: "SOC 2", label: "Enterprise Security", ariaLabel: "SOC 2 certified enterprise security" },
+    { icon: MessageCircle, value: "50M+", label: "Messages Delivered", ariaLabel: "Over 50 million messages delivered" },
+    { icon: Users, value: "Multi", label: "Channel Platform", ariaLabel: "Multi-channel customer platform" },
+    { icon: Globe, value: "24/7", label: "AI Support Coverage", ariaLabel: "24/7 AI-powered support coverage" },
   ];
 
   return (

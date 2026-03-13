@@ -169,11 +169,9 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                   <SelectValue placeholder="What are you looking for?" />
                 </SelectTrigger>
                 <SelectContent className="bg-white z-50">
+                  <SelectItem value="whatsapp-marketing">WhatsApp Marketing</SelectItem>
                   <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
-                  <SelectItem value="whatsapp-automation">WhatsApp Automation</SelectItem>
-                  <SelectItem value="customer-support">Customer Support Solution</SelectItem>
-                  <SelectItem value="lead-generation">Lead Generation</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                  <SelectItem value="whatsapp-shop">WhatsApp Shop</SelectItem>
                 </SelectContent>
               </Select>
             </div>

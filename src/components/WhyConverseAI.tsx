@@ -1,26 +1,26 @@
-import { Zap, Users, Lock, LineChart } from "lucide-react";
+import { Zap, Users, Lock, MessageCircle } from "lucide-react";
 
 const WhyConverseAI = () => {
   const advantages = [
     {
       icon: Zap,
-      title: "Faster Support Resolution",
-      description: "Reduce response times by 80% with AI-powered instant answers to common questions.",
+      title: "Instant AI Responses",
+      description: "AI chatbots reply to customer queries instantly, keeping conversations flowing 24/7 without delays.",
     },
     {
       icon: Users,
       title: "AI + Human Collaboration",
-      description: "Perfect balance between automation efficiency and human empathy when it matters most.",
+      description: "Seamlessly blend AI efficiency with human empathy — agents take over complex conversations when needed.",
     },
     {
       icon: Lock,
-      title: "Secure & Scalable Backend",
-      description: "Enterprise-grade security with a modern architecture built to handle millions of conversations.",
+      title: "Secure & Reliable Platform",
+      description: "Built on a robust, scalable architecture designed to handle high-volume conversations without compromise.",
     },
     {
-      icon: LineChart,
-      title: "Real-Time Insights",
-      description: "Make data-driven decisions with comprehensive analytics and customer behavior tracking.",
+      icon: MessageCircle,
+      title: "Multi-Channel Communication",
+      description: "Support customers across WhatsApp, live chat, and other channels — all from one unified platform.",
     },
   ];
 
@@ -37,16 +37,17 @@ const WhyConverseAI = () => {
               <span className="gradient-text">value their customers</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              We've helped thousands of businesses transform their customer experience 
-              with intelligent automation that doesn't compromise on quality.
+              ConverseAI brings together conversational AI, live chat, and WhatsApp 
+              for Business into one powerful platform — making customer engagement 
+              simple, scalable, and effective.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "80%", label: "Faster resolution" },
-                { value: "45%", label: "Cost reduction" },
-                { value: "98%", label: "Customer satisfaction" },
-                { value: "3x", label: "Team productivity" },
+                { value: "24/7", label: "Always available" },
+                { value: "Multi", label: "Channel support" },
+                { value: "Fast", label: "Easy setup" },
+                { value: "Unified", label: "Team inbox" },
               ].map((stat, index) => (
                 <div key={index} className="glass-card rounded-xl p-4 text-center">
                   <div className="text-2xl font-bold gradient-text">{stat.value}</div>

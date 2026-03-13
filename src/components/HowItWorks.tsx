@@ -1,36 +1,36 @@
-import { MessageSquare, Bot, User, Database, BarChart3, ArrowRight } from "lucide-react";
+import { MessageSquare, Bot, User, CheckCircle, Bell, ArrowRight } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
     {
       icon: MessageSquare,
       step: "01",
-      title: "Capture Message",
-      description: "Visitor sends a message through your website widget or WhatsApp.",
+      title: "Customer Reaches Out",
+      description: "Customer sends a message via your website chat widget or WhatsApp.",
     },
     {
       icon: Bot,
       step: "02",
-      title: "AI Responds",
-      description: "Our AI instantly analyzes intent and delivers accurate, helpful responses.",
+      title: "AI Engages Instantly",
+      description: "Conversational AI understands the query and responds with accurate, helpful answers.",
     },
     {
       icon: User,
       step: "03",
-      title: "Human Takeover",
-      description: "Complex queries are seamlessly transferred to your team when needed.",
+      title: "Agent Steps In",
+      description: "When needed, a live agent seamlessly takes over the conversation from the AI.",
     },
     {
-      icon: Database,
+      icon: CheckCircle,
       step: "04",
-      title: "Data Secured",
-      description: "All conversations are encrypted and stored securely in the cloud.",
+      title: "Issue Resolved",
+      description: "The customer's query is resolved efficiently, keeping satisfaction high.",
     },
     {
-      icon: BarChart3,
+      icon: Bell,
       step: "05",
-      title: "Insights Delivered",
-      description: "Access real-time analytics to optimize your customer experience.",
+      title: "Team Stays Notified",
+      description: "Your team receives real-time notifications and can manage all chats in one inbox.",
     },
   ];
 

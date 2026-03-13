@@ -83,9 +83,9 @@ const HeroSection = () => {
             {/* Quick Stats */}
             <div className="mt-12 flex flex-wrap gap-8 justify-center lg:justify-start" role="list" aria-label="Key statistics">
               {[
-                { value: "10K+", label: "Active Users" },
                 { value: "50M+", label: "Messages Sent" },
-                { value: "99.9%", label: "Uptime" },
+                { value: "24/7", label: "Always On Support" },
+                { value: "Multi", label: "Channel Platform" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left" role="listitem">
                   <div className="text-2xl font-bold gradient-text">{stat.value}</div>
