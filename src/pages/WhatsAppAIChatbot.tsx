@@ -205,15 +205,8 @@ const WhatsAppAIChatbot = () => {
                   Powerful Integrations
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Power up your workflow with integrations into CRM, payment gateways, and marketing tools.
+                  Power up your workflow with integrations into your favourite tools.
                 </p>
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  {["Salesforce", "HubSpot", "Stripe", "Razorpay", "Shopify", "Zapier"].map((tool, index) => (
-                    <span key={index} className="px-4 py-2 bg-muted/50 rounded-full text-sm font-medium text-muted-foreground border border-border/50">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
                 <Link to="/contact-us">
                   <Button variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
                     Explore Integrations
