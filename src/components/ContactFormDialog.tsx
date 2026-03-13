@@ -140,7 +140,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                 aria-required="true"
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? "email-error" : undefined}
-                className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.email ? "border-destructive" : ""}`}
+                className={`rounded-lg border focus-visible:ring-1 focus-visible:ring-primary ${errors.email ? "border-destructive" : "border-input"}`}
               />
               {errors.email && <p id="email-error" className="text-xs text-destructive" role="alert">{errors.email}</p>}
             </div>
