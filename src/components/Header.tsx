@@ -266,7 +266,7 @@ const Header = () => {
                 {/* Products Dropdown */}
                 {link.hasDropdown === "products" && activeDropdown === "products" && (
                   <div className="absolute top-full left-0 z-50" role="menu">
-                    <div className="bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-4 min-w-[240px] animate-fade-in">
+                    <div className="bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-3 min-w-[180px] animate-fade-in">
                       <ul className="space-y-1">
                         {productsMenu.map((item) => (
                           <li key={item.label} role="none">
