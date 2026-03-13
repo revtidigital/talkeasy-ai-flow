@@ -114,6 +114,10 @@ export function initScrollTracking() {
 }
 
 // ---------- AUTO BUTTON TRACKING ----------
+// Only fires for buttons/links that perform a real user action:
+// - <a> tags with a valid non-empty href (not just "#")
+// - <button> elements that open a dialog/form (data-action="form" or data-action="modal")
+// - <button> elements inside a <a> wrapper (delegated nav)
 export function initAutoButtonTracking() {
   if (typeof window === "undefined") return;
 
@@ -124,17 +128,43 @@ export function initAutoButtonTracking() {
     const btn = el.closest("button, a") as HTMLElement | null;
     if (!btn) return;
 
+    // Skip explicitly excluded elements
     if (btn.classList.contains("no-track")) return;
 
+    // Skip disabled buttons
+    if (btn.hasAttribute("disabled") || (btn as HTMLButtonElement).disabled) return;
+
+    const tag = btn.tagName.toLowerCase();
+
+    if (tag === "a") {
+      const href = btn.getAttribute("href") || "";
+      // Skip empty href or pure anchor-only links with no real destination
+      if (!href || href === "#" || href === "javascript:void(0)") return;
+      // Skip UI-only anchors (skip-to-content, etc.)
+      if (href.startsWith("#") && !btn.getAttribute("data-track")) return;
+    }
+
+    if (tag === "button") {
+      // Only track buttons that have an explicit data-track attribute
+      // OR are wrapped inside an <a> tag (navigation delegation)
+      // OR have data-action="form" / "modal" / "nav"
+      const hasDataTrack = btn.hasAttribute("data-track");
+      const hasAction = btn.hasAttribute("data-action");
+      const insideLink = !!btn.closest("a[href]");
+      if (!hasDataTrack && !hasAction && !insideLink) return;
+    }
+
     const text =
-      btn.innerText ||
       btn.getAttribute("aria-label") ||
-      btn.className ||
+      btn.innerText?.trim() ||
       "unknown_button";
 
     const label = text.trim().slice(0, 60);
 
-    // Fire GA4 button_click event
+    // Guard: skip if label is useless
+    if (!label || label === "unknown_button") return;
+
+    // Fire GA4 button_click event (no duplicate guard needed — native click fires once)
     if (window.gtag) {
       window.gtag("event", "button_click", {
         event_category: "engagement",

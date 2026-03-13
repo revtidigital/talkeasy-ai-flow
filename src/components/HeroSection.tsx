@@ -22,6 +22,7 @@ const HeroSection = () => {
     <section 
       className="relative min-h-screen pt-24 pb-16 overflow-hidden"
       aria-labelledby="hero-heading"
+      style={{ zIndex: 0, isolation: "isolate" }}
     >
       {/* Background Elements - using CSS instead of multiple divs for performance */}
       <div 
