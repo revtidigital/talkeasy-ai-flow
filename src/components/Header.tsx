@@ -80,12 +80,13 @@ const AccordionRow = ({
     className={cn(
       "w-full flex items-center gap-1.5 py-2.5 rounded-lg transition-colors text-left",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+      // depth === 0
+      //   // Primary items: 14px, semi-bold, px-12 (≈48px each side)
+      //   ? "px-12 text-[14px] font-semibold text-foreground hover:bg-secondary"
       depth === 0
-        // Primary items: 14px, semi-bold, px-12 (≈48px each side)
-        ? "px-12 text-[14px] font-semibold text-foreground hover:bg-secondary"
-        : depth === 1
-        // Sub-category headers: 14px, semi-bold, pl-2
-        ? "pl-2 pr-3 text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
+      ? "px-[42px] text-[14px] font-semibold text-foreground hover:bg-secondary"
+       depth === 1
+       ? "pl-[50px] pr-[42px] text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
         : "pl-2 pr-3 text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
     )}
   >
@@ -117,8 +118,10 @@ const LeafItem = ({
       "w-full text-left py-2 rounded-lg transition-colors",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
       // Deepest leaf items: 14px, regular weight, pl-2
+      // "text-[14px] font-normal text-muted-foreground hover:text-primary hover:bg-primary/5",
+      // "pl-2 pr-3"
       "text-[14px] font-normal text-muted-foreground hover:text-primary hover:bg-primary/5",
-      "pl-2 pr-3"
+      "pl-[58px] pr-[42px]"
     )}
   >
     {label}
