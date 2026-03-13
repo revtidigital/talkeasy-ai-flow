@@ -298,6 +298,12 @@ const ContactUs = () => {
                       >
                         himanshu@revtidigital.com
                       </a>
+                      <a 
+                        href="mailto:contact@theconverseai.com" 
+                        className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                      >
+                        contact@theconverseai.com
+                      </a>
                     </div>
                   </div>
                 </div>
