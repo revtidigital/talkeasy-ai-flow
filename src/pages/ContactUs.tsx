@@ -293,10 +293,10 @@ const ContactUs = () => {
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
                       <a 
-                        href="mailto:contact@theconverseai.com" 
+                        href="mailto:himanshu@revtidigital.com" 
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
                       >
-                        contact@theconverseai.com
+                        himanshu@revtidigital.com
                       </a>
                     </div>
                   </div>
