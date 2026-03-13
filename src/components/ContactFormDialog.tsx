@@ -165,7 +165,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
               >
                 <SelectTrigger
                   id="contact-looking-for"
-                  className="border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus:ring-0 focus:border-primary text-muted-foreground data-[state=open]:border-primary [&>span]:text-left"
+                  className={`rounded-lg border focus:ring-1 focus:ring-primary text-foreground data-[state=open]:ring-1 data-[state=open]:ring-primary ${errors.lookingFor ? "border-destructive" : "border-input"}`}
                   aria-label="Select what you're looking for"
                 >
                   <SelectValue placeholder="What are you looking for?" />
