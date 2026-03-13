@@ -333,7 +333,7 @@ const Header = () => {
               <Link
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2.5 text-[15px] font-medium text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                className="px-12 py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 Home
               </Link>
@@ -402,7 +402,7 @@ const Header = () => {
               <Link
                 to="/about-us"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2.5 text-[15px] font-medium text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                className="px-12 py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 About Us
               </Link>
@@ -413,7 +413,7 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2.5 text-[15px] font-medium text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                className="px-12 py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 Blog
               </a>
@@ -422,7 +422,7 @@ const Header = () => {
               <Link
                 to="/contact-us"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2.5 text-[15px] font-medium text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                className="px-12 py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 Contact Us
               </Link>
