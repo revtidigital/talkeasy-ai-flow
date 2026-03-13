@@ -391,7 +391,7 @@ const Header = () => {
             aria-label="Mobile navigation menu"
             className="lg:hidden absolute top-full left-0 right-0 bg-white backdrop-blur-xl border-b border-border/60 shadow-lg animate-fade-in max-h-[80vh] overflow-y-auto"
           >
-            <nav className="px-3 py-3 flex flex-col gap-0.5" aria-label="Mobile navigation">
+            <nav className="px-0 py-0 flex flex-col gap-0.5" aria-label="Mobile navigation">
 
               {/* ── Home ── */}
               <Link
