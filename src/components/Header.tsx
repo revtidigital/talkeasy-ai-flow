@@ -454,7 +454,7 @@ const Header = () => {
                         key={item.label}
                         label={item.label}
                         href={item.href}
-                        depth={2}
+                        depth={1}
                         onNavigate={handleMobileNavigate}
                       />
                     ))}
