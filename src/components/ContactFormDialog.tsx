@@ -77,6 +77,8 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         description: "We'll get back to you as soon as possible.",
       });
 
+      trackFormSuccess("contact_form");
+
       setFormData({
         name: "",
         email: "",
