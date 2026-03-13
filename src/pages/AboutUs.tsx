@@ -55,13 +55,13 @@ const AboutUs = () => {
   const advantages = [
     {
       icon: Server,
-      title: "Built on Scalable MERN Stack",
-      description: "Enterprise-grade architecture that grows with your business needs."
+      title: "Focus on Businesses",
+      description: "Built around your business needs, ConverseAI provides simple, affordable tools that help you communicate better and grow faster."
     },
     {
       icon: Users,
-      title: "AI + Human Collaboration",
-      description: "Smart handoffs between AI and live agents for optimal customer experience."
+      title: "Simplified Communication",
+      description: "Streamline your customer communication with one powerful platform. Manage every interaction in one place—no more switching between multiple tools or channels."
     },
     {
       icon: Shield,
