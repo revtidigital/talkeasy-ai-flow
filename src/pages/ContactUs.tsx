@@ -199,10 +199,9 @@ const ContactUs = () => {
                           <SelectValue placeholder="Choose a product" />
                         </SelectTrigger>
                         <SelectContent className="bg-white">
-                          <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
                           <SelectItem value="whatsapp-marketing">WhatsApp Marketing</SelectItem>
-                          <SelectItem value="live-chat">Live Chat</SelectItem>
-                          <SelectItem value="conversational-ai">Conversational AI</SelectItem>
+                          <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
+                          <SelectItem value="whatsapp-shop">WhatsApp Shop</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
