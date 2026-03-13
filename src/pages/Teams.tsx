@@ -47,7 +47,7 @@ const Teams = () => {
                   <div className="glass-card p-6 rounded-2xl">
                     <div className="flex items-center justify-between mb-6">
                       <h3 className="font-semibold text-foreground">Teams Overview</h3>
-                      <Button variant="outline" size="sm">+ New Team</Button>
+                      {/* <Button variant="outline" size="sm">+ New Team</Button> */}
                     </div>
                     <div className="space-y-4">
                       {[
