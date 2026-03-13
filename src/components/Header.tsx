@@ -64,6 +64,42 @@ const navLinks = [
 // ─── Sub-components ─────────────────────────────────────────────────────────────
 
 /** Single accordion row used at every level of the mobile menu */
+// const AccordionRow = ({
+//   label,
+//   isOpen,
+//   onToggle,
+//   depth = 0,
+// }: {
+//   label: string;
+//   isOpen: boolean;
+//   onToggle: () => void;
+//   depth?: number;
+// }) => (
+//   <button
+//     onClick={onToggle}
+//     className={cn(
+//       "w-full flex items-center gap-1.5 py-2.5 rounded-lg transition-colors text-left",
+//       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+//       // depth === 0
+//       //   // Primary items: 14px, semi-bold, px-12 (≈48px each side)
+//       //   ? "px-12 text-[14px] font-semibold text-foreground hover:bg-secondary"
+//       depth === 0
+//       ? "px-[42px] text-[14px] font-semibold text-foreground hover:bg-secondary"
+//        depth === 1
+//        ? "pl-[50px] pr-[42px] text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
+//         : "pl-2 pr-3 text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
+//     )}
+//   >
+//     <span>{label}</span>
+//     <ChevronDown
+//       className={cn(
+//         "shrink-0",
+//         depth === 0 ? "w-4 h-4" : "w-3.5 h-3.5"
+//       )}
+//     />
+//   </button>
+// );
+
 const AccordionRow = ({
   label,
   isOpen,
@@ -80,14 +116,14 @@ const AccordionRow = ({
     className={cn(
       "w-full flex items-center gap-1.5 py-2.5 rounded-lg transition-colors text-left",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-      // depth === 0
-      //   // Primary items: 14px, semi-bold, px-12 (≈48px each side)
-      //   ? "px-12 text-[14px] font-semibold text-foreground hover:bg-secondary"
+
       depth === 0
-      ? "px-[42px] text-[14px] font-semibold text-foreground hover:bg-secondary"
-       depth === 1
-       ? "pl-[50px] pr-[42px] text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
-        : "pl-2 pr-3 text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
+        ? "px-[42px] text-[14px] font-semibold text-foreground hover:bg-secondary"
+
+        : depth === 1
+        ? "pl-[50px] pr-[42px] text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
+
+        : "pl-[58px] pr-[42px] text-[14px] font-normal text-muted-foreground hover:text-primary hover:bg-primary/5"
     )}
   >
     <span>{label}</span>
@@ -99,8 +135,34 @@ const AccordionRow = ({
     />
   </button>
 );
-
 /** Leaf link inside the mobile menu */
+// const LeafItem = ({
+//   label,
+//   href,
+//   depth = 2,
+//   onNavigate,
+// }: {
+//   label: string;
+//   href: string;
+//   depth?: number;
+//   onNavigate: (href: string) => void;
+// }) => (
+//   <button
+//     onClick={() => onNavigate(href)}
+//     className={cn(
+//       "w-full text-left py-2 rounded-lg transition-colors",
+//       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+//       // Deepest leaf items: 14px, regular weight, pl-2
+//       // "text-[14px] font-normal text-muted-foreground hover:text-primary hover:bg-primary/5",
+//       // "pl-2 pr-3"
+//       "text-[14px] font-normal text-muted-foreground hover:text-primary hover:bg-primary/5",
+//       "pl-[58px] pr-[42px]"
+//     )}
+//   >
+//     {label}
+//   </button>
+// );
+
 const LeafItem = ({
   label,
   href,
@@ -117,17 +179,16 @@ const LeafItem = ({
     className={cn(
       "w-full text-left py-2 rounded-lg transition-colors",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-      // Deepest leaf items: 14px, regular weight, pl-2
-      // "text-[14px] font-normal text-muted-foreground hover:text-primary hover:bg-primary/5",
-      // "pl-2 pr-3"
-      "text-[14px] font-normal text-muted-foreground hover:text-primary hover:bg-primary/5",
-      "pl-[58px] pr-[42px]"
+
+      depth === 2
+        ? "pl-[58px] pr-[42px] text-[14px] font-normal text-muted-foreground hover:text-primary hover:bg-primary/5"
+
+        : "pl-[50px] pr-[42px] text-[14px] font-semibold text-muted-foreground hover:text-primary hover:bg-primary/5"
     )}
   >
     {label}
   </button>
 );
-
 // ─── Main Header ────────────────────────────────────────────────────────────────
 
 const Header = () => {
@@ -334,10 +395,10 @@ const Header = () => {
 
               {/* ── Home ── */}
               <Link
-                to="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="px-12 py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
-              >
+               to="/"
+                 onClick={() => setIsMobileMenuOpen(false)}
+                 className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                   >
                 Home
               </Link>
 
@@ -405,7 +466,7 @@ const Header = () => {
               <Link
                 to="/about-us"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-12 py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 About Us
               </Link>
@@ -416,7 +477,7 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-12 py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 Blog
               </a>
@@ -425,7 +486,7 @@ const Header = () => {
               <Link
                 to="/contact-us"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-12 py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
+                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 Contact Us
               </Link>
