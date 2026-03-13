@@ -297,7 +297,7 @@ const ContactUs = () => {
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
                       >
                         himanshu@revtidigital.com
-                      </a>
+                      </a> <br/>
                       <a 
                         href="mailto:contact@theconverseai.com" 
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
