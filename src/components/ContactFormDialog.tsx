@@ -124,7 +124,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                 aria-required="true"
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? "name-error" : undefined}
-                className={`border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary ${errors.name ? "border-destructive" : ""}`}
+                className={`rounded-lg border focus-visible:ring-1 focus-visible:ring-primary ${errors.name ? "border-destructive" : "border-input"}`}
               />
               {errors.name && <p id="name-error" className="text-xs text-destructive" role="alert">{errors.name}</p>}
             </div>
