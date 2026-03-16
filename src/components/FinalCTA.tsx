@@ -5,7 +5,11 @@ import ContactFormDialog from "./ContactFormDialog";
 
 const FinalCTA = memo(() => {
   return (
-    <section className="section-padding" aria-labelledby="cta-heading">
+  <section 
+  className="section-padding" 
+  aria-labelledby="cta-heading"
+  title="Start using ConverseAI for AI-powered customer conversations"
+>
       <div className="container-tight">
         <div className="relative text-center max-w-4xl mx-auto">
           {/* Background Glow - optimized with contain */}
@@ -33,13 +37,23 @@ const FinalCTA = memo(() => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ContactFormDialog>
-                <Button variant="hero" size="xl" aria-label="Get started with ConverseAI for free">
-                  Get Started Free
+                <Button 
+                        variant="hero" 
+                        size="xl" 
+                        aria-label="Get started with ConverseAI for free"
+                        title="Start your free ConverseAI trial"
+                      >
+                              Get Started Free
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Button>
               </ContactFormDialog>
               <ContactFormDialog>
-                <Button variant="hero-outline" size="xl" aria-label="Contact our sales team">
+                <Button 
+                    variant="hero-outline" 
+                    size="xl" 
+                    aria-label="Contact our sales team"
+                    title="Contact the ConverseAI sales team"
+                  >
                   Contact Sales
                 </Button>
               </ContactFormDialog>
