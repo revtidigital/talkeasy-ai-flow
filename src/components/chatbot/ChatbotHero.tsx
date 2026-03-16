@@ -119,7 +119,7 @@ const ChatbotHero = () => {
                 </div>
 
                 {/* Input */}
-                <div className="flex items-center gap-3 pt-4 border-t border-border/50">
+                {/* <div className="flex items-center gap-3 pt-4 border-t border-border/50">
                   <input
                     type="text"
                     placeholder="Type a message..."
@@ -128,7 +128,7 @@ const ChatbotHero = () => {
                   />
                   <Button size="icon" className="rounded-full gradient-bg">
                     <ArrowRight className="w-4 h-4" />
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
 
