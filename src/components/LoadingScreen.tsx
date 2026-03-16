@@ -5,6 +5,7 @@ const LoadingScreen = () => {
   return (
     <motion.div
       initial={{ opacity: 1 }}
+      title="Loading ConverseAI platform"
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="fixed inset-0 z-50 flex items-center justify-center bg-background"
@@ -28,6 +29,7 @@ const LoadingScreen = () => {
           <img 
             src={logoIcon} 
             alt="ConverseAI" 
+            title="ConverseAI AI Customer Engagement Platform"
             className="relative h-16 w-auto"
           />
         </motion.div>
@@ -65,7 +67,7 @@ const LoadingScreen = () => {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="relative overflow-hidden"
         >
-          <span className="text-sm font-medium text-muted-foreground">
+          <span className="text-sm font-medium text-muted-foreground" title="Please wait while ConverseAI loads">
             Loading experience...
           </span>
           <motion.div
