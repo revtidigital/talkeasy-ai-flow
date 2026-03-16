@@ -391,7 +391,9 @@ const Header = () => {
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              >  
+              >
+                {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+              </button>  
         </div>
 
         {/* ── Mobile Menu ──────────────────────────────────────────────────── */}
