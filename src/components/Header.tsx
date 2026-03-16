@@ -356,11 +356,12 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center" onMouseEnter={() => setActiveDropdown(null)}>
-            <Link to="/contact-us">
+            <Link to="/contact-us" title="Start your free trial with ConverseAI">
               <Button
                 variant="outline"
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6 hover:scale-100 hover:translate-y-0"
                 aria-label="Start your free trial"
+                title="Start your free trial with ConverseAI"
               >
                 Start Your Trial
               </Button>
