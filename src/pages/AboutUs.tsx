@@ -81,9 +81,9 @@ const AboutUs = () => {
   ];
 
   const trustStats = [
-    { icon: Clock, value: "99.9%", label: "Uptime Guarantee" },
+    { icon: Clock, value: "24/7", label: "Always On Support" },
     { icon: Shield, value: "Secure", label: "Cloud Infrastructure" },
-    { icon: Headphones, value: "24/7", label: "Dedicated Support" },
+    { icon: Headphones, value: "Expert", label: "Dedicated Support" },
     { icon: TrendingUp, value: "1000+", label: "Growing Businesses" }
   ];
 
