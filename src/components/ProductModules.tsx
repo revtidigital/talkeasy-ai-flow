@@ -46,13 +46,21 @@ const ProductModules = () => {
   ];
 
   return (
-    <section id="solutions" className="section-padding bg-secondary/30">
+    <section 
+      id="solutions" 
+      className="section-padding bg-secondary/30"
+      title="ConverseAI product suite for AI chatbots, live chat and WhatsApp automation"
+      aria-labelledby="product-modules-heading"
+    >
       <div className="container-tight">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             Product Suite
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+        <h2 
+            id="product-modules-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
+          >
             One platform.{" "}
             <span className="gradient-text">Multiple channels.</span>
           </h2>
@@ -66,13 +74,17 @@ const ProductModules = () => {
             <div
               key={index}
               className="glass-card rounded-3xl overflow-hidden group hover:shadow-glow transition-all duration-500"
+              title={`${module.title} module in the ConverseAI platform`}
             >
               {/* Gradient Header */}
               <div className={`h-2 bg-gradient-to-r ${module.color}`} />
               
               <div className="p-8">
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${module.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <module.icon className="w-8 h-8 text-white" />
+                  <module.icon 
+                    className="w-8 h-8 text-white"
+                    title={module.title}
+                  />
                 </div>
 
                 <h3 className="text-2xl font-bold mb-3">{module.title}</h3>
@@ -87,12 +99,16 @@ const ProductModules = () => {
                   ))}
                 </ul>
 
-                <Link
-                  to={module.link}
-                  className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
-                >
+               <Link
+                    to={module.link}
+                    title={`Explore ${module.title} features`}
+                    className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
+                  >
                   Explore {module.title}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight 
+                    className="w-4 h-4"
+                    title="Open module page"
+                  />
                 </Link>
               </div>
             </div>
