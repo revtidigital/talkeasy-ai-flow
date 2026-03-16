@@ -315,10 +315,10 @@ const AboutUs = () => {
                 <div className="glass-card rounded-2xl p-8 border border-primary/20">
                   <div className="flex flex-wrap gap-4 justify-center">
                     {[
-                      "99.9% Uptime SLA",
                       "Secure Cloud Infrastructure",
                       "Dedicated Support Team",
-                      "Trusted by Growing Businesses"
+                      "Trusted by Growing Businesses",
+                      "24/7 Always On Support"
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="w-5 h-5 text-mint" />
