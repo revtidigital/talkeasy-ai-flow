@@ -20,10 +20,10 @@ const MockupFallback = () => (
 const HeroSection = () => {
   return (
     <section 
-      className="relative min-h-screen pt-24 pb-16 overflow-hidden"
-      aria-labelledby="hero-heading"
-      style={{ zIndex: 0, isolation: "isolate" }}
-    >
+        className="relative min-h-screen pt-24 pb-16 overflow-hidden"
+        aria-labelledby="hero-heading"
+        title="AI chatbot platform for customer engagement by ConverseAI"
+      >
       {/* Background Elements - using CSS instead of multiple divs for performance */}
       <div 
         className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-background to-background" 
