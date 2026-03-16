@@ -35,7 +35,10 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="section-padding bg-secondary/30">
+    <section 
+        className="section-padding bg-secondary/30"
+        title="How ConverseAI AI chatbot platform works for customer engagement"
+      >
       <div className="container-tight">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -59,6 +62,7 @@ const HowItWorks = () => {
               <div
                 key={index}
                 className="relative group"
+                title={`${step.title} - Step ${step.step} in the ConverseAI workflow`}
               >
                 <div className="glass-card-hover rounded-2xl p-6 text-center h-full">
                   {/* Step Number */}
@@ -67,7 +71,7 @@ const HowItWorks = () => {
                   </div>
 
                   <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4 mt-2 group-hover:scale-110 transition-transform duration-300">
-                    <step.icon className="w-8 h-8 text-primary-foreground" />
+                    <step.icon title={step.title} className="w-8 h-8 text-primary-foreground" />
                   </div>
 
                   <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
