@@ -52,9 +52,11 @@ const WhatsAppMarketing = () => {
     <>
       <Helmet>
         <title>WhatsApp Marketing Automation Platform | ConverseAI</title>
-        <meta name="description" content="Run high-converting WhatsApp campaigns with ConverseAI. Automate notifications, retarget users, and increase conversions." />
-        <meta name="keywords" content="WhatsApp marketing, WhatsApp campaigns, marketing automation, customer engagement" />
-        <link rel="canonical" href="https://converseai.com/whatsapp-marketing" />
+        <meta name="description" content="Run high-converting WhatsApp campaigns with ConverseAI. Automate broadcast messages, drip sequences, and boost customer engagement." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="WhatsApp Marketing Automation Platform | ConverseAI" />
+        <meta property="og:description" content="Run high-converting WhatsApp campaigns with ConverseAI. Automate broadcast messages, drip sequences, and boost customer engagement." />
+        <link rel="canonical" href="https://theconverseai.com/whatsapp-marketing" />
       </Helmet>
 
       <main className="min-h-screen bg-background pt-16 md:pt-20">
