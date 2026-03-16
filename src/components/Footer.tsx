@@ -37,10 +37,16 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="inline-flex items-center mb-5" aria-label="ConverseAI - Go to homepage">
+            <Link 
+                  to="/" 
+                  className="inline-flex items-center mb-5" 
+                  aria-label="ConverseAI - Go to homepage"
+                  title="Go to ConverseAI Homepage"
+                >
               <img 
                 src={logoIcon} 
                 alt="ConverseAI Logo"
+                title="ConverseAI AI Customer Support Platform"
                 className="h-12 w-auto"
                 width="48"
                 height="48"
@@ -57,12 +63,13 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                   <li key={social.label}>
                     <a
                       href={social.href}
+                      title={`Visit our ${social.label} page`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:scale-125 transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded-full inline-block"
                       aria-label={`Visit our ${social.label} page`}
                     >
-                      <img src={social.icon} alt={social.label} className="w-10 h-10" aria-hidden="true" />
+                      <img src={social.icon} alt={social.label} title={social.label} className="w-10 h-10" aria-hidden="true" />
                     </a>
                   </li>
                 ))}
@@ -78,6 +85,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
+                    title={`Go to ${link.label}`}
                     className="text-sm text-footer-text hover:text-primary inline-block transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
                   >
                     {link.label}
@@ -95,6 +103,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
+                    title={`Go to ${link.label}`}
                     className="text-sm text-footer-text hover:text-primary inline-block transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
                   >
                     {link.label}
@@ -110,6 +119,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <address className="not-italic space-y-4">
               <a 
                 href="mailto:contact@theconverseai.com" 
+                title="Send email to contact@theconverseai.com"
                 className="text-sm text-footer-text hover:text-primary transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
                 aria-label="Email us at contact@theconverseai.com"
               >
@@ -119,6 +129,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 href="tel:+919982323333" 
                 className="text-sm text-footer-text hover:text-primary transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
                 aria-label="Call us at +91 99823 23333"
+                title="Call +91 99823 23333"
               >
                 +91-9982323333
               </a>
@@ -126,6 +137,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 href="tel:+917023084065" 
                 className="text-sm text-footer-text hover:text-primary transition-colors block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
                 aria-label="Call us at +91 70230 84065"
+                 title="Call +91 70230 84065"
               >
                 +91-7023084065
               </a>
@@ -170,8 +182,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
     A Product by{" "}
     <a 
       href="https://revtidigital.com/" 
+      
       target="_blank" 
       rel="noopener noreferrer" 
+      title="Visit Revti Digital Website"
       className="text-primary-foreground font-medium hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
     >
       Revti Digital
@@ -182,6 +196,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   <div className="flex items-center justify-center">
     <img 
       src={metaTechProvider} 
+      title="Meta Tech Provider Partner Badge"
       alt="Meta Tech Provider Partner Badge" 
       className="h-10 w-auto rounded-lg"
       width="80"
