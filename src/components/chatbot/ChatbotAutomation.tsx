@@ -61,7 +61,7 @@ const ChatbotAutomation = () => {
                       </div>
                     </div>
 
-                    <div className="flex justify-start">
+                    {/* <div className="flex justify-start">
                       <div className="bg-secondary rounded-2xl rounded-bl-sm px-4 py-2 max-w-[80%]">
                         <p className="text-xs">I can help with that! Your current plan is Pro. Would you like to:</p>
                         <div className="mt-2 space-y-2">
@@ -76,11 +76,33 @@ const ChatbotAutomation = () => {
                           </button>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
+                    <div className="flex justify-start">
+  <div className="bg-secondary rounded-2xl rounded-bl-sm px-4 py-2 max-w-[80%]">
+    <p className="text-xs">
+      I can help with that! Your current plan is Pro. Here are some options you can manage inside your account:
+    </p>
+
+    <div className="mt-2 space-y-2">
+      <div className="w-full text-xs bg-white px-3 py-2 rounded-lg border">
+        📊 View your plan details anytime from your dashboard
+      </div>
+
+      <div className="w-full text-xs bg-white px-3 py-2 rounded-lg border">
+        ⬆️ Upgrade your plan to unlock more AI features
+      </div>
+
+      <div className="w-full text-xs bg-white px-3 py-2 rounded-lg border">
+        💳 Manage or update your payment information securely
+      </div>
+    </div>
+  </div>
+</div>
                   </div>
 
+                  
                   {/* Input */}
-                  <div className="absolute bottom-4 left-4 right-4">
+                  {/* <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex items-center gap-2 bg-secondary rounded-full px-4 py-2">
                       <input
                         type="text"
@@ -90,7 +112,19 @@ const ChatbotAutomation = () => {
                       />
                       <MessageCircle className="w-5 h-5 text-primary" />
                     </div>
-                  </div>
+                  </div> */}
+
+                  <div className="absolute bottom-4 left-4 right-4">
+  <div className="flex items-center gap-2 bg-secondary rounded-full px-4 py-2">
+    
+    <div className="flex-1 text-xs text-muted-foreground">
+      Type a message...
+    </div>
+
+    <MessageCircle className="w-5 h-5 text-primary opacity-70" />
+    
+  </div>
+</div>
                 </div>
               </div>
 
