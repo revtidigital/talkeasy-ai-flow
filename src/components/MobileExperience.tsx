@@ -2,7 +2,10 @@ import { Bell, MessageCircle, CheckCircle, Smartphone } from "lucide-react";
 
 const MobileExperience = () => {
   return (
-    <section className="section-padding overflow-hidden">
+   <section 
+  className="section-padding overflow-hidden"
+  title="Manage customer conversations on mobile using ConverseAI app"
+>
       <div className="container-tight">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -28,7 +31,10 @@ const MobileExperience = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-primary" />
+                      <item.icon 
+                        className="w-5 h-5 text-primary"
+                        title={item.text}
+                      />
                   </div>
                   <span className="font-medium">{item.text}</span>
                 </div>
@@ -57,8 +63,11 @@ const MobileExperience = () => {
                   {/* App Header */}
                   <div className="gradient-bg px-4 py-3 flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                      <MessageCircle className="w-4 h-4 text-white" />
-                    </div>
+                      <MessageCircle 
+                        className="w-4 h-4 text-white"
+                        title="Customer conversations"
+                      />
+                   </div>
                     <div>
                       <div className="text-sm font-semibold text-white">ConverseAI</div>
                       <div className="text-xs text-white/70">3 active chats</div>
@@ -99,7 +108,10 @@ const MobileExperience = () => {
                   <div className="mx-4 glass-card rounded-xl p-3 shadow-lg animate-bounce-soft">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full gradient-bg flex items-center justify-center">
-                        <Bell className="w-4 h-4 text-white" />
+                        <Bell 
+                            className="w-4 h-4 text-white"
+                            title="New message notification"
+                          />
                       </div>
                       <div>
                         <div className="text-xs font-semibold">New message</div>
