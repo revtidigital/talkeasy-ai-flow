@@ -36,7 +36,7 @@ const FeaturesGrid = memo(() => {
   ];
 
   return (
-    <section id="product" className="section-padding" aria-labelledby="features-heading">
+    <section id="product" title="ConverseAI platform features for AI customer engagement" className="section-padding" aria-labelledby="features-heading">
       <div className="container-tight">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -56,11 +56,12 @@ const FeaturesGrid = memo(() => {
             <article
               key={index}
               className="glass-card-hover rounded-2xl p-8 group"
+              title={`${feature.title} feature of ConverseAI`}
               style={{ animationDelay: `${index * 0.1}s` }}
               role="listitem"
             >
               <div className="w-14 h-14 rounded-2xl gradient-bg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
-                <feature.icon className="w-7 h-7 text-primary-foreground" aria-hidden="true" />
+                <feature.icon className="w-7 h-7 text-primary-foreground" title={feature.title} aria-hidden="true" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-foreground">
                 {feature.title}
