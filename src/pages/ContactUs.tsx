@@ -254,8 +254,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            {/* Right Column - Contact Information */}
-            <div className="lg:col-span-2 space-y-6 animate-slide-in-right">
+        <div className="lg:col-span-2 space-y-6 animate-slide-in-right">
               {/* Contact Info Card */}
               <div className="glass-card rounded-2xl p-6 md:p-8 border border-white/50 bg-white/80 backdrop-blur-xl">
                 <h3 className="text-xl font-bold text-foreground mb-6">
@@ -284,12 +283,14 @@ const ContactUs = () => {
                       <div className="flex flex-col gap-1">
                         <a 
                           href="tel:+919982323333" 
+                          title="Call ConverseAI at +91 99823 23333"
                           className="text-muted-foreground text-sm hover:text-primary transition-colors"
                         >
                           +91-9982323333
                         </a>
                         <a 
                           href="tel:+917023084065" 
+                          title="Call ConverseAI at +91 70230 84065"
                           className="text-muted-foreground text-sm hover:text-primary transition-colors"
                         >
                           +91-7023084065
@@ -306,12 +307,14 @@ const ContactUs = () => {
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
                       <a 
                         href="mailto:himanshu@revtidigital.com" 
+                        title="Email ConverseAI at himanshu@revtidigital.com"
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
                       >
                         himanshu@revtidigital.com
                       </a> <br/>
                       <a 
                         href="mailto:contact@theconverseai.com" 
+                        title="Email ConverseAI at contact@theconverseai.com"
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
                       >
                         contact@theconverseai.com
