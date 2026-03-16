@@ -25,11 +25,11 @@ const ChatbotMockup = memo(() => {
   }, []);
 
   return (
-    <div 
+   <div 
       className="relative animate-slide-in-right" 
       role="img" 
       aria-label="Interactive chatbot demonstration showing a conversation between a user and ConverseAI Assistant about order tracking"
-      style={{ contain: 'layout style' }}
+      title="AI chatbot conversation demo by ConverseAI"
     >
       {/* Glow Effect - optimized with contain */}
       <div 
@@ -122,6 +122,7 @@ const ChatbotMockup = memo(() => {
           <div className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3">
             <input
               type="text"
+              title="Message input (demo only)"
               placeholder="Type your message..."
               className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
               disabled
@@ -130,11 +131,12 @@ const ChatbotMockup = memo(() => {
             />
             <span id="input-hint" className="sr-only">This is a demonstration chat interface and does not accept input</span>
             <button 
-              className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-primary-foreground shadow-soft hover:shadow-glow transition-all"
-              disabled
-              aria-label="Send message button (demonstration only - not functional)"
-              type="button"
-            >
+                className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center text-primary-foreground shadow-soft hover:shadow-glow transition-all"
+                disabled
+                aria-label="Send message button (demonstration only - not functional)"
+                title="Send message (demo interface)"
+                type="button"
+              >
               <Send className="w-4 h-4" aria-hidden="true" />
             </button>
           </div>
