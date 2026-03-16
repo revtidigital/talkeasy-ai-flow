@@ -128,8 +128,8 @@ const ChatbotHero = () => {
                   />
                   <Button size="icon" className="rounded-full gradient-bg">
                     <ArrowRight className="w-4 h-4" />
-                  </Button> */}
-                </div>
+                  </Button> 
+                </div> */}
               </div>
 
               {/* Floating Elements */}
