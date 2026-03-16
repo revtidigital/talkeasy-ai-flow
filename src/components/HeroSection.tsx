@@ -68,14 +68,18 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <ContactFormDialog>
-                <Button variant="hero" size="xl" aria-label="Start your free trial - opens contact form">
+                <Button variant="hero" size="xl" title="Start your free trial with ConverseAI" aria-label="Start your free trial - opens contact form">
                   Start Free Trial
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Button>
               </ContactFormDialog>
               <ContactFormDialog>
-                <Button variant="hero-outline" size="xl" aria-label="Book a demo - opens contact form">
-                  <Play className="w-5 h-5" aria-hidden="true" />
+                <Button 
+                    variant="hero-outline" 
+                    size="xl" 
+                    aria-label="Book a demo - opens contact form"
+                    title="Book a demo with ConverseAI"
+                  >
                   Book Demo
                 </Button>
               </ContactFormDialog>
