@@ -113,6 +113,7 @@ const AccordionRow = ({
 }) => (
   <button
     onClick={onToggle}
+    title={label}
     className={cn(
       "w-full flex items-center gap-1.5 py-2.5 rounded-lg transition-colors text-left",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
@@ -176,6 +177,7 @@ const LeafItem = ({
 }) => (
   <button
     onClick={() => onNavigate(href)}
+    title={label}
     className={cn(
       "w-full text-left py-2 rounded-lg transition-colors",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
@@ -260,10 +262,16 @@ const Header = () => {
       <div className="container-tight relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center group shrink-0" aria-label="ConverseAI - Go to homepage">
+          <Link 
+             to="/" 
+              className="flex items-center group shrink-0" 
+              aria-label="ConverseAI - Go to homepage"
+              title="Go to ConverseAI Homepage"
+             >
             <img
               src="/assets/logo.png"
               alt="ConverseAI Logo"
+              title="ConverseAI AI Customer Support Platform"
               className="h-8 md:h-10 w-auto"
               width="120"
               height="40"
@@ -287,6 +295,7 @@ const Header = () => {
               >
                 <a
                   href={link.href}
+                  title={link.label}
                   onClick={(e) => handleNavClick(e, link)}
                   target={link.isExternal ? "_blank" : undefined}
                   rel={link.isExternal ? "noopener noreferrer" : undefined}
@@ -315,6 +324,7 @@ const Header = () => {
                                 <li key={item.label} role="none">
                                   <button
                                     onClick={() => handleDropdownItemClick(item.href)}
+                                    title={`Open ${item.label}`}
                                     className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-2 py-1.5 rounded-lg transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                                     role="menuitem"
                                   >
@@ -339,6 +349,7 @@ const Header = () => {
                           <li key={item.label} role="none">
                             <button
                               onClick={() => handleDropdownItemClick(item.href)}
+                              title={`Open ${item.label}`}
                               className={`text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring${'noWrap' in item && item.noWrap ? ' whitespace-nowrap' : ''}`}
                               role="menuitem"
                             >
@@ -370,7 +381,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
+            className="lg:hidden p-2 text-foreground title={isMobileMenuOpen ? "Close menu" : "Open menu"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
             onClick={() => {
               setIsMobileMenuOpen(!isMobileMenuOpen);
               setOpenMobileTop(null);
@@ -397,6 +408,7 @@ const Header = () => {
               {/* ── Home ── */}
               <Link
                to="/"
+                title="Go to Home"
                  onClick={() => setIsMobileMenuOpen(false)}
                  className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
                    >
