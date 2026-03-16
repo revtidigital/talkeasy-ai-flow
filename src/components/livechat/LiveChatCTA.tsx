@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const LiveChatCTA = () => {
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-20 lg:py-28 relative overflow-hidden" title="Live chat customer engagement with ConverseAI">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent" />
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
@@ -34,6 +34,7 @@ const LiveChatCTA = () => {
             <Link to="/contact-us">
               <Button
                 variant="hero-outline"
+                title="Start your free trial with ConverseAI"
                 size="lg"
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gradient-cta text-primary-foreground shadow-glow hover:shadow-[0_16px_50px_-10px_hsl(262_83%_58%_/_0.6)] hover:scale-[1.03] hover:-translate-y-1 active:scale-100 active:translate-y-0 font-semibold h-14 rounded-xl px-8 text-base"
               >
@@ -44,6 +45,7 @@ const LiveChatCTA = () => {
             { <Link to="/contact-us">
               <Button
                 variant="outline"
+                title="Contact the ConverseAI sales team"
                 size="lg"
                 className=" w-[250px] inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-primary/30 bg-white/80 backdrop-blur-sm text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-[1.03] hover:-translate-y-1 active:scale-100 font-medium h-14 rounded-xl px-8 text-base"
               >
