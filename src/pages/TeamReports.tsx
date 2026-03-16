@@ -10,12 +10,11 @@ const TeamReports = () => {
     <>
       <Helmet>
         <title>Team Performance Reports & Analytics | ConverseAI</title>
-        <meta 
-          name="description" 
-          content="Track team productivity and performance in real time with ConverseAI Team Reports. Analyze workload, response times, and efficiency." 
-        />
+        <meta name="description" content="Track team productivity and performance with ConverseAI Team Reports. Analyze workload, response times, and team efficiency." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://converseai.com/team-reports" />
+        <meta property="og:title" content="Team Performance Reports & Analytics | ConverseAI" />
+        <meta property="og:description" content="Track team productivity and performance with ConverseAI Team Reports. Analyze workload, response times, and team efficiency." />
+        <link rel="canonical" href="https://theconverseai.com/team-reports" />
       </Helmet>
 
       <main className="min-h-screen bg-background pt-16 md:pt-20">
