@@ -4,7 +4,7 @@ import ContactFormDialog from "./ContactFormDialog";
 
 const MidCTA = () => {
   return (
-    <section className="section-padding">
+    <section className="section-padding" title="Start using ConverseAI for AI-powered customer support">
       <div className="container-tight">
         <div className="relative gradient-bg rounded-3xl p-12 md:p-16 lg:p-20 overflow-hidden">
           {/* Background Elements */}
@@ -39,6 +39,7 @@ const MidCTA = () => {
                 <Button 
                   variant="hero-outline" 
                   size="xl"
+                  title="Start your free trial with ConverseAI"
                   className="bg-white text-foreground border-0 hover:bg-primary hover:text-primary-foreground"
                 >
                   Start Free Trial
@@ -48,6 +49,7 @@ const MidCTA = () => {
               <ContactFormDialog>
                 <Button 
                   variant="outline" 
+                  title="Talk to the ConverseAI sales team"
                   size="xl"
                   className="text-white border-2 border-white/50 bg-white/10 hover:bg-white hover:text-primary hover:border-white"
                 >
