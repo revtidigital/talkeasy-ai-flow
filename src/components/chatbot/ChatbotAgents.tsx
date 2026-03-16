@@ -138,14 +138,14 @@ const ChatbotAgents = () => {
                   </div>
 
                   {/* Quick Actions */}
-                  <div className="flex gap-2">
+                  {/* <div className="flex gap-2">
                     <button className="flex-1 py-2 px-4 text-xs font-medium bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors">
                       View Context
                     </button>
                     <button className="flex-1 py-2 px-4 text-xs font-medium gradient-bg text-white rounded-lg hover:opacity-90 transition-opacity">
                       Take Over
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
