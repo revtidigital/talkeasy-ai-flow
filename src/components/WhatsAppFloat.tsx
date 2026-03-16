@@ -11,6 +11,7 @@ const WhatsAppFloat = memo(() => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
+      title="Chat with us on WhatsApp"
       onClick={() => trackWhatsAppClick()}
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-11 h-11 rounded-full bg-[#25D366] text-white shadow-lg  hover:shadow-xl transition-all duration-300"
     >
