@@ -106,6 +106,14 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen bg-background pt-16 md:pt-20">
+      <Helmet>
+        <title>Contact Us | Get in Touch with ConverseAI Team</title>
+        <meta name="description" content="Contact the ConverseAI team to explore AI chatbot and WhatsApp solutions for your business. We respond within 24 hours." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Contact Us | ConverseAI" />
+        <meta property="og:description" content="Contact the ConverseAI team to explore AI chatbot and WhatsApp solutions for your business. We respond within 24 hours." />
+        <link rel="canonical" href="https://theconverseai.com/contact-us" />
+      </Helmet>
       
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
