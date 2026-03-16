@@ -380,19 +380,18 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-foreground title={isMobileMenuOpen ? "Close menu" : "Open menu"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
-            onClick={() => {
-              setIsMobileMenuOpen(!isMobileMenuOpen);
-              setOpenMobileTop(null);
-              setOpenMobileSub(null);
-            }}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-          >
-            {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-          </button>
+         <button
+                className="lg:hidden p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
+                title={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                onClick={() => {
+                  setIsMobileMenuOpen(!isMobileMenuOpen);
+                  setOpenMobileTop(null);
+                  setOpenMobileSub(null);
+                }}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              >  
         </div>
 
         {/* ── Mobile Menu ──────────────────────────────────────────────────── */}
