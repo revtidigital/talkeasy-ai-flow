@@ -85,15 +85,15 @@ const ChatbotAutomation = () => {
 
     <div className="mt-2 space-y-2">
       <div className="w-full text-xs bg-white px-3 py-2 rounded-lg border">
-        📊 View your plan details anytime from your dashboard
+        📊 View plan details
       </div>
 
       <div className="w-full text-xs bg-white px-3 py-2 rounded-lg border">
-        ⬆️ Upgrade your plan to unlock more AI features
+        ⬆️ Upgrade plan 
       </div>
 
       <div className="w-full text-xs bg-white px-3 py-2 rounded-lg border">
-        💳 Manage or update your payment information securely
+        💳 update payment
       </div>
     </div>
   </div>
