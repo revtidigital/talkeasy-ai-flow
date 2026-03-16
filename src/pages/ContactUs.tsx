@@ -65,6 +65,8 @@ const ContactUs = () => {
         description: "Our team will get back to you within 24 hours.",
       });
       
+      trackFormSuccess("contact_page_form");
+      
       setFormData({
         name: "",
         email: "",
