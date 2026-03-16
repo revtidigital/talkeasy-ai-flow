@@ -165,6 +165,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
               >
                 <SelectTrigger
                   id="contact-looking-for"
+                  title="Select the product or service you are interested in"
                   className={`rounded-lg border focus:ring-1 focus:ring-primary text-foreground data-[state=open]:ring-1 data-[state=open]:ring-primary ${errors.lookingFor ? "border-destructive" : "border-input"}`}
                   aria-label="Select what you're looking for"
                 >
@@ -183,6 +184,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             <label htmlFor="contact-subject" className="sr-only">Subject (required)</label>
             <Input
               id="contact-subject"
+              title="Enter the subject of your message"
               placeholder="Subject*"
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -199,6 +201,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             <label htmlFor="contact-message" className="sr-only">Tell us about your project</label>
             <Textarea
               id="contact-message"
+              title="Describe your project or requirement"
               placeholder="Tell us about your project"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -233,6 +236,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             <Button
               type="submit"
               disabled={isSubmitting}
+              title="Send your message to ConverseAI team"
               className="bg-primary hover:bg-primary/90 text-white px-8 py-2 rounded-lg"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
