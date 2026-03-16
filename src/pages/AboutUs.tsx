@@ -81,9 +81,9 @@ const AboutUs = () => {
   ];
 
   const trustStats = [
-    { icon: Clock, value: "99.9%", label: "Uptime Guarantee" },
+    { icon: Clock, value: "24/7", label: "Always On Support" },
     { icon: Shield, value: "Secure", label: "Cloud Infrastructure" },
-    { icon: Headphones, value: "24/7", label: "Dedicated Support" },
+    { icon: Headphones, value: "Expert", label: "Dedicated Support" },
     { icon: TrendingUp, value: "1000+", label: "Growing Businesses" }
   ];
 
@@ -315,10 +315,10 @@ const AboutUs = () => {
                 <div className="glass-card rounded-2xl p-8 border border-primary/20">
                   <div className="flex flex-wrap gap-4 justify-center">
                     {[
-                      "99.9% Uptime SLA",
                       "Secure Cloud Infrastructure",
                       "Dedicated Support Team",
-                      "Trusted by Growing Businesses"
+                      "Trusted by Growing Businesses",
+                      "24/7 Always On Support"
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="w-5 h-5 text-mint" />

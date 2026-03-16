@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +16,7 @@ import { MapPin, Phone, Mail, Shield, Clock, Users, Send } from "lucide-react";
 import { validateContactForm } from "@/lib/validations/contact";
 import { submitContactForm } from "@/lib/submitContactForm";
 import PhoneInputField from "@/components/ui/PhoneInputField";
+import { trackFormSuccess } from "@/lib/tracking";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -63,6 +65,8 @@ const ContactUs = () => {
         description: "Our team will get back to you within 24 hours.",
       });
       
+      trackFormSuccess("contact_page_form");
+      
       setFormData({
         name: "",
         email: "",
@@ -102,6 +106,14 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen bg-background pt-16 md:pt-20">
+      <Helmet>
+        <title>Contact Us | Get in Touch with ConverseAI Team</title>
+        <meta name="description" content="Contact the ConverseAI team to explore AI chatbot and WhatsApp solutions for your business. We respond within 24 hours." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Contact Us | ConverseAI" />
+        <meta property="og:description" content="Contact the ConverseAI team to explore AI chatbot and WhatsApp solutions for your business. We respond within 24 hours." />
+        <link rel="canonical" href="https://theconverseai.com/contact-us" />
+      </Helmet>
       
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 overflow-hidden">
@@ -242,8 +254,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            {/* Right Column - Contact Information */}
-            <div className="lg:col-span-2 space-y-6 animate-slide-in-right">
+        <div className="lg:col-span-2 space-y-6 animate-slide-in-right">
               {/* Contact Info Card */}
               <div className="glass-card rounded-2xl p-6 md:p-8 border border-white/50 bg-white/80 backdrop-blur-xl">
                 <h3 className="text-xl font-bold text-foreground mb-6">
@@ -272,12 +283,14 @@ const ContactUs = () => {
                       <div className="flex flex-col gap-1">
                         <a 
                           href="tel:+919982323333" 
+                          title="Call ConverseAI at +91 99823 23333"
                           className="text-muted-foreground text-sm hover:text-primary transition-colors"
                         >
                           +91-9982323333
                         </a>
                         <a 
                           href="tel:+917023084065" 
+                          title="Call ConverseAI at +91 70230 84065"
                           className="text-muted-foreground text-sm hover:text-primary transition-colors"
                         >
                           +91-7023084065
@@ -294,12 +307,14 @@ const ContactUs = () => {
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
                       <a 
                         href="mailto:himanshu@revtidigital.com" 
+                        title="Email ConverseAI at himanshu@revtidigital.com"
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
                       >
                         himanshu@revtidigital.com
                       </a> <br/>
                       <a 
                         href="mailto:contact@theconverseai.com" 
+                        title="Email ConverseAI at contact@theconverseai.com"
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
                       >
                         contact@theconverseai.com

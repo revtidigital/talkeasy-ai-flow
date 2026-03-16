@@ -56,11 +56,11 @@ const PreChatForms = () => {
   return (
     <>
       <Helmet>
-        <title>Pre-Chat Forms for Smarter Conversations | ConverseAI</title>
-        <meta 
-          name="description" 
-          content="Collect essential customer data before chats start to deliver faster and more personalized support." 
-        />
+        <title>Pre-Chat Forms for Smarter Live Chat | ConverseAI</title>
+        <meta name="description" content="Collect essential customer info before chats start with ConverseAI Pre-Chat Forms. Deliver faster, more personalized customer support." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Pre-Chat Forms for Smarter Live Chat | ConverseAI" />
+        <meta property="og:description" content="Collect essential customer info before chats start with ConverseAI Pre-Chat Forms. Deliver faster, more personalized customer support." />
         <link rel="canonical" href="https://theconverseai.com/pre-chat-forms" />
       </Helmet>
 

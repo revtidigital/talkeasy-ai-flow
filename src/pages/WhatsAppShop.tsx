@@ -47,9 +47,11 @@ const WhatsAppShop = () => {
     <>
       <Helmet>
         <title>WhatsApp Shop for Ecommerce & Product Catalogs | ConverseAI</title>
-        <meta name="description" content="Sell directly on WhatsApp with ConverseAI WhatsApp Shop. Create catalogs, automate orders, and convert chats into sales." />
-        <meta name="keywords" content="WhatsApp shop, WhatsApp ecommerce, product catalog, WhatsApp sales" />
-        <link rel="canonical" href="https://converseai.com/whatsapp-shop" />
+        <meta name="description" content="Sell directly on WhatsApp with ConverseAI WhatsApp Shop. Create product catalogs, automate orders, and convert conversations into sales." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="WhatsApp Shop for Ecommerce & Product Catalogs | ConverseAI" />
+        <meta property="og:description" content="Sell directly on WhatsApp with ConverseAI WhatsApp Shop. Create product catalogs, automate orders, and convert conversations into sales." />
+        <link rel="canonical" href="https://theconverseai.com/whatsapp-shop" />
       </Helmet>
 
       <main className="min-h-screen bg-background pt-16 md:pt-20">

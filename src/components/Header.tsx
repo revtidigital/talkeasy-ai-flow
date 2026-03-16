@@ -356,11 +356,12 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center" onMouseEnter={() => setActiveDropdown(null)}>
-            <Link to="/contact-us">
+            <Link to="/contact-us" title="Start your free trial with ConverseAI">
               <Button
                 variant="outline"
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6 hover:scale-100 hover:translate-y-0"
                 aria-label="Start your free trial"
+                title="Start your free trial with ConverseAI"
               >
                 Start Your Trial
               </Button>
@@ -466,6 +467,7 @@ const Header = () => {
               <Link
                 to="/about-us"
                 onClick={() => setIsMobileMenuOpen(false)}
+                title="Learn about ConverseAI"
                 className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 About Us
@@ -476,6 +478,7 @@ const Header = () => {
                 href="https://blog.theconverseai.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Read the ConverseAI Blog"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
@@ -486,6 +489,7 @@ const Header = () => {
               <Link
                 to="/contact-us"
                 onClick={() => setIsMobileMenuOpen(false)}
+                title="Contact the ConverseAI team"
                 className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 Contact Us
@@ -493,11 +497,12 @@ const Header = () => {
 
               {/* ── CTA ── */}
               <div className="mt-3 px-1 pb-2">
-                <Link to="/contact-us" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link to="/contact-us" onClick={() => setIsMobileMenuOpen(false)} title="Start your free trial">
                   <Button
                     variant="outline"
                     className="w-full justify-center border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                     aria-label="Start your free trial"
+                    title="Start your free trial with ConverseAI"
                   >
                     Start Your Trial
                   </Button>

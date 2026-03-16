@@ -10,12 +10,11 @@ const InboxReports = () => {
     <>
       <Helmet>
         <title>Inbox Reports & Conversation Analytics | ConverseAI</title>
-        <meta 
-          name="description" 
-          content="Analyze your inbox performance with real-time reporting using ConverseAI Inbox Reports. Track resolution time and workload." 
-        />
+        <meta name="description" content="Analyze inbox performance with real-time reporting using ConverseAI Inbox Reports. Track resolution time, volume, and team workload." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://converseai.com/inbox-reports" />
+        <meta property="og:title" content="Inbox Reports & Conversation Analytics | ConverseAI" />
+        <meta property="og:description" content="Analyze inbox performance with real-time reporting using ConverseAI Inbox Reports. Track resolution time, volume, and team workload." />
+        <link rel="canonical" href="https://theconverseai.com/inbox-reports" />
       </Helmet>
 
       <main className="min-h-screen bg-background pt-16 md:pt-20">
