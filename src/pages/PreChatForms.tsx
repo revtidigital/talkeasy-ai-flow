@@ -127,9 +127,9 @@ const PreChatForms = () => {
                           </div>
                         </div>
                         
-                        <Button className="w-full gradient-bg text-white">
-                          Start Chat <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
+                        <div className="w-full gradient-bg text-white flex items-center justify-center py-2 rounded-lg cursor-pointer">
+                                  Start Chat <ArrowRight className="w-4 h-4 ml-2" />
+                                </div>
                       </div>
                     </div>
                   </div>
