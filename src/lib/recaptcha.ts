@@ -5,7 +5,7 @@ declare global {
 }
 
 // 🔑 Apni site key yaha daal
-const SITE_KEY = "6Ld6E40sAAAAAAayjrv2wh-ZInD0yK12mVNWIpmH";
+const SITE_KEY = "6Ld6E40sAAAAAAayjrv2wh-ZInD0yK12mVNWlmpH";
 
 export const getCaptchaToken = async (action: string = "submit"): Promise<string | null> => {
   try {
