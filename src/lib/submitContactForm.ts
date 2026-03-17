@@ -1,9 +1,4 @@
-import { getCaptchaToken } from "./recaptcha";
-
-
-
-// app script for google sheet
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxdbpvf0RaGD5rCUiMcQpTc3YUiKTekU4FYHpSMSGQfy5_DyxWBWDETrGVGxWnib4c1/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzRbQfkSSrtCdrL2eARlKHKP3olemBqA8rEFP_GXVmlwXjjZc8osKKZBOaVlVfs59ns/exec';
 
 interface ContactPayload {
   fullName: string;
@@ -17,11 +12,6 @@ interface ContactPayload {
 }
 
 export const submitContactForm = async (payload: ContactPayload): Promise<void> => {
-  const token = await getCaptchaToken("contact_form");
-
-  if (!token) {
-    throw new Error("Captcha failed");
-  }
   const utm = {
     utm_source: localStorage.getItem("utm_source") || "Direct",
     utm_medium: localStorage.getItem("utm_medium") || "N/A",
@@ -44,9 +34,6 @@ export const submitContactForm = async (payload: ContactPayload): Promise<void> 
     subject: payload.subject || "N/A",
     message: payload.message || "N/A",
     form_source: payload.form_source || "Website",
-     
-    captcha_token: token,
-    
     utm_source: utm.utm_source,
     utm_medium: utm.utm_medium,
     utm_campaign: utm.utm_campaign,
