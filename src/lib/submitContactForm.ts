@@ -1,3 +1,5 @@
+import { getCaptchaToken } from "./recaptcha";
+
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzRbQfkSSrtCdrL2eARlKHKP3olemBqA8rEFP_GXVmlwXjjZc8osKKZBOaVlVfs59ns/exec';
 
 interface ContactPayload {
@@ -12,6 +14,15 @@ interface ContactPayload {
 }
 
 export const submitContactForm = async (payload: ContactPayload): Promise<void> => {
+
+  // 🔥 STEP 1: GET CAPTCHA TOKEN
+  const token = await getCaptchaToken("contact_form");
+
+  if (!token) {
+    throw new Error("Captcha failed");
+  }
+
+  // 🔥 STEP 2: UTM DATA
   const utm = {
     utm_source: localStorage.getItem("utm_source") || "Direct",
     utm_medium: localStorage.getItem("utm_medium") || "N/A",
@@ -21,10 +32,9 @@ export const submitContactForm = async (payload: ContactPayload): Promise<void> 
     utm_id: localStorage.getItem("utm_id") || "N/A",
   };
 
-  // Truncate device_info to avoid body size issues
   const deviceInfo = navigator.userAgent.substring(0, 200);
 
-  // Build a clean flat object with all string values (no undefined/null)
+  // 🔥 STEP 3: FINAL PAYLOAD
   const finalPayload: Record<string, string> = {
     fullName: payload.fullName || "",
     email: payload.email || "",
@@ -34,6 +44,10 @@ export const submitContactForm = async (payload: ContactPayload): Promise<void> 
     subject: payload.subject || "N/A",
     message: payload.message || "N/A",
     form_source: payload.form_source || "Website",
+
+    // ✅ MOST IMPORTANT
+    captcha_token: token,
+
     utm_source: utm.utm_source,
     utm_medium: utm.utm_medium,
     utm_campaign: utm.utm_campaign,
