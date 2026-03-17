@@ -7,7 +7,7 @@ if (!token) {
 }
 
 // app script for google sheet
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzRbQfkSSrtCdrL2eARlKHKP3olemBqA8rEFP_GXVmlwXjjZc8osKKZBOaVlVfs59ns/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxdbpvf0RaGD5rCUiMcQpTc3YUiKTekU4FYHpSMSGQfy5_DyxWBWDETrGVGxWnib4c1/exec';
 
 interface ContactPayload {
   fullName: string;
