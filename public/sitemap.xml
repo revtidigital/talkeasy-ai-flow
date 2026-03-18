@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.theconverseai.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://www.theconverseai.com/about-us/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/contact-us/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Features -->
+  <url>
+    <loc>https://www.theconverseai.com/chatbot/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/live-chat/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/pre-chat-forms/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/omni-channel/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Reports -->
+  <url>
+    <loc>https://www.theconverseai.com/agent-reports/</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/csat-report/</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/team-reports/</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/inbox-reports/</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Products -->
+  <url>
+    <loc>https://www.theconverseai.com/whatsapp-ai-chatbot/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/whatsapp-shop/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/whatsapp-marketing/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/agent-capacity/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/private-notes/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/live-view/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theconverseai.com/teams-2/</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
