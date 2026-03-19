@@ -22,7 +22,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   };
 
   const socialLinks = [
-    { icon: facebookIcon, href: "https://www.facebook.com/share/1BTGfP9JgU/", label: "Facebook" },
+    { icon: facebookIcon, href: "https://www.facebook.com/61564130560658/", label: "Facebook" },
     { icon: youtubeIcon, href: "https://www.youtube.com/@theconverseai", label: "YouTube" },
     { icon: instagramIcon, href: "https://www.instagram.com/theconverseai/", label: "Instagram" },
     { icon: linkedinIcon, href: "https://www.linkedin.com/company/theconverseai", label: "LinkedIn" },
