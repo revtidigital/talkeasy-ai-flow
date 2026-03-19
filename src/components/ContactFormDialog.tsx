@@ -34,7 +34,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
     email: "",
     phone: "",
     countryName: "",
-    lookingFor: "",
+    product: "",
     subject: "",
     message: "",
   });
@@ -45,7 +45,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
     e.preventDefault();
     setErrors({});
 
-   
+
 
     const validation = validateContactForm(formData);
     if (!validation.success) {
@@ -66,7 +66,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         email: formData.email,
         phone: formData.phone,
         countryName: formData.countryName,
-        product: formData.lookingFor || "Not specified",
+        product: formData.product || "Not specified",
         subject: formData.subject,
         message: formData.message,
         form_source: "Popup Form Enquiry",
@@ -84,7 +84,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         email: "",
         phone: "",
         countryName: "",
-        lookingFor: "",
+        product: "",
         subject: "",
         message: "",
       });
@@ -160,8 +160,8 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             <div className="space-y-2">
               <label htmlFor="contact-looking-for" className="sr-only">What are you looking for?</label>
               <Select
-                value={formData.lookingFor}
-                onValueChange={(value) => setFormData({ ...formData, lookingFor: value })}
+                value={formData.product}
+                onValueChange={(value) => setFormData({ ...formData, product: value })}
               >
                 <SelectTrigger
                   id="contact-looking-for"
