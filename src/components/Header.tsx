@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.webp";
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -269,7 +270,7 @@ const Header = () => {
               title="Go to ConverseAI Homepage"
              >
             <img
-              src="/assets/logo.png"
+              src={logo}
               alt="ConverseAI Logo"
               title="ConverseAI AI Customer Support Platform"
               className="h-8 md:h-10 w-auto"

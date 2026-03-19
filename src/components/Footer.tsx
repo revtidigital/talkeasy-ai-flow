@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.svg";
-import metaTechProvider from "@/assets/meta-tech-provider.jpg";
+import metaTechProvider from "@/assets/meta-tech-provider.webp";
 import facebookIcon from "@/assets/social-facebook.svg";
 import youtubeIcon from "@/assets/social-youtube.svg";
 import instagramIcon from "@/assets/social-instagram.svg";
