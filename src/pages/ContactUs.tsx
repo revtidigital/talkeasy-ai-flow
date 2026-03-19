@@ -201,13 +201,13 @@ const ContactUs = () => {
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground">
-                        Select Product
+                        Select Product *
                       </label>
                       <Select
                         value={formData.product}
                         onValueChange={(value) => setFormData({ ...formData, product: value })}
                       >
-                        <SelectTrigger className="h-12 bg-white/50 border-muted focus:ring-primary">
+                        <SelectTrigger className={`h-12 bg-white/50 border-muted focus:ring-primary data-[state=open]:border-primary data-[state=open]:ring-1 data-[state=open]:ring-primary ${errors.product ? "border-destructive" : ""}`}>
                           <SelectValue placeholder="Choose a product" />
                         </SelectTrigger>
                         <SelectContent className="bg-white">
@@ -216,6 +216,7 @@ const ContactUs = () => {
                           <SelectItem value="whatsapp-shop">WhatsApp Shop</SelectItem>
                         </SelectContent>
                       </Select>
+                      {errors.product && <p className="text-xs text-destructive">{errors.product}</p>}
                     </div>
                   </div>
 

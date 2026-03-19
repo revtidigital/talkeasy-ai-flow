@@ -33,7 +33,7 @@ export const contactFormSchema = z.object({
     .max(2000, { message: "Message must be less than 2000 characters" })
     .optional()
     .or(z.literal("")),
-  product: z.string().optional().or(z.literal("")),
+  product: z.string().min(1, { message: "Please select a product" }),
   lookingFor: z.string().optional().or(z.literal("")),
   subject: z
     .string()

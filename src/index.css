@@ -464,3 +464,10 @@
 .phone-input-wrapper.bordered.error .PhoneInput {
   border-color: hsl(var(--destructive));
 }
+
+/* Prevent radix UI body scroll lock from hiding scrollbar */
+body[data-scroll-locked] {
+  overflow: auto !important;
+  overscroll-behavior: contain;
+  padding-right: 0 !important;
+}
