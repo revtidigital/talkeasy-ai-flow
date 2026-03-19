@@ -19,12 +19,12 @@ const HeroSection = () => {
         style={{ willChange: 'auto' }}
       />
       <div 
-        // className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" 
+        className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" 
         aria-hidden="true"
         style={{ willChange: 'auto', contain: 'layout style paint' }}
       />
       <div 
-        // className="absolute top-40 right-1/4 w-80 h-80 bg-violet/10 rounded-full blur-3xl" 
+        className="absolute top-40 right-1/4 w-80 h-80 bg-violet/10 rounded-full blur-3xl" 
         aria-hidden="true"
         style={{ willChange: 'auto', contain: 'layout style paint' }}
       />
