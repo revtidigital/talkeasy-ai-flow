@@ -1,21 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import { lazy, Suspense } from "react";
 import ContactFormDialog from "./ContactFormDialog";
+import ChatbotMockup from "./ChatbotMockup";
 
-// Lazy load ChatbotMockup - it's below the fold on mobile and not LCP critical
-const ChatbotMockup = lazy(() => import("./ChatbotMockup"));
 
-// Fallback for lazy loaded mockup
-const MockupFallback = () => (
-  <div 
-    className="relative animate-pulse bg-secondary/50 rounded-3xl min-h-[400px] flex items-center justify-center"
-    role="img"
-    aria-label="Loading chatbot demonstration"
-  >
-    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-  </div>
-);
 
 const HeroSection = () => {
   return (
@@ -102,9 +90,7 @@ const HeroSection = () => {
 
           {/* Right - Chatbot Mockup (lazy loaded) */}
           <div className="relative lg:pl-8">
-            <Suspense fallback={<MockupFallback />}>
-              <ChatbotMockup />
-            </Suspense>
+            <ChatbotMockup />
           </div>
         </div>
       </div>
