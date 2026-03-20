@@ -16,6 +16,7 @@ const LiveChatSuite = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <motion.div
+            title="Explore the full suite of ConverseAI live chat tools"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -33,6 +34,7 @@ const LiveChatSuite = () => {
             <div className="flex flex-wrap gap-3">
               {features.map((feature, index) => (
                 <motion.div
+                  title={feature.label}
                   key={feature.label}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -49,6 +51,7 @@ const LiveChatSuite = () => {
 
           {/* Visual */}
           <motion.div
+            title="Visual preview of ConverseAI's live chat interface showcasing key features"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -81,9 +84,9 @@ const LiveChatSuite = () => {
                 </div>
 
                 <div className="flex gap-2">
-                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">billing</span>
-                  <span className="text-xs bg-accent/10 text-accent px-3 py-1 rounded-full">urgent</span>
-                  <span className="text-xs bg-secondary text-muted-foreground px-3 py-1 rounded-full">vip</span>
+                  <span title="Billing" className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">billing</span>
+                  <span title="Urgent" className="text-xs bg-accent/10 text-accent px-3 py-1 rounded-full">urgent</span>
+                  <span title="VIP" className="text-xs bg-secondary text-muted-foreground px-3 py-1 rounded-full">vip</span>
                 </div>
               </div>
             </div>

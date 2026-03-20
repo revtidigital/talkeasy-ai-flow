@@ -6,6 +6,7 @@ const LiveChatTestimonial = () => {
     <section className="py-20 lg:py-28">
       <div className="container-tight">
         <motion.div
+          title="Customer testimonial highlighting the impact of ConverseAI's live chat solution"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -27,7 +28,7 @@ const LiveChatTestimonial = () => {
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg">
                 SK
               </div>
-              <div>
+              <div title="Sarah Kumar, Head of Customer Success at TechFlow Inc. - Testimonial about ConverseAI's live chat solution">
                 <p className="font-semibold text-foreground">Sarah Kumar</p>
                 <p className="text-sm text-muted-foreground">Head of Customer Success, TechFlow Inc.</p>
               </div>

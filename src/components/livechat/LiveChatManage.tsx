@@ -27,6 +27,7 @@ const LiveChatManage = () => {
     <section className="py-20 lg:py-28 bg-secondary/30">
       <div className="container-tight">
         <motion.div
+          title="Manage customer interactions effortlessly with ConverseAI's live chat platform"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -47,6 +48,7 @@ const LiveChatManage = () => {
           {cards.map((card, index) => (
             <motion.div
               key={card.title}
+              title={card.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -6,6 +6,7 @@ import facebookIcon from "@/assets/social-facebook.svg";
 import youtubeIcon from "@/assets/social-youtube.svg";
 import instagramIcon from "@/assets/social-instagram.svg";
 import linkedinIcon from "@/assets/social-linkedin.svg";
+import { title } from "process";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const footerLinks = {
@@ -22,10 +23,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   };
 
   const socialLinks = [
-    { icon: facebookIcon, href: "https://www.facebook.com/61564130560658/", label: "Facebook" },
-    { icon: youtubeIcon, href: "https://www.youtube.com/@theconverseai", label: "YouTube" },
-    { icon: instagramIcon, href: "https://www.instagram.com/theconverseai/", label: "Instagram" },
-    { icon: linkedinIcon, href: "https://www.linkedin.com/company/theconverseai", label: "LinkedIn" },
+    { icon: facebookIcon, href: "https://www.facebook.com/61564130560658/", label: "Facebook", title: "Facebook" },
+    { icon: youtubeIcon, href: "https://www.youtube.com/@theconverseai", label: "YouTube", title: "YouTube" },
+    { icon: instagramIcon, href: "https://www.instagram.com/theconverseai/", label: "Instagram", title: "Instagram" },
+    { icon: linkedinIcon, href: "https://www.linkedin.com/company/theconverseai", label: "LinkedIn", title: "LinkedIn" },
   ];
 
   return (

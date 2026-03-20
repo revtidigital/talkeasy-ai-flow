@@ -29,6 +29,7 @@ const LiveChatPreferences = () => {
     <section className="py-20 lg:py-28 bg-secondary/30">
       <div className="container-tight">
         <motion.div
+          title="Deliver personalized support with flexible live chat preferences in ConverseAI"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -48,6 +49,7 @@ const LiveChatPreferences = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <motion.div
+              title={feature.title}
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

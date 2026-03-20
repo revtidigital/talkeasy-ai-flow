@@ -31,7 +31,7 @@ const LiveChatHero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link to="/contact-us">
-                <Button variant="hero" size="lg" className="px-8 py-6 text-lg rounded-xl">
+                <Button title="Start your free ConverseAI trial" variant="hero" size="lg" className="px-8 py-6 text-lg rounded-xl">
                   Start Your Free Trial
                 </Button>
               </Link>
@@ -110,7 +110,7 @@ const LiveChatHero = () => {
                       className="flex-1 bg-transparent text-sm outline-none"
                       readOnly
                     />
-                    <button className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                    <button title="Send message" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                       <Send className="w-4 h-4 text-white" />
                     </button>
                   </div>
