@@ -180,7 +180,7 @@ const ChatbotAutomation = () => {
               </ul>
 
               <Link to="/whatsapp-ai-chatbot" className="inline-block mt-2">
-                <Button variant="hero" size="lg">
+                <Button title="Learn More" variant="hero" size="lg">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>
