@@ -78,7 +78,7 @@ const PreChatForms = () => {
             <div className="container-tight relative z-10">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <AnimatedSection>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                  <h1 title="Streamline customer interactions with ConverseAI's pre-chat forms" className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                     Streamline Customer Interactions with{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">
                       Pre-Chat Context
@@ -89,7 +89,7 @@ const PreChatForms = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link to="/contact-us">
-                    <Button variant="hero" size="lg" className="w-full px-8 py-6 text-lg rounded-xl">
+                    <Button title="Start Your Free Trial ConverseAI trial" variant="hero" size="lg" className="w-full px-8 py-6 text-lg rounded-xl">
                       Start Your Free Trial
                     </Button>
                   </Link>
@@ -142,7 +142,7 @@ const PreChatForms = () => {
           <section className="py-20 bg-secondary/30">
             <div className="container-tight">
               <AnimatedSection className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <h2 title="Effortless Setup for Enhanced User Experience" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   Effortless Setup for Enhanced User Experience
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -153,15 +153,15 @@ const PreChatForms = () => {
               <div className="grid md:grid-cols-3 gap-8">
                 {setupSteps.map((step, index) => (
                   <AnimatedSection key={step.step} delay={index * 0.1}>
-                    <div className="relative">
+                    <div title={step.step} className="relative">
                       <div className="text-7xl font-bold text-primary/10 absolute -top-6 left-0">
                         {step.step}
                       </div>
                       <div className="relative pt-8 pl-4">
-                        <h3 className="text-xl font-semibold text-foreground mb-2">
+                        <h3 title={step.title} className="text-xl font-semibold text-foreground mb-2">
                           {step.title}
                         </h3>
-                        <p className="text-muted-foreground">
+                        <p title={step.description} className="text-muted-foreground">
                           {step.description}
                         </p>
                       </div>
@@ -176,10 +176,10 @@ const PreChatForms = () => {
           <section className="py-20">
             <div className="container-tight">
               <AnimatedSection className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Customize Your Data Collection
+                <h2 title="Customize Your Data Collection" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                   Customize Your Data Collection
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                <p title="Tailor pre-chat forms to capture the exact information your team needs." className="text-lg text-muted-foreground max-w-2xl mx-auto">
                   Tailor pre-chat forms to capture the exact information your team needs.
                 </p>
               </AnimatedSection>
@@ -188,13 +188,13 @@ const PreChatForms = () => {
                 {customizationFeatures.map((feature, index) => (
                   <AnimatedSection key={feature.title} delay={index * 0.1}>
                     <div className="glass-card p-8 rounded-2xl h-full hover:shadow-glow transition-all duration-300 group">
-                      <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                      <div  title={feature.title} className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <feature.icon className="w-7 h-7 text-white" />
                       </div>
-                      <h3 className="text-xl font-semibold text-foreground mb-3">
+                      <h3 title={feature.title} className="text-xl font-semibold text-foreground mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p title={feature.description} className="text-muted-foreground leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -209,15 +209,15 @@ const PreChatForms = () => {
             <div className="container-tight">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <AnimatedSection>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                  <h2 title="Unified Dashboard Advantage" className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                     Unified Dashboard Advantage
                   </h2>
-                  <p className="text-lg text-muted-foreground mb-8">
+                  <p title="All pre-chat data integrates seamlessly with your existing workflow for maximum efficiency." className="text-lg text-muted-foreground mb-8">
                     All pre-chat data integrates seamlessly with your existing workflow for maximum efficiency.
                   </p>
                   <ul className="space-y-4">
                     {dashboardBenefits.map((benefit, index) => (
-                      <li key={index} className="flex items-center gap-3">
+                      <li title={benefit} key={index} className="flex items-center gap-3">
                         <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                         <span className="text-foreground">{benefit}</span>
                       </li>
@@ -246,15 +246,15 @@ const PreChatForms = () => {
                           <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                             <MessageSquare className="w-4 h-4 text-primary" />
                           </div>
-                          <div className="flex-1">
+                          <div title="Conversation Item" className="flex-1">
                             <div className="flex items-center justify-between">
                               <div className="h-3 bg-secondary rounded w-24" />
                               <div className="h-2 bg-secondary rounded w-12" />
                             </div>
                             <div className="h-2 bg-secondary/50 rounded w-full mt-2" />
                             <div className="flex gap-2 mt-2">
-                              <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded">Sales</span>
-                              <span className="text-xs px-2 py-1 bg-mint/10 text-mint rounded">Pre-chat</span>
+                              <span title="Sales" className="text-xs px-2 py-1 bg-primary/10 text-primary rounded">Sales</span>
+                              <span title="Pre-chat" className="text-xs px-2 py-1 bg-mint/10 text-mint rounded">Pre-chat</span>
                             </div>
                           </div>
                         </div>
@@ -276,14 +276,14 @@ const PreChatForms = () => {
             
             <div className="container-tight relative z-10">
               <AnimatedSection className="text-center max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                <h2 title="Unified Dashboard Advantage" className="text-3xl md:text-4xl font-bold text-white mb-6">
                   Manage Conversations Across Multiple Channels
                 </h2>
-                <p className="text-lg text-white/80 mb-8">
+                <p title="All pre-chat data integrates seamlessly with your existing workflow for maximum efficiency." className="text-lg text-white/80 mb-8">
                   From one dashboard, handle pre-chat forms, live chats, and customer data seamlessly.
                 </p>
                 <Link to="/contact-us">
-                  <Button   variant="hero-outline"
+                  <Button  title="Request a Demo" variant="hero-outline"
                 size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gradient-cta text-primary-foreground shadow-glow hover:shadow-[0_16px_50px_-10px_hsl(262_83%_58%_/_0.6)] hover:scale-[1.03] hover:-translate-y-1 active:scale-100 active:translate-y-0 font-semibold h-14 rounded-xl px-8 text-base"
             >
                     Request a Demo
