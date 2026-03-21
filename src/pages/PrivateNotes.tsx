@@ -39,7 +39,7 @@ const PrivateNotes = () => {
                   Work seamlessly with your team by discussing queries privately before responding to customers.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="w-full group">
+                  <Button title="Request a Demo to see it in action" variant="gradient" size="xl" className="w-full group">
                     Request a Demo
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -224,7 +224,7 @@ const PrivateNotes = () => {
                   Go beyond plain text. Attach files, use emojis, and format your notes for clearer contextual collaboration.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="lg" className="group">
+                  <Button title="Learn More" variant="gradient" size="lg" className="group">
                     Learn More
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -246,7 +246,7 @@ const PrivateNotes = () => {
                   Empower your team to collaborate internally and resolve customer issues faster than ever.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="group">
+                  <Button title="Start Your Free Trial" variant="gradient" size="xl" className="group">
                     Start Your Free Trial
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>

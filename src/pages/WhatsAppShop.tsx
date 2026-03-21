@@ -78,7 +78,7 @@ const WhatsAppShop = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                 <Link to="/contact-us">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-primary/25">
+                  <Button  title="Start Your Free Trial with ConverseAI" size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-primary/25">
                     Start Your Free Trial
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
@@ -112,7 +112,7 @@ const WhatsAppShop = () => {
                         <div className="text-4xl mb-3">{product.image}</div>
                         <h4 className="font-medium text-foreground text-sm">{product.name}</h4>
                         <p className="text-primary font-bold">{product.price}</p>
-                        <button className="mt-2 w-full py-2 bg-green-500 text-white text-xs rounded-lg font-medium">
+                        <button title="Buy on WhatsApp" className="mt-2 w-full py-2 bg-green-500 text-white text-xs rounded-lg font-medium">
                           Buy on WhatsApp
                         </button>
                       </div>
@@ -283,7 +283,7 @@ const WhatsAppShop = () => {
                 Transform chats into conversions with ConverseAI WhatsApp Shop
               </p>
               <Link to="/contact-us">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg rounded-xl shadow-lg">
+                <Button title="Request a Demo to See ConverseAI in Action" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg rounded-xl shadow-lg">
                   Request a Demo
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>

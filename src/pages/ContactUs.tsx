@@ -354,6 +354,7 @@ const ContactUs = () => {
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {benefits.map((benefit, index) => (
               <div
+                title={`${benefit.title} - ${benefit.description}`}
                 key={benefit.title}
                 className="glass-card-hover rounded-2xl p-6 text-center animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}

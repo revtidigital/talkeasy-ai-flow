@@ -82,7 +82,7 @@ const WhatsAppMarketing = () => {
               </p>
               
               <Link to="/contact-us">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-primary/25">
+                <Button title="Start Your Free Trial with ConverseAI" size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-primary/25">
                   Start Your Free Trial
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -108,8 +108,10 @@ const WhatsAppMarketing = () => {
                     {metrics.map((metric, index) => (
                       <div key={index} className="text-center p-3 bg-muted/30 rounded-xl">
                         <metric.icon className={`w-6 h-6 mx-auto mb-2 ${metric.color}`} />
-                        <p className={`text-2xl font-bold ${metric.color}`}>{metric.value}</p>
-                        <p className="text-xs text-muted-foreground">{metric.label}</p>
+                        <p title={metric.value} className={`text-2xl font-bold ${metric.color}`}>{metric.value}</p>
+                        <p  title={metric.label} className="text-xs text-muted-foreground">
+                          {metric.label}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -124,10 +126,10 @@ const WhatsAppMarketing = () => {
           <div className="container-tight">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <AnimatedSection>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                <h2 title=" Optimize WhatsApp Campaigns with AI" className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
                   Optimize WhatsApp Campaigns with AI
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8">
+                <p title="Leverage artificial intelligence to maximize your campaign performance" className="text-lg text-muted-foreground mb-8">
                   Leverage artificial intelligence to maximize your campaign performance
                 </p>
                 <div className="space-y-4">
@@ -140,7 +142,7 @@ const WhatsAppMarketing = () => {
                       <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                         <item.icon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="font-medium text-foreground">{item.text}</span>
+                      <span title={item.text} className="font-medium text-foreground">{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -169,6 +171,7 @@ const WhatsAppMarketing = () => {
                         {[40, 65, 45, 80, 55, 90, 70].map((height, i) => (
                           <div
                             key={i}
+                            title={`Message ${i + 1}`}
                             className="flex-1 bg-gradient-to-t from-primary to-purple-500 rounded-t"
                             style={{ height: `${height}%` }}
                           />
@@ -201,8 +204,8 @@ const WhatsAppMarketing = () => {
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                       <feature.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    <h3  title={feature.title} className="text-lg font-semibold mb-2 text-foreground">{feature.title}</h3>
+                    <p title={feature.description} className="text-sm text-muted-foreground">{feature.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -214,10 +217,10 @@ const WhatsAppMarketing = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container-tight">
             <AnimatedSection className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 title="Precision Targeting & Retargeting" className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Precision Targeting & Retargeting
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="Reach the right customers at the right time with intelligent targeting" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Reach the right customers at the right time with intelligent targeting
               </p>
             </AnimatedSection>
@@ -233,8 +236,8 @@ const WhatsAppMarketing = () => {
                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                       <item.icon className="w-8 h-8 text-green-600" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <h3 title={item.title} className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
+                    <p title={item.description} className="text-muted-foreground">{item.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -264,13 +267,13 @@ const WhatsAppMarketing = () => {
                         <div key={index} className="text-center p-4 bg-muted/30 rounded-xl">
                           <metric.icon className={`w-8 h-8 mx-auto mb-3 ${metric.color}`} />
                           <p className={`text-3xl font-bold ${metric.color}`}>{metric.value}</p>
-                          <p className="text-sm text-muted-foreground mt-1">{metric.label}</p>
+                          <p title={metric.label} className="text-sm text-muted-foreground mt-1">{metric.label}</p>
                         </div>
                       ))}
                     </div>
                     <div className="mt-8 text-center">
                       <Link to="/contact-us">
-                        <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
+                        <Button title="Explore Campaign Insights" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
                           Explore Campaign Insights
                           <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
@@ -287,10 +290,10 @@ const WhatsAppMarketing = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container-tight">
             <AnimatedSection className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 title="Why WhatsApp for Customer Engagement?" className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Why WhatsApp for Customer Engagement?
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="The numbers speak for themselves" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 The numbers speak for themselves
               </p>
             </AnimatedSection>
@@ -302,8 +305,8 @@ const WhatsAppMarketing = () => {
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-pink-500/20 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                       <benefit.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                    <h3 title={benefit.title} className="text-lg font-semibold mb-2 text-foreground">{benefit.title}</h3>
+                    <p title={benefit.description} className="text-sm text-muted-foreground">{benefit.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -318,14 +321,14 @@ const WhatsAppMarketing = () => {
           
           <div className="container-tight relative z-10">
             <AnimatedSection className="text-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
+              <h2 title="Get Started with ConverseAI Today" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
                 Get Started with ConverseAI Today
               </h2>
-              <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+              <p title="Join thousands of businesses growing with WhatsApp Marketing" className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
                 Join thousands of businesses growing with WhatsApp Marketing
               </p>
               <Link to="/contact-us">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg rounded-xl shadow-lg">
+                <Button title="Start Free Trial" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg rounded-xl shadow-lg">
                   Start Free Trial
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>

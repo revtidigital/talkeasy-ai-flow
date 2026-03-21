@@ -39,18 +39,17 @@ const Teams = () => {
                   Create structured teams to streamline collaboration and manage conversations more effectively.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="w-full group">
+                  <Button title="Schedule a Demo with ConverseAI" variant="gradient" size="xl" className="w-full group">
                     Schedule a Demo
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </ContactFormDialog>
               </AnimatedSection>
-
               <AnimatedSection delay={0.2}>
                 <div className="relative">
                   <div className="glass-card p-6 rounded-2xl">
                     <div className="flex items-center justify-between mb-6">
-                      <h3 className="font-semibold text-foreground">Teams Overview</h3>
+                      <h3 title="Team Overview" className="font-semibold text-foreground">Teams Overview</h3>
                       {/* <Button variant="outline" size="sm">+ New Team</Button> */}
                     </div>
                     <div className="space-y-4">
@@ -61,12 +60,16 @@ const Teams = () => {
                       ].map((team, index) => (
                         <div key={index} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
                           <div className="flex items-center gap-3">
-                            <div className={`w-3 h-3 rounded-full ${team.color}`} />
-                            <span className="font-medium text-foreground">{team.name}</span>
+                            <div title={team.name} className={`w-3 h-3 rounded-full ${team.color}`} />
+                            <span title={team.name} className="font-medium text-foreground">
+                              {team.name}
+                            </span>
                           </div>
                           <div className="flex items-center gap-2">
                             <Users className="w-4 h-4 text-muted-foreground" />
-                            <span className="text-sm text-muted-foreground">{team.members} members</span>
+                            <span title={`${team.members} members`} className="text-sm text-muted-foreground">
+                              {team.members} members
+                            </span>
                           </div>
                         </div>
                       ))}

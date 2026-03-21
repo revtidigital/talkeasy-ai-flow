@@ -72,7 +72,7 @@ const WhatsAppAIChatbot = () => {
               </p>
               
               <Link to="/contact-us">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-primary/25">
+                <Button title="Request a Demo with ConverseAI" size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-primary/25">
                   Request a Demo
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -85,23 +85,23 @@ const WhatsAppAIChatbot = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-pink-500/20 rounded-3xl blur-xl" />
                 <div className="relative bg-background/80 backdrop-blur-xl rounded-3xl border border-border/50 p-6 shadow-2xl">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
+                    <div title="ConverseAI Bot" className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
                       <WhatsAppIcon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">ConverseAI Bot</h3>
-                      <p className="text-sm text-muted-foreground">Online</p>
+                      <h3 title="ConverseAI Bot" className="font-semibold text-foreground">ConverseAI Bot</h3>
+                      <p title="Online" className="text-sm text-muted-foreground">Online</p>
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="bg-muted/50 rounded-2xl rounded-tl-none p-3 max-w-xs">
-                      <p className="text-sm text-foreground">Hi! How can I help you today? 🤖</p>
+                      <p  title="Hi! How can I help you today? 🤖" className="text-sm text-foreground">Hi! How can I help you today? 🤖</p>
                     </div>
                     <div className="bg-primary/10 rounded-2xl rounded-tr-none p-3 max-w-xs ml-auto">
-                      <p className="text-sm text-foreground">I need help with my order</p>
+                      <p title="I need help with my order" className="text-sm text-foreground">I need help with my order</p>
                     </div>
                     <div className="bg-muted/50 rounded-2xl rounded-tl-none p-3 max-w-xs">
-                      <p className="text-sm text-foreground">I'll help you track your order. Please share your order ID 📦</p>
+                      <p title="I'll help you track your order. Please share your order ID 📦" className="text-sm text-foreground">I'll help you track your order. Please share your order ID 📦</p>
                     </div>
                   </div>
                 </div>
@@ -114,10 +114,10 @@ const WhatsAppAIChatbot = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container-tight">
             <AnimatedSection className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 title="Accelerate WhatsApp Sales with Personalization" className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Accelerate WhatsApp Sales with Personalization
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="Deliver context-aware conversations that convert visitors into loyal customers" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Deliver context-aware conversations that convert visitors into loyal customers
               </p>
             </AnimatedSection>
@@ -133,8 +133,8 @@ const WhatsAppAIChatbot = () => {
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                       <item.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 text-foreground">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <h3 title={item.title} className="text-xl font-semibold mb-2 text-foreground">{item.title}</h3>
+                    <p title={item.description} className="text-muted-foreground">{item.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -146,10 +146,10 @@ const WhatsAppAIChatbot = () => {
         <section className="py-16 md:py-24">
           <div className="container-tight">
             <AnimatedSection className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 title="AI-Powered Content Enhancement" className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 AI-Powered Content Enhancement
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="Leverage AI to craft perfect responses every time" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Leverage AI to craft perfect responses every time
               </p>
             </AnimatedSection>
@@ -161,8 +161,12 @@ const WhatsAppAIChatbot = () => {
                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-pink-500/20 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                       <feature.icon className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    <h3 title={feature.title} className="text-lg font-semibold mb-2 text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p title={feature.description} className="text-sm text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -174,10 +178,10 @@ const WhatsAppAIChatbot = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container-tight">
             <AnimatedSection className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              <h2 title="Industry Use Cases" className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Industry Use Cases
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="Transform customer experiences across industries" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Transform customer experiences across industries
               </p>
             </AnimatedSection>
@@ -189,8 +193,12 @@ const WhatsAppAIChatbot = () => {
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500/20 to-primary/20 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                       <useCase.icon className="w-7 h-7 text-green-600" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground">{useCase.title}</h3>
-                    <p className="text-sm text-muted-foreground">{useCase.description}</p>
+                    <h3 title={useCase.title} className="text-lg font-semibold mb-2 text-foreground">
+                      {useCase.title}
+                    </h3>
+                    <p title={useCase.description} className="text-sm text-muted-foreground">
+                      {useCase.description}
+                    </p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -203,14 +211,14 @@ const WhatsAppAIChatbot = () => {
           <div className="container-tight">
             <AnimatedSection className="text-center">
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                <h2 title="Powerful Integrations" className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                   Powerful Integrations
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8">
+                <p title="Power up your workflow with integrations into your favourite tools" className="text-lg text-muted-foreground mb-8">
                   Power up your workflow with integrations into your favourite tools.
                 </p>
                 <Link to="/contact-us">
-                  <Button variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
+                  <Button title="Explore Integrations" variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
                     Explore Integrations
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
@@ -236,6 +244,7 @@ const WhatsAppAIChatbot = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact-us">
               <Button
+                title="Get Started Free with ConverseAI"
                 variant="hero-outline"
                 size="lg"
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gradient-cta text-primary-foreground shadow-glow hover:shadow-[0_16px_50px_-10px_hsl(262_83%_58%_/_0.6)] hover:scale-[1.03] hover:-translate-y-1 active:scale-100 active:translate-y-0 font-semibold h-14 rounded-xl px-8 text-base"
@@ -245,6 +254,7 @@ const WhatsAppAIChatbot = () => {
             </Link>
             { <Link to="/contact-us">
               <Button
+                title="Contact Sales"
                 variant="outline"
                 size="lg"
                 className="inline-flex w-[194px]  items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-primary/30 bg-white/80 backdrop-blur-sm text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-[1.03] hover:-translate-y-1 active:scale-100 font-medium h-14 rounded-xl px-8 text-base"

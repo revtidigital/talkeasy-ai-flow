@@ -61,7 +61,7 @@ const AgentCapacity = () => {
                       ].map((agent, index) => (
                         <div key={index} className="flex items-center gap-4 p-3 bg-muted/50 rounded-lg">
                           <div className={`w-3 h-3 rounded-full ${agent.status === 'online' ? 'bg-emerald-500' : 'bg-amber-500'}`} />
-                          <span className="font-medium text-foreground flex-1">{agent.name}</span>
+                          <span title={agent.name} className="font-medium text-foreground flex-1">{agent.name}</span>
                           <div className="flex items-center gap-2">
                             <div className="w-24 h-2 bg-muted rounded-full overflow-hidden">
                               <div 
@@ -69,7 +69,9 @@ const AgentCapacity = () => {
                                 style={{ width: `${(agent.current / agent.capacity) * 100}%` }}
                               />
                             </div>
-                            <span className="text-sm text-muted-foreground">{agent.current}/{agent.capacity}</span>
+                            <span title={`${agent.current} out of ${agent.capacity} conversations`} className="text-sm text-muted-foreground">
+                              {agent.current}/{agent.capacity}
+                            </span>
                           </div>
                         </div>
                       ))}

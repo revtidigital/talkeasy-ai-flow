@@ -323,7 +323,7 @@ const CSATReport = () => {
               </p>
 
               <Link to="/contact-us">
-                <Button size="lg" className="px-8 py-6 text-lg">
+                <Button  title="Request a Demo to See ConverseAI in Action" size="lg" className="px-8 py-6 text-lg">
                   Request a Demo
                 </Button>
               </Link>
@@ -382,7 +382,7 @@ const CSATReport = () => {
                       "Ticket resolved",
                       "Purchase completed",
                     ].map((trigger, index) => (
-                      <li key={index} className="flex items-center gap-2 text-foreground">
+                      <li title={trigger} key={index} className="flex items-center gap-2 text-foreground">
                         <ThumbsUp className="w-4 h-4 text-primary" />
                         {trigger}
                       </li>
@@ -422,7 +422,9 @@ const CSATReport = () => {
                     <div className="w-10 h-10 bg-pink-500/10 rounded-lg flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-pink-500" />
                     </div>
-                    <span>{item.text}</span>
+                    <span title={item.text} >
+                      {item.text}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -454,7 +456,7 @@ const CSATReport = () => {
             </h2>
 
             <Link to="/contact-us">
-              <Button size="lg" className="px-8 py-6 text-lg">
+              <Button title="Request a Demo to See ConverseAI in Action" size="lg" className="px-8 py-6 text-lg">
                 Get a Call Back
               </Button>
             </Link>

@@ -40,7 +40,7 @@ const TeamReports = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact-us">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-violet-600 hover:from-primary/90 hover:to-violet-600/90 text-white px-8 py-6 text-lg">
+                  <Button title="Try for Free" size="lg" className="bg-gradient-to-r from-primary to-violet-600 hover:from-primary/90 hover:to-violet-600/90 text-white px-8 py-6 text-lg">
                     Try for Free
                   </Button>
                 </Link>
@@ -53,10 +53,10 @@ const TeamReports = () => {
         <section className="py-20 bg-secondary/30">
           <div className="container-tight">
             <AnimatedSection className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 title="Intuitive Data Visualization" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Intuitive Data Visualization
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="Transform complex team data into actionable insights with beautiful visual representations" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Transform complex team data into actionable insights with beautiful visual representations
               </p>
             </AnimatedSection>
@@ -84,8 +84,12 @@ const TeamReports = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-violet-500/20 rounded-xl flex items-center justify-center mb-6">
                       <feature.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3  title={feature.title} className="text-xl font-semibold text-foreground mb-3">
+                      {feature.title}
+                    </h3>
+                    <p title={feature.description} className="text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -101,13 +105,13 @@ const TeamReports = () => {
                 <span className="inline-block px-4 py-2 bg-violet-500/10 text-violet-600 rounded-full text-sm font-medium mb-6">
                   Flexible Reporting
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                <h2 title="Customizable Filters for Targeted Insights" className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Customizable Filters for{" "}
                   <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">
                     Targeted Insights
                   </span>
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8">
+                <p title="Slice and dice your team data exactly how you need it. Filter by date ranges, business hours, teams, and more." className="text-lg text-muted-foreground mb-8">
                   Slice and dice your team data exactly how you need it. Filter by date ranges, business hours, teams, and more.
                 </p>
                 <ul className="space-y-4">
@@ -121,7 +125,9 @@ const TeamReports = () => {
                       <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center">
                         <div className="w-2 h-2 bg-primary rounded-full" />
                       </div>
-                      <span className="text-foreground">{item}</span>
+                      <span title={item} className="text-foreground">
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -137,8 +143,12 @@ const TeamReports = () => {
                   ].map((stat, index) => (
                     <div key={index} className="bg-gradient-to-br from-primary/5 to-violet-500/5 border border-border/50 rounded-2xl p-6 text-center hover:border-primary/30 transition-all duration-300">
                       <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                      <p className="text-sm text-muted-foreground">{stat.label}</p>
-                      <p className="text-lg font-semibold text-foreground">{stat.value}</p>
+                      <p title={stat.label} className="text-sm text-muted-foreground">
+                        {stat.label}
+                      </p>
+                      <p title={stat.value} className="text-lg font-semibold text-foreground">
+                        {stat.value}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -151,10 +161,10 @@ const TeamReports = () => {
         <section className="py-20 bg-gradient-to-br from-primary/5 via-violet-500/5 to-pink-500/5">
           <div className="container-tight">
             <AnimatedSection className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 title="Optimize Team Tracking with AI" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Optimize Team Tracking with AI
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="Let AI do the heavy lifting while you focus on strategic decisions" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Let AI do the heavy lifting while you focus on strategic decisions
               </p>
             </AnimatedSection>
@@ -182,8 +192,12 @@ const TeamReports = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-primary to-violet-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 title={feature.title} className="text-xl font-semibold text-foreground mb-3">
+                      {feature.title}
+                    </h3>
+                    <p title={feature.description} className="text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -198,14 +212,14 @@ const TeamReports = () => {
               <div className="bg-gradient-to-r from-primary via-violet-500 to-pink-500 rounded-3xl p-12 text-center relative overflow-hidden">
                 <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
                 <div className="relative z-10">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  <h2 title="Ready to Unlock Team Insights?" className="text-3xl md:text-4xl font-bold text-white mb-4">
                     Ready to Unlock Team Insights?
                   </h2>
-                  <p className="text-lg text-white/90 mb-8 max-w-xl mx-auto">
+                  <p title="See how ConverseAI Team Reports can transform your team's productivity tracking" className="text-lg text-white/90 mb-8 max-w-xl mx-auto">
                     See how ConverseAI Team Reports can transform your team's productivity tracking
                   </p>
                   <Link to="/contact-us">
-                    <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg font-semibold">
+                    <Button title="Request a Demo to ConveerseAI" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg font-semibold">
                       Request a Demo
                     </Button>
                   </Link>
