@@ -39,7 +39,7 @@ const AgentCapacity = () => {
                   Effortlessly manage agent workloads by setting precise auto-assignment limits and balancing capacity in real time.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="w-full group">
+                  <Button title="Start Your Free Trial With ConverseAI" variant="gradient" size="xl" className="w-full group">
                     Start Your Free Trial
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -50,7 +50,7 @@ const AgentCapacity = () => {
                 <div className="relative">
                   <div className="glass-card p-6 rounded-2xl">
                     <div className="flex items-center justify-between mb-6">
-                      <h3 className="font-semibold text-foreground">Agent Capacity Dashboard</h3>
+                      <h3 title="Agent Capacity Dashboard" className="font-semibold text-foreground">Agent Capacity Dashboard</h3>
                       <span className="px-3 py-1 bg-emerald-500/10 text-emerald-600 text-sm rounded-full">Live</span>
                     </div>
                     <div className="space-y-4">
@@ -86,10 +86,10 @@ const AgentCapacity = () => {
           <div className="container-tight">
             <AnimatedSection>
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <h2 title="Streamlined Auto-Assignment Configuration" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   Streamlined Auto-Assignment Configuration
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                <p title="Set maximum conversations per agent, prevent overload, and ensure balanced task distribution" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                   Set maximum conversations per agent, prevent overload, and ensure balanced task distribution.
                 </p>
               </div>
@@ -118,8 +118,8 @@ const AgentCapacity = () => {
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                       <feature.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 title={feature.title} className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
+                    <p title={feature.description} className="text-muted-foreground">{feature.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -132,10 +132,10 @@ const AgentCapacity = () => {
           <div className="container-tight">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <AnimatedSection>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                <h2 title="Tailored Capacity for Each Inbox" className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Tailored Capacity for Each Inbox
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8">
+                <p title="Configure unique capacity limits for different inboxes and channels to optimize your support workflow." className="text-lg text-muted-foreground mb-8">
                   Configure unique capacity limits for different inboxes and channels to optimize your support workflow.
                 </p>
                 <div className="space-y-4">
@@ -148,7 +148,7 @@ const AgentCapacity = () => {
                       <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                         <item.icon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-foreground font-medium">{item.text}</span>
+                      <span title={item.text} className="text-foreground font-medium">{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -166,9 +166,11 @@ const AgentCapacity = () => {
                       <div key={index} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
                         <div className="flex items-center gap-3">
                           <span className="text-xl">{inbox.icon}</span>
-                          <span className="font-medium text-foreground">{inbox.name}</span>
+                          <span title={inbox.name} className="font-medium text-foreground">
+                            {inbox.name}
+                          </span>
                         </div>
-                        <span className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                        <span title={`Max: ${inbox.limit}`} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
                           Max: {inbox.limit}
                         </span>
                       </div>
@@ -185,10 +187,10 @@ const AgentCapacity = () => {
           <div className="container-tight">
             <AnimatedSection>
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <h2 title="Enhance Customer Engagement" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   Enhance Customer Engagement
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                <p title="Better capacity management leads to faster responses, reduced wait times, and higher agent productivity." className="text-lg text-muted-foreground max-w-2xl mx-auto">
                   Better capacity management leads to faster responses, reduced wait times, and higher agent productivity.
                 </p>
               </div>
@@ -220,14 +222,14 @@ const AgentCapacity = () => {
           <div className="container-tight">
             <AnimatedSection>
               <div className="glass-card p-12 rounded-2xl text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <h2 title="Ready to Optimize Your Team's Capacity?" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   Ready to Optimize Your Team's Capacity?
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                <p title="Start managing agent workloads intelligently and deliver exceptional customer experiences." className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                   Start managing agent workloads intelligently and deliver exceptional customer experiences.
                 </p>
                 <ContactFormDialog>
-                  <Button variant="gradient" size="xl" className="group">
+                  <Button title="Request a Demo" variant="gradient" size="xl" className="group">
                     Request a Demo
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>

@@ -29,7 +29,8 @@ const InboxReports = () => {
               <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
                 Inbox Analytics
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+              <h1 title="Analyze Your Inboxes with Real-Time Reporting"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                 Analyze Your Inboxes with{" "}
                 <span className="bg-gradient-to-r from-primary via-violet-500 to-pink-500 bg-clip-text text-transparent">
                   Real-Time Reporting
@@ -38,7 +39,7 @@ const InboxReports = () => {
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Get a complete picture of your inbox performance across all channels with actionable insights and trends.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div title="Request a Demo to Converse AI" className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact-us">
                   <Button size="lg" className="bg-gradient-to-r from-primary to-violet-600 hover:from-primary/90 hover:to-violet-600/90 text-white px-8 py-6 text-lg">
                     Request a Demo
@@ -84,8 +85,8 @@ const InboxReports = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-violet-500/20 rounded-xl flex items-center justify-center mb-6">
                       <feature.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 title={feature.title} className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+                    <p title={feature.description} className="text-muted-foreground">{feature.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -121,7 +122,7 @@ const InboxReports = () => {
                       <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                         <item.icon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-foreground">{item.text}</span>
+                      <span title={item.text} className="text-foreground">{item.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -137,16 +138,19 @@ const InboxReports = () => {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {["All Channels", "Email", "Chat", "WhatsApp", "Social"].map((channel, index) => (
-                          <button
-                            key={index}
-                            className={`px-3 py-1.5 rounded-lg text-sm transition-all ${
-                              index === 0 
-                                ? 'bg-primary text-white' 
-                                : 'bg-secondary text-foreground hover:bg-primary/10'
-                            }`}
-                          >
-                            {channel}
-                          </button>
+                           <div
+                              key={index}
+                              role="button"
+                              tabIndex={0}
+                              title={`Filter by ${channel}`}
+                              className={`px-3 py-1.5 rounded-lg text-sm cursor-pointer transition-all ${
+                                index === 0 
+                                  ? 'bg-primary text-white' 
+                                  : 'bg-secondary text-foreground hover:bg-primary/10'
+                              }`}
+                            >
+                              {channel}
+                            </div>
                         ))}
                       </div>
                     </div>
@@ -174,14 +178,14 @@ const InboxReports = () => {
                           { channel: "Social", percent: 5 }
                         ].map((item, index) => (
                           <div key={index} className="flex items-center gap-3">
-                            <span className="text-sm text-muted-foreground w-20">{item.channel}</span>
+                            <span title={item.channel} className="text-sm text-muted-foreground w-20">{item.channel}</span>
                             <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
                               <div 
                                 className="h-full bg-gradient-to-r from-primary to-violet-500 rounded-full"
                                 style={{ width: `${item.percent}%` }}
                               />
                             </div>
-                            <span className="text-sm text-foreground w-10 text-right">{item.percent}%</span>
+                            <span title={`${item.percent}%`} className="text-sm text-foreground w-10 text-right">{item.percent}%</span>
                           </div>
                         ))}
                       </div>
@@ -223,8 +227,8 @@ const InboxReports = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-primary to-violet-500 rounded-2xl flex items-center justify-center mb-6">
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-foreground mb-4">{feature.title}</h3>
-                    <p className="text-muted-foreground text-lg">{feature.description}</p>
+                    <h3  title={feature.title} className="text-2xl font-semibold text-foreground mb-4">{feature.title}</h3>
+                    <p title={feature.description} className="text-muted-foreground text-lg">{feature.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -242,11 +246,11 @@ const InboxReports = () => {
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                     Ready to Optimize Your Inbox?
                   </h2>
-                  <p className="text-lg text-white/90 mb-8 max-w-xl mx-auto">
+                  <p title="See how ConverseAI Inbox Reports can help you deliver faster, better support" className="text-lg text-white/90 mb-8 max-w-xl mx-auto">
                     See how ConverseAI Inbox Reports can help you deliver faster, better support
                   </p>
                   <Link to="/contact-us">
-                    <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg font-semibold">
+                    <Button title="Request a callback to learn more about Inbox Reports" size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg font-semibold">
                       Get a Call Back
                     </Button>
                   </Link>

@@ -40,7 +40,7 @@ const AgentReports = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact-us">
-                  <Button size="lg" className="bg-gradient-to-r from-violet-500 to-primary hover:from-violet-500/90 hover:to-primary/90 text-white px-8 py-6 text-lg">
+                  <Button title="Request a Demo to converse AI" size="lg" className="bg-gradient-to-r from-violet-500 to-primary hover:from-violet-500/90 hover:to-primary/90 text-white px-8 py-6 text-lg">
                     Request a Demo
                   </Button>
                 </Link>
@@ -53,10 +53,10 @@ const AgentReports = () => {
         <section className="py-20 bg-secondary/30">
           <div className="container-tight">
             <AnimatedSection className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 title="Simplified Data Visualization" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Simplified Data Visualization
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="Easy-to-understand metrics that tell the story of each agent's performance" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Easy-to-understand metrics that tell the story of each agent's performance
               </p>
             </AnimatedSection>
@@ -84,8 +84,8 @@ const AgentReports = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-violet-500/20 to-primary/20 rounded-xl flex items-center justify-center mb-6">
                       <feature.icon className="w-7 h-7 text-violet-500" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 title={feature.title} className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+                    <p title={feature.description} className="text-muted-foreground">{feature.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -112,9 +112,9 @@ const AgentReports = () => {
                               <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-primary rounded-full flex items-center justify-center text-white font-semibold">
                                 {agent.name.charAt(0)}
                               </div>
-                              <span className="font-medium text-foreground">{agent.name}</span>
+                              <span title={agent.name} className="font-medium text-foreground">{agent.name}</span>
                             </div>
-                            <span className="text-lg font-bold text-foreground">{agent.score}%</span>
+                            <span title={`${agent.score}%`} className="text-lg font-bold text-foreground">{agent.score}%</span>
                           </div>
                           <div className="h-2 bg-secondary rounded-full overflow-hidden">
                             <div 
@@ -139,7 +139,7 @@ const AgentReports = () => {
                     Agent Insights
                   </span>
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8">
+                <p title="Filter and compare agent performance across different time periods to identify trends and areas for improvement." className="text-lg text-muted-foreground mb-8">
                   Filter and compare agent performance across different time periods to identify trends and areas for improvement.
                 </p>
                 <ul className="space-y-4">
@@ -153,7 +153,9 @@ const AgentReports = () => {
                       <div className="w-6 h-6 bg-violet-500/20 rounded-full flex items-center justify-center">
                         <Filter className="w-3 h-3 text-violet-500" />
                       </div>
-                      <span className="text-foreground">{item}</span>
+                      <span title={item} className="text-foreground">
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -169,7 +171,7 @@ const AgentReports = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Optimize Agent Productivity
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p title="Leverage AI-powered insights to maximize each agent's potential" className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Leverage AI-powered insights to maximize each agent's potential
               </p>
             </AnimatedSection>
@@ -194,11 +196,11 @@ const AgentReports = () => {
               ].map((feature, index) => (
                 <AnimatedSection key={index} delay={index * 0.1}>
                   <div className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-xl hover:border-violet-500/30 transition-all duration-300 text-center h-full">
-                    <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <div title={feature.title} className="w-16 h-16 bg-gradient-to-br from-violet-500 to-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 title={feature.title} className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+                    <p title={feature.description} className="text-muted-foreground">{feature.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -213,10 +215,10 @@ const AgentReports = () => {
               <div className="bg-gradient-to-r from-violet-500 via-primary to-pink-500 rounded-3xl p-12 text-center relative overflow-hidden">
                 <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
                 <div className="relative z-10">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  <h2 title="Empower Your Agents Today" className="text-3xl md:text-4xl font-bold text-white mb-4">
                     Empower Your Agents Today
                   </h2>
-                  <p className="text-lg text-white/90 mb-8 max-w-xl mx-auto">
+                  <p title="Discover how ConverseAI Agent Reports can help your team reach peak performance" className="text-lg text-white/90 mb-8 max-w-xl mx-auto">
                     Discover how ConverseAI Agent Reports can help your team reach peak performance
                   </p>
                   <Link to="/contact-us">

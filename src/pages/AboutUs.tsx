@@ -131,13 +131,13 @@ const AboutUs = () => {
             <AnimatedSection delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <ContactFormDialog>
-                  <Button variant="hero" size="xl">
+                  <Button title="Start Free Trial With Converse AI" variant="hero" size="xl">
                     Start Free Trial
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </ContactFormDialog>
                 <Link to="/contact-us">
-                  <Button variant="hero-outline" size="xl" className="w-full">
+                  <Button title="Contact Sales" variant="hero-outline" size="xl" className="w-full">
                     Contact Sales
                   </Button>
                 </Link>
@@ -151,10 +151,10 @@ const AboutUs = () => {
           <div className="container-tight">
             <AnimatedSection>
               <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                <h2 title="Our Story" className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Our <span className="gradient-text">Story</span>
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p title="Learn about the origins and mission of ConverseAI" className="text-lg text-muted-foreground leading-relaxed">
                   ConverseAI was built to solve modern customer communication challenges by bringing 
                   together AI chatbots, live chat, and WhatsApp Business automation into a single, 
                   easy-to-use platform. We help businesses simplify engagement while improving customer 
@@ -178,8 +178,8 @@ const AboutUs = () => {
                     <div className="w-14 h-14 rounded-2xl gradient-cta flex items-center justify-center mb-6">
                       <Target className="w-7 h-7 text-primary-foreground" />
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <h3 title="Our Mission" className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
+                    <p title="To empower businesses with intelligent conversational tools that drive engagement, improve support, and accelerate growth" className="text-muted-foreground leading-relaxed">
                       To empower businesses with intelligent conversational tools that drive engagement, 
                       improve support, and accelerate growth. We believe that meaningful conversations 
                       are the foundation of lasting customer relationships.
@@ -195,8 +195,8 @@ const AboutUs = () => {
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-violet to-primary flex items-center justify-center mb-6">
                       <Eye className="w-7 h-7 text-primary-foreground" />
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <h3 title="Our Vision" className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
+                    <p title="To become the most trusted conversational AI platform for businesses worldwide. We envision a future where every business can deliver personalized, intelligent customer experiences at scale." className="text-muted-foreground leading-relaxed">
                       To become the most trusted conversational AI platform for businesses worldwide. 
                       We envision a future where every business can deliver personalized, intelligent 
                       customer experiences at scale.
@@ -216,7 +216,7 @@ const AboutUs = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   What We <span className="gradient-text">Do</span>
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+                <p title="Comprehensive solutions to transform your customer engagement strategy" className="text-muted-foreground max-w-2xl mx-auto">
                   Comprehensive solutions to transform your customer engagement strategy
                 </p>
               </div>
@@ -229,10 +229,10 @@ const AboutUs = () => {
                     <div className="w-14 h-14 mx-auto rounded-2xl gradient-cta flex items-center justify-center mb-5">
                       <feature.icon className="w-7 h-7 text-primary-foreground" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                    <h3 title={feature.title} className="text-lg font-semibold text-foreground mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p title={feature.description} className="text-muted-foreground text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -247,10 +247,10 @@ const AboutUs = () => {
           <div className="container-tight">
             <AnimatedSection>
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <h2 title="Why Choose ConverseAI" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   Why Choose <span className="gradient-text">ConverseAI</span>
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+                <p title="The platform trusted by forward-thinking businesses" className="text-muted-foreground max-w-2xl mx-auto">
                   The platform trusted by forward-thinking businesses
                 </p>
               </div>
@@ -264,10 +264,10 @@ const AboutUs = () => {
                       <advantage.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">
+                      <h3 title={advantage.title} className="font-semibold text-foreground mb-1">
                         {advantage.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p title={advantage.description} className="text-sm text-muted-foreground">
                         {advantage.description}
                       </p>
                     </div>
@@ -283,10 +283,10 @@ const AboutUs = () => {
           <div className="container-tight">
             <AnimatedSection>
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <h2 title="Trust & Credibility" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   Trust & <span className="gradient-text">Credibility</span>
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+                <p title="Built for reliability, designed for scale" className="text-muted-foreground max-w-2xl mx-auto">
                   Built for reliability, designed for scale
                 </p>
               </div>
@@ -296,7 +296,7 @@ const AboutUs = () => {
               {trustStats.map((stat, index) => (
                 <AnimatedSection key={stat.label} delay={index * 0.1}>
                   <div className="glass-card rounded-2xl p-6 text-center">
-                    <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <div title={stat.label} className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                       <stat.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="text-2xl md:text-3xl font-bold gradient-text mb-1">
@@ -322,7 +322,7 @@ const AboutUs = () => {
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="w-5 h-5 text-mint" />
-                        <span className="text-foreground font-medium">{item}</span>
+                        <span title={item} className="text-foreground font-medium">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -341,22 +341,22 @@ const AboutUs = () => {
           <div className="container-tight relative z-10">
             <AnimatedSection>
               <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                <h2  title="Join Thousands of Businesses" className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
                   Join thousands of businesses building{" "}
                   <span className="gradient-text">better conversations</span> with ConverseAI
                 </h2>
-                <p className="text-lg text-muted-foreground mb-10">
+                <p title="Start transforming your customer engagement today" className="text-lg text-muted-foreground mb-10">
                   Start transforming your customer engagement today
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <ContactFormDialog>
-                    <Button variant="hero" size="xl">
+                    <Button title="Get Started Free with ConverseAI" variant="hero" size="xl">
                       Get Started Free
                       <ArrowRight className="w-5 h-5" />
                     </Button>
                   </ContactFormDialog>
                   <Link to="/contact-us">
-                    <Button variant="hero-outline" size="xl" className="w-full">
+                    <Button title="Talk to Sales" variant="hero-outline" size="xl" className="w-full">
                       Talk to Sales
                     </Button>
                   </Link>
