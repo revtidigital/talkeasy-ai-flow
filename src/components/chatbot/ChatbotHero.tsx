@@ -37,13 +37,13 @@ const ChatbotHero = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <ContactFormDialog>
-                  <Button variant="hero" size="xl">
+                  <Button title="Request a Demo to ConverseAI" variant="hero" size="xl">
                     Request a Demo
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </ContactFormDialog>
                 <Link to="/contact-us">
-                  <Button variant="hero-outline" size="xl" className="w-full">
+                  <Button title="Start a Free Trial" variant="hero-outline" size="xl" className="w-full">
                     <Play className="w-5 h-5" />
                     Start Free Trial
                   </Button>

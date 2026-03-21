@@ -39,13 +39,13 @@ const ChatbotFinalCTA = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact-us">
-                  <Button variant="hero" size="xl" className="w-full">
+                  <Button title="Get Free Trial" variant="hero" size="xl" className="w-full">
                     Get Free Trial
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </Link>
                 <ContactFormDialog>
-                  <Button variant="hero-outline" size="xl">
+                  <Button title="Contact Sales" variant="hero-outline" size="xl">
                     Contact Sales
                   </Button>
                 </ContactFormDialog>
@@ -64,8 +64,12 @@ const ChatbotFinalCTA = () => {
                   { label: "24/7", sublabel: "Support" },
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
-                    <p className="text-2xl font-bold gradient-text">{stat.label}</p>
-                    <p className="text-xs text-muted-foreground">{stat.sublabel}</p>
+                    <p title={stat.label} className="text-2xl font-bold gradient-text">
+                      {stat.label}
+                    </p>
+                    <p title={stat.sublabel} className="text-xs text-muted-foreground">
+                      {stat.sublabel}
+                    </p>
                   </div>
                 ))}
               </div>

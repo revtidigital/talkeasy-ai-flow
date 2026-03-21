@@ -50,15 +50,17 @@ const ChatbotAgents = () => {
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                      <h4 title={item.title} className="font-semibold mb-1">{item.title}</h4>
+                      <p title={item.description} className="text-sm text-muted-foreground">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
 
               <Link to="/agent-capacity" className="inline-block mt-2">
-                <Button variant="hero" size="lg">
+                <Button title="Learn More" variant="hero" size="lg">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -82,8 +84,12 @@ const ChatbotAgents = () => {
                         <Headphones className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold">Agent Dashboard</p>
-                        <p className="text-xs text-muted-foreground">3 active conversations</p>
+                        <p title="Agent Dashboard" className="font-semibold">
+                          Agent Dashboard
+                        </p>
+                        <p title="3 active conversations" className="text-xs text-muted-foreground">
+                          3 active conversations
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -111,8 +117,12 @@ const ChatbotAgents = () => {
                           {conv.avatar}
                         </div>
                         <div className="flex-1">
-                          <p className="font-medium text-sm">{conv.name}</p>
-                          <p className="text-xs text-muted-foreground">{conv.status}</p>
+                          <p title={conv.name} className="font-medium text-sm">
+                            {conv.name}
+                          </p>
+                          <p title={conv.status} className="text-xs text-muted-foreground">
+                            {conv.status}
+                          </p>
                         </div>
                         {conv.priority === "high" && (
                           <Zap className="w-5 h-5 text-destructive animate-pulse" />
@@ -129,7 +139,7 @@ const ChatbotAgents = () => {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-mint">AI Suggestion</p>
-                        <p className="text-xs text-muted-foreground mt-1">
+                        <p title="Based on the conversation, the customer may need help with their billing cycle. Here's a relevant article..." className="text-xs text-muted-foreground mt-1">
                           "Based on the conversation, the customer may need help with their 
                           billing cycle. Here's a relevant article..."
                         </p>

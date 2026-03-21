@@ -39,7 +39,9 @@ const ChatbotRevolutionize = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3 p-3 rounded-xl bg-secondary/50">
                     <item.icon className="w-5 h-5 text-primary" />
-                    <span className="text-sm font-medium">{item.label}</span>
+                    <span title={item.label} className="text-sm font-medium">
+                      {item.label}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -61,7 +63,9 @@ const ChatbotRevolutionize = () => {
                     </div>
                     <div className="flex-1">
                       <div className="bg-secondary rounded-2xl rounded-tl-sm px-4 py-3">
-                        <p className="text-sm">I'm looking for a product that matches my style</p>
+                        <p title="I'm looking for a product that matches my style" className="text-sm">
+                          I'm looking for a product that matches my style
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -72,7 +76,9 @@ const ChatbotRevolutionize = () => {
                     </div>
                     <div className="flex-1">
                       <div className="bg-primary/10 rounded-2xl rounded-tl-sm px-4 py-3 border border-primary/20">
-                        <p className="text-sm mb-2">Based on your preferences and past purchases, I recommend:</p>
+                        <p title="Based on your preferences and past purchases, I recommend:" className="text-sm mb-2">
+                          Based on your preferences and past purchases, I recommend:
+                        </p>
                         <div className="flex gap-2">
                           <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet/30 to-primary/30" />
                           <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-mint/30 to-primary/30" />
@@ -88,7 +94,9 @@ const ChatbotRevolutionize = () => {
                     </div>
                     <div className="flex-1">
                       <div className="bg-secondary rounded-2xl rounded-tl-sm px-4 py-3">
-                        <p className="text-sm">Perfect! Can you tell me more about the first one?</p>
+                        <p title="Perfect! Can you tell me more about the first one?" className="text-sm">
+                          Perfect! Can you tell me more about the first one?
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -100,15 +108,21 @@ const ChatbotRevolutionize = () => {
                       <span className="w-2 h-2 bg-mint rounded-full animate-bounce" style={{ animationDelay: "0.1s" }} />
                       <span className="w-2 h-2 bg-mint rounded-full animate-bounce" style={{ animationDelay: "0.2s" }} />
                     </div>
-                    <span className="text-sm text-mint font-medium">AI analyzing context & preferences...</span>
+                    <span title="AI analyzing context & preferences..." className="text-sm text-mint font-medium">
+                      AI analyzing context & preferences...
+                    </span>
                   </div>
                 </div>
               </div>
 
               {/* Floating Stats */}
               <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-3 shadow-lg animate-float">
-                <p className="text-xs text-muted-foreground">Response Time</p>
-                <p className="text-lg font-bold text-primary">0.3s</p>
+                <p title="Response Time" className="text-xs text-muted-foreground">
+                  Response Time
+                </p>
+                <p title="0.3s" className="text-lg font-bold text-primary">
+                  0.3s
+                </p>
               </div>
             </div>
           </AnimatedSection>

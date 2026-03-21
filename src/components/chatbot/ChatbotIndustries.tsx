@@ -73,7 +73,7 @@ const ChatbotIndustries = () => {
                   <industry.icon className="w-7 h-7 text-white" />
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-3">{industry.title}</h3>
+                <h3 title={industry.title} className="text-xl font-semibold mb-3">{industry.title}</h3>
                 
                 <p className="text-muted-foreground">{industry.description}</p>
               </div>
@@ -84,7 +84,7 @@ const ChatbotIndustries = () => {
         <AnimatedSection delay={0.4}>
           <div className="text-center mt-12">
             <ContactFormDialog>
-              <Button variant="hero" size="xl">
+              <Button title="Request a Demo to ConverseAI" variant="hero" size="xl">
                 Request a Demo
                 <ArrowRight className="w-5 h-5" />
               </Button>

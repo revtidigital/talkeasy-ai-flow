@@ -116,13 +116,13 @@ const ChatbotPlatform = () => {
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
                       <ArrowRight className="w-3 h-3 text-primary" />
                     </div>
-                    <span>{item}</span>
+                    <span title={item}>{item}</span>
                   </li>
                 ))}
               </ul>
 
               <Link to="/inbox-reports" className="inline-block mt-2">
-                <Button variant="hero" size="lg" className="w-auto">
+                <Button title="Learn More" variant="hero" size="lg" className="w-auto">
                   Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Button>

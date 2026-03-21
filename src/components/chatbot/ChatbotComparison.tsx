@@ -145,7 +145,7 @@ const ChatbotComparison = () => {
 
                 <div className="mt-6">
                   <ContactFormDialog>
-                    <Button variant="hero" className="w-full">
+                    <Button title="Learn More" variant="hero" className="w-full">
                       Learn More
                       <ArrowRight className="w-4 h-4" />
                     </Button>
@@ -167,8 +167,12 @@ const ChatbotComparison = () => {
             ].map((stat, index) => (
               <div key={index} className="text-center glass-card rounded-2xl p-6">
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <p className="text-3xl font-bold gradient-text">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
+                <p title={stat.value} className="text-3xl font-bold gradient-text">
+                  {stat.value}
+                </p>
+                <p title={stat.label} className="text-sm text-muted-foreground">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
