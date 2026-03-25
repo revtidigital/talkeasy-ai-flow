@@ -3,20 +3,21 @@
     { "handle": "filesystem" },
 
     {
+      "src": "/faq",
+      "status": 410
+    },
+    {
       "src": "/faq_cat/(.*)",
       "status": 410
     },
     {
-      "src": "/product/(.*)",
-      "status": 410
-    },
-    {
-  "src": "/faq",
-  "status": 410
-    },
-        {
       "src": "/(.*)/page/(.*)",
       "status": 410
+    },
+
+    {
+      "src": "/(.*\\.(ico|png|jpg|jpeg|svg|css|js|woff|woff2))",
+      "dest": "/$1"
     },
 
     {
