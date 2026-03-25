@@ -3,6 +3,11 @@
     { "handle": "filesystem" },
 
     {
+      "src": "/(.*\\.(ico|png|jpg|jpeg|svg|css|js|woff|woff2))",
+      "dest": "/$1"
+    },
+
+    {
       "src": "/faq",
       "status": 410
     },
@@ -14,15 +19,24 @@
       "src": "/(.*)/page/(.*)",
       "status": 410
     },
+    {
+      "src": "/product/theconverseai.com/(.*)",
+      "status": 410
+    },
 
     {
-      "src": "/(.*\\.(ico|png|jpg|jpeg|svg|css|js|woff|woff2))",
-      "dest": "/$1"
+      "src": "^/$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/(about-us|contact-us|chatbot|live-chat|pre-chat-forms|omni-channel|agent-reports|csat-report|team-reports|inbox-reports|whatsapp-ai-chatbot|whatsapp-shop|whatsapp-marketing|agent-capacity|private-notes|live-view|teams-2)/?$",
+      "dest": "/index.html"
     },
 
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "status": 404,
+      "dest": "/404.html"
     }
   ]
 }
