@@ -11,6 +11,10 @@
       "status": 410
     },
     {
+  "src": "/faq",
+  "status": 410
+    },
+        {
       "src": "/(.*)/page/(.*)",
       "status": 410
     },
