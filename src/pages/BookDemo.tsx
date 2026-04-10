@@ -42,14 +42,24 @@ const BookDemo = () => {
                 </p>
               </div>
             )}
-            <iframe
+            {/* <iframe
               src="https://converseai.zohobookings.in/portal-embed#/421680000000042050"
               title="Schedule a demo with ConverseAI"
               className="w-full border-0"
               style={{ height: "800px", minHeight: "600px" }}
               onLoad={() => setIsLoading(false)}
               allow="payment"
-            />
+            /> */}
+            <iframe
+  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3A-sR86Lvn6njkZNbhagQa-tC8b_y5SNTLfMxDlllCvpaYLtv9ycg4jyW3Y8iPKoE_l-5XX3O4?gv=true"
+  title="Schedule via Google Calendar"
+  className="w-full border-0"
+  style={{ height: "800px", minHeight: "600px" }}
+  frameBorder="0"
+  onLoad={() => setIsLoading(false)}
+  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+/>
+
           </div>
         </section>
 
