@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -40,6 +41,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,11 +74,6 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         form_source: "Popup Form Enquiry",
       });
 
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
-      });
-
       trackFormSuccess("contact_form");
 
       setFormData({
@@ -90,6 +87,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
       });
       setErrors({});
       setOpen(false);
+      navigate("/thank-you");
     } catch {
       toast({
         title: "Failed to send message",

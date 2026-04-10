@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -30,6 +31,7 @@ const ContactUs = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,11 +62,6 @@ const ContactUs = () => {
         form_source: "Contact Page Form",
       });
       
-      toast({
-        title: "Message sent successfully!",
-        description: "Our team will get back to you within 24 hours.",
-      });
-      
       trackFormSuccess("contact_page_form");
       
       setFormData({
@@ -75,6 +72,7 @@ const ContactUs = () => {
         product: "",
         message: "",
       });
+      navigate("/thank-you");
     } catch {
       toast({
         title: "Failed to send message",
