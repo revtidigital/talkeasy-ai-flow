@@ -49,7 +49,6 @@ const BookDemo = () => {
               style={{ height: "800px", minHeight: "600px" }}
               onLoad={() => setIsLoading(false)}
               allow="payment"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
             />
           </div>
         </section>
