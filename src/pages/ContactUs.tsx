@@ -212,6 +212,7 @@ const ContactUs = () => {
                           <SelectItem value="whatsapp-marketing">WhatsApp Marketing</SelectItem>
                           <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
                           <SelectItem value="whatsapp-shop">WhatsApp Shop</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
                       {errors.product && <p className="text-xs text-destructive">{errors.product}</p>}
@@ -305,11 +306,11 @@ const ContactUs = () => {
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
                       <a 
-                        href="mailto:himanshu@revtidigital.com" 
-                        title="Email ConverseAI at himanshu@revtidigital.com"
+                        href="mailto:himanshu@theconverseai.com" 
+                        title="Email ConverseAI at himanshu@theconverseai.com"
                         className="text-muted-foreground text-sm hover:text-primary transition-colors"
                       >
-                        himanshu@revtidigital.com
+                        himanshu@theconverseai.com
                       </a> <br/>
                       <a 
                         href="mailto:contact@theconverseai.com" 

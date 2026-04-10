@@ -173,6 +173,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                   <SelectItem value="whatsapp-marketing">WhatsApp Marketing</SelectItem>
                   <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
                   <SelectItem value="whatsapp-shop">WhatsApp Shop</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
             </div>
