@@ -61,16 +61,17 @@ const HeroSection = () => {
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Button>
               </ContactFormDialog>
-              <ContactFormDialog>
+              {/* <ContactFormDialog> */}
                 <Button 
                     variant="hero-outline" 
                     size="xl" 
                     aria-label="Book a demo - opens contact form"
                     title="Book a demo with ConverseAI"
+                    onClick={() => window.location.href = "/book-demo"}
                   >
                   Book Demo
                 </Button>
-              </ContactFormDialog>
+              {/* </ContactFormDialog> */}
             </div>
 
             {/* Quick Stats */}
