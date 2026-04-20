@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
-import { caseStudies } from "@/data/caseStudies";
+import { useCaseStudies } from "@/hooks/useCaseStudies";
 
 const categoryColors: Record<string, string> = {
   "WhatsApp Marketing": "bg-green-100 text-green-700",
@@ -15,6 +15,8 @@ const categoryColors: Record<string, string> = {
 };
 
 const CaseStudies = () => {
+  const { data: caseStudies, loading, error } = useCaseStudies();
+
   return (
     <>
       <Helmet>
@@ -79,6 +81,17 @@ const CaseStudies = () => {
           {/* Case Study Cards */}
           <section className="pb-24">
             <div className="container-tight">
+              {loading && (
+                <div className="flex justify-center items-center py-24" aria-label="Loading case studies">
+                  <div className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
+                </div>
+              )}
+              {error && (
+                <p className="text-center text-muted-foreground py-24">
+                  Unable to load case studies. Please try again later.
+                </p>
+              )}
+              {!loading && !error && (
               <div className="grid gap-8 md:gap-10">
                 {caseStudies.map((cs, index) => (
                   <AnimatedSection key={cs.id} delay={index * 0.1}>
@@ -163,6 +176,7 @@ const CaseStudies = () => {
                   </AnimatedSection>
                 ))}
               </div>
+              )}
             </div>
           </section>
 
