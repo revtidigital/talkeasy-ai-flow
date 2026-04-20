@@ -23,7 +23,7 @@ import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
-import { getCaseStudyBySlug, caseStudies } from "@/data/caseStudies";
+import { useCaseStudy, useCaseStudies } from "@/hooks/useCaseStudies";
 
 /* ─── Feature → icon mapping ─────────────────────────────── */
 const featureIcons: Record<string, React.ReactNode> = {
@@ -55,17 +55,26 @@ const CaseStudyDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
 
-  const caseStudy = slug ? getCaseStudyBySlug(slug) : undefined;
+  const { data: caseStudy, loading, error } = useCaseStudy(slug);
+  const { data: allCaseStudies } = useCaseStudies();
 
   useEffect(() => {
-    if (!caseStudy) {
+    if (!loading && !error && !caseStudy) {
       navigate("/case-studies", { replace: true });
     }
-  }, [caseStudy, navigate]);
+  }, [caseStudy, loading, error, navigate]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background pt-16 md:pt-20 flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin" aria-label="Loading" />
+      </div>
+    );
+  }
 
   if (!caseStudy) return null;
 
-  const otherStudies = caseStudies.filter((cs) => cs.slug !== slug).slice(0, 2);
+  const otherStudies = allCaseStudies.filter((cs) => cs.slug !== slug).slice(0, 2);
 
   const pageUrl =
     typeof window !== "undefined"
