@@ -25,18 +25,8 @@
     },
 
     {
-      "src": "^/$",
-      "dest": "/index.html"
-    },
-    {
-      "src": "^/(about-us|book-demo |thank-you|contact-us|chatbot|live-chat|pre-chat-forms|omni-channel|agent-reports|csat-report|team-reports|inbox-reports|whatsapp-ai-chatbot|whatsapp-shop|whatsapp-marketing|agent-capacity|private-notes|live-view|teams-2|book-demo)/?$",
-      "dest": "/index.html"
-    },
-
-    {
       "src": "/(.*)",
-      "status": 404,
-      "dest": "/404.html"
+      "dest": "/index.html"
     }
   ]
 }
