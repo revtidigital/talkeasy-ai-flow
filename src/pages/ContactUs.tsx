@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -27,6 +28,7 @@ const ContactUs = () => {
     countryName: "",
     product: "",
     message: "",
+    agreeToTerms: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,6 +73,7 @@ const ContactUs = () => {
         countryName: "",
         product: "",
         message: "",
+        agreeToTerms: false,
       });
       navigate("/thank-you");
     } catch {
@@ -209,9 +212,12 @@ const ContactUs = () => {
                           <SelectValue placeholder="Choose a product" />
                         </SelectTrigger>
                         <SelectContent className="bg-white">
+                          <SelectItem value="conversational-ai-chatbot">Conversational AI Chatbot</SelectItem>
+                          <SelectItem value="whatsapp-ai-chatbot">WhatsApp AI Chatbot</SelectItem>
+                          <SelectItem value="live-chat">Live Chat</SelectItem>
+                          <SelectItem value="omni-channel">Omni Channel</SelectItem>
+                          <SelectItem value="pre-chat-forms">Pre-Chat Forms</SelectItem>
                           <SelectItem value="whatsapp-marketing">WhatsApp Marketing</SelectItem>
-                          <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
-                          <SelectItem value="whatsapp-shop">WhatsApp Shop</SelectItem>
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
@@ -232,6 +238,34 @@ const ContactUs = () => {
                     />
                     {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
                   </div>
+
+                  <div className="flex items-start space-x-2">
+                    <Checkbox
+                      id="terms"
+                      checked={formData.agreeToTerms}
+                      onCheckedChange={(checked) =>
+                        setFormData({ ...formData, agreeToTerms: checked as boolean })
+                      }
+                      className="mt-0.5 border-muted-foreground data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                      aria-describedby="terms-description"
+                    />
+                    <label
+                      htmlFor="terms"
+                      id="terms-description"
+                      className="text-sm text-muted-foreground cursor-pointer leading-relaxed"
+                    >
+                      I agree to the{" "}
+                      <Link to="/terms-and-conditions" className="text-primary hover:underline font-medium" target="_blank" rel="noopener noreferrer">
+                        Terms & Conditions
+                      </Link>{" "}
+                      and{" "}
+                      <Link to="/privacy-policy" className="text-primary hover:underline font-medium" target="_blank" rel="noopener noreferrer">
+                        Privacy Policy
+                      </Link>
+                      *
+                    </label>
+                  </div>
+                  {errors.agreeToTerms && <p className="text-xs text-destructive">{errors.agreeToTerms}</p>}
 
                   <Button
                     type="submit"

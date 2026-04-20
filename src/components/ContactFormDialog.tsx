@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -38,6 +39,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
     product: "",
     subject: "",
     message: "",
+    agreeToTerms: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
@@ -84,6 +86,7 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
         product: "",
         subject: "",
         message: "",
+        agreeToTerms: false,
       });
       setErrors({});
       setOpen(false);
@@ -170,10 +173,13 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
                   <SelectValue placeholder="What are you looking for?" />
                 </SelectTrigger>
                 <SelectContent className="bg-white z-50">
+                  <SelectItem value="conversational-ai-chatbot">Conversational AI Chatbot</SelectItem>
+                  <SelectItem value="whatsapp-ai-chatbot">WhatsApp AI Chatbot</SelectItem>
+                  <SelectItem value="live-chat">Live Chat</SelectItem>
+                  <SelectItem value="omni-channel">Omni Channel</SelectItem>
+                  <SelectItem value="pre-chat-forms">Pre-Chat Forms</SelectItem>
                   <SelectItem value="whatsapp-marketing">WhatsApp Marketing</SelectItem>
-                  <SelectItem value="ai-chatbot">AI Chatbot</SelectItem>
-                  <SelectItem value="whatsapp-shop">WhatsApp Shop</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -212,24 +218,36 @@ const ContactFormDialog = ({ children }: ContactFormDialogProps) => {
             {errors.message && <p id="message-error" className="text-xs text-destructive" role="alert">{errors.message}</p>}
           </div>
 
-          {/* <div className="flex items-center space-x-2">
-            <Checkbox
-              id="terms"
-              checked={formData.agreeToTerms}
-              onCheckedChange={(checked) =>
-                setFormData({ ...formData, agreeToTerms: checked as boolean })
-              }
-              className="border-muted-foreground data-[state=checked]:bg-primary data-[state=checked]:border-primary"
-              aria-describedby="terms-description"
-            />
-            <label
-              htmlFor="terms"
-              id="terms-description"
-              className="text-sm text-muted-foreground cursor-pointer"
-            >
-              I agree to the terms of this Privacy Policy
-            </label>
-          </div> */}
+          {/* Terms & Conditions */}
+          <div className="space-y-1">
+            <div className="flex items-start space-x-2">
+              <Checkbox
+                id="dialog-terms"
+                checked={formData.agreeToTerms}
+                onCheckedChange={(checked) =>
+                  setFormData({ ...formData, agreeToTerms: checked as boolean })
+                }
+                className="mt-0.5 border-muted-foreground data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                aria-describedby="dialog-terms-description"
+              />
+              <label
+                htmlFor="dialog-terms"
+                id="dialog-terms-description"
+                className="text-sm text-muted-foreground cursor-pointer leading-relaxed"
+              >
+                I agree to the{" "}
+                <Link to="/terms-and-conditions" className="text-primary hover:underline font-medium" target="_blank" rel="noopener noreferrer">
+                  Terms & Conditions
+                </Link>{" "}
+                and{" "}
+                <Link to="/privacy-policy" className="text-primary hover:underline font-medium" target="_blank" rel="noopener noreferrer">
+                  Privacy Policy
+                </Link>
+                *
+              </label>
+            </div>
+            {errors.agreeToTerms && <p className="text-xs text-destructive" role="alert">{errors.agreeToTerms}</p>}
+          </div>
 
           <div className="flex justify-end pt-2">
             <Button

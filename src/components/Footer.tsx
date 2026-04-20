@@ -20,6 +20,8 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
       { label: "About Us", href: "/about-us", isRoute: true },
       { label: "Case Studies", href: "/case-studies", isRoute: true },
       { label: "Contact Us", href: "/contact-us", isRoute: true },
+      { label: "Terms & Conditions", href: "/terms-and-conditions", isRoute: true },
+      { label: "Privacy Policy", href: "/privacy-policy", isRoute: true },
     ],
   };
 
@@ -209,7 +211,11 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   </div>
 
   {/* Right */}
-  <p className="text-sm text-footer-text md:justify-self-end">
+  <p className="text-sm text-footer-text md:justify-self-end flex flex-wrap items-center gap-x-3 gap-y-1 justify-center md:justify-end">
+    <Link to="/terms-and-conditions" title="Terms & Conditions" className="hover:text-primary transition-colors">Terms &amp; Conditions</Link>
+    <span aria-hidden="true">·</span>
+    <Link to="/privacy-policy" title="Privacy Policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+    <span aria-hidden="true">·</span>
     © {new Date().getFullYear()} ConverseAI. All rights reserved.
   </p>
 

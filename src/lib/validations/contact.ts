@@ -41,7 +41,11 @@ export const contactFormSchema = z.object({
     .max(200, { message: "Subject must be less than 200 characters" })
     .optional()
     .or(z.literal("")),
-  agreeToTerms: z.boolean().optional(),
+  agreeToTerms: z
+    .boolean()
+    .refine((val) => val === true, {
+      message: "You must accept the Terms & Conditions to proceed",
+    }),
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
