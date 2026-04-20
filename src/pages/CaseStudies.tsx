@@ -82,7 +82,14 @@ const CaseStudies = () => {
               <div className="grid gap-8 md:gap-10">
                 {caseStudies.map((cs, index) => (
                   <AnimatedSection key={cs.id} delay={index * 0.1}>
-                    <article className="group glass-card-hover rounded-2xl overflow-hidden border border-border/60">
+                    <article className="group glass-card-hover rounded-2xl overflow-hidden border border-border/60 relative">
+                      {/* Stretched link — makes the whole card clickable */}
+                      <Link
+                        to={`/case-studies/${cs.slug}`}
+                        className="absolute inset-0 z-0 rounded-2xl"
+                        aria-hidden="true"
+                        tabIndex={-1}
+                      />
                       <div className="md:flex">
                         {/* Image */}
                         <div className="md:w-2/5 relative overflow-hidden">
@@ -143,7 +150,7 @@ const CaseStudies = () => {
                             </span>
                             <Link
                               to={`/case-studies/${cs.slug}`}
-                              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                              className="relative z-10 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
                               aria-label={`Read full case study: ${cs.company}`}
                             >
                               Read Case Study
