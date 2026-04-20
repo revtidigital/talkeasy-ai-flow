@@ -5,6 +5,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.webp";
 
+// ─── Constants ──────────────────────────────────────────────────────────────────
+
+const GET_DEMO_URL = "https://www.theconverseai.com/book-demo";
+
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
 const featuresMenu = {
@@ -369,16 +373,16 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center" onMouseEnter={() => setActiveDropdown(null)}>
-            <Link to="/contact-us" title="Start your free trial with ConverseAI">
+            <a href={GET_DEMO_URL} target="_blank" rel="noopener noreferrer" title="Get a Demo of ConverseAI">
               <Button
                 variant="outline"
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors px-6 hover:scale-100 hover:translate-y-0"
-                aria-label="Start your free trial"
-                title="Start your free trial with ConverseAI"
+                aria-label="Get a Demo"
+                title="Get a Demo of ConverseAI"
               >
-                Start Your Trial
+                Get a Demo
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -522,16 +526,16 @@ const Header = () => {
 
               {/* ── CTA ── */}
               <div className="mt-3 px-1 pb-2">
-                <Link to="/contact-us" onClick={() => setIsMobileMenuOpen(false)} title="Start your free trial">
+                <a href={GET_DEMO_URL} target="_blank" rel="noopener noreferrer" title="Get a Demo of ConverseAI" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button
                     variant="outline"
                     className="w-full justify-center border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    aria-label="Start your free trial"
-                    title="Start your free trial with ConverseAI"
+                    aria-label="Get a Demo"
+                    title="Get a Demo of ConverseAI"
                   >
-                    Start Your Trial
+                    Get a Demo
                   </Button>
-                </Link>
+                </a>
               </div>
             </nav>
           </div>
