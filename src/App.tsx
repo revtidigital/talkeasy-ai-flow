@@ -11,6 +11,7 @@ import PageTransition from "./components/PageTransition";
 import LoadingScreen from "./components/LoadingScreen";
 import Header from "./components/Header";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import ProtectedRoute from "./components/admin/ProtectedRoute";
 
 // Eagerly loaded - critical for initial render
 import Index from "./pages/Index";
@@ -40,6 +41,9 @@ const BookDemo = lazy(() => import("./pages/BookDemo"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
+const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+const AdminCaseStudyForm = lazy(() => import("./pages/admin/AdminCaseStudyForm"));
 
 const queryClient = new QueryClient();
 
@@ -82,12 +86,57 @@ const AnimatedRoutes = () => {
           <Route path="/thank-you" element={<PageTransition><ThankYou /></PageTransition>} />
           <Route path="/case-studies" element={<PageTransition><CaseStudies /></PageTransition>} />
           <Route path="/case-studies/:slug" element={<PageTransition><CaseStudyDetail /></PageTransition>} />
+
+          {/* Admin routes — no page transition, no public header */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/case-studies/new"
+            element={
+              <ProtectedRoute>
+                <AdminCaseStudyForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/case-studies/:id/edit"
+            element={
+              <ProtectedRoute>
+                <AdminCaseStudyForm />
+              </ProtectedRoute>
+            }
+          />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Routes>
       </Suspense>
     </AnimatePresence>
+  );
+};
+
+const PublicLayout = () => {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith("/admin");
+  return (
+    <>
+      {!isAdmin && (
+        <>
+          {/* Header outside PageTransition to maintain fixed positioning */}
+          <Header />
+          <ScrollToTop />
+          <WhatsAppFloat />
+        </>
+      )}
+      <AnimatedRoutes />
+    </>
   );
 };
 
@@ -109,11 +158,7 @@ const App = () => {
             <a href="#main-content" className="skip-link">
               Skip to main content
             </a>
-            {/* Header outside PageTransition to maintain fixed positioning */}
-            <Header />
-            <ScrollToTop />
-            <WhatsAppFloat />
-            <AnimatedRoutes />
+            <PublicLayout />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
