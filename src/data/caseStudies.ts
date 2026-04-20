@@ -30,8 +30,10 @@ export interface CaseStudy {
     quote: string;
     author: string;
     role: string;
+    avatarUrl?: string;
   };
   featuresUsed: string[];
+  useCase: string[];
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -90,6 +92,12 @@ export const caseStudies: CaseStudy[] = [
       role: "Head of Digital, StyleMart India",
     },
     featuresUsed: ["WhatsApp AI Chatbot", "WhatsApp Marketing", "Live Chat", "CSAT Report"],
+    useCase: [
+      "Abandoned cart recovery",
+      "Order tracking automation",
+      "Personalised broadcast campaigns",
+      "Product recommendations",
+    ],
   },
   {
     id: 2,
@@ -141,6 +149,12 @@ export const caseStudies: CaseStudy[] = [
       role: "Co-founder & CEO, LearnSphere",
     },
     featuresUsed: ["Conversational AI Chatbot", "Live Chat", "Pre-Chat Forms", "Agent Reports"],
+    useCase: [
+      "Instant lead qualification",
+      "Personalised course recommendations",
+      "Discovery call booking",
+      "CRM auto-sync",
+    ],
   },
   {
     id: 3,
@@ -197,6 +211,12 @@ export const caseStudies: CaseStudy[] = [
       role: "Operations Director, CareFirst Clinics",
     },
     featuresUsed: ["Omni-Channel", "WhatsApp Marketing", "Pre-Chat Forms", "Team Reports", "CSAT Report"],
+    useCase: [
+      "Automated appointment reminders",
+      "Multi-channel patient support",
+      "Digital intake forms",
+      "No-show prevention",
+    ],
   },
 ];
 
