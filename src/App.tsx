@@ -38,6 +38,8 @@ const LiveView = lazy(() => import("./pages/LiveView"));
 const Teams = lazy(() => import("./pages/Teams"));
 const BookDemo = lazy(() => import("./pages/BookDemo"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
 
 const queryClient = new QueryClient();
 
@@ -78,6 +80,8 @@ const AnimatedRoutes = () => {
           <Route path="/teams-2" element={<PageTransition><Teams /></PageTransition>} />
           <Route path="/book-demo" element={<PageTransition><BookDemo /></PageTransition>} />
           <Route path="/thank-you" element={<PageTransition><ThankYou /></PageTransition>} />
+          <Route path="/case-studies" element={<PageTransition><CaseStudies /></PageTransition>} />
+          <Route path="/case-studies/:slug" element={<PageTransition><CaseStudyDetail /></PageTransition>} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
