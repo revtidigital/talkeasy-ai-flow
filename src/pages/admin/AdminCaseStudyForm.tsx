@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { supabase } from "@/integrations/supabase/client";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Plus, Trash2, LogOut } from "lucide-react";
+import ImageUpload from "@/components/admin/ImageUpload";
 
 /* ─── Form types ───────────────────────────────────────────── */
 interface MetricField {
@@ -316,15 +317,37 @@ const AdminCaseStudyForm = () => {
           {/* ── Images ─────────────────────────────────────────── */}
           <section className="bg-white rounded-xl border border-border/60 p-6 space-y-5">
             <h2 className="font-semibold text-base text-foreground">Images</h2>
-            <div className={fieldClass}>
-              <Label htmlFor="hero_image">Hero image URL *</Label>
-              <Input id="hero_image" {...register("hero_image", { required: "Required" })} placeholder="https://…" />
-              {errors.hero_image && <p className={errorClass}>{errors.hero_image.message}</p>}
-            </div>
-            <div className={fieldClass}>
-              <Label htmlFor="logo">Logo URL</Label>
-              <Input id="logo" {...register("logo")} placeholder="https://…" />
-            </div>
+            <Controller
+              control={control}
+              name="hero_image"
+              rules={{ required: "Required" }}
+              render={({ field }) => (
+                <div className={fieldClass}>
+                  <ImageUpload
+                    id="hero_image"
+                    label="Hero image"
+                    required
+                    value={field.value}
+                    onChange={field.onChange}
+                  />
+                  {errors.hero_image && <p className={errorClass}>{errors.hero_image.message}</p>}
+                </div>
+              )}
+            />
+            <Controller
+              control={control}
+              name="logo"
+              render={({ field }) => (
+                <div className={fieldClass}>
+                  <ImageUpload
+                    id="logo"
+                    label="Logo"
+                    value={field.value}
+                    onChange={field.onChange}
+                  />
+                </div>
+              )}
+            />
           </section>
 
           {/* ── Metrics ────────────────────────────────────────── */}
