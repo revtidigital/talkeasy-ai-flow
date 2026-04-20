@@ -58,6 +58,7 @@ const navLinks = [
   { label: "Features", href: "#features", isRoute: false, hasDropdown: "features" },
   { label: "Products", href: "#products", isRoute: false, hasDropdown: "products" },
   { label: "About Us", href: "/about-us", isRoute: true },
+  { label: "Case Studies", href: "/case-studies", isRoute: true },
   { label: "Blog", href: "https://blog.theconverseai.com/", isRoute: false, isExternal: true },
   { label: "Contact Us", href: "/contact-us", isRoute: true },
 ];
@@ -485,6 +486,16 @@ const Header = () => {
                 className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 About Us
+              </Link>
+
+              {/* ── Case Studies ── */}
+              <Link
+                to="/case-studies"
+                onClick={() => setIsMobileMenuOpen(false)}
+                title="Read ConverseAI customer case studies"
+                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
+              >
+                Case Studies
               </Link>
 
               {/* ── Blog (external) ── */}
