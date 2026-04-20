@@ -101,7 +101,7 @@ const CaseStudyDetail = () => {
         <main id="main-content">
 
           {/* ── Hero ──────────────────────────────────────────── */}
-          <section className="bg-[#0a4d3c] text-white py-14 md:py-24">
+          <section className="gradient-cta text-white py-14 md:py-24">
             <div className="container-tight text-center">
               <Link
                 to="/case-studies"
@@ -112,7 +112,7 @@ const CaseStudyDetail = () => {
                 All Case Studies
               </Link>
 
-              <p className="text-sm font-semibold uppercase tracking-widest text-emerald-300 mb-4">
+              <p className="text-sm font-semibold uppercase tracking-widest text-white/80 mb-4">
                 Case Study
               </p>
 
@@ -137,12 +137,12 @@ const CaseStudyDetail = () => {
           {/* ── Use Case + Winning Features Card ──────────────── */}
           <AnimatedSection>
             <div className="container-tight py-8 md:py-10">
-              <div className="rounded-2xl overflow-hidden border border-green-100 shadow-sm">
-                <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-green-100">
+              <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-sm">
+                <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-primary/20">
 
                   {/* Use Case */}
-                  <div className="bg-[#e8f5e4] p-8 text-center">
-                    <h2 className="text-base font-bold text-[#1a7a50] mb-5 uppercase tracking-wide">
+                  <div className="bg-secondary p-8 text-center">
+                    <h2 className="text-base font-bold text-primary mb-5 uppercase tracking-wide">
                       Use Case
                     </h2>
                     <ul className="space-y-2" aria-label="Use cases">
@@ -155,8 +155,8 @@ const CaseStudyDetail = () => {
                   </div>
 
                   {/* Winning Features */}
-                  <div className="bg-[#e8f5e4] p-8">
-                    <h2 className="text-base font-bold text-[#1a7a50] mb-5 uppercase tracking-wide text-center">
+                  <div className="bg-secondary p-8">
+                    <h2 className="text-base font-bold text-primary mb-5 uppercase tracking-wide text-center">
                       Winning Features
                     </h2>
                     <ul
@@ -168,7 +168,7 @@ const CaseStudyDetail = () => {
                           key={feature}
                           className="flex items-center gap-2 text-sm font-semibold text-gray-800"
                         >
-                          <span className="text-[#1a7a50]" aria-hidden="true">
+                          <span className="text-primary" aria-hidden="true">
                             {featureIcons[feature] ?? <CheckCircle2 className="w-5 h-5" />}
                           </span>
                           {feature}
@@ -188,7 +188,7 @@ const CaseStudyDetail = () => {
               <div className="grid md:grid-cols-2 gap-6">
 
                 {/* Testimonial */}
-                <div className="bg-[#e8f0fb] rounded-2xl p-7 flex flex-col justify-between">
+                <div className="bg-secondary rounded-2xl p-7 flex flex-col justify-between">
                   <p className="text-base leading-relaxed text-gray-800 mb-6">
                     &ldquo;{caseStudy.testimonial.quote}&rdquo;
                   </p>
@@ -203,7 +203,7 @@ const CaseStudyDetail = () => {
                       />
                     ) : (
                       <div
-                        className="w-14 h-14 rounded-full bg-blue-300 flex items-center justify-center text-xl font-bold text-white flex-shrink-0"
+                        className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-xl font-bold text-white flex-shrink-0"
                         aria-label={caseStudy.testimonial.author}
                         role="img"
                       >
@@ -220,7 +220,7 @@ const CaseStudyDetail = () => {
                 </div>
 
                 {/* Social Share */}
-                <div className="bg-[#e8f0fb] rounded-2xl p-7 flex flex-col justify-center">
+                <div className="bg-secondary rounded-2xl p-7 flex flex-col justify-center">
                   <h3 className="text-xl font-bold text-gray-900 mb-5">
                     Like what you see? Share it with a friend
                   </h3>
