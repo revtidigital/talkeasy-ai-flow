@@ -19,6 +19,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
     Company: [
       { label: "About Us", href: "/about-us", isRoute: true },
       { label: "Case Studies", href: "/case-studies", isRoute: true },
+      { label: "Blog", href: "https://blog.theconverseai.com/", isRoute: false },
       { label: "Contact Us", href: "/contact-us", isRoute: true },
       { label: "Terms & Conditions", href: "/terms-and-conditions", isRoute: true },
       { label: "Privacy Policy", href: "/privacy-policy", isRoute: true },
@@ -105,13 +106,25 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <ul className="space-y-3">
               {footerLinks.Company.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    title={`Go to ${link.label}`}
-                    className="text-sm text-footer-text hover:text-primary inline-block transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      title={`Go to ${link.label}`}
+                      className="text-sm text-footer-text hover:text-primary inline-block transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      title={`Go to ${link.label}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-footer-text hover:text-primary inline-block transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-footer rounded"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

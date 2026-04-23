@@ -43,6 +43,7 @@ const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const Services = lazy(() => import("./pages/Services"));
 const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
 const AdminCaseStudyForm = lazy(() => import("./pages/admin/AdminCaseStudyForm"));
@@ -90,6 +91,7 @@ const AnimatedRoutes = () => {
           <Route path="/case-studies/:slug" element={<PageTransition><CaseStudyDetail /></PageTransition>} />
           <Route path="/terms-and-conditions" element={<PageTransition><TermsAndConditions /></PageTransition>} />
           <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+          <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
 
           {/* Admin routes — no page transition, no public header */}
           <Route path="/admin/login" element={<AdminLogin />} />

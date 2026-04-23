@@ -61,10 +61,9 @@ const navLinks = [
   { label: "Home", href: "/", isRoute: true },
   { label: "Features", href: "#features", isRoute: false, hasDropdown: "features" },
   { label: "Products", href: "#products", isRoute: false, hasDropdown: "products" },
+  { label: "Services", href: "/services", isRoute: true },
   { label: "About Us", href: "/about-us", isRoute: true },
   { label: "Case Studies", href: "/case-studies", isRoute: true },
-  { label: "Blog", href: "https://blog.theconverseai.com/", isRoute: false, isExternal: true },
-  { label: "Contact Us", href: "/contact-us", isRoute: true },
 ];
 
 // ─── Sub-components ─────────────────────────────────────────────────────────────
@@ -482,6 +481,16 @@ const Header = () => {
                 )}
               </div>
 
+              {/* ── Services ── */}
+              <Link
+                to="/services"
+                onClick={() => setIsMobileMenuOpen(false)}
+                title="View AI Services"
+                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
+              >
+                Services
+              </Link>
+
               {/* ── About Us ── */}
               <Link
                 to="/about-us"
@@ -500,28 +509,6 @@ const Header = () => {
                 className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
               >
                 Case Studies
-              </Link>
-
-              {/* ── Blog (external) ── */}
-              <a
-                href="https://blog.theconverseai.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Read the ConverseAI Blog"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
-              >
-                Blog
-              </a>
-
-              {/* ── Contact Us ── */}
-              <Link
-                to="/contact-us"
-                onClick={() => setIsMobileMenuOpen(false)}
-                title="Contact the ConverseAI team"
-                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
-              >
-                Contact Us
               </Link>
 
               {/* ── CTA ── */}
