@@ -73,10 +73,8 @@ const navLinks = [
   { label: "Features", href: "#features", isRoute: false, hasDropdown: "features" },
   { label: "Products", href: "#products", isRoute: false, hasDropdown: "products" },
   { label: "Services", href: "#services", isRoute: false, hasDropdown: "services" },
-  { label: "About Us", href: "/about-us", isRoute: true },
   { label: "Case Studies", href: "/case-studies", isRoute: true },
   { label: "Blog", href: "https://blog.theconverseai.com/", isRoute: false, isExternal: true },
-  { label: "Contact Us", href: "/contact-us", isRoute: true },
 ];
 
 // ─── Sub-components ─────────────────────────────────────────────────────────────
@@ -539,16 +537,6 @@ const Header = () => {
                 )}
               </div>
 
-              {/* ── About Us ── */}
-              <Link
-                to="/about-us"
-                onClick={() => setIsMobileMenuOpen(false)}
-                title="Learn about ConverseAI"
-                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
-              >
-                About Us
-              </Link>
-
               {/* ── Case Studies ── */}
               <Link
                 to="/case-studies"
@@ -570,16 +558,6 @@ const Header = () => {
               >
                 Blog
               </a>
-
-              {/* ── Contact Us ── */}
-              <Link
-                to="/contact-us"
-                onClick={() => setIsMobileMenuOpen(false)}
-                title="Contact the ConverseAI team"
-                className="px-[42px] py-2.5 text-[14px] font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors block"
-              >
-                Contact Us
-              </Link>
 
               {/* ── CTA ── */}
               <div className="mt-3 px-1 pb-2">
