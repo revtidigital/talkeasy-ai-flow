@@ -57,10 +57,22 @@ const productsMenu = [
   { label: "Pre-Chat Forms", href: "/pre-chat-forms" },
 ];
 
+const servicesMenu = [
+  { label: "Services Hub", href: "/services" },
+  { label: "AI Strategy & Readiness Audit", href: "/services#ai-strategy-audit", noWrap: true },
+  { label: "Agentic Systems & Process Automation", href: "/services#agentic-automation", noWrap: true },
+  { label: "AI Voice Agents", href: "/services#ai-voice-agents" },
+  { label: "Custom AI Agent Development", href: "/services#custom-ai-agent-development", noWrap: true },
+  { label: "AI Integration Services", href: "/services#ai-integration-services", noWrap: true },
+  { label: "Document & Knowledge Intelligence", href: "/services#knowledge-intelligence", noWrap: true },
+  { label: "Sales Intelligence & Outreach", href: "/services#sales-intelligence", noWrap: true },
+];
+
 const navLinks = [
   { label: "Home", href: "/", isRoute: true },
   { label: "Features", href: "#features", isRoute: false, hasDropdown: "features" },
   { label: "Products", href: "#products", isRoute: false, hasDropdown: "products" },
+  { label: "Services", href: "#services", isRoute: false, hasDropdown: "services" },
   { label: "About Us", href: "/about-us", isRoute: true },
   { label: "Case Studies", href: "/case-studies", isRoute: true },
   { label: "Blog", href: "https://blog.theconverseai.com/", isRoute: false, isExternal: true },
@@ -367,6 +379,28 @@ const Header = () => {
                     </div>
                   </div>
                 )}
+
+                {/* Services Dropdown */}
+                {link.hasDropdown === "services" && activeDropdown === "services" && (
+                  <div className="absolute top-full left-0 z-50" role="menu">
+                    <div className="bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 p-3 min-w-[220px] animate-fade-in">
+                      <ul className="space-y-1">
+                        {servicesMenu.map((item) => (
+                          <li key={item.label} role="none">
+                            <button
+                              onClick={() => handleDropdownItemClick(item.href)}
+                              title={`Open ${item.label}`}
+                              className={`text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring${'noWrap' in item && item.noWrap ? ' whitespace-nowrap' : ''}`}
+                              role="menuitem"
+                            >
+                              {item.label}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </nav>
@@ -470,6 +504,29 @@ const Header = () => {
                 {openMobileTop === "products" && (
                   <div className="mt-0.5 flex flex-col gap-0.5 animate-fade-in">
                     {productsMenu.map((item) => (
+                      <LeafItem
+                        key={item.label}
+                        label={item.label}
+                        href={item.href}
+                        depth={1}
+                        onNavigate={handleMobileNavigate}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* ── Services (flat accordion) ── */}
+              <div>
+                <AccordionRow
+                  label="Services"
+                  isOpen={openMobileTop === "services"}
+                  onToggle={() => toggleMobileTop("services")}
+                  depth={0}
+                />
+                {openMobileTop === "services" && (
+                  <div className="mt-0.5 flex flex-col gap-0.5 animate-fade-in">
+                    {servicesMenu.map((item) => (
                       <LeafItem
                         key={item.label}
                         label={item.label}

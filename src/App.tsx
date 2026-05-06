@@ -20,6 +20,7 @@ import Index from "./pages/Index";
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
+const Services = lazy(() => import("./pages/Services"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Chatbot = lazy(() => import("./pages/Chatbot"));
@@ -67,6 +68,7 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<PageTransition><Index /></PageTransition>} />
           <Route path="/contact-us" element={<PageTransition><ContactUs /></PageTransition>} />
           <Route path="/about-us" element={<PageTransition><AboutUs /></PageTransition>} />
+          <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
           <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
           <Route path="/blog/:slug" element={<PageTransition><BlogPost /></PageTransition>} />
           <Route path="/chatbot" element={<PageTransition><Chatbot /></PageTransition>} />
