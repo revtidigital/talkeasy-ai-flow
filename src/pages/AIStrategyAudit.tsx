@@ -15,7 +15,7 @@ const auditSteps = [
   {
     title: "Data & tooling readiness assessment (week 2)",
     description:
-      "We evaluate your data, systems, and integration layer. What’s AI-ready today. What needs to be fixed first. Where the quick wins are.",
+      "We evaluate your data, systems, and integration layer to identify what’s AI-ready today, what needs to be fixed first, and where the quick wins are.",
   },
   {
     title: "Use case identification & scoring (week 2)",
