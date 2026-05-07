@@ -9,23 +9,27 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 const auditSteps = [
   {
     title: "Discovery workshops (week 1)",
-    description: "Two 90-minute sessions with leadership and team leads. We map workflows, pain points, and existing AI spend.",
+    description:
+      "Two 90-minute sessions with your leadership and team leads. We map current workflows, pain points, and existing AI spend.",
   },
   {
     title: "Data & tooling readiness assessment (week 2)",
-    description: "We evaluate data quality, systems, and integration layers to identify what’s AI-ready now and what needs fixing.",
+    description:
+      "We evaluate your data, systems, and integration layer. What’s AI-ready today. What needs to be fixed first. Where the quick wins are.",
   },
   {
     title: "Use case identification & scoring (week 2)",
-    description: "5–10 AI use cases scored on ROI impact, feasibility, time-to-value, and risk.",
+    description:
+      "5–10 AI use cases scored on our ROI-First framework: business impact, technical feasibility, time-to-value, and risk.",
   },
   {
     title: "90-day roadmap (week 3)",
-    description: "Ranked action plan with recommended first build, budget estimates, team needs, and success metrics.",
+    description:
+      "Ranked action plan with recommended first build (and why), budget estimates per use case, team + tooling requirements, and milestones with success metrics.",
   },
   {
     title: "Executive readout (week 3)",
-    description: "15-slide board-ready summary built to be presented and acted on — not filed away.",
+    description: "15-slide board-ready summary. Not 120. Built to be presented and acted on — not filed.",
   },
 ];
 
@@ -69,7 +73,7 @@ const comparisonRows = [
   },
   {
     label: "Best for",
-    converse: "Mid-market + SMB committing AI budget in 12 months",
+    converse: "Mid-market + SMB committing real AI budget in 12 months",
     big4: "Fortune 500 enterprise transformations",
     boutique: "Teams wanting deeper strategy theater",
   },
@@ -126,7 +130,7 @@ const differentiators = [
 
 const outcomes = [
   "A prioritized roadmap of 5–10 AI use cases",
-  "Audits typically surface $500K–$2M in annual efficiency opportunities",
+  "Audits we've shipped typically surface $500K–$2M in annual efficiency opportunities",
   "Use-case pilot failure rate drops from 70% to under 20%",
   "A board-ready readout your CFO will actually sign off on",
   "Clear path from audit to first live AI system in 60–90 days",
@@ -175,11 +179,11 @@ const faqs = [
   {
     question: "How much does an AI readiness audit cost?",
     answer:
-      "Our ROI-First Audit starts at $4,999 / ₹3,50,000 for a single-function scope. Cross-functional audits are $9,999. Enterprise/multi-BU scope is custom. Deloitte, BCG, and McKinsey typically quote $75K–$250K for equivalent work.",
+      "Our ROI-First Audit starts at $4,999 / ₹3,50,000 for a single-function scope. Cross-functional audits are $9,999. Enterprise/multi-BU scope is custom. Compare: Deloitte, BCG, and McKinsey quote $75K–$250K for equivalent work.",
   },
   {
     question: "How long does an AI audit take?",
-    answer: "Three weeks from kickoff to executive readout. Longer audits rarely produce better decisions.",
+    answer: "3 weeks from kickoff to executive readout. Longer audits rarely produce better decisions.",
   },
   {
     question: "How is this different from a Deloitte or BCG audit?",
@@ -204,7 +208,7 @@ const faqs = [
   {
     question: "What frameworks do you use?",
     answer:
-      "Our ROI-First Audit framework — use-case scoring on business impact × technical feasibility × time-to-value × risk. Built from shipping 40+ AI projects.",
+      "Our ROI-First Audit framework — use-case scoring on business impact × technical feasibility × time-to-value × risk. Built from shipping 40+ AI projects. Frameworks are a starting point — your business context is the real input.",
   },
   {
     question: "How do you handle compliance (DPDP, GDPR, SOC 2, HIPAA)?",
@@ -475,7 +479,7 @@ const AIStrategyAudit = () => {
                     <TableRow className="bg-muted/50">
                       <TableHead></TableHead>
                       <TableHead>ConverseAI ROI-First Audit</TableHead>
-                      <TableHead>Big-4 / MBB</TableHead>
+                      <TableHead>Big-4 / MBB (Deloitte, Accenture, BCG, McKinsey)</TableHead>
                       <TableHead>Generalist boutique</TableHead>
                     </TableRow>
                   </TableHeader>
