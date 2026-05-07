@@ -31,8 +31,8 @@ const services = [
     description:
       "Human-sounding voice bots for inbound support, outbound qualification, collections, appointment booking. Multilingual (Hindi, English, regional Indian languages, Spanish). 24/7 operation, zero hold time.",
     cta: "See AI Voice Agents",
-    href: "/contact-us",
-    url: "https://theconverseai.com/services#ai-voice-agents",
+    href: "/services/ai-voice-agents",
+    url: "https://theconverseai.com/services/ai-voice-agents",
   },
   {
     id: "custom-ai-agent-development",
