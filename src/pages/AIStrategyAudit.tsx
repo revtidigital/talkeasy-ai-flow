@@ -1,0 +1,662 @@
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+
+const auditSteps = [
+  {
+    title: "Discovery workshops (week 1)",
+    description: "Two 90-minute sessions with leadership and team leads. We map workflows, pain points, and existing AI spend.",
+  },
+  {
+    title: "Data & tooling readiness assessment (week 2)",
+    description: "We evaluate data quality, systems, and integration layers to identify what’s AI-ready now and what needs fixing.",
+  },
+  {
+    title: "Use case identification & scoring (week 2)",
+    description: "5–10 AI use cases scored on ROI impact, feasibility, time-to-value, and risk.",
+  },
+  {
+    title: "90-day roadmap (week 3)",
+    description: "Ranked action plan with recommended first build, budget estimates, team needs, and success metrics.",
+  },
+  {
+    title: "Executive readout (week 3)",
+    description: "15-slide board-ready summary built to be presented and acted on — not filed away.",
+  },
+];
+
+const scoringCriteria = [
+  "Business impact (cost savings, revenue, CX)",
+  "Technical feasibility (data quality, integration complexity)",
+  "Time-to-value (weeks to first production)",
+  "Risk (compliance, accuracy, change management)",
+];
+
+const comparisonRows = [
+  {
+    label: "Timeline",
+    converse: "3 weeks fixed",
+    big4: "8–12 weeks",
+    boutique: "4–8 weeks",
+  },
+  {
+    label: "Price",
+    converse: "$4,999–$9,999 fixed",
+    big4: "$75K–$250K",
+    boutique: "$15K–$60K",
+  },
+  {
+    label: "Deliverable",
+    converse: "15-slide executive readout + roadmap",
+    big4: "80–120 slide deck + findings report",
+    boutique: "Variable",
+  },
+  {
+    label: "Team",
+    converse: "Engineers + operators",
+    big4: "Partners + junior MBAs",
+    boutique: "Mix",
+  },
+  {
+    label: "Can they build what they recommend?",
+    converse: "Yes — audit credited to build",
+    big4: "Usually referred to SI partner",
+    boutique: "Sometimes",
+  },
+  {
+    label: "Best for",
+    converse: "Mid-market + SMB committing AI budget in 12 months",
+    big4: "Fortune 500 enterprise transformations",
+    boutique: "Teams wanting deeper strategy theater",
+  },
+];
+
+const audiences = [
+  "Mid-market and SMB leaders ($5M–$500M revenue)",
+  "CXOs, CTOs, Heads of Digital/Operations",
+  "Teams who’ve tried AI tools but haven’t seen ROI",
+  "Companies preparing to commit real budget to AI in the next 12 months",
+];
+
+const howItWorks = [
+  {
+    title: "Week 0 — Kickoff call (free).",
+    description: "Confirm fit, scope, and stakeholders.",
+  },
+  {
+    title: "Week 1 — Discovery.",
+    description: "5–8 interviews across leadership and operating teams.",
+  },
+  {
+    title: "Week 2 — Analysis.",
+    description: "Stack + data + process review. Score use cases.",
+  },
+  {
+    title: "Week 3 — Deliverables.",
+    description: "Roadmap + executive readout + optional build proposal.",
+  },
+  {
+    title: "Post-audit.",
+    description: "If we build together, the audit fee is credited toward the first engagement.",
+  },
+];
+
+const differentiators = [
+  {
+    title: "We build what we audit.",
+    description: "Your audit fee is credited toward the first build — big firms can’t do that because they don’t build.",
+  },
+  {
+    title: "Fixed fee, fixed timeline.",
+    description: "Three weeks, one price. No scope creep or 12-week delays.",
+  },
+  {
+    title: "Engineers and operators, not junior MBAs.",
+    description: "Your audit is led by people who ship AI, not people who read about it.",
+  },
+  {
+    title: "India + US delivery economics.",
+    description: "From $4,999 — under 10% of what Deloitte or BCG quote.",
+  },
+];
+
+const outcomes = [
+  "A prioritized roadmap of 5–10 AI use cases",
+  "Audits typically surface $500K–$2M in annual efficiency opportunities",
+  "Use-case pilot failure rate drops from 70% to under 20%",
+  "A board-ready readout your CFO will actually sign off on",
+  "Clear path from audit to first live AI system in 60–90 days",
+];
+
+const stats = [
+  { label: "Founded", value: "[TO CONFIRM: YYYY]" },
+  { label: "HQ", value: "Jaipur, India (+ US presence)" },
+  { label: "Parent", value: "Revti Digital" },
+  { label: "AI systems shipped to date", value: "[TO CONFIRM: N+ production deployments]" },
+  { label: "Team", value: "[TO CONFIRM: N engineers + operators]" },
+  {
+    label: "Verticals served",
+    value: "D2C, B2B SaaS, BFSI, healthcare, education, real estate, professional services",
+  },
+  {
+    label: "Model + framework coverage",
+    value: "Anthropic Claude, OpenAI, Google Gemini, open models (Llama, Qwen, Mistral), LangGraph, CrewAI, OpenAI Agents SDK, Claude Agent SDK, MCP",
+  },
+];
+
+const pricingTiers = [
+  {
+    title: "Essential",
+    scope: "Single function (e.g., CX or RevOps)",
+    price: "$4,999 / ₹3,50,000",
+  },
+  {
+    title: "Growth",
+    scope: "Cross-functional, 3 workstreams",
+    price: "$9,999 / ₹7,50,000",
+  },
+  {
+    title: "Enterprise",
+    scope: "Multi-BU, data readiness deep-dive",
+    price: "Custom",
+  },
+];
+
+const faqs = [
+  {
+    question: "What’s an AI readiness assessment?",
+    answer:
+      "A structured evaluation of your business, data, tools, and team — designed to identify which AI use cases are worth building, in what order, and with what investment.",
+  },
+  {
+    question: "How much does an AI readiness audit cost?",
+    answer:
+      "Our ROI-First Audit starts at $4,999 / ₹3,50,000 for a single-function scope. Cross-functional audits are $9,999. Enterprise/multi-BU scope is custom. Deloitte, BCG, and McKinsey typically quote $75K–$250K for equivalent work.",
+  },
+  {
+    question: "How long does an AI audit take?",
+    answer: "Three weeks from kickoff to executive readout. Longer audits rarely produce better decisions.",
+  },
+  {
+    question: "How is this different from a Deloitte or BCG audit?",
+    answer:
+      "Our audit is three weeks and a fraction of the cost. We’re engineers who ship. Their audits are 8–12 weeks of frameworks and slides. Both can have value — ours is built for companies that need to move.",
+  },
+  {
+    question: "Do you understand our industry?",
+    answer:
+      "We’ve worked across BFSI, healthcare, D2C, B2B SaaS, manufacturing, real estate, and education. If we’re not the right fit for your vertical, we’ll say so upfront.",
+  },
+  {
+    question: "What if we decide not to build anything after the audit?",
+    answer:
+      "That’s fine. You walk away with a roadmap, budget estimates, and clarity — whether you build with us or not.",
+  },
+  {
+    question: "Does the audit cover data readiness, not just use cases?",
+    answer:
+      "Yes. Data quality, integration, permissions, and governance are core to the assessment. Most pilots fail on data, not models.",
+  },
+  {
+    question: "What frameworks do you use?",
+    answer:
+      "Our ROI-First Audit framework — use-case scoring on business impact × technical feasibility × time-to-value × risk. Built from shipping 40+ AI projects.",
+  },
+  {
+    question: "How do you handle compliance (DPDP, GDPR, SOC 2, HIPAA)?",
+    answer:
+      "Flagged as part of the readiness assessment. We note compliance exposure per use case so your legal/InfoSec team can sign off before the build.",
+  },
+];
+
+const howToSteps = [
+  {
+    name: "Kickoff call",
+    text: "Confirm fit, scope, and stakeholders for the audit.",
+  },
+  {
+    name: "Discovery",
+    text: "Interview leadership and operating teams to map workflows and pain points.",
+  },
+  {
+    name: "Analysis",
+    text: "Review stack, data, and processes to score ROI-ready use cases.",
+  },
+  {
+    name: "Roadmap + readout",
+    text: "Deliver the 90-day roadmap and board-ready executive readout.",
+  },
+];
+
+const AIStrategyAudit = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://theconverseai.com/services/ai-strategy-audit#service",
+        name: "AI Strategy & Readiness Audit",
+        description:
+          "3-week fixed-fee AI readiness audit that identifies 5–10 high-ROI use cases and delivers a 90-day roadmap.",
+        serviceType: "AI readiness audit",
+        provider: {
+          "@type": "Organization",
+          name: "ConverseAI",
+          url: "https://theconverseai.com",
+        },
+        areaServed: ["India", "United States"],
+        offers: {
+          "@type": "Offer",
+          url: "https://theconverseai.com/services/ai-strategy-audit",
+          availability: "https://schema.org/InStock",
+          priceSpecification: [
+            {
+              "@type": "UnitPriceSpecification",
+              priceCurrency: "USD",
+              price: 4999,
+            },
+            {
+              "@type": "UnitPriceSpecification",
+              priceCurrency: "INR",
+              price: 350000,
+            },
+          ],
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://theconverseai.com/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://theconverseai.com/services",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "AI Strategy & Readiness Audit",
+            item: "https://theconverseai.com/services/ai-strategy-audit",
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "HowTo",
+        name: "3-week AI Readiness Audit process",
+        description: "A three-week process to identify, score, and prioritize high-ROI AI use cases.",
+        totalTime: "P3W",
+        step: howToSteps.map((step, index) => ({
+          "@type": "HowToStep",
+          position: index + 1,
+          name: step.name,
+          text: step.text,
+        })),
+      },
+    ],
+  };
+
+  return (
+    <>
+      <Helmet>
+        <title>AI Readiness Audit — 3-Week Strategy Roadmap | ConverseAI</title>
+        <meta
+          name="description"
+          content="3-week fixed-fee AI readiness audit. Identify 5–10 high-ROI use cases and get a 90-day roadmap. From $4,999 — book a free fit call today."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="AI Readiness Audit — 3-Week Strategy Roadmap | ConverseAI" />
+        <meta
+          property="og:description"
+          content="3-week fixed-fee AI readiness audit. Identify 5–10 high-ROI use cases and get a 90-day roadmap. From $4,999 — book a free fit call today."
+        />
+        <link rel="canonical" href="https://theconverseai.com/services/ai-strategy-audit" />
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
+
+      <div className="min-h-screen bg-background pt-16 md:pt-20">
+        <main id="main-content">
+          <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
+            <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
+            <div className="container-tight relative z-10 text-center py-12">
+              <AnimatedSection>
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI Strategy & Readiness Audit</p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                  Stop guessing where AI fits. Get a 3-week AI Readiness Audit.
+                </h1>
+              </AnimatedSection>
+              <AnimatedSection delay={0.2}>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+                  A fixed-fee AI readiness audit that surfaces your 5–10 highest-ROI AI use cases, scores them by feasibility,
+                  and delivers a 90-day action plan.{" "}
+                  <span className="font-semibold text-foreground">
+                    $4,999 / ₹3,50,000 — and the audit fee is credited toward your first build if we work together.
+                  </span>
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/contact-us">
+                    <Button variant="hero" size="xl" title="Start my audit — proposal in 48 hours">
+                      Start my audit — proposal in 48 hours
+                      <ArrowRight className="w-5 h-5" />
+                    </Button>
+                  </Link>
+                  <Link to="/contact-us">
+                    <Button variant="hero-outline" size="xl" title="Book a free 20-min fit call">
+                      Book a free 20-min fit call
+                      <ArrowRight className="w-5 h-5" />
+                    </Button>
+                  </Link>
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+
+          <section className="section-padding">
+            <div className="container-tight">
+              <div className="grid lg:grid-cols-2 gap-10 items-start">
+                <AnimatedSection>
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">The problem</h2>
+                    <p className="text-lg text-muted-foreground mb-6">
+                      You bought the Copilot licenses. You’ve read every “AI for business” article. Your team keeps asking
+                      what to do next. And your board keeps asking why you haven’t done more.
+                    </p>
+                    <p className="text-lg text-muted-foreground mb-6">
+                      <span className="font-semibold text-foreground">70% of GenAI pilots never reach production</span>{" "}
+                      (Gartner, 2024 CIO Survey). The problem isn’t the tech. It’s that no one decided what to build, or why.
+                    </p>
+                    <p className="text-lg text-muted-foreground">
+                      You need a prioritized, feasibility-scored list of 5–10 AI use cases with real ROI — and the answer to
+                      “which one do we build first.”
+                    </p>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection delay={0.1}>
+                  <div className="glass-card rounded-2xl p-8 border border-primary/10 bg-white/80">
+                    <h3 className="text-2xl font-semibold mb-4">The ROI-First AI Audit delivers</h3>
+                    <ul className="space-y-3 text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                        5–10 high-ROI AI use cases scored by feasibility
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                        A 90-day action plan with budgets, milestones, and owners
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                        A board-ready readout your CFO will sign off on
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                        A clear recommendation for the first build
+                      </li>
+                    </ul>
+                  </div>
+                </AnimatedSection>
+              </div>
+            </div>
+          </section>
+
+          <section className="section-padding bg-secondary/20">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">The ROI-First AI Audit — what’s inside</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    A structured 3-week process focused on ROI, feasibility, and time-to-value.
+                  </p>
+                </div>
+              </AnimatedSection>
+              <div className="grid md:grid-cols-2 gap-6">
+                {auditSteps.map((step) => (
+                  <AnimatedSection key={step.title}>
+                    <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full">
+                      <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+                      <p className="text-muted-foreground">{step.description}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+              <AnimatedSection delay={0.1}>
+                <div className="mt-10 rounded-2xl border border-primary/10 bg-white/90 p-6">
+                  <h3 className="text-lg font-semibold mb-3">ROI-First scoring framework</h3>
+                  <ul className="grid md:grid-cols-2 gap-3 text-muted-foreground">
+                    {scoringCriteria.map((criteria) => (
+                      <li key={criteria} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-1" />
+                        {criteria}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+
+          <section className="section-padding">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">How we compare</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    ROI-first delivery without the 12-week strategy theater.
+                  </p>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection>
+                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead></TableHead>
+                      <TableHead>ConverseAI ROI-First Audit</TableHead>
+                      <TableHead>Big-4 / MBB</TableHead>
+                      <TableHead>Generalist boutique</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {comparisonRows.map((row) => (
+                      <TableRow key={row.label}>
+                        <TableCell className="font-semibold text-foreground">{row.label}</TableCell>
+                        <TableCell>{row.converse}</TableCell>
+                        <TableCell>{row.big4}</TableCell>
+                        <TableCell>{row.boutique}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </AnimatedSection>
+            </div>
+          </section>
+
+          <section className="section-padding bg-gradient-to-br from-background via-secondary/20 to-background">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Who it’s for</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Designed for leaders who need ROI clarity before committing real AI budget.
+                  </p>
+                </div>
+              </AnimatedSection>
+              <ul className="max-w-3xl mx-auto space-y-3 text-muted-foreground text-lg">
+                {audiences.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <section className="section-padding">
+            <div className="container-tight">
+              <AnimatedSection>
+                <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">How it works</h2>
+              </AnimatedSection>
+              <div className="grid md:grid-cols-2 gap-6">
+                {howItWorks.map((step) => (
+                  <AnimatedSection key={step.title}>
+                    <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full">
+                      <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+                      <p className="text-muted-foreground">{step.description}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section-padding bg-secondary/20">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Why ConverseAI</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Most pilots fail on the wrong question, not the wrong model. That’s what this audit is for.
+                  </p>
+                </div>
+              </AnimatedSection>
+              <div className="grid md:grid-cols-2 gap-6">
+                {differentiators.map((item) => (
+                  <AnimatedSection key={item.title}>
+                    <div className="rounded-2xl border border-primary/10 bg-white/90 p-6 h-full">
+                      <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section-padding">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Outcomes you can expect</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Clarity, prioritization, and a path to production within 60–90 days.
+                  </p>
+                </div>
+              </AnimatedSection>
+              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                {outcomes.map((item) => (
+                  <div key={item} className="flex items-start gap-2 text-muted-foreground">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section-padding bg-secondary/20">
+            <div className="container-tight">
+              <AnimatedSection>
+                <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">ConverseAI by the numbers</h2>
+              </AnimatedSection>
+              <div className="grid md:grid-cols-2 gap-6">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="rounded-2xl border border-border/60 bg-white/90 p-6">
+                    <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">{stat.label}</p>
+                    <p className="text-lg font-semibold text-foreground">{stat.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section-padding">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    All tiers include the full deliverable set. Pricing differs by scope and interview count. Audit fee is
+                    credited toward the first build if we work together.
+                  </p>
+                </div>
+              </AnimatedSection>
+              <div className="grid md:grid-cols-3 gap-6">
+                {pricingTiers.map((tier) => (
+                  <AnimatedSection key={tier.title}>
+                    <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full">
+                      <p className="text-sm uppercase tracking-wide text-primary mb-2">{tier.title}</p>
+                      <h3 className="text-xl font-semibold mb-2">{tier.price}</h3>
+                      <p className="text-muted-foreground">{tier.scope}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section-padding bg-secondary/20">
+            <div className="container-tight">
+              <AnimatedSection>
+                <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">FAQs</h2>
+              </AnimatedSection>
+              <div className="space-y-6 max-w-4xl mx-auto">
+                {faqs.map((faq) => (
+                  <div key={faq.question} className="rounded-2xl border border-border/60 bg-white/90 p-6">
+                    <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section-padding bg-gradient-to-r from-primary/10 via-violet/10 to-background">
+            <div className="container-tight text-center">
+              <AnimatedSection>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to stop guessing?</h2>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+                  Book a free 20-min fit call. If we’re a fit, we’ll send a proposal in 48 hours and start your audit within
+                  2 weeks. If we’re not, we’ll say so.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.2}>
+                <Link to="/contact-us">
+                  <Button variant="hero" size="xl" title="Book my fit call">
+                    Book my fit call
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </Link>
+              </AnimatedSection>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+};
+
+export default AIStrategyAudit;
