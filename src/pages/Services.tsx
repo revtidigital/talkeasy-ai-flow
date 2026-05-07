@@ -40,8 +40,8 @@ const services = [
     description:
       "Bespoke agents for your unique workflow — SDR research, AR clerk, L2 support, RFP drafting, internal analyst. Built from scratch, not templated. You own the code, data, and IP.",
     cta: "See Custom AI Agent Development",
-    href: "/contact-us",
-    url: "https://theconverseai.com/services#custom-ai-agent-development",
+    href: "/services/custom-ai-agents",
+    url: "https://theconverseai.com/services/custom-ai-agents",
   },
   {
     id: "ai-integration-services",
