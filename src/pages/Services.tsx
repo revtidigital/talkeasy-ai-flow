@@ -22,8 +22,8 @@ const services = [
     description:
       "Productized AI agents that run back-office processes end-to-end — invoice-to-pay, ticket triage, reconciliation, vendor onboarding. Start with our 4-week Agent Sprint: $9,995 flat, one production agent live.",
     cta: "See Agentic Automation services",
-    href: "/contact-us",
-    url: "https://theconverseai.com/services#agentic-automation",
+    href: "/services/agentic-automation",
+    url: "https://theconverseai.com/services/agentic-automation",
   },
   {
     id: "ai-voice-agents",

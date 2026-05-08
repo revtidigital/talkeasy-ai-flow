@@ -60,7 +60,7 @@ const productsMenu = [
 const servicesMenu = [
   { label: "Services Hub", href: "/services" },
   { label: "AI Strategy & Readiness Audit", href: "/services/ai-strategy-audit", noWrap: true },
-  { label: "Agentic Systems & Process Automation", href: "/services#agentic-automation", noWrap: true },
+  { label: "Agentic Systems & Process Automation", href: "/services/agentic-automation", noWrap: true },
   { label: "AI Voice Agents", href: "/services/ai-voice-agents" },
   { label: "Custom AI Agent Development", href: "/services/custom-ai-agents", noWrap: true },
   { label: "AI Integration Services", href: "/services#ai-integration-services", noWrap: true },
