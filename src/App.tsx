@@ -26,6 +26,7 @@ const AIVoiceAgents = lazy(() => import("./pages/AIVoiceAgents"));
 const AgenticAutomation = lazy(() => import("./pages/AgenticAutomation"));
 const AIIntegration = lazy(() => import("./pages/AIIntegration"));
 const CustomAIAgents = lazy(() => import("./pages/CustomAIAgents"));
+const KnowledgeIntelligence = lazy(() => import("./pages/KnowledgeIntelligence"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Chatbot = lazy(() => import("./pages/Chatbot"));
@@ -79,6 +80,7 @@ const AnimatedRoutes = () => {
           <Route path="/services/ai-integration" element={<PageTransition><AIIntegration /></PageTransition>} />
           <Route path="/services/ai-voice-agents" element={<PageTransition><AIVoiceAgents /></PageTransition>} />
           <Route path="/services/custom-ai-agents" element={<PageTransition><CustomAIAgents /></PageTransition>} />
+          <Route path="/services/knowledge-intelligence" element={<PageTransition><KnowledgeIntelligence /></PageTransition>} />
           <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
           <Route path="/blog/:slug" element={<PageTransition><BlogPost /></PageTransition>} />
           <Route path="/chatbot" element={<PageTransition><Chatbot /></PageTransition>} />

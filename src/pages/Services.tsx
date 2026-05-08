@@ -58,8 +58,8 @@ const services = [
     description:
       "Private, permission-aware AI that reads your documents, contracts, SOPs, and knowledge bases — and answers with citations. Deployed in your cloud.",
     cta: "See Knowledge Intelligence services",
-    href: "/contact-us",
-    url: "https://theconverseai.com/services#knowledge-intelligence",
+    href: "/services/knowledge-intelligence",
+    url: "https://theconverseai.com/services/knowledge-intelligence",
   },
   {
     id: "sales-intelligence",
