@@ -62,13 +62,13 @@ const services = [
     url: "https://theconverseai.com/services/knowledge-intelligence",
   },
   {
-    id: "sales-intelligence",
-    title: "Sales Intelligence & Outreach",
+    id: "sales-ai",
+    title: "Sales Intelligence & Outreach Automation",
     description:
-      "Signal-based outbound done for you. Lead research, enrichment, personalized multi-channel campaigns. Start with a 6-week Performance Pilot: pay per qualified meeting.",
+      "Signal-triggered outbound for B2B SaaS. Lead research, personalized email + LinkedIn + voice, reply handling. Start with a 6-week Performance Pilot: pay per qualified meeting.",
     cta: "See Sales AI services",
-    href: "/contact-us",
-    url: "https://theconverseai.com/services#sales-intelligence",
+    href: "/services/sales-ai",
+    url: "https://theconverseai.com/services/sales-ai",
   },
 ];
 
