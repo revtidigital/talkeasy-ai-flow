@@ -65,7 +65,7 @@ const servicesMenu = [
   { label: "Custom AI Agent Development", href: "/services/custom-ai-agents", noWrap: true },
   { label: "AI Integration Services", href: "/services/ai-integration", noWrap: true },
   { label: "Document & Knowledge Intelligence", href: "/services/knowledge-intelligence", noWrap: true },
-  { label: "Sales Intelligence & Outreach", href: "/services#sales-intelligence", noWrap: true },
+  { label: "Sales Intelligence & Outreach Automation", href: "/services/sales-ai", noWrap: true },
 ];
 
 const navLinks = [
