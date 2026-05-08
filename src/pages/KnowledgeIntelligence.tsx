@@ -434,19 +434,20 @@ const KnowledgeIntelligence = () => {
             <div className="container-tight">
               <AnimatedSection>
                 <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Live demo (phase 2)</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Live demo (coming soon)</h2>
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    High-converting lead magnet: upload a sample PDF or paste text, ask a question, and see the cited
-                    answer. Email gate after the first question.
+                    Upload a sample PDF or paste text, ask a question, and see the cited answer. We&apos;ll add an email
+                    gate after the first question when the demo launches in phase 2.
                   </p>
                 </div>
               </AnimatedSection>
               <AnimatedSection delay={0.1}>
                 <div className="rounded-2xl border border-border/60 bg-white/90 p-8 text-center">
-                  <p className="text-lg font-semibold mb-3">[INTERACTIVE] Upload a sample PDF or paste text → ask a question → see the cited answer.</p>
+                  <p className="text-lg font-semibold mb-3">
+                    [INTERACTIVE] Upload a sample PDF or paste text → ask a question → see the cited answer.
+                  </p>
                   <p className="text-sm text-muted-foreground italic">
-                    Note for build: requires a sandboxed RAG endpoint with a file-upload UI. Not in v1 scope — launch as
-                    phase 2, post-initial-traffic.
+                    Phase 2 placeholder — launching after initial traffic.
                   </p>
                 </div>
               </AnimatedSection>
