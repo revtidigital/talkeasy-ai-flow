@@ -336,7 +336,7 @@ const CustomAIAgents = () => {
               name: "Agent Sprint",
               priceCurrency: "USD",
               price: 9995,
-              url: "https://theconverseai.com/services#agentic-automation",
+              url: "https://theconverseai.com/services/agentic-automation",
             },
             {
               "@type": "Offer",
@@ -482,7 +482,7 @@ const CustomAIAgents = () => {
                     <p className="text-lg text-muted-foreground mb-6">
                       This page is for bespoke, unique-workflow AI agents — the ones you can&apos;t buy off the shelf. For
                       productized back-office automation (invoice-to-pay, ticket triage, reconciliation), see{" "}
-                      <Link to="/services#agentic-automation" className="text-primary font-semibold hover:underline">
+                      <Link to="/services/agentic-automation" className="text-primary font-semibold hover:underline">
                         Agentic Process Automation
                       </Link>
                       — that&apos;s where our 4-week Agent Sprint lives.
@@ -659,7 +659,7 @@ const CustomAIAgents = () => {
                 <div className="mt-10 rounded-2xl border border-primary/10 bg-white/90 p-6">
                   <p className="text-lg text-muted-foreground">
                     For productized back-office automation (invoice-to-pay, IT ticket triage, vendor onboarding) — see{" "}
-                    <Link to="/services#agentic-automation" className="text-primary font-semibold hover:underline">
+                    <Link to="/services/agentic-automation" className="text-primary font-semibold hover:underline">
                       Agentic Process Automation
                     </Link>
                     .
@@ -812,7 +812,7 @@ const CustomAIAgents = () => {
               <AnimatedSection delay={0.2}>
                 <p className="text-muted-foreground mt-6">
                   Prefer productized back-office automation? See{" "}
-                  <Link to="/services#agentic-automation" className="text-primary font-semibold hover:underline">
+                  <Link to="/services/agentic-automation" className="text-primary font-semibold hover:underline">
                     Agentic Process Automation
                   </Link>
                   .
@@ -838,7 +838,7 @@ const CustomAIAgents = () => {
                 <div className="mt-8 text-center">
                   <p className="text-muted-foreground">
                     Need integration-only help? See{" "}
-                    <Link to="/services#ai-integration-services" className="text-primary font-semibold hover:underline">
+                    <Link to="/services/ai-integration" className="text-primary font-semibold hover:underline">
                       AI Integration Services
                     </Link>
                     .
