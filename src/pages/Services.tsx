@@ -49,8 +49,8 @@ const services = [
     description:
       "Plug AI into the tools you already run — Salesforce, HubSpot, Zoho, Zendesk, SAP, Tally, custom internal systems. No rip-and-replace.",
     cta: "See AI Integration Services",
-    href: "/contact-us",
-    url: "https://theconverseai.com/services#ai-integration-services",
+    href: "/services/ai-integration",
+    url: "https://theconverseai.com/services/ai-integration",
   },
   {
     id: "knowledge-intelligence",

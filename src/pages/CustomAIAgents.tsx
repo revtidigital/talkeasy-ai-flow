@@ -838,7 +838,7 @@ const CustomAIAgents = () => {
                 <div className="mt-8 text-center">
                   <p className="text-muted-foreground">
                     Need integration-only help? See{" "}
-                    <Link to="/services#ai-integration-services" className="text-primary font-semibold hover:underline">
+                    <Link to="/services/ai-integration" className="text-primary font-semibold hover:underline">
                       AI Integration Services
                     </Link>
                     .
