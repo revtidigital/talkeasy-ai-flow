@@ -109,7 +109,7 @@ const buildAreas = [
       "“Ask your data” analyst agent over your warehouse",
       <>
         Internal Q&A assistant over SOPs and policies (for cross-document, see{" "}
-        <Link to="/services#knowledge-intelligence" className="text-primary hover:underline">
+        <Link to="/services/knowledge-intelligence" className="text-primary hover:underline">
           Knowledge Intelligence
         </Link>
         )
