@@ -489,7 +489,7 @@ const AIForSMB = () => {
                     <p>You don’t have an AI budget problem. You have an AI scoping problem.</p>
                     <p>
                       We built our service menu differently: fixed-fee engagements, 4-week sprints, starting prices a small
-                      business can actually afford. Outcomes that move your P&amp;L next quarter.
+                      business can actually afford. Outcomes that move your P&L next quarter.
                     </p>
                   </div>
                 </AnimatedSection>
