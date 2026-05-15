@@ -148,14 +148,6 @@ const comparisonRows = [
     inHouse: "Your problem",
   },
   {
-    label: "Cost in month 3",
-    converse: "$2.5K setup + $300–500/meeting",
-    aiSdr: "$3K–10K/mo flat",
-    clay: "$3K–7K/mo",
-    volume: "$4K–15K/mo retainer",
-    inHouse: "$110K/yr fully loaded",
-  },
-  {
     label: "What you get",
     converse: "Operator-run signal plays",
     aiSdr: "Autonomous agent + dashboards",

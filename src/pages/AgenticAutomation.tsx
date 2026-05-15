@@ -224,6 +224,15 @@ const faqs = [
   },
 ];
 
+const providerComparisonRows = [
+  { label: "Timeline to first agent", converse: "4 weeks fixed (Agent Sprint)", platform: "8–16 weeks", custom: "Unpredictable" },
+  { label: "Core mechanism", converse: "LLM reasoning + deterministic tool calls", platform: "Rule-based + limited AI layer", custom: "Custom code, no standard pattern" },
+  { label: "Exception handling", converse: "Agent reasons, acts, or escalates with context", platform: "Escalate to human", custom: "Manual scripting" },
+  { label: "Maintenance overhead", converse: "Low — agents adapt to variations", platform: "40–60% of TCO fixing broken bots", custom: "High — no eval harness" },
+  { label: "Deliverable", converse: "Agent + eval harness + observability + runbook", platform: "Configured flows + support contract", custom: "Code only" },
+  { label: "Best for", converse: "Messy middle — invoices, tickets, approvals, onboarding", platform: "High-volume, fully deterministic steps", custom: "One-off prototypes" },
+];
+
 const AgenticAutomation = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -669,6 +678,39 @@ const AgenticAutomation = () => {
                   </div>
                 </AnimatedSection>
               </div>
+            </div>
+          </section>
+
+          <section className="py-12 md:py-16">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">How we compare</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Agent Sprint vs RPA platforms vs custom dev shops.</p>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection>
+                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead></TableHead>
+                      <TableHead>ConverseAI Agent Sprint</TableHead>
+                      <TableHead>UiPath / Automation Anywhere</TableHead>
+                      <TableHead>Custom dev shop</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {providerComparisonRows.map((row) => (
+                      <TableRow key={row.label}>
+                        <TableCell className="font-semibold text-foreground">{row.label}</TableCell>
+                        <TableCell>{row.converse}</TableCell>
+                        <TableCell>{row.platform}</TableCell>
+                        <TableCell>{row.custom}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </AnimatedSection>
             </div>
           </section>
 

@@ -175,6 +175,15 @@ const faqs = [
   },
 ];
 
+const integrationComparisonRows = [
+  { label: "Custom AI logic", converse: "Yes — built per workflow", zapier: "No — if/then only", ipaas: "Limited without custom code" },
+  { label: "AI-native", converse: "Yes — LLM + tool calls across 50+ connectors", zapier: "Basic AI steps only", ipaas: "Add-on modules" },
+  { label: "Timeline", converse: "2–6 weeks per integration", zapier: "Hours to days (simple flows)", ipaas: "Weeks to months" },
+  { label: "Handles unstructured data", converse: "Yes — PDFs, emails, free text", zapier: "No", ipaas: "Partial" },
+  { label: "Maintenance", converse: "Observability dashboard + retainer available", zapier: "You maintain", ipaas: "Vendor-managed, expensive" },
+  { label: "Best for", converse: "AI-heavy, multi-system workflows with business logic", zapier: "Simple linear automations", ipaas: "Enterprise ESB / EDI patterns" },
+];
+
 const AIIntegration = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -562,6 +571,39 @@ const AIIntegration = () => {
                         <TableCell className="font-semibold text-foreground">{row.engagement}</TableCell>
                         <TableCell>{row.scope}</TableCell>
                         <TableCell>{row.range}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </AnimatedSection>
+            </div>
+          </section>
+
+          <section className="py-12 md:py-16">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">How we compare</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">AI-native integration vs no-code tools vs enterprise iPaaS.</p>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection>
+                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead></TableHead>
+                      <TableHead>ConverseAI</TableHead>
+                      <TableHead>Zapier / Make</TableHead>
+                      <TableHead>MuleSoft / Boomi</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {integrationComparisonRows.map((row) => (
+                      <TableRow key={row.label}>
+                        <TableCell className="font-semibold text-foreground">{row.label}</TableCell>
+                        <TableCell>{row.converse}</TableCell>
+                        <TableCell>{row.zapier}</TableCell>
+                        <TableCell>{row.ipaas}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

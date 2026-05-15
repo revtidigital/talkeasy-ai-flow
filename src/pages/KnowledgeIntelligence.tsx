@@ -292,6 +292,15 @@ const faqs = [
   },
 ];
 
+const knowledgeComparisonRows = [
+  { label: "Answers with citations", converse: "Yes — every answer sourced to document + page", llm: "No — hallucinated summaries", search: "No — returns links, not answers" },
+  { label: "Handles proprietary docs", converse: "Yes — PDFs, Word, Confluence, SharePoint, Notion", llm: "Only if uploaded each session", search: "Depends on indexing" },
+  { label: "Hallucination control", converse: "Strict — only answers from ingested corpus", llm: "Medium — may generate outside source", search: "N/A — keyword match only" },
+  { label: "Private deployment", converse: "Yes — your cloud or on-premise", llm: "No — data leaves your environment", search: "Yes (on-prem SharePoint)" },
+  { label: "Keeps up with new docs", converse: "Yes — automated re-ingestion pipeline", llm: "No — static training cutoff", search: "Depends on crawl schedule" },
+  { label: "Best for", converse: "Teams that need accurate, cited answers from internal knowledge", llm: "General-purpose Q&A on public knowledge", search: "Finding documents, not answering questions" },
+];
+
 const KnowledgeIntelligence = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -722,6 +731,39 @@ const KnowledgeIntelligence = () => {
                         <TableCell className="font-semibold text-foreground">{row.engagement}</TableCell>
                         <TableCell>{row.scope}</TableCell>
                         <TableCell>{row.range}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </AnimatedSection>
+            </div>
+          </section>
+
+          <section className="py-12 md:py-16 bg-secondary/20">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">How we compare</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Private knowledge AI vs generic LLMs vs document search.</p>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection>
+                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead></TableHead>
+                      <TableHead>ConverseAI Knowledge AI</TableHead>
+                      <TableHead>Generic LLM (ChatGPT, Copilot)</TableHead>
+                      <TableHead>SharePoint / Confluence search</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {knowledgeComparisonRows.map((row) => (
+                      <TableRow key={row.label}>
+                        <TableCell className="font-semibold text-foreground">{row.label}</TableCell>
+                        <TableCell>{row.converse}</TableCell>
+                        <TableCell>{row.llm}</TableCell>
+                        <TableCell>{row.search}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

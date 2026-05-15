@@ -144,24 +144,6 @@ const comparisonRows = [
     synthflow: "Partial",
     bpo: "N/A",
   },
-  {
-    label: "Outcome-linked pricing available",
-    converse: "Yes (select use cases)",
-    retell: "No",
-    vapi: "No",
-    bland: "No",
-    synthflow: "No",
-    bpo: "No",
-  },
-  {
-    label: "Cost vs human SDR at 5K min/mo",
-    converse: "60–80% lower",
-    retell: "70% lower",
-    vapi: "75% lower",
-    bland: "70% lower",
-    synthflow: "60% lower",
-    bpo: "Baseline",
-  },
 ];
 
 const languageMatrix = [

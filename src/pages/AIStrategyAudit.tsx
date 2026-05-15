@@ -97,12 +97,6 @@ const comparisonRows = [
     boutique: "4–8 weeks",
   },
   {
-    label: "Price",
-    converse: "$999–$4,999 fixed",
-    big4: "$75K–$250K",
-    boutique: "$15K–$60K",
-  },
-  {
     label: "Deliverable",
     converse: "15-slide executive readout + roadmap",
     big4: "80–120 slide deck + findings report",

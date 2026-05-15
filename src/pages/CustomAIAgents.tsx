@@ -284,6 +284,15 @@ const faqs = [
   },
 ];
 
+const agentComparisonRows = [
+  { label: "Timeline", converse: "4–8 weeks to first production agent", enterprise: "12–24 weeks", freelance: "Unpredictable" },
+  { label: "Team", converse: "Engineers who ship AI in production", enterprise: "Partners + junior MBAs", freelance: "Single dev, no AI ops experience" },
+  { label: "Deliverable", converse: "Working agent + eval harness + runbook", enterprise: "Architecture doc + recommendations", freelance: "Code only" },
+  { label: "Eval & testing", converse: "Full test suite, every agent", enterprise: "Varies", freelance: "Manual only" },
+  { label: "Production support", converse: "Observability dashboard + retainer available", enterprise: "Separate support contract", freelance: "Best effort" },
+  { label: "Best for", converse: "Mid-market with unique workflows needing production-grade agents", enterprise: "Fortune 500 transformation programs", freelance: "Proof-of-concept only" },
+];
+
 const CustomAIAgents = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -817,6 +826,39 @@ const CustomAIAgents = () => {
                   </Link>
                   .
                 </p>
+              </AnimatedSection>
+            </div>
+          </section>
+
+          <section className="py-12 md:py-16">
+            <div className="container-tight">
+              <AnimatedSection>
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">How we compare</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Production-grade AI agents without the enterprise price tag or freelance risk.</p>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection>
+                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead></TableHead>
+                      <TableHead>ConverseAI</TableHead>
+                      <TableHead>Enterprise AI vendor (Accenture, Deloitte)</TableHead>
+                      <TableHead>Freelance / offshore dev</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {agentComparisonRows.map((row) => (
+                      <TableRow key={row.label}>
+                        <TableCell className="font-semibold text-foreground">{row.label}</TableCell>
+                        <TableCell>{row.converse}</TableCell>
+                        <TableCell>{row.enterprise}</TableCell>
+                        <TableCell>{row.freelance}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
               </AnimatedSection>
             </div>
           </section>
