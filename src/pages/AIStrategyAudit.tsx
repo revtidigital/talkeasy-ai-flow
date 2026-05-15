@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle, ClipboardList, BarChart3, Map } from "lucide-r
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const auditSteps = [
   {
@@ -38,45 +37,6 @@ const scoringCriteria = [
   "Technical feasibility (data quality, integration complexity)",
   "Time-to-value (weeks to first production)",
   "Risk (compliance, accuracy, change management)",
-];
-
-const comparisonRows = [
-  {
-    label: "Timeline",
-    converse: "3 weeks fixed",
-    big4: "8–12 weeks",
-    boutique: "4–8 weeks",
-  },
-  {
-    label: "Price",
-    converse: "$4,999–$9,999 fixed",
-    big4: "$75K–$250K",
-    boutique: "$15K–$60K",
-  },
-  {
-    label: "Deliverable",
-    converse: "15-slide executive readout + roadmap",
-    big4: "80–120 slide deck + findings report",
-    boutique: "Variable",
-  },
-  {
-    label: "Team",
-    converse: "Engineers + operators",
-    big4: "Partners + junior MBAs",
-    boutique: "Mix",
-  },
-  {
-    label: "Can they build what they recommend?",
-    converse: "Yes — audit credited to build",
-    big4: "Usually referred to SI partner",
-    boutique: "Sometimes",
-  },
-  {
-    label: "Best for",
-    converse: "Mid-market + SMB committing real AI budget in 12 months",
-    big4: "Fortune 500 enterprise transformations",
-    boutique: "Teams wanting deeper strategy theater",
-  },
 ];
 
 const audiences = [
@@ -475,41 +435,6 @@ const AIStrategyAudit = () => {
                     ))}
                   </ul>
                 </div>
-              </AnimatedSection>
-            </div>
-          </section>
-
-          <section className="py-12 md:py-16">
-            <div className="container-tight">
-              <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">How we compare</h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    ROI-first delivery without the 12-week strategy theater.
-                  </p>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection>
-                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
-                  <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead></TableHead>
-                      <TableHead>ConverseAI ROI-First Audit</TableHead>
-                      <TableHead>Big-4 / MBB (Deloitte, Accenture, BCG, McKinsey)</TableHead>
-                      <TableHead>Generalist boutique</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {comparisonRows.map((row) => (
-                      <TableRow key={row.label}>
-                        <TableCell className="font-semibold text-foreground">{row.label}</TableCell>
-                        <TableCell>{row.converse}</TableCell>
-                        <TableCell>{row.big4}</TableCell>
-                        <TableCell>{row.boutique}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
               </AnimatedSection>
             </div>
           </section>
