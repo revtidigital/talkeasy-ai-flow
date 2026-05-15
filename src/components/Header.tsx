@@ -185,18 +185,19 @@ const LeafItem = ({
   label,
   href,
   depth = 2,
-  onNavigate,
+  onClose,
 }: {
   label: string;
   href: string;
   depth?: number;
-  onNavigate: (href: string) => void;
+  onClose: () => void;
 }) => (
-  <button
-    onClick={() => onNavigate(href)}
+  <Link
+    to={href}
+    onClick={onClose}
     title={label}
     className={cn(
-      "w-full text-left py-2 rounded-lg transition-colors",
+      "block py-2 rounded-lg transition-colors",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
 
       depth === 2
@@ -206,7 +207,7 @@ const LeafItem = ({
     )}
   >
     {label}
-  </button>
+  </Link>
 );
 // ─── Main Header ────────────────────────────────────────────────────────────────
 
@@ -253,18 +254,10 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleDropdownItemClick = (href: string) => {
-    setActiveDropdown(null);
-    if (href.startsWith("/")) navigate(href);
-    else if (href.startsWith("#"))
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  const handleMobileNavigate = (href: string) => {
+  const handleMobileClose = () => {
     setIsMobileMenuOpen(false);
     setOpenMobileTop(null);
     setOpenMobileSub(null);
-    navigate(href);
   };
 
   return (
@@ -339,14 +332,15 @@ const Header = () => {
                             <ul className="space-y-1" role="group" aria-label={column.title}>
                               {column.items.map((item) => (
                                 <li key={item.label} role="none">
-                                  <button
-                                    onClick={() => handleDropdownItemClick(item.href)}
+                                  <Link
+                                    to={item.href}
+                                    onClick={() => setActiveDropdown(null)}
                                     title={`Open ${item.label}`}
-                                    className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-2 py-1.5 rounded-lg transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                    className="text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 block px-2 py-1.5 rounded-lg transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                                     role="menuitem"
                                   >
                                     {item.label}
-                                  </button>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -364,14 +358,15 @@ const Header = () => {
                       <ul className="space-y-1">
                         {productsMenu.map((item) => (
                           <li key={item.label} role="none">
-                            <button
-                              onClick={() => handleDropdownItemClick(item.href)}
+                            <Link
+                              to={item.href}
+                              onClick={() => setActiveDropdown(null)}
                               title={`Open ${item.label}`}
-                              className={`text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring${'noWrap' in item && item.noWrap ? ' whitespace-nowrap' : ''}`}
+                              className={`text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 block px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring${'noWrap' in item && item.noWrap ? ' whitespace-nowrap' : ''}`}
                               role="menuitem"
                             >
                               {item.label}
-                            </button>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -386,14 +381,15 @@ const Header = () => {
                       <ul className="space-y-1">
                         {servicesMenu.map((item) => (
                           <li key={item.label} role="none">
-                            <button
-                              onClick={() => handleDropdownItemClick(item.href)}
+                            <Link
+                              to={item.href}
+                              onClick={() => setActiveDropdown(null)}
                               title={`Open ${item.label}`}
-                              className={`text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 w-full text-left px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring${'noWrap' in item && item.noWrap ? ' whitespace-nowrap' : ''}`}
+                              className={`text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 block px-3 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring${'noWrap' in item && item.noWrap ? ' whitespace-nowrap' : ''}`}
                               role="menuitem"
                             >
                               {item.label}
-                            </button>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -481,7 +477,7 @@ const Header = () => {
                                 label={item.label}
                                 href={item.href}
                                 depth={2}
-                                onNavigate={handleMobileNavigate}
+                                onClose={handleMobileClose}
                               />
                             ))}
                           </div>
@@ -508,7 +504,7 @@ const Header = () => {
                         label={item.label}
                         href={item.href}
                         depth={1}
-                        onNavigate={handleMobileNavigate}
+                        onClose={handleMobileClose}
                       />
                     ))}
                   </div>
@@ -531,7 +527,7 @@ const Header = () => {
                         label={item.label}
                         href={item.href}
                         depth={1}
-                        onNavigate={handleMobileNavigate}
+                        onClose={handleMobileClose}
                       />
                     ))}
                   </div>
