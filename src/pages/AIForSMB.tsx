@@ -24,7 +24,7 @@ const diagnosticQuestions = [
 const smbServices = [
   {
     title: "AI Readiness Audit",
-    price: "from $4,999",
+    price: "from $999",
     description:
       "The most common entry point. 3-week fixed-fee engagement that maps your highest-ROI AI opportunities. Audit fee credited toward the build.",
     href: "/services/ai-strategy-audit",
@@ -76,7 +76,7 @@ const smbServices = [
 const smbNeeds = [
   {
     pain: "“We know AI could help us — we have no idea where to start.”",
-    recommendation: "Start with an AI Readiness Audit ($4,999). 3 weeks to a prioritized roadmap.",
+    recommendation: "Start with an AI Readiness Audit ($999). 3 weeks to a prioritized roadmap.",
   },
   {
     pain: "“We’re missing calls / leads / support requests because we can’t staff 24/7.”",
@@ -170,7 +170,7 @@ const faqs = [
   {
     question: "What’s the minimum engagement?",
     answer:
-      "The $2,000 Agent Feasibility Review and the $2,500 Voice Agent setup are our smallest fixed-scope entries. Audit starts at $4,999. Sales outreach Performance Pilot is pay-per-meeting.",
+      "The $2,000 Agent Feasibility Review and the $2,500 Voice Agent setup are our smallest fixed-scope entries. Audit starts at $999. Sales outreach Performance Pilot is pay-per-meeting.",
   },
   {
     question: "Do you work with startups?",
@@ -382,7 +382,7 @@ const AIForSMB = () => {
                       <p className="text-sm font-semibold text-primary mb-5 text-center">SMB AI — typical 90-day outcomes</p>
                       <div className="space-y-4">
                         {[
-                          { icon: DollarSign, metric: "$4,999", label: "Starting price", sub: "AI Strategy Audit — fixed fee", color: "text-primary bg-primary/10" },
+                          { icon: DollarSign, metric: "$999", label: "Starting price", sub: "AI Strategy Audit — fixed fee", color: "text-primary bg-primary/10" },
                           { icon: Clock, metric: "30 days", label: "First agent live", sub: "Agent Sprint — 4-week delivery", color: "text-violet bg-violet/10" },
                           { icon: TrendingUp, metric: "3–5×", label: "ROI in year one", sub: "Measured across 40+ deployments", color: "text-mint bg-mint/10" },
                           { icon: Zap, metric: "24/7", label: "Autonomous ops", sub: "No extra headcount needed", color: "text-primary bg-primary/10" },
