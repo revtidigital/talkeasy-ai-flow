@@ -114,25 +114,6 @@ const differentiators = [
   },
 ];
 
-const stats = [
-  { label: "Founded", value: "[TO CONFIRM: YYYY]" },
-  { label: "Headquarters", value: "Jaipur, India (US business presence)" },
-  { label: "Parent company", value: "Revti Digital" },
-  { label: "Team size", value: "[TO CONFIRM: N engineers + operators]" },
-  { label: "AI systems shipped to date", value: "[TO CONFIRM: N+ production deployments]" },
-  {
-    label: "Verticals served",
-    value: "D2C, B2B SaaS, BFSI, healthcare, education, real estate, professional services",
-  },
-  {
-    label: "Languages supported (voice)",
-    value: "20+ including Hindi, English, Tamil, Telugu, Marathi, Kannada, Bengali, Spanish",
-  },
-  {
-    label: "Model & framework coverage",
-    value: "Anthropic Claude, OpenAI, Google Gemini, open models (Llama, Qwen, Mistral), LangGraph, CrewAI, OpenAI Agents SDK, Claude Agent SDK, MCP",
-  },
-];
 
 const audiences = [
   "SMB and mid-market teams (20–5,000 employees) in India and the US",
@@ -437,51 +418,6 @@ const Services = () => {
                     </div>
                   </AnimatedSection>
                 ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="section-padding">
-            <div className="container-tight">
-              <AnimatedSection>
-                <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">ConverseAI by the numbers</h2>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 gap-6">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-border/60 bg-white/90 p-6">
-                    <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">{stat.label}</p>
-                    <p className="text-lg font-semibold text-foreground">{stat.value}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 text-center text-muted-foreground">
-                <span className="font-semibold text-foreground">Links:</span>{" "}
-                <a
-                  href="https://www.linkedin.com/company/theconverseai"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>{" "}
-                ·{" "}
-                <a
-                  href="https://www.crunchbase.com/organization/theconverseai"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Crunchbase
-                </a>{" "}
-                ·{" "}
-                <a
-                  href="https://theconverseai.com"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  theconverseai.com
-                </a>
               </div>
             </div>
           </section>

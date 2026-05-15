@@ -288,16 +288,6 @@ const outcomes = [
   "Recover 15–25% more on early-stage collections buckets",
 ];
 
-const stats = [
-  { label: "Founded", value: "[TO CONFIRM: YYYY]" },
-  { label: "HQ", value: "Jaipur, India (+ US presence)" },
-  { label: "Parent", value: "Revti Digital" },
-  { label: "Voice calls delivered to date", value: "[TO CONFIRM: N+]" },
-  { label: "Languages supported (voice)", value: "20+" },
-  { label: "Telephony partners", value: "Twilio, Exotel, Plivo, Knowlarity, Ozonetel" },
-  { label: "Concurrent call capacity", value: "1,000+" },
-];
-
 const pricingCards = [
   {
     title: "Setup",
@@ -813,26 +803,6 @@ const AIVoiceAgents = () => {
                     <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full flex gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-1" />
                       <p className="text-muted-foreground">{item}</p>
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="section-padding bg-gradient-to-br from-background via-secondary/20 to-background">
-            <div className="container-tight">
-              <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">ConverseAI by the numbers</h2>
-                </div>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {stats.map((stat) => (
-                  <AnimatedSection key={stat.label}>
-                    <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full">
-                      <p className="text-sm uppercase tracking-wide text-primary mb-2">{stat.label}</p>
-                      <p className="text-lg font-semibold">{stat.value}</p>
                     </div>
                   </AnimatedSection>
                 ))}

@@ -161,18 +161,6 @@ const benchmarks = [
   "Finance automation: 70%+ reduction in manual invoice cycles",
 ];
 
-const stats = [
-  { label: "Founded", value: "[TO CONFIRM: YYYY]" },
-  { label: "HQ", value: "Jaipur, India (+ US presence)" },
-  { label: "Parent", value: "Revti Digital" },
-  { label: "SMB clients served", value: "[TO CONFIRM]" },
-  { label: "AI systems shipped", value: "[TO CONFIRM]" },
-  {
-    label: "Verticals",
-    value: "D2C, B2B SaaS, BFSI, healthcare, education, real estate, professional services",
-  },
-];
-
 const faqs = [
   {
     question: "Can we afford AI as a small business?",
@@ -637,26 +625,6 @@ const AIForSMB = () => {
                   <AnimatedSection key={benchmark}>
                     <div className="rounded-2xl border border-border/60 bg-white/90 p-6">
                       {benchmark}
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="section-padding">
-            <div className="container-tight">
-              <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">ConverseAI by the numbers</h2>
-                </div>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {stats.map((stat) => (
-                  <AnimatedSection key={stat.label}>
-                    <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full">
-                      <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">{stat.label}</p>
-                      <p className="text-lg font-semibold">{stat.value}</p>
                     </div>
                   </AnimatedSection>
                 ))}

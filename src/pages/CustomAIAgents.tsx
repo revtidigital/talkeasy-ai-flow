@@ -204,22 +204,6 @@ const outcomes = [
   "Move models without a rebuild as provider pricing shifts",
 ];
 
-const stats = [
-  { label: "Founded", value: "[TO CONFIRM: YYYY]" },
-  { label: "HQ", value: "Jaipur, India (+ US presence)" },
-  { label: "Parent", value: "Revti Digital" },
-  { label: "AI agents shipped to production", value: "[TO CONFIRM: N+]" },
-  { label: "Team", value: "[TO CONFIRM]" },
-  {
-    label: "Frameworks we build on",
-    value: "LangGraph, CrewAI, OpenAI Agents SDK, Claude Agent SDK, custom MCP servers",
-  },
-  {
-    label: "Models we deploy",
-    value: "Anthropic Claude, OpenAI, Google Gemini, Llama, Qwen, Mistral",
-  },
-];
-
 const pricingRows = [
   {
     engagement: "Agent Feasibility Review",
@@ -748,7 +732,7 @@ const CustomAIAgents = () => {
 
           <section className="section-padding">
             <div className="container-tight">
-              <div className="grid lg:grid-cols-2 gap-10 items-start">
+              <div>
                 <AnimatedSection>
                   <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Outcomes you can expect</h2>
@@ -760,19 +744,6 @@ const CustomAIAgents = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={0.1}>
-                  <div className="rounded-2xl border border-border/60 bg-white/90 p-6">
-                    <h3 className="text-xl font-semibold mb-4">ConverseAI by the numbers</h3>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {stats.map((stat) => (
-                        <div key={stat.label} className="rounded-xl border border-border/40 bg-white/80 p-4">
-                          <p className="text-sm uppercase tracking-wide text-primary mb-2">{stat.label}</p>
-                          <p className="text-muted-foreground">{stat.value}</p>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </AnimatedSection>
               </div>
