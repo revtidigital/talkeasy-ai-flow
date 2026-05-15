@@ -538,11 +538,10 @@ const AIForSMB = () => {
                 {smbServices.map((service, index) => (
                   <AnimatedSection key={service.title}>
                     <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full flex flex-col">
-                      <div className="flex items-center justify-between mb-3">
+                      <div className="mb-3">
                         <span className="text-xs font-semibold uppercase tracking-wide text-primary">
                           #{index + 1}
                         </span>
-                        <span className="text-xs font-semibold text-muted-foreground">{service.price}</span>
                       </div>
                       <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                       <p className="text-muted-foreground mb-4">{service.description}</p>
