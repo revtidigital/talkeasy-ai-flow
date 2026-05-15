@@ -11,7 +11,7 @@ const services = [
     id: "ai-strategy-audit",
     title: "AI Strategy & Readiness Audit",
     description:
-      "Fixed-fee, 3-week engagement that maps your highest-ROI AI opportunities, scores them by feasibility, and delivers a 90-day action plan. Starts at $4,999 / ₹3,50,000. Audit fee is credited toward your first build.",
+      "Fixed-fee, 3-week engagement that maps your highest-ROI AI opportunities, scores them by feasibility, and delivers a 90-day action plan. Starts at $999 / ₹70,000. Audit fee is credited toward your first build.",
     cta: "See the AI Strategy Audit",
     href: "/services/ai-strategy-audit",
     url: "https://theconverseai.com/services/ai-strategy-audit",
@@ -153,7 +153,7 @@ const faqs = [
   },
   {
     question: "What's the typical engagement size and timeline?",
-    answer: "Audits: 3–4 weeks, fixed fee (from $4,999). Builds: 4–12 weeks depending on complexity. Ongoing managed services available monthly.",
+    answer: "Audits: 3–4 weeks, fixed fee (from $999). Builds: 4–12 weeks depending on complexity. Ongoing managed services available monthly.",
   },
   {
     question: "Can you work with our internal team, or do you need to own the whole thing?",
@@ -292,8 +292,8 @@ const Services = () => {
                         </Button>
                       </Link>
                       <Link to="/contact-us">
-                        <Button variant="hero-outline" size="xl" title="Start with a $4,999 AI Readiness Audit">
-                          Start with a $4,999 AI Readiness Audit
+                        <Button variant="hero-outline" size="xl" title="Start with a $999 AI Readiness Audit">
+                          Start with a $999 AI Readiness Audit
                         </Button>
                       </Link>
                     </div>
@@ -493,7 +493,7 @@ const Services = () => {
               </AnimatedSection>
               <AnimatedSection delay={0.1}>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                  Start with the $4,999 AI Readiness Audit. If we build together after, the audit fee is credited toward
+                  Start with the $999 AI Readiness Audit. If we build together after, the audit fee is credited toward
                   your first engagement. If we're not the right fit, we'll say so in 30 minutes.
                 </p>
               </AnimatedSection>
