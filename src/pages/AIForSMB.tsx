@@ -31,7 +31,7 @@ const smbServices = [
   },
   {
     title: "AI Voice Agents",
-    price: "from $2,500 setup + usage",
+    price: "from $250 setup + usage",
     description:
       "Answer inbound calls 24/7, qualify leads, book appointments. Most SMBs recover setup cost in month one on missed-call recovery alone.",
     href: "/services/ai-voice-agents",
@@ -52,7 +52,7 @@ const smbServices = [
   },
   {
     title: "Custom AI Agent Development",
-    price: "$2K feasibility review → $25K+ build",
+    price: "$200 feasibility review → $25K+ build",
     description:
       "When off-the-shelf doesn’t fit. Start with a 1-week feasibility review before committing to a custom build.",
     href: "/services/custom-ai-agents",
@@ -170,7 +170,7 @@ const faqs = [
   {
     question: "What’s the minimum engagement?",
     answer:
-      "The $2,000 Agent Feasibility Review and the $2,500 Voice Agent setup are our smallest fixed-scope entries. Audit starts at $999. Sales outreach Performance Pilot is pay-per-meeting.",
+      "The $200 Agent Feasibility Review and the $250 Voice Agent setup are our smallest fixed-scope entries. Audit starts at $999. Sales outreach Performance Pilot is pay-per-meeting.",
   },
   {
     question: "Do you work with startups?",
@@ -345,7 +345,7 @@ const AIForSMB = () => {
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
             <div className="container-tight relative z-10 py-12">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
                 <AnimatedSection>
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI for SMBs</p>
@@ -359,7 +359,7 @@ const AIForSMB = () => {
                       You don’t need a $500K AI project. You need one that pays back in 90 days. That’s what we build for SMBs
                       and mid-market teams in India and the US.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-col gap-4 sm:max-w-xs">
                       <a href="#smb-diagnostic">
                         <Button variant="hero" size="xl" title="Find my starting point (2-min diagnostic)">
                           Find my starting point (2-min diagnostic)
@@ -376,7 +376,7 @@ const AIForSMB = () => {
                   </div>
                 </AnimatedSection>
                 <AnimatedSection delay={0.3}>
-                  <div className="relative">
+                  <div className="relative mt-6 lg:mt-8">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
                     <div className="relative glass-card rounded-3xl p-8">
                       <p className="text-sm font-semibold text-primary mb-5 text-center">SMB AI — typical 90-day outcomes</p>

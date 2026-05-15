@@ -58,7 +58,6 @@ const productsMenu = [
 ];
 
 const servicesMenu = [
-  { label: "Services Hub", href: "/services" },
   { label: "AI for SMBs", href: "/solutions/ai-for-smb" },
   { label: "AI Strategy & Readiness Audit", href: "/services/ai-strategy-audit", noWrap: true },
   { label: "Agentic Systems & Process Automation", href: "/services/agentic-automation", noWrap: true },
@@ -73,7 +72,7 @@ const navLinks = [
   { label: "Home", href: "/", isRoute: true },
   { label: "Features", href: "#features", isRoute: false, hasDropdown: "features" },
   { label: "Products", href: "#products", isRoute: false, hasDropdown: "products" },
-  { label: "Services", href: "#services", isRoute: false, hasDropdown: "services" },
+  { label: "Services", href: "/services", isRoute: true, hasDropdown: "services" },
   { label: "Case Studies", href: "/case-studies", isRoute: true },
   { label: "Blog", href: "https://blog.theconverseai.com/", isRoute: false, isExternal: true },
 ];
@@ -242,10 +241,10 @@ const Header = () => {
     e: React.MouseEvent<HTMLAnchorElement>,
     link: { href: string; isRoute: boolean; hasDropdown?: string; isExternal?: boolean }
   ) => {
-    if (link.hasDropdown) { e.preventDefault(); return; }
+    if (link.hasDropdown && !link.isRoute) { e.preventDefault(); return; }
     if (link.isExternal) { setIsMobileMenuOpen(false); return; }
     e.preventDefault();
-    if (link.isRoute) { navigate(link.href); setIsMobileMenuOpen(false); return; }
+    if (link.isRoute) { navigate(link.href); setActiveDropdown(null); setIsMobileMenuOpen(false); return; }
     if (link.href === "#") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {

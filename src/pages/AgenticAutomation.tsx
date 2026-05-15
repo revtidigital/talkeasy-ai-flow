@@ -23,7 +23,7 @@ const useCases = [
 
 const agentSprintDetails = [
   { label: "Timeline", value: "4 weeks, fixed" },
-  { label: "Price", value: "$9,995 flat (₹7,50,000)" },
+  { label: "Price", value: "flat fee" },
   { label: "Deliverable", value: "One production agent, eval harness, observability dashboard, runbook" },
   { label: "Best for", value: "Testing the waters — or shipping one workflow fast" },
   { label: "What comes next", value: "Optional retained engagement for additional agents" },
@@ -186,7 +186,7 @@ const faqs = [
   {
     question: "How much does it cost to build an AI agent?",
     answer:
-      "Our productized Agent Sprint is $9,995 flat for one production agent in 4 weeks. Larger programs range from $25K for complex bespoke builds (see Custom AI Agent Development) up to $500K+ for multi-BU programs.",
+      "Our productized Agent Sprint is a flat fee for one production agent in 4 weeks. Larger programs range from $25K for complex bespoke builds (see Custom AI Agent Development) up to $500K+ for multi-BU programs.",
   },
   {
     question: "Will agents hallucinate on financial data?",
@@ -255,12 +255,7 @@ const AgenticAutomation = () => {
           {
             "@type": "UnitPriceSpecification",
             priceCurrency: "USD",
-            price: 9995,
-          },
-          {
-            "@type": "UnitPriceSpecification",
-            priceCurrency: "INR",
-            price: 750000,
+            price: 999,
           },
         ],
       },
@@ -334,7 +329,7 @@ const AgenticAutomation = () => {
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
             <div className="container-tight relative z-10 py-12">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
                 <AnimatedSection>
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">Agentic Process Automation</p>
@@ -348,10 +343,10 @@ const AgenticAutomation = () => {
                       AI agents that handle exceptions, reason across systems, and run end-to-end back-office processes —
                       invoice-to-pay, ticket triage, reconciliation, vendor onboarding. First production agent live in 30 days.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-col gap-4 sm:max-w-xs">
                       <Link to="/contact-us">
-                        <Button variant="hero" size="xl" title="Start a 4-week Agent Sprint — $9,995">
-                          Start a 4-week Agent Sprint — $9,995
+                        <Button variant="hero" size="xl" title="Start a 4-week Agent Sprint">
+                          Start a 4-week Agent Sprint
                           <ArrowRight className="w-5 h-5" />
                         </Button>
                       </Link>
@@ -365,7 +360,7 @@ const AgenticAutomation = () => {
                   </div>
                 </AnimatedSection>
                 <AnimatedSection delay={0.3}>
-                  <div className="relative">
+                  <div className="relative mt-6 lg:mt-8">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
                     <div className="relative glass-card rounded-3xl p-8">
                       <p className="text-sm font-semibold text-primary mb-5 text-center">Workflow before → after</p>
@@ -395,7 +390,7 @@ const AgenticAutomation = () => {
                           <p className="text-xs text-muted-foreground">First agent live</p>
                         </div>
                         <div>
-                          <p className="text-xl font-bold text-violet">$9,995</p>
+                          <p className="text-xl font-bold text-violet">$999</p>
                           <p className="text-xs text-muted-foreground">Agent Sprint fixed fee</p>
                         </div>
                         <div>
@@ -419,7 +414,7 @@ const AgenticAutomation = () => {
                       Agent Sprint — productized engagement
                     </p>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                      4 weeks. One production-ready agent. $9,995 fixed fee.
+                      4 weeks. One production-ready agent.
                     </h2>
                     <p className="text-lg text-muted-foreground mb-6">
                       The Agent Sprint is our productized entry engagement. We pick one back-office workflow with you,
@@ -700,7 +695,7 @@ const AgenticAutomation = () => {
               </AnimatedSection>
               <AnimatedSection delay={0.1}>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                  Start with a 4-week Agent Sprint — $9,995 flat, one production agent live. No T&amp;M. No scope creep. If
+                  Start with a 4-week Agent Sprint — one production agent live. No T&amp;M. No scope creep. If
                   it works, we talk about retained.
                 </p>
               </AnimatedSection>
