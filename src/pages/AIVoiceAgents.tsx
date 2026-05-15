@@ -1,6 +1,7 @@
+import { useState, useRef, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Phone, Mic, Volume2 } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, Mic, Volume2, Play, Square } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -13,45 +14,55 @@ const sampleCalls = [
     id: "english-sdr",
     title: "English — SDR qualifying an inbound lead for a B2B SaaS",
     description: "Qualification, budget fit, and next-step booking for a SaaS demo.",
-    audioSrc: "/audio/voice-sample-english-sdr.mp3",
+    lang: "en-US",
+    script:
+      "Hi there, this is Aria from ConverseAI. I can see you recently filled out our contact form — thanks for reaching out! I just have a couple of quick questions so I can point you to the right team. Are you looking to automate customer support conversations, or is the priority more on the sales side? Great. And roughly how many support or sales interactions does your team handle per month? Perfect — that puts you right in our sweet spot. I'd love to set up a 20-minute demo with one of our solutions engineers. Do you have availability Thursday at 2 PM, or would Friday morning work better for you? Fantastic. I'll send a calendar invite to the email on file. Looking forward to showing you what we can do. Have a great rest of your day!",
     transcript:
-      "Transcript preview: The agent greets the caller, confirms their product interest, asks 2 qualification questions, and offers a demo slot. Full transcript and recording kit provided on request.",
+      "Agent greets the caller, confirms product interest from the form submission, asks two qualification questions (use case and volume), then books a demo slot. Warm, conversational tone throughout.",
     languageSchema: "en",
   },
   {
     id: "hindi-appointment",
     title: "Hindi — Appointment booking for a clinic",
     description: "Collects symptoms, suggests slots, and confirms appointment details in Hindi.",
-    audioSrc: "/audio/voice-sample-hindi-clinic.mp3",
+    lang: "hi-IN",
+    script:
+      "नमस्ते, मैं HealthCare Clinic की तरफ से बोल रही हूं। क्या मैं आपसे दो मिनट बात कर सकती हूं? आपने हमारी वेबसाइट पर appointment request भेजी थी। आप किस doctor से मिलना चाहते हैं? General physician के लिए हमारे पास गुरुवार दोपहर 3 बजे और शुक्रवार सुबह 11 बजे का slot available है। कौन सा आपके लिए सुविधाजनक रहेगा? बहुत अच्छा। मैं गुरुवार 3 बजे आपका appointment confirm कर देती हूं। आपका नाम और date of birth confirm कर सकती हूं? धन्यवाद। आपके registered number पर confirmation SMS आ जाएगा। कोई और सहायता चाहिए?",
     transcript:
-      "Transcript preview: Agent confirms the doctor, asks for preferred date/time, and books the appointment in Hindi. Full transcript and recording kit provided on request.",
+      "Agent greets in Hindi, confirms appointment request, asks for doctor preference, offers two available slots, collects confirmation details, and sends SMS confirmation. Polite and efficient tone.",
     languageSchema: "hi",
   },
   {
     id: "tamil-collections",
     title: "Tamil — Loan collections (early bucket, DLT-compliant)",
     description: "Gentle reminder call with compliant language and payment-link follow-up.",
-    audioSrc: "/audio/voice-sample-tamil-collections.mp3",
+    lang: "ta-IN",
+    script:
+      "வணக்கம், நான் FinCare-ஐ சார்ந்த Priya பேசுகிறேன். நான் உங்களிடம் ஒரு முக்கியமான விஷயம் பற்றி பேச விரும்புகிறேன். உங்கள் loan account-ல் இந்த மாதத்தின் EMI payment இன்னும் pending-ஆக இருக்கிறது. தொகை 4,500 ரூபாய். நீங்கள் இன்று அல்லது நாளை payment செய்ய முடியுமா? நாங்கள் UPI, net banking அல்லது payment link மூலம் ஏற்றுக்கொள்கிறோம். உங்கள் registered mobile-க்கு payment link அனுப்பட்டுமா? நன்றி. Link-ஐ 24 மணி நேரத்திற்குள் use செய்யுங்கள். வேறு ஏதாவது உதவி வேண்டுமா?",
     transcript:
-      "Transcript preview: Agent verifies identity, shares due amount, offers payment options, and schedules a callback. Full transcript and recording kit provided on request.",
+      "Agent identifies caller, states the pending EMI amount, offers payment options, and sends a payment link. Compliant, non-aggressive tone as required for early-bucket collections.",
     languageSchema: "ta",
   },
   {
     id: "hinglish-d2c",
-    title: "Hinglish code-switching — D2C order status",
-    description: "Natural code-switching for order tracking, ETA updates, and escalation.",
-    audioSrc: "/audio/voice-sample-hinglish-d2c.mp3",
+    title: "Hinglish — D2C order status and escalation",
+    description: "Natural code-switching for order tracking, ETA updates, and quick resolution.",
+    lang: "en-IN",
+    script:
+      "Hello! Main ShopEase ki taraf se Riya bol rahi hoon. Aapne hamare helpline pe call kiya tha regarding your order. Order number DO-7742 ke baare mein pooch rahi hain aap? Let me check that for you. Okay, so aapka order kal, yaani Wednesday ko 10 AM se 2 PM ke beech deliver hoga. Delivery partner ka naam Rakesh hai, aur unka number aapke registered mobile pe message ho jayega. Koi aur problem hai? Return ya exchange chahiye toh I can raise a request right now. Great. Is there anything else I can help you with? Have a nice day!",
     transcript:
-      "Transcript preview: Agent confirms order ID, shares delivery status, and offers a quick escalation. Full transcript and recording kit provided on request.",
+      "Agent seamlessly switches between Hindi and English, confirms order details, shares ETA, offers escalation options. Natural Hinglish tone matching how urban Indian customers actually speak.",
     languageSchema: "en-IN",
   },
   {
     id: "spanish-real-estate",
     title: "Spanish — Real estate viewing booking",
-    description: "Qualifies intent, budget, and schedules a viewing in Spanish.",
-    audioSrc: "/audio/voice-sample-spanish-real-estate.mp3",
+    description: "Qualifies intent, budget, and schedules a property viewing in Spanish.",
+    lang: "es-ES",
+    script:
+      "Hola, buenos días. Soy Sofía, agente virtual de PropertyFinder. Gracias por su interés en nuestras propiedades. ¿Busca para compra o para alquiler? Perfecto. ¿Tiene alguna zona en mente, o está abierto a opciones en distintos barrios? ¿Y cuál sería su presupuesto aproximado? Entendido. Tengo tres propiedades que encajan perfectamente con lo que busca. ¿Le gustaría agendar una visita este fin de semana? Tenemos disponibilidad el sábado a las 11 de la mañana o el domingo a las 5 de la tarde. ¿Cuál le viene mejor? Perfecto, queda confirmada la visita del sábado. Le enviaré los detalles por WhatsApp. ¡Hasta pronto!",
     transcript:
-      "Transcript preview: Agent qualifies the listing, confirms preferences, and books a viewing slot. Full transcript and recording kit provided on request.",
+      "Agent qualifies the lead (buy vs rent, zone, budget), matches to listings, and books a weekend viewing. Natural, friendly Spanish tone with a clear close.",
     languageSchema: "es",
   },
 ];
@@ -337,6 +348,44 @@ const faqs = [
   },
 ];
 
+const VoicePlayer = ({ script, lang }: { script: string; lang: string }) => {
+  const [playing, setPlaying] = useState(false);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
+  const play = useCallback(() => {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(script);
+    utterance.lang = lang;
+    utterance.rate = 0.88;
+    utterance.pitch = 1.05;
+    utterance.onend = () => setPlaying(false);
+    utterance.onerror = () => setPlaying(false);
+    utteranceRef.current = utterance;
+    setPlaying(true);
+    window.speechSynthesis.speak(utterance);
+  }, [script, lang]);
+
+  const stop = useCallback(() => {
+    window.speechSynthesis.cancel();
+    setPlaying(false);
+  }, []);
+
+  return (
+    <button
+      onClick={playing ? stop : play}
+      className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm transition-colors ${
+        playing
+          ? "bg-red-50 text-red-600 hover:bg-red-100 border border-red-200"
+          : "bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20"
+      }`}
+    >
+      {playing ? <Square className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current" />}
+      {playing ? "Stop" : "Play sample"}
+    </button>
+  );
+};
+
 const AIVoiceAgents = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -557,10 +606,9 @@ const AIVoiceAgents = () => {
                     <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full">
                       <h3 className="text-lg font-semibold mb-2">{sample.title}</h3>
                       <p className="text-muted-foreground mb-4">{sample.description}</p>
-                      <audio controls preload="none" className="w-full mb-4">
-                        <source src={sample.audioSrc} />
-                        Your browser does not support the audio element.
-                      </audio>
+                      <div className="mb-4">
+                        <VoicePlayer script={sample.script} lang={sample.lang} />
+                      </div>
                       <Accordion type="single" collapsible>
                         <AccordionItem value={`${sample.id}-transcript`}>
                           <AccordionTrigger>Transcript</AccordionTrigger>
