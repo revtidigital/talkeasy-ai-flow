@@ -253,10 +253,6 @@ const faqs = [
       "Yes, when built right. We deploy in your cloud, use permission-aware retrieval, and never train on your data. Open models for fully on-prem deployments.",
   },
   {
-    question: "What's the cost of building a knowledge assistant?",
-    answer: "Pilots from $15K / ₹5L. Production deployments $40K–$150K / ₹15L–₹40L.",
-  },
-  {
     question: "RAG vs. fine-tuning — which is better for internal docs?",
     answer:
       "RAG for most cases. Handles frequent updates, provides citations, respects permissions. See the comparison table above.",
@@ -458,30 +454,6 @@ const KnowledgeIntelligence = () => {
                   </div>
                 </AnimatedSection>
               </div>
-            </div>
-          </section>
-
-          <section id="live-demo" className="py-12 md:py-16">
-            <div className="container-tight">
-              <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Live demo (coming soon)</h2>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Upload a sample PDF or paste text, ask a question, and see the cited answer. We&apos;ll add an email
-                    gate after the first question when the demo launches in phase 2.
-                  </p>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <div className="rounded-2xl border border-border/60 bg-white/90 p-8 text-center">
-                  <p className="text-lg font-semibold mb-3">
-                    [INTERACTIVE] Upload a sample PDF or paste text → ask a question → see the cited answer.
-                  </p>
-                  <p className="text-sm text-muted-foreground italic">
-                    Phase 2 placeholder — launching after initial traffic.
-                  </p>
-                </div>
-              </AnimatedSection>
             </div>
           </section>
 
@@ -703,39 +675,6 @@ const KnowledgeIntelligence = () => {
                   </div>
                 </AnimatedSection>
               </div>
-            </div>
-          </section>
-
-          <section className="py-12 md:py-16 bg-secondary/20">
-            <div className="container-tight">
-              <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    India: ₹5L–₹40L for a build; ₹50K–₹2L/month retainer.
-                  </p>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
-                  <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead>Engagement</TableHead>
-                      <TableHead>Scope</TableHead>
-                      <TableHead>Range</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {pricingRows.map((row) => (
-                      <TableRow key={row.engagement}>
-                        <TableCell className="font-semibold text-foreground">{row.engagement}</TableCell>
-                        <TableCell>{row.scope}</TableCell>
-                        <TableCell>{row.range}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </AnimatedSection>
             </div>
           </section>
 
