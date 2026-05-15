@@ -337,7 +337,7 @@ const AIStrategyAudit = () => {
                         The audit fee is credited toward your first build if we work together.
                       </span>
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-col gap-4 sm:max-w-xs">
                       <Link to="/contact-us">
                         <Button variant="hero" size="xl" title="Start my audit — proposal in 48 hours">
                           Start my audit — proposal in 48 hours
