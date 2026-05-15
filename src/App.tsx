@@ -1,4 +1,21 @@
 import { useState, lazy, Suspense } from "react";
+
+function lazyWithRetry(factory: () => Promise<{ default: React.ComponentType<unknown> }>) {
+  return lazy(async () => {
+    const hasRefreshed = sessionStorage.getItem("chunk-refresh") === "true";
+    try {
+      const mod = await factory();
+      sessionStorage.removeItem("chunk-refresh");
+      return mod;
+    } catch {
+      if (!hasRefreshed) {
+        sessionStorage.setItem("chunk-refresh", "true");
+        window.location.reload();
+      }
+      throw new Error("Failed to load chunk after refresh");
+    }
+  });
+}
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,44 +34,44 @@ import ProtectedRoute from "./components/admin/ProtectedRoute";
 import Index from "./pages/Index";
 
 // Lazy loaded - non-critical routes for better performance
-const NotFound = lazy(() => import("./pages/NotFound"));
-const ContactUs = lazy(() => import("./pages/ContactUs"));
-const AboutUs = lazy(() => import("./pages/AboutUs"));
-const Services = lazy(() => import("./pages/Services"));
-const AIStrategyAudit = lazy(() => import("./pages/AIStrategyAudit"));
-const AIVoiceAgents = lazy(() => import("./pages/AIVoiceAgents"));
-const AgenticAutomation = lazy(() => import("./pages/AgenticAutomation"));
-const AIIntegration = lazy(() => import("./pages/AIIntegration"));
-const CustomAIAgents = lazy(() => import("./pages/CustomAIAgents"));
-const KnowledgeIntelligence = lazy(() => import("./pages/KnowledgeIntelligence"));
-const SalesAI = lazy(() => import("./pages/SalesAI"));
-const AIForSMB = lazy(() => import("./pages/AIForSMB"));
-const Blog = lazy(() => import("./pages/Blog"));
-const BlogPost = lazy(() => import("./pages/BlogPost"));
-const Chatbot = lazy(() => import("./pages/Chatbot"));
-const LiveChat = lazy(() => import("./pages/LiveChat"));
-const OmniChannel = lazy(() => import("./pages/OmniChannel"));
-const PreChatForms = lazy(() => import("./pages/PreChatForms"));
-const TeamReports = lazy(() => import("./pages/TeamReports"));
-const AgentReports = lazy(() => import("./pages/AgentReports"));
-const CSATReport = lazy(() => import("./pages/CSATReport"));
-const InboxReports = lazy(() => import("./pages/InboxReports"));
-const WhatsAppAIChatbot = lazy(() => import("./pages/WhatsAppAIChatbot"));
-const WhatsAppShop = lazy(() => import("./pages/WhatsAppShop"));
-const WhatsAppMarketing = lazy(() => import("./pages/WhatsAppMarketing"));
-const AgentCapacity = lazy(() => import("./pages/AgentCapacity"));
-const PrivateNotes = lazy(() => import("./pages/PrivateNotes"));
-const LiveView = lazy(() => import("./pages/LiveView"));
-const Teams = lazy(() => import("./pages/Teams"));
-const BookDemo = lazy(() => import("./pages/BookDemo"));
-const ThankYou = lazy(() => import("./pages/ThankYou"));
-const CaseStudies = lazy(() => import("./pages/CaseStudies"));
-const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
-const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
-const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
-const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
-const AdminCaseStudyForm = lazy(() => import("./pages/admin/AdminCaseStudyForm"));
+const NotFound = lazyWithRetry(() => import("./pages/NotFound"));
+const ContactUs = lazyWithRetry(() => import("./pages/ContactUs"));
+const AboutUs = lazyWithRetry(() => import("./pages/AboutUs"));
+const Services = lazyWithRetry(() => import("./pages/Services"));
+const AIStrategyAudit = lazyWithRetry(() => import("./pages/AIStrategyAudit"));
+const AIVoiceAgents = lazyWithRetry(() => import("./pages/AIVoiceAgents"));
+const AgenticAutomation = lazyWithRetry(() => import("./pages/AgenticAutomation"));
+const AIIntegration = lazyWithRetry(() => import("./pages/AIIntegration"));
+const CustomAIAgents = lazyWithRetry(() => import("./pages/CustomAIAgents"));
+const KnowledgeIntelligence = lazyWithRetry(() => import("./pages/KnowledgeIntelligence"));
+const SalesAI = lazyWithRetry(() => import("./pages/SalesAI"));
+const AIForSMB = lazyWithRetry(() => import("./pages/AIForSMB"));
+const Blog = lazyWithRetry(() => import("./pages/Blog"));
+const BlogPost = lazyWithRetry(() => import("./pages/BlogPost"));
+const Chatbot = lazyWithRetry(() => import("./pages/Chatbot"));
+const LiveChat = lazyWithRetry(() => import("./pages/LiveChat"));
+const OmniChannel = lazyWithRetry(() => import("./pages/OmniChannel"));
+const PreChatForms = lazyWithRetry(() => import("./pages/PreChatForms"));
+const TeamReports = lazyWithRetry(() => import("./pages/TeamReports"));
+const AgentReports = lazyWithRetry(() => import("./pages/AgentReports"));
+const CSATReport = lazyWithRetry(() => import("./pages/CSATReport"));
+const InboxReports = lazyWithRetry(() => import("./pages/InboxReports"));
+const WhatsAppAIChatbot = lazyWithRetry(() => import("./pages/WhatsAppAIChatbot"));
+const WhatsAppShop = lazyWithRetry(() => import("./pages/WhatsAppShop"));
+const WhatsAppMarketing = lazyWithRetry(() => import("./pages/WhatsAppMarketing"));
+const AgentCapacity = lazyWithRetry(() => import("./pages/AgentCapacity"));
+const PrivateNotes = lazyWithRetry(() => import("./pages/PrivateNotes"));
+const LiveView = lazyWithRetry(() => import("./pages/LiveView"));
+const Teams = lazyWithRetry(() => import("./pages/Teams"));
+const BookDemo = lazyWithRetry(() => import("./pages/BookDemo"));
+const ThankYou = lazyWithRetry(() => import("./pages/ThankYou"));
+const CaseStudies = lazyWithRetry(() => import("./pages/CaseStudies"));
+const CaseStudyDetail = lazyWithRetry(() => import("./pages/CaseStudyDetail"));
+const TermsAndConditions = lazyWithRetry(() => import("./pages/TermsAndConditions"));
+const PrivacyPolicy = lazyWithRetry(() => import("./pages/PrivacyPolicy"));
+const AdminLogin = lazyWithRetry(() => import("./pages/admin/AdminLogin"));
+const AdminDashboard = lazyWithRetry(() => import("./pages/admin/AdminDashboard"));
+const AdminCaseStudyForm = lazyWithRetry(() => import("./pages/admin/AdminCaseStudyForm"));
 
 const queryClient = new QueryClient();
 
