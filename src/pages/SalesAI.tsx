@@ -222,7 +222,7 @@ const faqs = [
   {
     question: "Clay vs Apollo vs your setup — which do we need?",
     answer:
-      "For $25K+ ACV outbound in 2026: Clay for enrichment, Apollo as a data source inside Clay, Smartlead/Instantly for sending, Sales Nav + Heyreach for LinkedIn. We run all of it.",
+      "For B2B outbound in 2026: Clay for enrichment, Apollo as a data source inside Clay, Smartlead/Instantly for sending, Sales Nav + Heyreach for LinkedIn. We run all of it.",
   },
 ];
 
@@ -313,7 +313,7 @@ const SalesAI = () => {
                       Signal-based outbound. Built by operators. Priced on outcomes.
                     </h1>
                     <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
-                      We run signal-triggered outbound for B2B SaaS teams selling $25K+ ACV — not volume campaigns, not
+                      We run signal-triggered outbound for B2B SaaS teams — not volume campaigns, not
                       AI-SDR demoware.
                     </h2>
                     <p className="text-lg text-muted-foreground mb-10">

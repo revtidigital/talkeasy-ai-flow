@@ -111,23 +111,6 @@ const outcomes = [
   "No rip-and-replace — we extend, not replace",
 ];
 
-const pricingRows = [
-  {
-    engagement: "Per-integration",
-    scope: "Single tool, single use case",
-    range: "$10K–$75K fixed",
-  },
-  {
-    engagement: "Platform program",
-    scope: "3+ tools, cross-functional",
-    range: "$100K–$500K, 3–6 months",
-  },
-  {
-    engagement: "Managed AI ops",
-    scope: "Ongoing integration health + tuning",
-    range: "$3K–$15K/month",
-  },
-];
 
 const faqs = [
   {
@@ -546,38 +529,6 @@ const AIIntegration = () => {
             </div>
           </section>
 
-          <section className="py-12 md:py-16">
-            <div className="container-tight">
-              <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    India: ₹8L–₹40L per integration; ₹1L–₹5L/month for retainer.
-                  </p>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
-                  <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead>Engagement</TableHead>
-                      <TableHead>Scope</TableHead>
-                      <TableHead>Range</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {pricingRows.map((row) => (
-                      <TableRow key={row.engagement}>
-                        <TableCell className="font-semibold text-foreground">{row.engagement}</TableCell>
-                        <TableCell>{row.scope}</TableCell>
-                        <TableCell>{row.range}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </AnimatedSection>
-            </div>
-          </section>
 
           <section className="py-12 md:py-16">
             <div className="container-tight">

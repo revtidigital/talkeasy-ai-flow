@@ -27,12 +27,6 @@ const comparisonRows = [
     diy: "You choose",
   },
   {
-    label: "Cost (500 users, year 1)",
-    converse: "$40K–$100K one-time + $2K–10K/mo",
-    glean: "$240K–$300K/yr ($40–50/user)",
-    diy: "3–6 months of eng time + infra",
-  },
-  {
     label: "Time to production",
     converse: "4–6 weeks",
     glean: "6-month rollout typical",
@@ -90,11 +84,6 @@ const ragVsFineTuneRows = [
     label: "Permission-aware",
     rag: "Yes",
     fineTune: "No (model memorizes)",
-  },
-  {
-    label: "Typical cost",
-    rag: "$15K–$150K build",
-    fineTune: "$30K–$200K+ per tune cycle",
   },
   {
     label: "Typical accuracy for internal-doc Q&A",
@@ -522,40 +511,6 @@ const KnowledgeIntelligence = () => {
                         <TableCell>{row.converse}</TableCell>
                         <TableCell>{row.glean}</TableCell>
                         <TableCell>{row.diy}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </AnimatedSection>
-            </div>
-          </section>
-
-          <section className="py-12 md:py-16 bg-secondary/20">
-            <div className="container-tight">
-              <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">RAG vs fine-tuning — which do you need?</h2>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    For internal knowledge: RAG wins almost always. Fine-tuning is for specialized reasoning patterns,
-                    not knowledge injection.
-                  </p>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
-                  <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead />
-                      <TableHead>RAG</TableHead>
-                      <TableHead>Fine-tuning</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {ragVsFineTuneRows.map((row) => (
-                      <TableRow key={row.label}>
-                        <TableCell className="font-semibold text-foreground">{row.label}</TableCell>
-                        <TableCell>{row.rag}</TableCell>
-                        <TableCell>{row.fineTune}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
