@@ -85,7 +85,7 @@ const differentiators = [
   },
   {
     title: "India + US delivery economics.",
-    description: "From $4,999 — under 10% of what Deloitte or BCG quote.",
+    description: "From $999 — under 10% of what Deloitte or BCG quote.",
   },
 ];
 
@@ -98,7 +98,7 @@ const comparisonRows = [
   },
   {
     label: "Price",
-    converse: "$999–$9,999 fixed",
+    converse: "$999–$4,999 fixed",
     big4: "$75K–$250K",
     boutique: "$15K–$60K",
   },
@@ -140,7 +140,7 @@ const pricingTiers = [
   {
     title: "Essential",
     scope: "Single function (e.g., CX or RevOps)",
-    price: "$4,999 / ₹3,50,000",
+    price: "$999 / ₹70,000",
   },
   {
     title: "Growth",
@@ -163,7 +163,7 @@ const faqs = [
   {
     question: "How much does an AI readiness audit cost?",
     answer:
-      "Our ROI-First Audit starts at $4,999 / ₹3,50,000 for a single-function scope. Cross-functional audits are $9,999. Enterprise/multi-BU scope is custom. Compare: Deloitte, BCG, and McKinsey quote $75K–$250K for equivalent work.",
+      "Our ROI-First Audit starts at $999 / ₹70,000 for a single-function scope. Cross-functional audits are $9,999. Enterprise/multi-BU scope is custom. Compare: Deloitte, BCG, and McKinsey quote $75K–$250K for equivalent work.",
   },
   {
     question: "How long does an AI audit take?",
@@ -245,12 +245,12 @@ const AIStrategyAudit = () => {
             {
               "@type": "UnitPriceSpecification",
               priceCurrency: "USD",
-              price: 4999,
+              price: 999,
             },
             {
               "@type": "UnitPriceSpecification",
               priceCurrency: "INR",
-              price: 350000,
+              price: 70000,
             },
           ],
         },
@@ -310,13 +310,13 @@ const AIStrategyAudit = () => {
         <title>AI Readiness Audit — 3-Week Strategy Roadmap | ConverseAI</title>
         <meta
           name="description"
-          content="3-week fixed-fee AI readiness audit. Identify 5–10 high-ROI use cases and get a 90-day roadmap. From $4,999 — book a free fit call today."
+          content="3-week fixed-fee AI readiness audit. Identify 5–10 high-ROI use cases and get a 90-day roadmap. From $999 — book a free fit call today."
         />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="AI Readiness Audit — 3-Week Strategy Roadmap | ConverseAI" />
         <meta
           property="og:description"
-          content="3-week fixed-fee AI readiness audit. Identify 5–10 high-ROI use cases and get a 90-day roadmap. From $4,999 — book a free fit call today."
+          content="3-week fixed-fee AI readiness audit. Identify 5–10 high-ROI use cases and get a 90-day roadmap. From $999 — book a free fit call today."
         />
         <link rel="canonical" href="https://theconverseai.com/services/ai-strategy-audit" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
@@ -339,7 +339,7 @@ const AIStrategyAudit = () => {
                       A fixed-fee AI readiness audit that surfaces your 5–10 highest-ROI AI use cases, scores them by feasibility,
                       and delivers a 90-day action plan.{" "}
                       <span className="font-semibold text-foreground">
-                        $4,999 / ₹3,50,000 — and the audit fee is credited toward your first build if we work together.
+                        $999 / ₹70,000 — and the audit fee is credited toward your first build if we work together.
                       </span>
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -383,7 +383,7 @@ const AIStrategyAudit = () => {
                       </div>
                       <div className="mt-6 pt-5 border-t border-border/50 text-center">
                         <p className="text-xs text-muted-foreground mb-1">Audit fee credited toward build</p>
-                        <p className="text-2xl font-bold text-primary">From $4,999</p>
+                        <p className="text-2xl font-bold text-primary">From $999</p>
                       </div>
                     </div>
                     <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-3 shadow-lg animate-float">
