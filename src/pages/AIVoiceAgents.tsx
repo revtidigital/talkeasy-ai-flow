@@ -775,6 +775,20 @@ const AIVoiceAgents = () => {
             </div>
           </section>
 
+          <section className="py-8 md:py-10 bg-primary/5 border-y border-primary/15">
+            <div className="container-tight flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div>
+                <p className="text-xl font-semibold text-foreground">Want to hear our AI voice agent on your use case?</p>
+                <p className="text-muted-foreground mt-1">We'll build a working demo for your scenario before you commit to anything.</p>
+              </div>
+              <Link to="/contact-us" className="shrink-0">
+                <Button variant="default" size="lg" title="Request a live demo">
+                  Request a live demo <ArrowRight className="w-4 h-4 ml-1" />
+                </Button>
+              </Link>
+            </div>
+          </section>
+
           <section className="py-12 md:py-16">
             <div className="container-tight">
               <AnimatedSection>

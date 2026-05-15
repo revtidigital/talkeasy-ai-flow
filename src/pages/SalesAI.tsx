@@ -540,6 +540,20 @@ const SalesAI = () => {
             </div>
           </section>
 
+          <section className="py-8 md:py-10 bg-primary/5 border-y border-primary/15">
+            <div className="container-tight flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div>
+                <p className="text-xl font-semibold text-foreground">Ready to launch your first signal play?</p>
+                <p className="text-muted-foreground mt-1">Book a 30-min planning call — we'll map your ICP and pick the right signals to act on.</p>
+              </div>
+              <Link to="/contact-us" className="shrink-0">
+                <Button variant="default" size="lg" title="Book a planning call">
+                  Book a planning call <ArrowRight className="w-4 h-4 ml-1" />
+                </Button>
+              </Link>
+            </div>
+          </section>
+
           <section className="py-12 md:py-16">
             <div className="container-tight">
               <AnimatedSection>

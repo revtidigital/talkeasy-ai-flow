@@ -622,6 +622,20 @@ const CustomAIAgents = () => {
             </div>
           </section>
 
+          <section className="py-8 md:py-10 bg-primary/5 border-y border-primary/15">
+            <div className="container-tight flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div>
+                <p className="text-xl font-semibold text-foreground">Have an agent idea? Let's scope it in 30 minutes.</p>
+                <p className="text-muted-foreground mt-1">We'll tell you honestly if it's buildable, what it'll cost, and when it can be live.</p>
+              </div>
+              <Link to="/contact-us" className="shrink-0">
+                <Button variant="default" size="lg" title="Book a scoping call">
+                  Book a scoping call <ArrowRight className="w-4 h-4 ml-1" />
+                </Button>
+              </Link>
+            </div>
+          </section>
+
           <section className="py-12 md:py-16">
             <div className="container-tight">
               <AnimatedSection>

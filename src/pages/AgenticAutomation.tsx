@@ -585,6 +585,20 @@ const AgenticAutomation = () => {
             </div>
           </section>
 
+          <section className="py-8 md:py-10 bg-primary/5 border-y border-primary/15">
+            <div className="container-tight flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div>
+                <p className="text-xl font-semibold text-foreground">Have a workflow you want to automate?</p>
+                <p className="text-muted-foreground mt-1">Tell us the process — we'll tell you if it's agent-shaped and what it'll cost.</p>
+              </div>
+              <Link to="/contact-us" className="shrink-0">
+                <Button variant="default" size="lg" title="Discuss my workflow">
+                  Discuss my workflow <ArrowRight className="w-4 h-4 ml-1" />
+                </Button>
+              </Link>
+            </div>
+          </section>
+
           <section className="py-12 md:py-16 bg-secondary/20">
             <div className="container-tight">
               <div className="grid lg:grid-cols-2 gap-10 items-start">
