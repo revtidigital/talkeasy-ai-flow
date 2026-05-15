@@ -307,7 +307,7 @@ const Services = () => {
             </div>
           </section>
 
-          <section className="section-padding">
+          <section className="py-12 md:py-16">
             <div className="container-tight">
               <div className="grid lg:grid-cols-2 gap-10 items-start">
                 <AnimatedSection>
@@ -348,7 +348,7 @@ const Services = () => {
             </div>
           </section>
 
-          <section className="section-padding bg-secondary/20">
+          <section className="py-12 md:py-16 bg-secondary/20">
             <div className="container-tight">
               <AnimatedSection>
                 <div className="text-center mb-12">
@@ -381,7 +381,7 @@ const Services = () => {
             </div>
           </section>
 
-          <section className="section-padding">
+          <section className="py-12 md:py-16">
             <div className="container-tight">
               <AnimatedSection>
                 <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">How we work</h2>
@@ -399,7 +399,7 @@ const Services = () => {
             </div>
           </section>
 
-          <section className="section-padding bg-gradient-to-br from-background via-secondary/20 to-background">
+          <section className="py-12 md:py-16 bg-gradient-to-br from-background via-secondary/20 to-background">
             <div className="container-tight">
               <AnimatedSection>
                 <div className="text-center mb-10">
@@ -422,7 +422,7 @@ const Services = () => {
             </div>
           </section>
 
-          <section className="section-padding bg-secondary/20">
+          <section className="py-12 md:py-16 bg-secondary/20">
             <div className="container-tight">
               <AnimatedSection>
                 <div className="text-center mb-10">
@@ -446,7 +446,7 @@ const Services = () => {
             </div>
           </section>
 
-          <section className="section-padding">
+          <section className="py-12 md:py-16">
             <div className="container-tight">
               <AnimatedSection>
                 <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">FAQs</h2>
@@ -462,7 +462,7 @@ const Services = () => {
             </div>
           </section>
 
-          <section className="section-padding bg-gradient-to-r from-primary/10 via-violet/10 to-background">
+          <section className="py-12 md:py-16 bg-gradient-to-r from-primary/10 via-violet/10 to-background">
             <div className="container-tight text-center">
               <AnimatedSection>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Not sure where to start?</h2>
