@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, ClipboardList, BarChart3, Map } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -327,40 +327,72 @@ const AIStrategyAudit = () => {
           <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
-            <div className="container-tight relative z-10 text-center py-12">
-              <AnimatedSection>
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI Strategy & Readiness Audit</p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  Stop guessing where AI fits. Get a 3-week AI Readiness Audit.
-                </h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-                  A fixed-fee AI readiness audit that surfaces your 5–10 highest-ROI AI use cases, scores them by feasibility,
-                  and delivers a 90-day action plan.{" "}
-                  <span className="font-semibold text-foreground">
-                    $4,999 / ₹3,50,000 — and the audit fee is credited toward your first build if we work together.
-                  </span>
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact-us">
-                    <Button variant="hero" size="xl" title="Start my audit — proposal in 48 hours">
-                      Start my audit — proposal in 48 hours
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                  <Link to="/contact-us">
-                    <Button variant="hero-outline" size="xl" title="Book a free 20-min fit call">
-                      Book a free 20-min fit call
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                </div>
-              </AnimatedSection>
+            <div className="container-tight relative z-10 py-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <AnimatedSection>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI Strategy & Readiness Audit</p>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                      Stop guessing where AI fits. Get a 3-week AI Readiness Audit.
+                    </h1>
+                    <p className="text-lg text-muted-foreground mb-8">
+                      A fixed-fee AI readiness audit that surfaces your 5–10 highest-ROI AI use cases, scores them by feasibility,
+                      and delivers a 90-day action plan.{" "}
+                      <span className="font-semibold text-foreground">
+                        $4,999 / ₹3,50,000 — and the audit fee is credited toward your first build if we work together.
+                      </span>
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link to="/contact-us">
+                        <Button variant="hero" size="xl" title="Start my audit — proposal in 48 hours">
+                          Start my audit — proposal in 48 hours
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </Link>
+                      <Link to="/contact-us">
+                        <Button variant="hero-outline" size="xl" title="Book a free 20-min fit call">
+                          Book a free 20-min fit call
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
+                    <div className="relative glass-card rounded-3xl p-8">
+                      <p className="text-sm font-semibold text-primary mb-6 text-center">3-Week ROI-First Audit</p>
+                      <div className="space-y-4">
+                        {[
+                          { icon: ClipboardList, week: "Week 1", label: "Discovery", detail: "Leadership interviews + workflow mapping", color: "bg-primary/10 border-primary/20 text-primary" },
+                          { icon: BarChart3, week: "Week 2", label: "Analysis", detail: "Stack & data review · 5–10 use cases scored", color: "bg-violet/10 border-violet/20 text-violet" },
+                          { icon: Map, week: "Week 3", label: "Roadmap", detail: "90-day action plan + executive readout", color: "bg-mint/10 border-mint/20 text-mint" },
+                        ].map((step, i) => (
+                          <div key={i} className={`flex items-center gap-4 p-4 rounded-xl border ${step.color}`}>
+                            <div className="w-10 h-10 rounded-xl bg-white/80 flex items-center justify-center flex-shrink-0 shadow-sm">
+                              <step.icon className="w-5 h-5 text-foreground" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-semibold text-muted-foreground">{step.week}</p>
+                              <p className="font-semibold text-sm">{step.label}</p>
+                              <p className="text-xs text-muted-foreground">{step.detail}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-6 pt-5 border-t border-border/50 text-center">
+                        <p className="text-xs text-muted-foreground mb-1">Audit fee credited toward build</p>
+                        <p className="text-2xl font-bold text-primary">From $4,999</p>
+                      </div>
+                    </div>
+                    <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-3 shadow-lg animate-float">
+                      <p className="text-xs text-muted-foreground">Avg. opportunities surfaced</p>
+                      <p className="text-lg font-bold text-primary">$1.2M+/yr</p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </section>
 

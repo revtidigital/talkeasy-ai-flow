@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, Mic, Volume2 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -462,48 +462,100 @@ const AIVoiceAgents = () => {
           <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
-            <div className="container-tight relative z-10 text-center py-12">
-              <AnimatedSection>
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI Voice Agents</p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  AI voice agents that sound human. Work 24/7. Cost a fraction of an SDR.
-                </h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">
-                  AI voice agents for business — inbound support, outbound qualification, appointment booking, collections.
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-                  Drop your number. We'll call your phone in 60 seconds with a live AI voice agent built for your use case.
-                  Natural voice. Sub-800ms latency. 20+ languages including Hindi, English, and regional Indian languages.
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.4}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-3 items-center">
-                    <Input
-                      type="tel"
-                      placeholder="Enter your phone number"
-                      className="h-12 w-full sm:w-72 bg-white/80 border-primary/20 focus:ring-primary"
-                      aria-label="Phone number"
-                    />
-                    <Button variant="hero" size="lg" type="button" title="Hear it call me in 60 seconds">
-                      Hear it call me in 60 seconds
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
+            <div className="container-tight relative z-10 py-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <AnimatedSection>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI Voice Agents</p>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                      AI voice agents that sound human. Work 24/7. Cost a fraction of an SDR.
+                    </h1>
+                    <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">
+                      AI voice agents for business — inbound support, outbound qualification, appointment booking, collections.
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-8">
+                      Drop your number. We'll call your phone in 60 seconds with a live AI voice agent built for your use case.
+                      Natural voice. Sub-800ms latency. 20+ languages including Hindi, English, and regional Indian languages.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 items-start">
+                      <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-3 items-center">
+                        <Input
+                          type="tel"
+                          placeholder="Enter your phone number"
+                          className="h-12 w-full sm:w-64 bg-white/80 border-primary/20 focus:ring-primary"
+                          aria-label="Phone number"
+                        />
+                        <Button variant="hero" size="lg" type="button" title="Hear it call me in 60 seconds">
+                          Hear it call me in 60 seconds
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </div>
+                    </div>
+                    <a href="#sample-calls" className="mt-4 text-primary font-semibold inline-flex items-center gap-2 hover:underline text-sm">
+                      Listen to sample calls ↓
+                    </a>
                   </div>
-                  <a
-                    href="#sample-calls"
-                    className="text-primary font-semibold inline-flex items-center gap-2 hover:underline"
-                  >
-                    Listen to sample calls ↓
-                  </a>
-                </div>
-              </AnimatedSection>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
+                    <div className="relative glass-card rounded-3xl p-8">
+                      <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border/50">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <Phone className="w-6 h-6 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-semibold">ConverseAI Voice Agent</p>
+                          <p className="text-xs text-mint flex items-center gap-1">
+                            <span className="w-2 h-2 bg-mint rounded-full animate-pulse inline-block" />
+                            Active call · 0:42
+                          </p>
+                        </div>
+                      </div>
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-start gap-3">
+                          <div className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span className="text-xs">👤</span>
+                          </div>
+                          <div className="bg-secondary rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm">
+                            I'd like to reschedule my appointment to Friday.
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Mic className="w-3.5 h-3.5 text-primary" />
+                          </div>
+                          <div className="bg-primary/10 rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm border border-primary/20">
+                            Of course! I have Friday at 10 AM or 2 PM available. Which works better for you?
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <div className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span className="text-xs">👤</span>
+                          </div>
+                          <div className="bg-secondary rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm">
+                            2 PM please.
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 px-3 py-2 bg-mint/10 rounded-xl border border-mint/20">
+                          <Volume2 className="w-4 h-4 text-mint flex-shrink-0" />
+                          <div className="flex gap-0.5 items-end h-4">
+                            {[3, 5, 8, 4, 7, 5, 3, 6, 4, 8, 5, 3].map((h, i) => (
+                              <div key={i} className="w-1 bg-mint rounded-full animate-pulse" style={{ height: `${h * 2}px`, animationDelay: `${i * 0.1}s` }} />
+                            ))}
+                          </div>
+                          <span className="text-xs text-mint font-medium">Confirming Friday 2 PM...</span>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-3 gap-3 pt-4 border-t border-border/50 text-center">
+                        <div><p className="text-lg font-bold text-primary">&lt;800ms</p><p className="text-xs text-muted-foreground">Latency</p></div>
+                        <div><p className="text-lg font-bold text-violet">20+</p><p className="text-xs text-muted-foreground">Languages</p></div>
+                        <div><p className="text-lg font-bold text-mint">24/7</p><p className="text-xs text-muted-foreground">Always on</p></div>
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </section>
 

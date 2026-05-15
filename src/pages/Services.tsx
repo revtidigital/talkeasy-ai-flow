@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Bot, Mic, Brain, Puzzle, BookOpen, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
@@ -268,42 +268,66 @@ const Services = () => {
           <section className="relative pt-20 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
-            <div className="container-tight relative z-10 text-center py-12">
-              <AnimatedSection>
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">Services</p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  AI services that actually ship — not slide decks.
-                </h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
-                  AI services for businesses that want outcomes, not strategy frameworks.
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
-                  We help growing businesses move from "AI is amazing" to "AI is running our work." Strategy audits,
-                  custom agents, agentic automation, voice, integration, knowledge intelligence, and outbound — delivered
-                  by people who've shipped AI in production, not pitched it in PowerPoint.
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.4}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact-us">
-                    <Button variant="hero" size="xl" title="Get my 90-day AI roadmap">
-                      Get my 90-day AI roadmap
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                  <Link to="/contact-us">
-                    <Button variant="hero-outline" size="xl" title="Start with a $4,999 AI Readiness Audit">
-                      Start with a $4,999 AI Readiness Audit
-                    </Button>
-                  </Link>
-                </div>
-              </AnimatedSection>
+            <div className="container-tight relative z-10 py-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <AnimatedSection>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">Services</p>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                      AI services that actually ship — not slide decks.
+                    </h1>
+                    <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
+                      AI services for businesses that want outcomes, not strategy frameworks.
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-10">
+                      We help growing businesses move from "AI is amazing" to "AI is running our work." Strategy audits,
+                      custom agents, agentic automation, voice, integration, knowledge intelligence, and outbound — delivered
+                      by people who've shipped AI in production, not pitched it in PowerPoint.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link to="/contact-us">
+                        <Button variant="hero" size="xl" title="Get my 90-day AI roadmap">
+                          Get my 90-day AI roadmap
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </Link>
+                      <Link to="/contact-us">
+                        <Button variant="hero-outline" size="xl" title="Start with a $4,999 AI Readiness Audit">
+                          Start with a $4,999 AI Readiness Audit
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
+                    <div className="relative glass-card rounded-3xl p-8">
+                      <p className="text-sm font-semibold text-primary mb-5 text-center">What we build & ship</p>
+                      <div className="grid grid-cols-2 gap-3">
+                        {[
+                          { icon: Brain, label: "AI Strategy Audit", color: "text-primary bg-primary/10" },
+                          { icon: Bot, label: "Custom AI Agents", color: "text-violet bg-violet/10" },
+                          { icon: TrendingUp, label: "Agentic Automation", color: "text-mint bg-mint/10" },
+                          { icon: Mic, label: "AI Voice Agents", color: "text-primary bg-primary/10" },
+                          { icon: Puzzle, label: "AI Integration", color: "text-violet bg-violet/10" },
+                          { icon: BookOpen, label: "Knowledge AI", color: "text-mint bg-mint/10" },
+                        ].map((item, i) => (
+                          <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/70 border border-border/40">
+                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${item.color}`}>
+                              <item.icon className="w-4 h-4" />
+                            </div>
+                            <span className="text-sm font-medium">{item.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-4 p-3 rounded-xl bg-primary/5 border border-primary/10 text-center">
+                        <p className="text-sm text-muted-foreground">India + US delivery · Fixed fees · Ships in weeks</p>
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </section>
 

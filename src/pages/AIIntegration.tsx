@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Plug, Globe, Zap, RefreshCw } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -262,42 +262,76 @@ const AIIntegration = () => {
           <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
-            <div className="container-tight relative z-10 text-center py-12">
-              <AnimatedSection>
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI Integration Services</p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  Your tools already charge you for AI. Make it actually do something.
-                </h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
-                  AI integration services — plug AI into the CRM, ERP, and helpdesk you already run.
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
-                  Salesforce, HubSpot, Zoho, Zendesk, SAP, Tally, Oracle, your in-house systems — we wire AI into your
-                  existing stack. No rip-and-replace. AI live in weeks.
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.4}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact-us">
-                    <Button variant="hero" size="xl" title="Map my stack (free 30-min audit)">
-                      Map my stack (free 30-min audit)
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                  <Button asChild variant="hero-outline" size="xl">
-                    <a href="#supported-tools" title="See supported tools">
-                      See supported tools
-                      <ArrowRight className="w-5 h-5" />
-                    </a>
-                  </Button>
-                </div>
-              </AnimatedSection>
+            <div className="container-tight relative z-10 py-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <AnimatedSection>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI Integration Services</p>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                      Your tools already charge you for AI. Make it actually do something.
+                    </h1>
+                    <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
+                      AI integration services — plug AI into the CRM, ERP, and helpdesk you already run.
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-10">
+                      Salesforce, HubSpot, Zoho, Zendesk, SAP, Tally, Oracle, your in-house systems — we wire AI into your
+                      existing stack. No rip-and-replace. AI live in weeks.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link to="/contact-us">
+                        <Button variant="hero" size="xl" title="Map my stack (free 30-min audit)">
+                          Map my stack (free 30-min audit)
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </Link>
+                      <Button asChild variant="hero-outline" size="xl">
+                        <a href="#supported-tools" title="See supported tools">
+                          See supported tools
+                          <ArrowRight className="w-5 h-5" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
+                    <div className="relative glass-card rounded-3xl p-8">
+                      <p className="text-sm font-semibold text-primary mb-5 text-center">Your stack → AI-powered</p>
+                      <div className="flex items-center justify-center gap-4 mb-6">
+                        <div className="grid grid-cols-2 gap-2">
+                          {["Salesforce", "HubSpot", "Zendesk", "SAP"].map((tool) => (
+                            <div key={tool} className="px-3 py-2 rounded-lg bg-white/80 border border-border/50 text-xs font-medium text-center shadow-sm">{tool}</div>
+                          ))}
+                        </div>
+                        <div className="flex flex-col items-center gap-1">
+                          <RefreshCw className="w-5 h-5 text-primary animate-spin" style={{ animationDuration: "3s" }} />
+                          <div className="w-px h-6 bg-primary/30" />
+                          <Plug className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-violet flex items-center justify-center shadow-lg">
+                          <Zap className="w-8 h-8 text-white" />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        {[
+                          { icon: Globe, label: "No rip-and-replace", sub: "Works with what you already run" },
+                          { icon: Zap, label: "Live in weeks", sub: "Not months of implementation" },
+                          { icon: Plug, label: "50+ integrations built", sub: "CRM, ERP, helpdesk, custom APIs" },
+                        ].map((item, i) => (
+                          <div key={i} className="flex items-center gap-3 p-2.5 rounded-xl bg-white/70 border border-border/40">
+                            <item.icon className="w-4 h-4 text-primary flex-shrink-0" />
+                            <div>
+                              <p className="text-xs font-semibold">{item.label}</p>
+                              <p className="text-xs text-muted-foreground">{item.sub}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </section>
 

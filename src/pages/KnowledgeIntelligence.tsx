@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Search, FileText, ShieldCheck } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -379,44 +379,76 @@ const KnowledgeIntelligence = () => {
           <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
-            <div className="container-tight relative z-10 text-center py-12">
-              <AnimatedSection>
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">
-                  Document &amp; Knowledge Intelligence
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  Your best documentation is trapped in your worst search tool.
-                </h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
-                  Enterprise RAG implementation and AI knowledge assistants, built in your cloud.
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
-                  AI that reads your SOPs, contracts, policies, and internal docs — and answers with citations.
-                  Permission-aware. Deployed in your VPC or on-prem. Zero hallucination tolerance for compliance teams.
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.4}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact-us">
-                    <Button variant="hero" size="xl" title="Book a free knowledge audit">
-                      Book a free knowledge audit
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                  <Button asChild variant="hero-outline" size="xl">
-                    <a href="#live-demo" title="Try the live demo">
-                      Try the live demo (upload a sample doc)
-                      <ArrowRight className="w-5 h-5" />
-                    </a>
-                  </Button>
-                </div>
-              </AnimatedSection>
+            <div className="container-tight relative z-10 py-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <AnimatedSection>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">Document &amp; Knowledge Intelligence</p>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                      Your best documentation is trapped in your worst search tool.
+                    </h1>
+                    <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
+                      Enterprise RAG implementation and AI knowledge assistants, built in your cloud.
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-10">
+                      AI that reads your SOPs, contracts, policies, and internal docs — and answers with citations.
+                      Permission-aware. Deployed in your VPC or on-prem. Zero hallucination tolerance for compliance teams.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link to="/contact-us">
+                        <Button variant="hero" size="xl" title="Book a free knowledge audit">
+                          Book a free knowledge audit
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </Link>
+                      <Button asChild variant="hero-outline" size="xl">
+                        <a href="#live-demo" title="Try the live demo">
+                          Try the live demo (upload a sample doc)
+                          <ArrowRight className="w-5 h-5" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
+                    <div className="relative glass-card rounded-3xl p-8">
+                      <div className="flex items-center gap-3 mb-5 p-3 rounded-xl bg-white/80 border border-border/40">
+                        <Search className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-sm text-muted-foreground">What is the refund policy for enterprise contracts?</span>
+                        <div className="ml-auto w-2 h-4 bg-primary rounded-sm animate-pulse" />
+                      </div>
+                      <div className="space-y-3">
+                        <div className="p-4 rounded-xl bg-primary/5 border border-primary/15">
+                          <p className="text-sm font-medium mb-2">Answer</p>
+                          <p className="text-sm text-muted-foreground">Enterprise contracts are eligible for a pro-rated refund within 30 days of the billing cycle, subject to the terms in Section 8.3...</p>
+                          <div className="mt-3 flex items-center gap-2">
+                            <ShieldCheck className="w-4 h-4 text-mint flex-shrink-0" />
+                            <p className="text-xs text-mint font-medium">Cited from: Enterprise Agreement v2.4, §8.3</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="flex-1 h-px bg-border/50" />
+                          <p className="text-xs text-muted-foreground">Sources</p>
+                          <div className="flex-1 h-px bg-border/50" />
+                        </div>
+                        {["Enterprise_Agreement_v2.4.pdf", "Billing_Policy_2025.pdf"].map((doc) => (
+                          <div key={doc} className="flex items-center gap-2 p-2 rounded-lg bg-white/70 border border-border/40">
+                            <FileText className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span className="text-xs text-muted-foreground truncate">{doc}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-4 pt-3 border-t border-border/50 flex justify-between text-center text-xs">
+                        <div><p className="font-bold text-primary">85–95%</p><p className="text-muted-foreground">Answer accuracy</p></div>
+                        <div><p className="font-bold text-violet">100%</p><p className="text-muted-foreground">Citation-backed</p></div>
+                        <div><p className="font-bold text-mint">Your cloud</p><p className="text-muted-foreground">VPC / on-prem</p></div>
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </section>
 

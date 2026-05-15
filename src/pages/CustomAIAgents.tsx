@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Bot, Brain, Database, Wrench } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -418,42 +418,71 @@ const CustomAIAgents = () => {
           <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
-            <div className="container-tight relative z-10 text-center py-12">
-              <AnimatedSection>
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">Custom AI Agent Development</p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  Off-the-shelf copilots don&apos;t know your business. We build the one that does.
-                </h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
-                  Custom AI agent development services for unique, high-value workflows.
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
-                  Production-ready bespoke AI agents for your specific workflow — not generic copilots, not templated
-                  chatbots, not productized back-office bots.{" "}
-                  <span className="font-semibold text-foreground">You own the code, the prompts, the data, the IP.</span>
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.4}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact-us">
-                    <Button variant="hero" size="xl" title="Scope my custom agent">
-                      Scope my custom agent
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                  <Link to="/contact-us">
-                    <Button variant="hero-outline" size="xl" title="Start with a $2K Agent Feasibility Review">
-                      Start with a $2K Agent Feasibility Review
-                    </Button>
-                  </Link>
-                </div>
-              </AnimatedSection>
+            <div className="container-tight relative z-10 py-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <AnimatedSection>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">Custom AI Agent Development</p>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                      Off-the-shelf copilots don&apos;t know your business. We build the one that does.
+                    </h1>
+                    <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
+                      Custom AI agent development services for unique, high-value workflows.
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-10">
+                      Production-ready bespoke AI agents for your specific workflow — not generic copilots, not templated
+                      chatbots, not productized back-office bots.{" "}
+                      <span className="font-semibold text-foreground">You own the code, the prompts, the data, the IP.</span>
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link to="/contact-us">
+                        <Button variant="hero" size="xl" title="Scope my custom agent">
+                          Scope my custom agent
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </Link>
+                      <Link to="/contact-us">
+                        <Button variant="hero-outline" size="xl" title="Start with a $2K Agent Feasibility Review">
+                          Start with a $2K Agent Feasibility Review
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
+                    <div className="relative glass-card rounded-3xl p-8">
+                      <p className="text-sm font-semibold text-primary mb-5 text-center">How a custom agent is built</p>
+                      <div className="flex flex-col gap-3">
+                        {[
+                          { icon: Brain, label: "Reasoning layer", detail: "LLM (Claude, GPT, Gemini, open model)", color: "bg-primary/10 text-primary" },
+                          { icon: Wrench, label: "Tools & integrations", detail: "APIs, CRM, ERP, databases, your systems", color: "bg-violet/10 text-violet" },
+                          { icon: Database, label: "Memory & context", detail: "Short-term + long-term · Permission-aware", color: "bg-mint/10 text-mint" },
+                          { icon: Bot, label: "Agent orchestration", detail: "LangGraph · CrewAI · OpenAI Agents SDK · MCP", color: "bg-primary/10 text-primary" },
+                        ].map((item, i) => (
+                          <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/70 border border-border/40">
+                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${item.color}`}>
+                              <item.icon className="w-4.5 h-4.5" />
+                            </div>
+                            <div>
+                              <p className="text-sm font-semibold">{item.label}</p>
+                              <p className="text-xs text-muted-foreground">{item.detail}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-5 p-3 rounded-xl bg-primary/5 border border-primary/10 text-center">
+                        <p className="text-xs text-muted-foreground">You own all code, prompts, and IP</p>
+                      </div>
+                    </div>
+                    <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-3 shadow-lg animate-float">
+                      <p className="text-xs text-muted-foreground">Feasibility Review</p>
+                      <p className="text-lg font-bold text-primary">From $2K</p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </section>
 

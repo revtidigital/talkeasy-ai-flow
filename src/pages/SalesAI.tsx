@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, TrendingUp, Target, Mail, Users } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -312,42 +312,73 @@ const SalesAI = () => {
           <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
-            <div className="container-tight relative z-10 text-center py-12">
-              <AnimatedSection>
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">Sales Intelligence & Outreach</p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  Signal-based outbound. Built by operators. Priced on outcomes.
-                </h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
-                  We run signal-triggered outbound for B2B SaaS teams selling $25K+ ACV — not volume campaigns, not
-                  AI-SDR demoware.
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
-                  Start with a 6-week Performance Pilot: you pay per Stage-2-qualified meeting, or you don&apos;t pay.
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.4}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact-us">
-                    <Button variant="hero" size="xl" title="Start a Performance Pilot">
-                      Start a Performance Pilot
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </Link>
-                  <Button asChild variant="hero-outline" size="xl">
-                    <a href="#signal-plays" title="See how signal plays work">
-                      See how signal plays work
-                      <ArrowRight className="w-5 h-5" />
-                    </a>
-                  </Button>
-                </div>
-              </AnimatedSection>
+            <div className="container-tight relative z-10 py-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <AnimatedSection>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">Sales Intelligence & Outreach</p>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                      Signal-based outbound. Built by operators. Priced on outcomes.
+                    </h1>
+                    <h2 className="text-xl sm:text-2xl text-foreground/80 font-semibold mb-6">
+                      We run signal-triggered outbound for B2B SaaS teams selling $25K+ ACV — not volume campaigns, not
+                      AI-SDR demoware.
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-10">
+                      Start with a 6-week Performance Pilot: you pay per Stage-2-qualified meeting, or you don&apos;t pay.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link to="/contact-us">
+                        <Button variant="hero" size="xl" title="Start a Performance Pilot">
+                          Start a Performance Pilot
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </Link>
+                      <Button asChild variant="hero-outline" size="xl">
+                        <a href="#signal-plays" title="See how signal plays work">
+                          See how signal plays work
+                          <ArrowRight className="w-5 h-5" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
+                    <div className="relative glass-card rounded-3xl p-8">
+                      <p className="text-sm font-semibold text-primary mb-5 text-center">Signal-to-meeting pipeline</p>
+                      <div className="space-y-3">
+                        {[
+                          { icon: Target, step: "1", label: "Signal detected", detail: "Hiring surge · Funding · Tech change · Intent", color: "text-primary bg-primary/10" },
+                          { icon: Users, step: "2", label: "ICP matched & researched", detail: "Decision-maker identified · Context built", color: "text-violet bg-violet/10" },
+                          { icon: Mail, step: "3", label: "Hyper-personalised outreach", detail: "1-of-1 message · Not a template blast", color: "text-mint bg-mint/10" },
+                          { icon: TrendingUp, step: "4", label: "Stage-2 meeting booked", detail: "You pay per qualified meeting", color: "text-primary bg-primary/10" },
+                        ].map((item, i) => (
+                          <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/70 border border-border/40">
+                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${item.color}`}>
+                              <item.icon className="w-4.5 h-4.5" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-xs font-semibold">{item.label}</p>
+                              <p className="text-xs text-muted-foreground truncate">{item.detail}</p>
+                            </div>
+                            <span className="text-xs font-bold text-muted-foreground/50">{item.step}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-5 p-3 rounded-xl bg-primary/5 border border-primary/10 text-center">
+                        <p className="text-sm font-semibold text-primary">Pay per Stage-2 meeting</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">From $300/meeting · 6-week pilot</p>
+                      </div>
+                    </div>
+                    <div className="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-3 shadow-lg animate-float">
+                      <p className="text-xs text-muted-foreground">Performance-based pricing</p>
+                      <p className="text-sm font-bold text-primary">No meetings = no charge</p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </section>
 

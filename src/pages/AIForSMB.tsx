@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, TrendingUp, Clock, DollarSign, Zap } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -344,42 +344,71 @@ const AIForSMB = () => {
           <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-br from-primary/15 via-violet/10 to-background">
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
-            <div className="container-tight relative z-10 text-center py-12">
-              <AnimatedSection>
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI for SMBs</p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  Big AI. SMB price point. Same team.
-                </h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">
-                  AI services for small and mid-sized businesses — built for outcomes, priced to be accessible.
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-                  You don’t need a $500K AI project. You need one that pays back in 90 days. That’s what we build for SMBs
-                  and mid-market teams in India and the US.
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.4}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="#smb-diagnostic">
-                    <Button variant="hero" size="xl" title="Find my starting point (2-min diagnostic)">
-                      Find my starting point (2-min diagnostic)
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </a>
-                  <a href="#smb-services">
-                    <Button variant="hero-outline" size="xl" title="Browse SMB-friendly services">
-                      Browse SMB-friendly services
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </a>
-                </div>
-              </AnimatedSection>
+            <div className="container-tight relative z-10 py-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <AnimatedSection>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI for SMBs</p>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                      Big AI. SMB price point. Same team.
+                    </h1>
+                    <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">
+                      AI services for small and mid-sized businesses — built for outcomes, priced to be accessible.
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-8">
+                      You don’t need a $500K AI project. You need one that pays back in 90 days. That’s what we build for SMBs
+                      and mid-market teams in India and the US.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <a href="#smb-diagnostic">
+                        <Button variant="hero" size="xl" title="Find my starting point (2-min diagnostic)">
+                          Find my starting point (2-min diagnostic)
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </a>
+                      <a href="#smb-services">
+                        <Button variant="hero-outline" size="xl" title="Browse SMB-friendly services">
+                          Browse SMB-friendly services
+                          <ArrowRight className="w-5 h-5" />
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
+                    <div className="relative glass-card rounded-3xl p-8">
+                      <p className="text-sm font-semibold text-primary mb-5 text-center">SMB AI — typical 90-day outcomes</p>
+                      <div className="space-y-4">
+                        {[
+                          { icon: DollarSign, metric: "$4,999", label: "Starting price", sub: "AI Strategy Audit — fixed fee", color: "text-primary bg-primary/10" },
+                          { icon: Clock, metric: "30 days", label: "First agent live", sub: "Agent Sprint — 4-week delivery", color: "text-violet bg-violet/10" },
+                          { icon: TrendingUp, metric: "3–5×", label: "ROI in year one", sub: "Measured across 40+ deployments", color: "text-mint bg-mint/10" },
+                          { icon: Zap, metric: "24/7", label: "Autonomous ops", sub: "No extra headcount needed", color: "text-primary bg-primary/10" },
+                        ].map((item, i) => (
+                          <div key={i} className="flex items-center gap-4 p-3 rounded-xl bg-white/70 border border-border/40">
+                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${item.color}`}>
+                              <item.icon className="w-5 h-5" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-baseline gap-2">
+                                <span className="text-lg font-bold">{item.metric}</span>
+                                <span className="text-sm font-semibold text-foreground">{item.label}</span>
+                              </div>
+                              <p className="text-xs text-muted-foreground">{item.sub}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="absolute -bottom-4 -left-4 glass-card rounded-xl px-4 py-3 shadow-lg animate-float">
+                      <p className="text-xs text-muted-foreground">Audit fee credited toward build</p>
+                      <p className="text-sm font-bold text-primary">Always.</p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </section>
 
