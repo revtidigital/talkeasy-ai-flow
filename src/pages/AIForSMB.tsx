@@ -85,7 +85,7 @@ const smbNeeds = [
   },
   {
     pain: "“Our team is drowning in repetitive back-office work.”",
-    recommendation: "Start with a 4-week Agent Sprint. One production agent. $9,995 flat.",
+    recommendation: "Start with a 4-week Agent Sprint. One production agent.",
   },
   {
     pain: "“We need more pipeline but can’t afford SDRs.”",
