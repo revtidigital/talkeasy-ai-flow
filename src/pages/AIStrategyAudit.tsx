@@ -140,12 +140,12 @@ const pricingTiers = [
   {
     title: "Essential",
     scope: "Single function (e.g., CX or RevOps)",
-    price: "$999 / ₹70,000",
+    price: "$999",
   },
   {
     title: "Growth",
     scope: "Cross-functional, 3 workstreams",
-    price: "$9,999 / ₹7,50,000",
+    price: "$4,999",
   },
   {
     title: "Enterprise",
@@ -163,7 +163,7 @@ const faqs = [
   {
     question: "How much does an AI readiness audit cost?",
     answer:
-      "Our ROI-First Audit starts at $999 / ₹70,000 for a single-function scope. Cross-functional audits are $9,999. Enterprise/multi-BU scope is custom. Compare: Deloitte, BCG, and McKinsey quote $75K–$250K for equivalent work.",
+      "Our ROI-First Audit starts at $999 for a single-function scope. Cross-functional audits are $4,999. Enterprise/multi-BU scope is custom. Compare: Deloitte, BCG, and McKinsey quote $75K–$250K for equivalent work.",
   },
   {
     question: "How long does an AI audit take?",
@@ -247,11 +247,6 @@ const AIStrategyAudit = () => {
               priceCurrency: "USD",
               price: 999,
             },
-            {
-              "@type": "UnitPriceSpecification",
-              priceCurrency: "INR",
-              price: 70000,
-            },
           ],
         },
       },
@@ -328,7 +323,7 @@ const AIStrategyAudit = () => {
             <div className="absolute top-16 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-violet/15 rounded-full blur-3xl" />
             <div className="container-tight relative z-10 py-12">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
                 <AnimatedSection>
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">AI Strategy & Readiness Audit</p>
@@ -339,7 +334,7 @@ const AIStrategyAudit = () => {
                       A fixed-fee AI readiness audit that surfaces your 5–10 highest-ROI AI use cases, scores them by feasibility,
                       and delivers a 90-day action plan.{" "}
                       <span className="font-semibold text-foreground">
-                        $999 / ₹70,000 — and the audit fee is credited toward your first build if we work together.
+                        The audit fee is credited toward your first build if we work together.
                       </span>
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -359,7 +354,7 @@ const AIStrategyAudit = () => {
                   </div>
                 </AnimatedSection>
                 <AnimatedSection delay={0.3}>
-                  <div className="relative">
+                  <div className="relative mt-6 lg:mt-8">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-violet/20 rounded-3xl blur-2xl" />
                     <div className="relative glass-card rounded-3xl p-8">
                       <p className="text-sm font-semibold text-primary mb-6 text-center">3-Week ROI-First Audit</p>
