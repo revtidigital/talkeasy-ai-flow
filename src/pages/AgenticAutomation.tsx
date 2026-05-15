@@ -184,11 +184,6 @@ const faqs = [
       "RPA automates the happy path with deterministic rules. APA adds reasoning — so agents handle variations, unstructured data, and exceptions. Most companies run both: RPA for high-volume deterministic steps, APA for the messy middle.",
   },
   {
-    question: "How much does it cost to build an AI agent?",
-    answer:
-      "Our productized Agent Sprint is a flat fee for one production agent in 4 weeks. Larger programs range from $25K for complex bespoke builds (see Custom AI Agent Development) up to $500K+ for multi-BU programs.",
-  },
-  {
     question: "Will agents hallucinate on financial data?",
     answer:
       "Not when designed correctly. Deterministic tool calls for irreversible actions, HITL approvals on high-risk steps, strict guardrails. Agents reason about the decision; the action is code.",

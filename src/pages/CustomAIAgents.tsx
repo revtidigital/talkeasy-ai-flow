@@ -171,7 +171,7 @@ const processSteps = [
     description: "Workflow, success metrics, constraints, stack.",
   },
   {
-    title: "Week 1 — Agent Feasibility Review ($2K).",
+    title: "Week 1 — Agent Feasibility Review.",
     description: "Architecture, cost/timeline estimate, go/no-go.",
   },
   {
@@ -204,39 +204,12 @@ const outcomes = [
   "Move models without a rebuild as provider pricing shifts",
 ];
 
-const pricingRows = [
-  {
-    engagement: "Agent Feasibility Review",
-    scope: "1-week scoping + prototype + feasibility report",
-    range: "$2,000 / ₹1,50,000",
-  },
-  {
-    engagement: "Agent Sprint (productized — see Agentic Process Automation)",
-    scope: "One scoped back-office agent, 4 weeks",
-    range: "$9,995",
-  },
-  {
-    engagement: "Custom Agent Build",
-    scope: "Bespoke agent, multi-system integration, 6–10 weeks",
-    range: "$25K–$150K",
-  },
-  {
-    engagement: "Multi-agent program",
-    scope: "3+ agents, cross-functional",
-    range: "Custom",
-  },
-  {
-    engagement: "Managed retainer",
-    scope: "Post-launch ops, tuning, evals",
-    range: "$5K–$20K/month",
-  },
-];
 
 const faqs = [
   {
     question: "How much does it cost to build a custom AI agent?",
     answer:
-      "Our Agent Feasibility Review is $2,000 (1 week). Fixed-scope bespoke builds run $25K–$150K. India: ₹15L–₹60L. We always quote fixed-fee.",
+      "We start with a 1-week Agent Feasibility Review that scopes your workflow, prototypes the core logic, and delivers a go/no-go recommendation. All builds are fixed-fee and fixed-timeline — no T&M.",
   },
   {
     question: "How long does AI agent development take?",
@@ -280,7 +253,7 @@ const faqs = [
   {
     question: "Custom AI Agent Development vs Agentic Process Automation — which do I need?",
     answer:
-      "Use Agentic Process Automation for productized back-office workflows (invoice-to-pay, ticket triage, reconciliation). Use Custom AI Agent Development for unique workflows not on our productized list — bespoke logic, proprietary data, domain-specific reasoning. Not sure? Start with a $2K Feasibility Review.",
+      "Use Agentic Process Automation for productized back-office workflows (invoice-to-pay, ticket triage, reconciliation). Use Custom AI Agent Development for unique workflows not on our productized list — bespoke logic, proprietary data, domain-specific reasoning. Not sure? Start with a Feasibility Review.",
   },
 ];
 
@@ -451,8 +424,8 @@ const CustomAIAgents = () => {
                         </Button>
                       </Link>
                       <Link to="/contact-us">
-                        <Button variant="hero-outline" size="xl" title="Start with a $2K Agent Feasibility Review">
-                          Start with a $2K Agent Feasibility Review
+                        <Button variant="hero-outline" size="xl" title="Start with an Agent Feasibility Review">
+                          Start with an Agent Feasibility Review
                         </Button>
                       </Link>
                     </div>
@@ -537,16 +510,16 @@ const CustomAIAgents = () => {
               <div className="grid lg:grid-cols-2 gap-10 items-center">
                 <AnimatedSection>
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Agent Feasibility Review — $2K, 1 week</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Agent Feasibility Review — 1 week</h2>
                     <p className="text-lg text-muted-foreground mb-6">
-                      Not ready to commit to a $25K+ build? Start here. One week. $2,000 / ₹1,50,000 flat. We scope your
+                      Not ready to commit to a custom build? Start here. One week. We scope your
                       workflow, interview your team, prototype the core agent logic, and deliver a feasibility report —
                       technical architecture, cost/timeline estimate, risk flags, and a go/no-go recommendation. If we
                       build together, the fee is credited toward the build.
                     </p>
                     <Link to="/contact-us">
-                      <Button variant="hero" size="lg" title="Start a $2K Agent Feasibility Review">
-                        Start a $2K Agent Feasibility Review
+                      <Button variant="hero" size="lg" title="Start an Agent Feasibility Review">
+                        Start an Agent Feasibility Review
                         <ArrowRight className="w-5 h-5" />
                       </Button>
                     </Link>
@@ -791,35 +764,7 @@ const CustomAIAgents = () => {
           <section className="py-12 md:py-16 bg-secondary/20">
             <div className="container-tight">
               <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    India pricing: ₹15L–₹60L for a build, ₹2L–₹8L/month retainer. Feasibility Review fee credited toward build.
-                  </p>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <Table className="rounded-2xl overflow-hidden border border-border/60 bg-white/90">
-                  <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead>Engagement</TableHead>
-                      <TableHead>Scope</TableHead>
-                      <TableHead>Range</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {pricingRows.map((row) => (
-                      <TableRow key={row.engagement}>
-                        <TableCell className="font-semibold text-foreground">{row.engagement}</TableCell>
-                        <TableCell>{row.scope}</TableCell>
-                        <TableCell>{row.range}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <p className="text-muted-foreground mt-6">
+                <p className="text-muted-foreground">
                   Prefer productized back-office automation? See{" "}
                   <Link to="/services/agentic-automation" className="text-primary font-semibold hover:underline">
                     Agentic Process Automation
@@ -897,7 +842,7 @@ const CustomAIAgents = () => {
               </AnimatedSection>
               <AnimatedSection delay={0.1}>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                  Book a free scoping call, or start with a 1-week $2K Feasibility Review. We&apos;ll tell you honestly whether
+                  Book a free scoping call, or start with a 1-week Feasibility Review. We&apos;ll tell you honestly whether
                   it&apos;s agent-shaped, what it&apos;ll cost, and when it&apos;ll be live.
                 </p>
               </AnimatedSection>

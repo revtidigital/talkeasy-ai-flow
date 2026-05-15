@@ -293,7 +293,7 @@ const faqs = [
   {
     question: "How much does an AI voice agent cost?",
     answer:
-      "Setup from $2,500, then per-minute usage. At typical SMB volume (5,000 minutes/month), all-in cost is 60–80% less than a human SDR or BPO agent.",
+      "Setup from $999, then per-minute usage. At typical SMB volume (5,000 minutes/month), all-in cost is 60–80% less than a human SDR or BPO agent.",
   },
   {
     question: "Can AI voice agents speak Hindi and regional languages?",
@@ -837,29 +837,6 @@ const AIVoiceAgents = () => {
                     <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full flex gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-1" />
                       <p className="text-muted-foreground">{item}</p>
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="py-12 md:py-16">
-            <div className="container-tight">
-              <AnimatedSection>
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Contact us for a tailored quote based on your call volume, language mix, and integrations.
-                  </p>
-                </div>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 gap-6">
-                {pricingCards.map((card) => (
-                  <AnimatedSection key={card.title}>
-                    <div className="rounded-2xl border border-border/60 bg-white/90 p-6 h-full">
-                      <p className="text-sm uppercase tracking-wide text-primary mb-2">{card.title}</p>
-                      <p className="text-muted-foreground">{card.detail}</p>
                     </div>
                   </AnimatedSection>
                 ))}
