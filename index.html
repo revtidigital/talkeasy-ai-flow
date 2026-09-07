@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#7c3aed" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Preconnect to external origins - highest priority -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Preload LCP image with highest priority - critical for desktop LCP -->
+    <link rel="preload" as="image" href="/assets/logo.webp" fetchpriority="high" type="image/png" />
+    
+    <!-- Preload critical font weights only -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+
+    <!-- SEO Meta Tags -->
+    <title>ConverseAI - AI Conversations That Feel Human</title>
+    <meta name="description" content="ConverseAI helps businesses automate, engage, and support customers using intelligent chatbots and real-time messaging." />
+    <meta name="author" content="ConverseAI" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://theconverseai.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ConverseAI - AI Conversations That Feel Human" />
+    <meta property="og:description" content="ConverseAI helps businesses automate, engage, and support customers using intelligent chatbots and real-time messaging." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://theconverseai.com/" />
+    <meta property="og:image" content="https://theconverseai.com/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ConverseAI - AI conversations that feel human" />
+    <meta property="og:site_name" content="ConverseAI" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ConverseAI - AI Conversations That Feel Human" />
+    <meta name="twitter:description" content="ConverseAI helps businesses automate, engage, and support customers using intelligent chatbots and real-time messaging." />
+    <meta name="twitter:image" content="https://theconverseai.com/og-image.svg" />
+    <meta name="twitter:image:alt" content="ConverseAI - AI conversations that feel human" />
+
+   
+    <!-- Google Analytics 4 -->
+      <!-- Google Analytics 4 -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSF8XLD87H"></script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config','G-CSF8XLD87H',{
+        linker:{
+          domains:[
+            'theconverseai.com'
+          ]
+        }
+      });
+      </script>
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CSF8XLD87H', {
+        linker: {
+          domains: [
+            'linen-spoonbill-814762.hostingersite.com',
+            'talkeasy-ai-flow.lovable.app'
+          ]
+        }
+      });
+    </script> -->
+    <!-- End Google Analytics 4 -->
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wenqj2tgtm");
+    </script>
+    <!-- End Microsoft Clarity -->
+
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1477034076305247');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel -->
+
+    <!-- UTM Parameter Capture -->
+    <script>
+      (function() {
+        if (typeof window === 'undefined') return;
+        function getParam(name) {
+          var urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(name);
+        }
+        var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','utm_id'];
+        utmKeys.forEach(function(key) {
+          var val = getParam(key);
+          if (val) localStorage.setItem(key, val);
+        });
+      })();
+    </script>
+    <!-- End UTM Parameter Capture -->
+
+    <!-- Critical inline CSS for above-the-fold content -->
+    <style>
+      /* Critical CSS for LCP optimization */
+      :root{--background:0 0% 100%;--foreground:260 20% 10%;--primary:262 83% 58%;--primary-foreground:0 0% 100%;--muted-foreground:260 10% 45%}
+      *{box-sizing:border-box;margin:0;padding:0}
+      body{font-family:'Inter',system-ui,sans-serif;background:hsl(var(--background));color:hsl(var(--foreground));-webkit-font-smoothing:antialiased}
+      .container-tight{max-width:72rem;margin:0 auto;padding:0 1rem}
+      @media(min-width:640px){.container-tight{padding:0 1.5rem}}
+      @media(min-width:1024px){.container-tight{padding:0 2rem}}
+    </style>
+  </head>
+
+  <body>
+    <!-- Meta Pixel noscript fallback -->
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1477034076305247&ev=PageView&noscript=1" /></noscript>
+    <div id="root"></div>
+
+     <!-- ✅ reCAPTCHA (FOOTER placement) -->
+  <script 
+    src="https://www.google.com/recaptcha/api.js?render=6Ld6E40sAAAAAAayjrv2wh-ZInD0yK12mVNWlmpH"
+    async
+    defer
+  ></script>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

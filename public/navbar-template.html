@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConverseAI - Navigation Bar Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CSS RESET & BASE ==================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ==================== CSS VARIABLES ==================== */
+        :root {
+            /* Brand Colors */
+            --primary: 262, 83%, 58%;
+            --primary-foreground: 0, 0%, 100%;
+            --foreground: 240, 10%, 10%;
+            --muted-foreground: 240, 5%, 45%;
+            --background: 0, 0%, 100%;
+            --secondary: 240, 5%, 96%;
+            --border: 240, 6%, 90%;
+            --ring: 262, 83%, 58%;
+            
+            /* Spacing */
+            --header-height-mobile: 64px;
+            --header-height-desktop: 80px;
+            --container-padding: 16px;
+            --container-max-width: 1280px;
+        }
+
+        /* ==================== HEADER STYLES ==================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--header-height-mobile);
+        }
+
+        /* ==================== LOGO ==================== */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.02);
+        }
+
+        .logo-img {
+            height: 32px;
+            width: auto;
+        }
+
+        /* ==================== DESKTOP NAVIGATION ==================== */
+        .desktop-nav {
+            display: none;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: hsl(var(--muted-foreground));
+            transition: color 0.2s ease;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: hsl(var(--foreground));
+        }
+
+        .nav-link:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 12px;
+            right: 12px;
+            height: 2px;
+            background: hsl(var(--primary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-link.has-dropdown::after {
+            display: none;
+        }
+
+        /* Chevron Icon */
+        .chevron-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-item:hover .chevron-icon {
+            transform: rotate(180deg);
+        }
+
+        /* ==================== DROPDOWN MENUS ==================== */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-top: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 16px;
+            box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid hsl(var(--border) / 0.5);
+            padding: 24px;
+            animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mega Menu (Features) */
+        .mega-menu {
+            min-width: 750px;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .mega-menu-column {
+            min-width: 150px;
+        }
+
+        .mega-menu-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid hsl(var(--border) / 0.5);
+            white-space: nowrap;
+        }
+
+        .mega-menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .mega-menu-link {
+            display: block;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: hsl(var(--muted-foreground));
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .mega-menu-link:hover {
+            color: hsl(var(--primary));
+            background: hsl(var(--primary) / 0.05);
+        }
+
+        .mega-menu-link:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        /* Simple Dropdown (Products) */
+        .simple-dropdown {
+            min-width: 220px;
+        }
+
+        .simple-dropdown-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .simple-dropdown-link {
+            display: block;
+            padding: 10px 16px;
+            font-size: 14px;
+            color: hsl(var(--muted-foreground));
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .simple-dropdown-link:hover {
+            color: hsl(var(--primary));
+            background: hsl(var(--primary) / 0.05);
+        }
+
+        .simple-dropdown-link:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        /* ==================== CTA BUTTON ==================== */
+        .desktop-cta {
+            display: none;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            color: hsl(var(--primary));
+            background: transparent;
+            border: 2px solid hsl(var(--primary));
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            color: hsl(var(--primary-foreground));
+            background: hsl(var(--primary));
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px -5px hsl(var(--primary) / 0.4);
+        }
+
+        .cta-button:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        .cta-button:active {
+            transform: translateY(0) scale(1);
+        }
+
+        /* ==================== MOBILE MENU BUTTON ==================== */
+        .mobile-menu-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: hsl(var(--foreground));
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background: hsl(var(--secondary));
+        }
+
+        .mobile-menu-btn:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        .menu-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .menu-icon-open,
+        .menu-icon-close {
+            display: none;
+        }
+
+        .menu-icon-open {
+            display: block;
+        }
+
+        .mobile-menu-btn[aria-expanded="true"] .menu-icon-open {
+            display: none;
+        }
+
+        .mobile-menu-btn[aria-expanded="true"] .menu-icon-close {
+            display: block;
+        }
+
+        /* ==================== MOBILE MENU ==================== */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid hsl(var(--border));
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 16px var(--container-padding);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-nav-item {
+            border-radius: 8px;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 12px 16px;
+            font-size: 16px;
+            color: hsl(var(--foreground));
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .mobile-nav-link:hover {
+            background: hsl(var(--secondary));
+        }
+
+        .mobile-nav-link:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        /* Mobile Accordion Button */
+        .mobile-accordion-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            color: hsl(var(--foreground));
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .mobile-accordion-btn:hover {
+            background: hsl(var(--secondary));
+        }
+
+        .mobile-accordion-btn:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        .mobile-accordion-btn .chevron-icon {
+            transition: transform 0.2s ease;
+        }
+
+        .mobile-accordion-btn[aria-expanded="true"] .chevron-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile Submenu */
+        .mobile-submenu {
+            display: none;
+            padding-left: 16px;
+            padding-bottom: 8px;
+        }
+
+        .mobile-submenu.active {
+            display: block;
+        }
+
+        .mobile-submenu-section {
+            margin-bottom: 12px;
+        }
+
+        .mobile-submenu-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: hsl(var(--muted-foreground));
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 16px 4px;
+        }
+
+        .mobile-submenu-link {
+            display: block;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: hsl(var(--muted-foreground));
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-submenu-link:hover {
+            color: hsl(var(--primary));
+            background: hsl(var(--primary) / 0.05);
+        }
+
+        .mobile-submenu-link:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        /* Mobile CTA */
+        .mobile-cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 0 16px;
+        }
+
+        .mobile-cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            color: hsl(var(--primary));
+            background: transparent;
+            border: 2px solid hsl(var(--primary));
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-cta-button:hover {
+            color: hsl(var(--primary-foreground));
+            background: hsl(var(--primary));
+        }
+
+        .mobile-cta-button:focus-visible {
+            outline: 2px solid hsl(var(--ring));
+            outline-offset: 2px;
+        }
+
+        /* ==================== RESPONSIVE BREAKPOINTS ==================== */
+        
+        /* Tablet (768px and up) */
+        @media (min-width: 768px) {
+            :root {
+                --container-padding: 24px;
+            }
+
+            .header-inner {
+                height: var(--header-height-desktop);
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+        }
+
+        /* Desktop (1024px and up) */
+        @media (min-width: 1024px) {
+            :root {
+                --container-padding: 32px;
+            }
+
+            .desktop-nav {
+                display: flex;
+            }
+
+            .desktop-cta {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+
+        /* Large Desktop (1280px and up) */
+        @media (min-width: 1280px) {
+            .desktop-nav {
+                gap: 32px;
+            }
+        }
+
+        /* ==================== DEMO CONTENT STYLES ==================== */
+        .demo-content {
+            padding-top: 100px;
+            min-height: 200vh;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 50%, #f0f4ff 100%);
+        }
+
+        .demo-hero {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 60px var(--container-padding);
+            text-align: center;
+        }
+
+        .demo-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: hsl(var(--foreground));
+            margin-bottom: 16px;
+        }
+
+        .demo-subtitle {
+            font-size: 18px;
+            color: hsl(var(--muted-foreground));
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .demo-hero {
+                padding: 100px var(--container-padding);
+            }
+
+            .demo-title {
+                font-size: 48px;
+            }
+
+            .demo-subtitle {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== HEADER START ==================== -->
+    <header class="header" id="header" role="banner">
+        <div class="header-container">
+            <div class="header-inner">
+                <!-- Logo -->
+                <a href="/" class="logo-link" aria-label="ConverseAI - Go to homepage">
+                    <img 
+                        src="/assets/logo.png" 
+                        alt="ConverseAI Logo" 
+                        class="logo-img"
+                        width="120"
+                        height="40"
+                        loading="eager"
+                    >
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav" aria-label="Main navigation">
+                    <!-- Home -->
+                    <div class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </div>
+
+                    <!-- Features (Mega Menu) -->
+                    <div class="nav-item">
+                        <button class="nav-link has-dropdown" aria-expanded="false" aria-haspopup="menu">
+                            Features
+                            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown" role="menu" aria-label="Features submenu">
+                            <div class="dropdown-content mega-menu">
+                                <div class="mega-menu-grid">
+                                    <!-- Products Column -->
+                                    <div class="mega-menu-column">
+                                        <h4 class="mega-menu-title">Products</h4>
+                                        <ul class="mega-menu-list" role="group" aria-label="Products">
+                                            <li><a href="/chatbot" class="mega-menu-link" role="menuitem">Chatbot</a></li>
+                                            <li><a href="/live-chat" class="mega-menu-link" role="menuitem">Live Chat</a></li>
+                                            <li><a href="/pre-chat-forms" class="mega-menu-link" role="menuitem">Pre-Chat Forms</a></li>
+                                            <li><a href="/omni-channel" class="mega-menu-link" role="menuitem">Omni Channel</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Analyse Column -->
+                                    <div class="mega-menu-column">
+                                        <h4 class="mega-menu-title">Analyse</h4>
+                                        <ul class="mega-menu-list" role="group" aria-label="Analyse">
+                                            <li><a href="/team-reports" class="mega-menu-link" role="menuitem">Team Reports</a></li>
+                                            <li><a href="/agent-reports" class="mega-menu-link" role="menuitem">Agent Reports</a></li>
+                                            <li><a href="/csat-report" class="mega-menu-link" role="menuitem">CSAT Report</a></li>
+                                            <li><a href="/inbox-reports" class="mega-menu-link" role="menuitem">Inbox Reports</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- WhatsApp for Business Column -->
+                                    <div class="mega-menu-column">
+                                        <h4 class="mega-menu-title">WhatsApp for Business</h4>
+                                        <ul class="mega-menu-list" role="group" aria-label="WhatsApp for Business">
+                                            <li><a href="/whatsapp-shop" class="mega-menu-link" role="menuitem">WhatsApp Shop</a></li>
+                                            <li><a href="/whatsapp-marketing" class="mega-menu-link" role="menuitem">WhatsApp Marketing</a></li>
+                                            <li><a href="/whatsapp-ai-chatbot" class="mega-menu-link" role="menuitem">WhatsApp AI Chatbot</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Manage Column -->
+                                    <div class="mega-menu-column">
+                                        <h4 class="mega-menu-title">Manage</h4>
+                                        <ul class="mega-menu-list" role="group" aria-label="Manage">
+                                            <li><a href="/agent-capacity" class="mega-menu-link" role="menuitem">Agent Capacity</a></li>
+                                            <li><a href="/private-notes" class="mega-menu-link" role="menuitem">Private Notes</a></li>
+                                            <li><a href="/live-view" class="mega-menu-link" role="menuitem">Live View</a></li>
+                                            <li><a href="/teams-2" class="mega-menu-link" role="menuitem">Teams</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products (Simple Dropdown) -->
+                    <div class="nav-item">
+                        <button class="nav-link has-dropdown" aria-expanded="false" aria-haspopup="menu">
+                            Products
+                            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown" role="menu" aria-label="Products submenu">
+                            <div class="dropdown-content simple-dropdown">
+                                <ul class="simple-dropdown-list">
+                                    <li><a href="/chatbot" class="simple-dropdown-link" role="menuitem">Conversational AI Chatbot</a></li>
+                                    <li><a href="/whatsapp-ai-chatbot" class="simple-dropdown-link" role="menuitem">WhatsApp AI Chatbot</a></li>
+                                    <li><a href="/live-chat" class="simple-dropdown-link" role="menuitem">Live Chat</a></li>
+                                    <li><a href="/omni-channel" class="simple-dropdown-link" role="menuitem">Omni Channel</a></li>
+                                    <li><a href="/pre-chat-forms" class="simple-dropdown-link" role="menuitem">Pre-Chat Forms</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Us -->
+                    <div class="nav-item">
+                        <a href="/about-us" class="nav-link">About Us</a>
+                    </div>
+
+                    <!-- Blog -->
+                    <div class="nav-item">
+                        <a href="/blog" class="nav-link">Blog</a>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div class="nav-item">
+                        <a href="/contact-us" class="nav-link">Contact Us</a>
+                    </div>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="desktop-cta">
+                    <a href="/contact-us" class="cta-button" aria-label="Start your free trial">
+                        Start Your Trial
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button 
+                    class="mobile-menu-btn" 
+                    id="mobileMenuBtn"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                    aria-label="Open navigation menu"
+                >
+                    <svg class="menu-icon menu-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="menu-icon menu-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation menu">
+            <nav class="mobile-menu-container" aria-label="Mobile navigation">
+                <!-- Home -->
+                <div class="mobile-nav-item">
+                    <a href="/" class="mobile-nav-link">Home</a>
+                </div>
+
+                <!-- Features Accordion -->
+                <div class="mobile-nav-item">
+                    <button 
+                        class="mobile-accordion-btn" 
+                        aria-expanded="false"
+                        aria-controls="mobileFeatures"
+                        data-accordion="features"
+                    >
+                        Features
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-submenu" id="mobileFeatures" role="group" aria-label="Features">
+                        <!-- Products Section -->
+                        <div class="mobile-submenu-section">
+                            <h5 class="mobile-submenu-title">Products</h5>
+                            <a href="/chatbot" class="mobile-submenu-link">Chatbot</a>
+                            <a href="/live-chat" class="mobile-submenu-link">Live Chat</a>
+                            <a href="/pre-chat-forms" class="mobile-submenu-link">Pre-Chat Forms</a>
+                            <a href="/omni-channel" class="mobile-submenu-link">Omni Channel</a>
+                        </div>
+                        <!-- Analyse Section -->
+                        <div class="mobile-submenu-section">
+                            <h5 class="mobile-submenu-title">Analyse</h5>
+                            <a href="/team-reports" class="mobile-submenu-link">Team Reports</a>
+                            <a href="/agent-reports" class="mobile-submenu-link">Agent Reports</a>
+                            <a href="/csat-report" class="mobile-submenu-link">CSAT Report</a>
+                            <a href="/inbox-reports" class="mobile-submenu-link">Inbox Reports</a>
+                        </div>
+                        <!-- WhatsApp Section -->
+                        <div class="mobile-submenu-section">
+                            <h5 class="mobile-submenu-title">WhatsApp for Business</h5>
+                            <a href="/whatsapp-shop" class="mobile-submenu-link">WhatsApp Shop</a>
+                            <a href="/whatsapp-marketing" class="mobile-submenu-link">WhatsApp Marketing</a>
+                            <a href="/whatsapp-ai-chatbot" class="mobile-submenu-link">WhatsApp AI Chatbot</a>
+                        </div>
+                        <!-- Manage Section -->
+                        <div class="mobile-submenu-section">
+                            <h5 class="mobile-submenu-title">Manage</h5>
+                            <a href="/agent-capacity" class="mobile-submenu-link">Agent Capacity</a>
+                            <a href="/private-notes" class="mobile-submenu-link">Private Notes</a>
+                            <a href="/live-view" class="mobile-submenu-link">Live View</a>
+                            <a href="/teams-2" class="mobile-submenu-link">Teams</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Accordion -->
+                <div class="mobile-nav-item">
+                    <button 
+                        class="mobile-accordion-btn" 
+                        aria-expanded="false"
+                        aria-controls="mobileProducts"
+                        data-accordion="products"
+                    >
+                        Products
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-submenu" id="mobileProducts" role="group" aria-label="Products">
+                        <a href="/chatbot" class="mobile-submenu-link">Conversational AI Chatbot</a>
+                        <a href="/whatsapp-ai-chatbot" class="mobile-submenu-link">WhatsApp AI Chatbot</a>
+                        <a href="/live-chat" class="mobile-submenu-link">Live Chat</a>
+                        <a href="/omni-channel" class="mobile-submenu-link">Omni Channel</a>
+                        <a href="/pre-chat-forms" class="mobile-submenu-link">Pre-Chat Forms</a>
+                    </div>
+                </div>
+
+                <!-- About Us -->
+                <div class="mobile-nav-item">
+                    <a href="/about-us" class="mobile-nav-link">About Us</a>
+                </div>
+
+                <!-- Blog -->
+                <div class="mobile-nav-item">
+                    <a href="/blog" class="mobile-nav-link">Blog</a>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="mobile-nav-item">
+                    <a href="/contact-us" class="mobile-nav-link">Contact Us</a>
+                </div>
+
+                <!-- Mobile CTA -->
+                <div class="mobile-cta-container">
+                    <a href="/contact-us" class="mobile-cta-button" aria-label="Start your free trial">
+                        Start Your Trial
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ==================== HEADER END ==================== -->
+
+    <!-- Demo Content (for scroll testing) -->
+    <main class="demo-content">
+        <div class="demo-hero">
+            <h1 class="demo-title">Navigation Bar Template</h1>
+            <p class="demo-subtitle">
+                This is a fully responsive navigation bar with mega menu, dropdowns, and mobile accordion menu. 
+                Scroll down to see the sticky header effect.
+            </p>
+        </div>
+    </main>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        (function() {
+            'use strict';
+
+            // DOM Elements
+            const header = document.getElementById('header');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const accordionBtns = document.querySelectorAll('.mobile-accordion-btn');
+
+            // Track expanded accordion
+            let expandedAccordion = null;
+
+            // Scroll Effect
+            function handleScroll() {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+
+            // Mobile Menu Toggle
+            function toggleMobileMenu() {
+                const isOpen = mobileMenu.classList.contains('active');
+                
+                if (isOpen) {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.setAttribute('aria-label', 'Open navigation menu');
+                } else {
+                    mobileMenu.classList.add('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                    mobileMenuBtn.setAttribute('aria-label', 'Close navigation menu');
+                }
+            }
+
+            // Close mobile menu when clicking a link
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Open navigation menu');
+            }
+
+            // Accordion Toggle
+            function toggleAccordion(btn) {
+                const targetId = btn.getAttribute('aria-controls');
+                const target = document.getElementById(targetId);
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                // Close previously expanded accordion
+                if (expandedAccordion && expandedAccordion !== btn) {
+                    const prevTarget = document.getElementById(expandedAccordion.getAttribute('aria-controls'));
+                    expandedAccordion.setAttribute('aria-expanded', 'false');
+                    prevTarget.classList.remove('active');
+                }
+
+                // Toggle current accordion
+                if (isExpanded) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    target.classList.remove('active');
+                    expandedAccordion = null;
+                } else {
+                    btn.setAttribute('aria-expanded', 'true');
+                    target.classList.add('active');
+                    expandedAccordion = btn;
+                }
+            }
+
+            // Event Listeners
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+            accordionBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    toggleAccordion(btn);
+                });
+            });
+
+            // Close mobile menu when clicking links
+            const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link, .mobile-submenu-link, .mobile-cta-button');
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Close mobile menu on window resize (when switching to desktop)
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth >= 1024 && mobileMenu.classList.contains('active')) {
+                        closeMobileMenu();
+                    }
+                }, 100);
+            });
+
+            // Initial scroll check
+            handleScroll();
+        })();
+    </script>
+</body>
+</html>

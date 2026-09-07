@@ -1,0 +1,101 @@
+{
+  "functions": {
+    "api/serve-blog.ts": {
+      "includeFiles": "dist/index.html"
+    }
+  },
+  "routes": [
+
+  {
+      "src": "/storage/(.*)",
+      "dest": "https://njtfddsnsxlxlimuvhfa.supabase.co/storage/$1"
+    },
+    {
+      "src": "/wp-content/uploads/(.*)",
+      "dest": "https://njtfddsnsxlxlimuvhfa.supabase.co/storage/v1/object/public/blog-images/wp-content/$1"
+    },
+    {
+      "src": "/(?!(api|assets|favicon|logo|sitemap|robots\\.txt|wp-content|faq).*).*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(blog\\.theconverseai\\.com|localhost:5173)"
+        }
+      ],
+      "dest": "/api/serve-blog"
+    },
+
+    {
+      "src": "/sitemap-blogs.xml",
+      "dest": "/api/sitemap-blogs"
+    },
+    { "handle": "filesystem" },
+
+    {
+      "src": "/(.*\\.(ico|png|jpg|jpeg|svg|css|js|woff|woff2))",
+      "dest": "/$1"
+    },
+
+    {
+      "src": "/compare/sierra-ai",
+      "status": 301,
+      "headers": { "Location": "https://blog.theconverseai.com/sierra-ai-alternative-what-to-consider-if-you-dont-have-an-enterprise-ai-team" }
+    },
+    {
+      "src": "/compare/decagon-ai",
+      "status": 301,
+      "headers": { "Location": "https://blog.theconverseai.com/decagon-ai-alternative-managed-ai-customer-support-without-the-platform-overhead" }
+    },
+    {
+      "src": "/compare/wati-aisensy",
+      "status": 301,
+      "headers": { "Location": "https://blog.theconverseai.com/wati-aisensy-interakt-or-converseai-an-honest-2026-comparison-for-mid-market" }
+    },
+    {
+      "src": "/compare/retell-ai",
+      "status": 301,
+      "headers": { "Location": "https://blog.theconverseai.com/retell-ai-vs-vapi-vs-bland-ai-which-voice-ai-platform-should-you-use" }
+    },
+    {
+      "src": "/compare/vapi-ai",
+      "status": 301,
+      "headers": { "Location": "https://blog.theconverseai.com/retell-ai-vs-vapi-vs-bland-ai-which-voice-ai-platform-should-you-use" }
+    },
+    {
+      "src": "/compare/bland-ai",
+      "status": 301,
+      "headers": { "Location": "https://blog.theconverseai.com/retell-ai-vs-vapi-vs-bland-ai-which-voice-ai-platform-should-you-use" }
+    },
+
+    {
+      "src": "/faq",
+      "status": 410
+    },
+    {
+      "src": "/faq_cat/(.*)",
+      "status": 410
+    },
+    {
+      "src": "/(.*)/page/(.*)",
+      "status": 410
+    },
+    {
+      "src": "/product/(.*)",
+      "status": 410
+    },
+    {
+      "src": "/wp-content/(.*)",
+      "status": 410
+    },
+    {
+      "src": "/(19|20)[0-9]{2}/(.*)",
+      "status": 410
+    },
+
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "headers": { "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0" }
+    }
+  ]
+}

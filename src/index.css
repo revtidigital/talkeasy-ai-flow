@@ -1,0 +1,494 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font is preloaded in index.html for non-render-blocking loading */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 260 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 20% 10%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 50% 96%;
+    --secondary-foreground: 262 83% 40%;
+
+    --muted: 260 20% 96%;
+    --muted-foreground: 260 10% 45%;
+
+    --accent: 168 84% 50%;
+    --accent-foreground: 168 84% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 20% 90%;
+    --input: 260 20% 90%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    /* Custom ConverseAI tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(280, 87%, 65%) 50%, hsl(310, 70%, 60%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(260, 50%, 98%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(262, 83%, 55%) 0%, hsl(290, 80%, 55%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+    
+    --purple-glow: 262 83% 58%;
+    --violet: 280 87% 65%;
+    --pink-soft: 330 70% 85%;
+    --mint: 168 84% 50%;
+    --mint-soft: 168 60% 90%;
+    
+    /* Footer colors */
+    --footer-bg: 225 25% 14%;
+    --footer-text: 220 10% 60%;
+    
+    --shadow-soft: 0 4px 20px -4px hsl(262 83% 58% / 0.15);
+    --shadow-glow: 0 8px 40px -8px hsl(262 83% 58% / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(260 20% 20% / 0.08);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 260 30% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 260 30% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 260 30% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 83% 65%;
+    --primary-foreground: 260 30% 6%;
+
+    --secondary: 260 30% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 260 30% 15%;
+    --muted-foreground: 260 10% 60%;
+
+    --accent: 168 84% 50%;
+    --accent-foreground: 168 84% 95%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 30% 18%;
+    --input: 260 30% 18%;
+    --ring: 262 83% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-bg {
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-cta {
+    background-image: var(--gradient-cta);
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    @apply bg-white/90 border-primary/20;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .chat-bubble {
+    @apply rounded-2xl px-4 py-3 max-w-xs;
+  }
+
+  .chat-bubble-user {
+    @apply chat-bubble bg-primary text-primary-foreground rounded-br-md;
+  }
+
+  .chat-bubble-ai {
+    @apply chat-bubble bg-secondary text-secondary-foreground rounded-bl-md;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-tight {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+    will-change: auto;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+    will-change: auto;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+    will-change: auto;
+  }
+
+  .animate-typing {
+    animation: typing 1.5s ease-in-out infinite;
+    will-change: auto;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+    will-change: auto;
+  }
+
+  .animate-fade-up-delayed {
+    animation: fade-up 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+    will-change: auto;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+    will-change: auto;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+    will-change: auto;
+  }
+
+  .animate-bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
+    will-change: auto;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes typing {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Smooth scrolling - respect user preferences */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Reduce animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Skip to main content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Enhanced focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* ===== react-phone-number-input styles ===== */
+.phone-input-wrapper .PhoneInput {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.phone-input-wrapper .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Remove any underlines from the phone input */
+.phone-input-wrapper .PhoneInputInput,
+.phone-input-wrapper .PhoneInputCountrySelect,
+.phone-input-wrapper * {
+  text-decoration: none !important;
+}
+
+.phone-input-wrapper .PhoneInputCountrySelect {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.phone-input-wrapper .PhoneInputCountryIcon {
+  width: 24px;
+  height: 18px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.phone-input-wrapper .PhoneInputCountryIcon--square {
+  width: 20px;
+  height: 20px;
+}
+
+.phone-input-wrapper .PhoneInputCountrySelectArrow {
+  display: inline-block;
+  content: '';
+  width: 0.3em;
+  height: 0.3em;
+  margin-left: 0.35em;
+  border-style: solid;
+  border-color: hsl(var(--muted-foreground));
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+  border-right-width: 1px;
+  transform: rotate(45deg);
+  opacity: 0.7;
+}
+
+/* Underline variant (for ContactFormDialog) */
+.phone-input-wrapper.underline .PhoneInput {
+  border-bottom: 1px solid hsl(var(--border));
+  padding-bottom: 4px;
+}
+
+.phone-input-wrapper.underline .PhoneInput:focus-within {
+  border-bottom-color: hsl(var(--primary));
+}
+
+.phone-input-wrapper.underline .PhoneInputInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  padding: 0;
+  height: 36px;
+}
+
+.phone-input-wrapper.underline .PhoneInputInput::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+.phone-input-wrapper.underline.error .PhoneInput {
+  border-bottom-color: hsl(var(--destructive));
+}
+
+/* Bordered variant (for ContactUs page) */
+.phone-input-wrapper.bordered .PhoneInput {
+  height: 48px;
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0 12px;
+  background: hsl(var(--background) / 0.5);
+  transition: border-color 0.15s;
+}
+
+.phone-input-wrapper.bordered .PhoneInput:focus-within {
+  border-color: hsl(var(--primary));
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+}
+
+.phone-input-wrapper.bordered .PhoneInputInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  padding: 0;
+  height: 100%;
+}
+
+.phone-input-wrapper.bordered .PhoneInputInput::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+.phone-input-wrapper.bordered.error .PhoneInput {
+  border-color: hsl(var(--destructive));
+}
+
+/* Prevent radix UI body scroll lock from hiding scrollbar */
+body[data-scroll-locked] {
+  overflow: auto !important;
+  overscroll-behavior: contain;
+  padding-right: 0 !important;
+}
+
+
+/* User Section CSS */
+
+.brands-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.brands-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
